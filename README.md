@@ -1,8 +1,10 @@
-# SoftiCAR Query and Modeling Language (SQML)
+# SQML Eclipse Plugin
 
-The _SoftiCAR Query and Modeling Language (SQML)_ is a domain-specific language ([DSL](https://en.wikipedia.org/wiki/Domain-specific_language)) to define database table structures and database queries. It is implemented as an [Eclipse](https://www.eclipse.org/) plugin based on the [Xtext framework](https://www.eclipse.org/Xtext/).
+The _SQML Eclipse Plugin_ is an [Eclipse](https://www.eclipse.org/) plugin that implements the _SoftiCAR Query and Modeling Language (SQML)_, which is a domain-specific language ([DSL](https://en.wikipedia.org/wiki/Domain-specific_language)) to define database table structures and database queries. The _SQML Eclipse Plugin_ is based on the [Xtext framework](https://www.eclipse.org/Xtext/).
 
 ## Main Features
+
+The _SQML Eclipse Plugin_ provides the following features.
 
 - Tables
   - database table structures can be defined and validated
@@ -19,9 +21,9 @@ To write _SQML_ code, the following is required:
 
 - Java SDK 15+, e.g. [OpenJDK](https://adoptopenjdk.net/)
 - [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/), e.g. 2020-09 (4.17) or higher
-- SQML Eclipse Plugin
+- _SQML Eclipse Plugin_
 
-:warning: There is currently no publicly available update site to download the _SQML Eclipse Plugin_ from. This will change when our migration to _Github_ is completed.
+:warning: There is currently no publicly available update site to download the _SQML Eclipse Plugin_ from. This will change when our migration to _Github_ is completed. Until then, an organization has to build and publish the plugin internally.
 
 ## Development
 
@@ -29,18 +31,20 @@ To contribute to the source code, an installation of the [Eclipse IDE for Java D
 
 ### Building
 
-To build the source code, the [SoftiCAR Gradle Plugins](https://github.com/Prevent-DEV/com.softicar.gradle.plugin) is necessary, as well as a `.softicar/build.properties` file with a configured `com.softicar.ivy.repository.url` property.
+To build the source code, the [SoftiCAR Gradle Plugins](https://github.com/Prevent-DEV/com.softicar.gradle.plugin) and the [SoftiCAR Platform](https://github.com/Prevent-DEV/com.softicar.platform) need to be available.
+
+:warning: Until our migration to _Github_ is complete, the file `.softicar/build.properties` needs to be configured and point to the location where to find the artifacts of the _SoftiCAR Gradle Plugins_ and _SoftiCAR Platform_.
 ```
 com.softicar.ivy.repository.url = https://host/path/
 ```
 
-External dependencies are bundled by the `com.softicar.sqml.shared` subproject and dependency resolution is done by _Gradle_. To gather external dependencies, execute this:
+External dependencies are bundled by the `com.softicar.sqml.shared` subproject and dependency resolution is done by the [Gradle Build Tool](https://gradle.org/). To gather external dependencies, execute this:
 ```
 cd com.softicar.sqml.shared
 ../gradlew syncSharedDependencies
 ```
 
-The projects can now be imported without errors into _Eclipse_. Future updates may require repeated execution of the `syncSharedDependencies` task when dependencies changed.
+The projects can now be imported without errors into [Eclipse](https://www.eclipse.org/). Future updates may require repeated execution of the `syncSharedDependencies` task when dependencies changed.
 
 ### Publishing
 
