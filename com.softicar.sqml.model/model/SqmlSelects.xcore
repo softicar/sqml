@@ -1,0 +1,151 @@
+package com.softicar.sqml.model.selects
+
+import com.softicar.sqml.model.externals.List
+import com.softicar.sqml.model.interfaces.ISqmlColumn
+import com.softicar.sqml.model.interfaces.ISqmlExpression
+import com.softicar.sqml.model.interfaces.ISqmlForeignKeyVariable
+import com.softicar.sqml.model.interfaces.ISqmlFromClause
+import com.softicar.sqml.model.interfaces.ISqmlGroupByClause
+import com.softicar.sqml.model.interfaces.ISqmlHavingClause
+import com.softicar.sqml.model.interfaces.ISqmlJoinClause
+import com.softicar.sqml.model.interfaces.ISqmlOrderByClause
+import com.softicar.sqml.model.interfaces.ISqmlOrderByExpression
+import com.softicar.sqml.model.interfaces.ISqmlSelect
+import com.softicar.sqml.model.interfaces.ISqmlSelectBlock
+import com.softicar.sqml.model.interfaces.ISqmlSelectClause
+import com.softicar.sqml.model.interfaces.ISqmlSelectColumn
+import com.softicar.sqml.model.interfaces.ISqmlSelectElse
+import com.softicar.sqml.model.interfaces.ISqmlSelectElseIf
+import com.softicar.sqml.model.interfaces.ISqmlStaticExpression
+import com.softicar.sqml.model.interfaces.ISqmlSelectIf
+import com.softicar.sqml.model.interfaces.ISqmlSelectPart
+import com.softicar.sqml.model.interfaces.ISqmlSubSelectVariable
+import com.softicar.sqml.model.interfaces.ISqmlTable
+import com.softicar.sqml.model.interfaces.ISqmlTableVariable
+import com.softicar.sqml.model.interfaces.ISqmlVariable
+import com.softicar.sqml.model.interfaces.ISqmlWhereClause
+
+// -------------------- AbstractSqmlSelectBlock -------------------- //
+
+abstract class AbstractSqmlSelectBlock extends ISqmlSelectBlock {
+	contains ISqmlSelectPart[] parts
+
+	op List<? extends ISqmlSelectPart> getAllElements() {
+		parts
+	}
+}
+
+// -------------------- SqmlForeignKeyVariable -------------------- //
+
+class SqmlForeignKeyVariable extends ISqmlForeignKeyVariable {
+	String name
+	refers ISqmlVariable variable
+	refers ISqmlColumn column
+}
+
+// -------------------- SqmlFromClause -------------------- //
+
+class SqmlFromClause extends ISqmlFromClause {
+	contains ISqmlVariable variable
+}
+
+// -------------------- SqmlGroupByClause -------------------- //
+
+class SqmlGroupByClause extends ISqmlGroupByClause {
+	contains ISqmlExpression[] expressions
+}
+
+// -------------------- SqmlHavingClause -------------------- //
+
+class SqmlHavingClause extends ISqmlHavingClause {
+	contains ISqmlExpression condition
+}
+
+// -------------------- SqmlJoinClause -------------------- //
+
+class SqmlJoinClause extends ISqmlJoinClause {
+	boolean leftJoin
+	contains ISqmlVariable variable
+	contains ISqmlExpression[] conditions
+}
+
+// -------------------- SqmlOrderByClause -------------------- //
+
+class SqmlOrderByClause extends ISqmlOrderByClause {
+	contains SqmlOrderByExpression[] expressions
+}
+
+// -------------------- SqmlOrderByExpression -------------------- //
+
+class SqmlOrderByExpression extends ISqmlOrderByExpression {
+	contains ISqmlExpression expression
+	boolean descending
+}
+
+// -------------------- SqmlSelect -------------------- //
+
+class SqmlSelect extends AbstractSqmlSelectBlock, ISqmlSelect {
+}
+
+// -------------------- SqmlSelectClause -------------------- //
+
+class SqmlSelectClause extends ISqmlSelectClause {
+	boolean distinct
+	contains SqmlSelectColumn[] columns
+}
+
+// -------------------- SqmlSelectColumn -------------------- //
+
+class SqmlSelectColumn extends ISqmlSelectColumn {
+	String alias
+	String title
+	contains ISqmlExpression expression
+	
+	derived String name get {
+		SqmlSelectColumnMethods.getName(this)
+	}
+}
+
+// -------------------- SqmlSelectElse -------------------- //
+
+class SqmlSelectElse extends AbstractSqmlSelectBlock, ISqmlSelectElse {
+}
+
+// -------------------- SqmlSelectElseIf -------------------- //
+
+class SqmlSelectElseIf extends AbstractSqmlSelectBlock, ISqmlSelectElseIf {
+	contains ISqmlStaticExpression condition
+}
+
+// -------------------- SqmlSelectIf -------------------- //
+
+class SqmlSelectIf extends AbstractSqmlSelectBlock, ISqmlSelectIf {
+	contains ISqmlStaticExpression condition
+	contains ISqmlSelectElseIf[] elseIfs
+	contains ISqmlSelectElse ^else
+
+	op List<? extends ISqmlSelectPart> getAllElements() {
+
+		return SqmlSelectIfMethods.getAllElements(this);
+	}
+}
+
+// -------------------- SqmlSubSelectVariable -------------------- //
+
+class SqmlSubSelectVariable extends ISqmlSubSelectVariable {
+	String name
+	contains ISqmlSelect subSelect
+}
+
+// -------------------- SqmlTableVariable -------------------- //
+
+class SqmlTableVariable extends ISqmlTableVariable {
+	String name
+	refers ISqmlTable table
+}
+
+// -------------------- SqmlWhereClause -------------------- //
+
+class SqmlWhereClause extends ISqmlWhereClause {
+	contains ISqmlExpression condition
+}

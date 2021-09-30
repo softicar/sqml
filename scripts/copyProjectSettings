@@ -1,0 +1,32 @@
+#!/bin/bash
+
+PROJECTS=( \
+	"com.softicar.sqml.generator" \
+	"com.softicar.sqml.generator.sqml" \
+	"com.softicar.sqml.main" \
+	"com.softicar.sqml.model" \
+	"com.softicar.sqml.shared" \
+	"com.softicar.sqml.tests" \
+	"com.softicar.sqml.ui" \
+)
+
+SETTINGS_FOLDER="scripts/settings/"
+
+# This script copies the common project settings to all sub-projects.
+
+cd "`dirname "$0"`/../"
+
+function copy {
+	echo "copying $1"
+
+	for project in "${PROJECTS[@]}"
+	do
+		echo -e "  -> $project/.settings/"
+		cp "$1" "$project/.settings/"
+	done
+}
+
+find $SETTINGS_FOLDER -type f | while read file
+do
+	copy "$file" 
+done

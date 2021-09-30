@@ -1,0 +1,97 @@
+package com.softicar.sqml.model.tables
+
+import com.softicar.sqml.model.files.SqmlFileElement
+import com.softicar.sqml.model.interfaces.ISqmlDefaultValue
+import com.softicar.sqml.model.interfaces.ISqmlEnum
+import com.softicar.sqml.model.interfaces.ISqmlIndexKey
+import com.softicar.sqml.model.interfaces.ISqmlLiteral
+import com.softicar.sqml.model.interfaces.ISqmlLiteralDefaultValue
+import com.softicar.sqml.model.interfaces.ISqmlRowConstructorDefaultValue
+import com.softicar.sqml.model.interfaces.ISqmlTable
+import com.softicar.sqml.model.interfaces.ISqmlTableColumn
+import com.softicar.sqml.model.interfaces.ISqmlTableKey
+import com.softicar.sqml.model.interfaces.ISqmlTableRow
+import com.softicar.sqml.model.interfaces.ISqmlTableRowValue
+import com.softicar.sqml.model.interfaces.ISqmlTypeReference
+import com.softicar.sqml.model.interfaces.ISqmlUniqueKey
+import com.softicar.sqml.model.interfaces.ISqmlValueReference
+import com.softicar.sqml.model.interfaces.ISqmlValueReferenceDefaultValue
+
+class SqmlLiteralDefaultValue extends ISqmlLiteralDefaultValue {
+	boolean minus
+	contains ISqmlLiteral literal
+}
+
+class SqmlRowConstructorDefaultValue extends ISqmlRowConstructorDefaultValue {
+	contains ISqmlValueReference[] valueReferences
+}
+
+class SqmlTable extends SqmlFileElement, ISqmlTable {
+	boolean enumTable
+	String physicalNameOverride
+	contains SqmlTableColumn[] columns opposite table
+	contains SqmlTableKey[] tableKeys opposite table
+	contains ISqmlEnum[] enums
+	contains SqmlTableRow[] rows opposite table
+}
+
+class SqmlTableColumn extends ISqmlTableColumn {
+	container SqmlTable table opposite columns
+	String name
+	String physicalNameOverride
+	contains ISqmlTypeReference typeReference
+	boolean primaryKey
+	boolean serial
+	boolean baseColumn
+	boolean nullable
+	boolean unsigned
+	SqmlForeignKeyAction onDeleteAction
+	SqmlForeignKeyAction onUpdateAction
+	boolean defaultNull
+	boolean defaultNow
+	boolean onUpdateNow
+	boolean timestamp
+	contains ISqmlDefaultValue defaultValue
+	Integer bits
+	Integer precision
+	Integer scale
+	Integer maxLength
+	Integer lengthBits
+	String characterSet
+	String collation
+	String comment
+	String constraintName
+}
+
+abstract class SqmlTableKey extends ISqmlTableKey {
+	String name
+	refers ISqmlTableColumn[] columns
+	container SqmlTable table opposite tableKeys
+}
+
+enum SqmlForeignKeyAction {
+	UNDEFINED,
+	CASCADE
+	NO_ACTION
+	RESTRICT
+	SET_DEFAULT
+	SET_NULL
+}
+
+class SqmlUniqueKey extends SqmlTableKey, ISqmlUniqueKey {}
+class SqmlIndexKey extends SqmlTableKey, ISqmlIndexKey {}
+
+class SqmlValueReferenceDefaultValue extends ISqmlValueReferenceDefaultValue {
+	contains ISqmlValueReference valueReference
+}
+
+class SqmlTableRow extends ISqmlTableRow {
+	container SqmlTable table opposite rows
+	contains SqmlTableRowValue[] values opposite row
+}
+
+class SqmlTableRowValue extends ISqmlTableRowValue {
+	container SqmlTableRow row opposite values
+	contains ISqmlLiteral literal
+	boolean ^null
+}

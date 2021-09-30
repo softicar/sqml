@@ -1,0 +1,19 @@
+package com.softicar.sqml.model.queries
+
+import com.softicar.sqml.model.files.SqmlFileElement
+import com.softicar.sqml.model.interfaces.ISqmlQuery
+import com.softicar.sqml.model.interfaces.ISqmlQueryParameter
+import com.softicar.sqml.model.interfaces.ISqmlSelect
+import com.softicar.sqml.model.interfaces.ISqmlTypeReference
+
+class SqmlQuery extends SqmlFileElement, ISqmlQuery {
+	contains SqmlQueryParameter[] parameters opposite query
+	contains ISqmlSelect select
+}
+
+class SqmlQueryParameter extends ISqmlQueryParameter {
+	String name
+	refers SqmlQuery query opposite parameters
+	boolean optional
+	contains ISqmlTypeReference typeReference
+}

@@ -1,0 +1,27 @@
+package com.softicar.sqml.model.files
+
+import com.softicar.sqml.model.interfaces.ISqmlFile
+import com.softicar.sqml.model.interfaces.ISqmlFileElement
+import com.softicar.sqml.model.interfaces.ISqmlGlobalObject
+import com.softicar.sqml.model.interfaces.ISqmlImport
+import com.softicar.sqml.model.interfaces.ISqmlPackageDeclaration
+
+class SqmlFile extends ISqmlFile {
+	contains SqmlPackageDeclaration packageDeclaration opposite sqmlFile
+	contains SqmlImport[] imports opposite sqmlFile
+	contains SqmlFileElement[] elements
+}
+
+class SqmlPackageDeclaration extends ISqmlPackageDeclaration {
+	container SqmlFile sqmlFile opposite packageDeclaration
+	String name
+}
+
+class SqmlImport extends ISqmlImport {
+	container SqmlFile sqmlFile opposite imports
+	refers ISqmlGlobalObject target
+}
+
+abstract class SqmlFileElement extends ISqmlFileElement {
+	String name
+}

@@ -1,0 +1,31 @@
+package com.softicar.sqml.model.externals
+
+import com.softicar.platform.common.code.java.JavaClass
+import com.softicar.platform.common.core.java.classes.name.JavaClassName
+import com.softicar.platform.common.core.java.packages.name.JavaPackageName
+import com.softicar.platform.db.sql.token.SqlKeyword
+import com.softicar.platform.db.sql.token.SqlSymbol
+import com.softicar.platform.db.sql.^type.SqlFieldType
+import com.softicar.platform.db.core.table.DbTableName
+import com.softicar.sqml.model.generation.ISqmlSelectGenerator
+import com.softicar.sqml.model.utils.ISqmlJavaType
+import org.eclipse.xtext.naming.QualifiedName
+import java.math.BigDecimal
+import java.util.Collection
+import java.util.List
+
+// -------------------- external references -------------------- //
+
+type BigDecimal wraps BigDecimal
+type Collection<T> wraps Collection
+type ISqmlJavaType wraps ISqmlJavaType
+type ISqmlSelectGenerator wraps ISqmlSelectGenerator
+type JavaClass wraps JavaClass
+type JavaClassName wraps JavaClassName
+type JavaPackageName wraps JavaPackageName
+type List<T> wraps List
+type QualifiedName wraps QualifiedName
+type SqlFieldType wraps SqlFieldType
+type SqlKeyword wraps SqlKeyword
+type SqlSymbol wraps SqlSymbol
+type DbTableName wraps DbTableName

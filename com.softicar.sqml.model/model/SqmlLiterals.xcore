@@ -1,0 +1,38 @@
+package com.softicar.sqml.model.literals
+
+import com.softicar.sqml.model.externals.BigDecimal
+import com.softicar.sqml.model.interfaces.ISqmlBooleanLiteral
+import com.softicar.sqml.model.interfaces.ISqmlDecimalLiteral
+import com.softicar.sqml.model.interfaces.ISqmlDoubleLiteral
+import com.softicar.sqml.model.interfaces.ISqmlFloatLiteral
+import com.softicar.sqml.model.interfaces.ISqmlIntegerLiteral
+import com.softicar.sqml.model.interfaces.ISqmlLongLiteral
+import com.softicar.sqml.model.interfaces.ISqmlStringLiteral
+
+class SqmlBooleanLiteral extends ISqmlBooleanLiteral {
+	boolean ^true
+}
+
+class SqmlIntegerLiteral extends ISqmlIntegerLiteral {
+	Integer value
+}
+
+class SqmlLongLiteral extends ISqmlLongLiteral {
+	Long value
+}
+
+class SqmlFloatLiteral extends ISqmlFloatLiteral {
+	BigDecimal value
+}
+
+class SqmlDoubleLiteral extends ISqmlDoubleLiteral {
+	BigDecimal value
+}
+
+class SqmlDecimalLiteral extends ISqmlDecimalLiteral {
+	BigDecimal value
+}
+
+class SqmlStringLiteral extends ISqmlStringLiteral {
+	String value
+}

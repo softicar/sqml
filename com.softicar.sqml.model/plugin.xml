@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlConditions -->
+      <package
+            uri="com.softicar.sqml.model.conditions"
+            class="com.softicar.sqml.model.conditions.ConditionsPackage"
+            genModel="model/SqmlConditions.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlExpressions -->
+      <package
+            uri="com.softicar.sqml.model.expressions"
+            class="com.softicar.sqml.model.expressions.ExpressionsPackage"
+            genModel="model/SqmlExpressions.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlExternals -->
+      <package
+            uri="com.softicar.sqml.model.externals"
+            class="com.softicar.sqml.model.externals.ExternalsPackage"
+            genModel="model/SqmlExternals.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlLiterals -->
+      <package
+            uri="com.softicar.sqml.model.literals"
+            class="com.softicar.sqml.model.literals.LiteralsPackage"
+            genModel="model/SqmlLiterals.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlSelects -->
+      <package
+            uri="com.softicar.sqml.model.selects"
+            class="com.softicar.sqml.model.selects.SelectsPackage"
+            genModel="model/SqmlSelects.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlQueries -->
+      <package
+            uri="com.softicar.sqml.model.queries"
+            class="com.softicar.sqml.model.queries.QueriesPackage"
+            genModel="model/SqmlQueries.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlTables -->
+      <package
+            uri="com.softicar.sqml.model.tables"
+            class="com.softicar.sqml.model.tables.TablesPackage"
+            genModel="model/SqmlTables.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlInterfaces -->
+      <package
+            uri="com.softicar.sqml.model.interfaces"
+            class="com.softicar.sqml.model.interfaces.InterfacesPackage"
+            genModel="model/SqmlInterfaces.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlTypes -->
+      <package
+            uri="com.softicar.sqml.model.types"
+            class="com.softicar.sqml.model.types.TypesPackage"
+            genModel="model/SqmlTypes.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlFiles -->
+      <package
+            uri="com.softicar.sqml.model.files"
+            class="com.softicar.sqml.model.files.FilesPackage"
+            genModel="model/SqmlFiles.xcore"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SqmlFunctions -->
+      <package
+            uri="com.softicar.sqml.model.functions"
+            class="com.softicar.sqml.model.functions.FunctionsPackage"
+            genModel="model/SqmlFunctions.xcore"/>
+   </extension>
+
+
+</plugin>

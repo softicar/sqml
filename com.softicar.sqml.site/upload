@@ -1,0 +1,21 @@
+#!/bin/bash
+
+CONFIG_FILE="$HOME/.softicar/build.properties"
+UPLOAD_URL_PROPERTY="com.softicar.sqml.upload.url"
+
+if [ -e "$CONFIG_FILE" ]
+then
+	UPLOAD_URL="`grep ^$UPLOAD_URL_PROPERTY $CONFIG_FILE | cut -d= -f2`"
+	if [ "$UPLOAD_URL" == "" ]
+	then
+		echo "configuration file is missing property: $UPLOAD_URL_PROPERTY"
+		exit 1
+	fi
+else
+	echo "missing configuration file: '$CONFIG_FILE'"
+	exit 1
+fi
+
+cd "`dirname $0`"
+echo "uploading to $UPLOAD_URL"
+rsync -ia --delete ./ "$UPLOAD_URL"

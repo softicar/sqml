@@ -1,0 +1,21 @@
+buildscript {
+	new File(System.properties['user.home'] + "/.softicar/build.properties").withReader { reader ->
+		new Properties().tap { load(reader) }.each { project.ext.set(it.key, it.value) }
+	}
+
+	repositories.ivy {
+		allowInsecureProtocol true;
+		url project['com.softicar.ivy.repository.url']
+	}
+	
+	dependencies.classpath "com.softicar:com.softicar.gradle.plugin:2.3.0"
+}
+
+apply plugin: 'com.softicar.gradle'
+
+project.ext {
+	versions = [
+		libraries: "9.0.0",
+		mariadbJavaClient: "2.6.0",
+	]
+}

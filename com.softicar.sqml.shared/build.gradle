@@ -1,0 +1,18 @@
+configurations {
+	shared
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	shared "com.softicar:com.softicar.platform.db.runtime:${versions.libraries}"
+	shared "com.softicar:com.softicar.platform.db.sqml.builtin:${versions.libraries}"
+	shared "org.mariadb.jdbc:mariadb-java-client:$versions.mariadbJavaClient"
+}
+
+task syncSharedDependencies(type: Sync) {
+	from configurations.shared
+	into "$projectDir/lib/jars"
+}
