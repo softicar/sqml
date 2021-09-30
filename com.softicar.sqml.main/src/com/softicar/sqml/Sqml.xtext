@@ -1,0 +1,423 @@
+grammar com.softicar.sqml.Sqml with org.eclipse.xtext.common.Terminals
+
+//import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "com.softicar.sqml.model.conditions"
+import "com.softicar.sqml.model.externals"
+import "com.softicar.sqml.model.expressions"
+import "com.softicar.sqml.model.files"
+import "com.softicar.sqml.model.functions"
+import "com.softicar.sqml.model.interfaces"
+import "com.softicar.sqml.model.literals"
+import "com.softicar.sqml.model.queries"
+import "com.softicar.sqml.model.selects"
+import "com.softicar.sqml.model.tables"
+import "com.softicar.sqml.model.types"
+
+/* -------------------- file -------------------- */
+//
+SqmlFile:
+	packageDeclaration=SqmlPackageDeclaration
+	(imports+=SqmlImport)*
+	(elements+=SqmlFileElement)*;
+
+SqmlPackageDeclaration:
+	'PACKAGE' name=QualifiedName;
+
+SqmlImport:
+	'IMPORT' target=[ISqmlGlobalObject|QualifiedName];
+
+SqmlFileElement:
+	SqmlValueType | SqmlTable | SqmlQuery | SqmlFunction;
+
+SqmlTypeReference:
+	typeDefinition=[ISqmlTypeDefinition|QualifiedName]
+	('<' typeParameters+=SqmlTypeReference (',' typeParameters+=SqmlTypeReference)* '>')?
+	(list?='[' ']')?;
+
+/* -------------------- table and value type -------------------- */
+//
+SqmlValueType:
+	'VALUETYPE' name=ID '{'
+	//	'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
+	//	'sqltype' sqlType=STRING
+	'}';
+
+SqmlEnum:
+	'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{'
+	(enumerators+=SqmlEnumerator)*
+	'}';
+
+SqmlEnumerator:
+	name=ID ('=' value=SqmlLiteral)?;
+
+SqmlTable:
+	(enumTable?='ENUM')? 'TABLE' name=ID physicalNameOverride=STRING '{'
+	(columns+=SqmlTableColumn)*
+	(tableKeys+=SqmlTableKey)*
+	(enums+=SqmlEnum)*
+	(rows+=SqmlTableRow)*
+	'}';
+
+SqmlTableColumn:
+	primaryKey?='PK'?
+	typeReference=SqmlTypeReference name=ID
+	('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE'))?
+	('['
+	((nullable?='NULLABLE')? &
+	(timestamp?='TIMESTAMP')? &
+	(unsigned?='UNSIGNED')? &
+	('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? &
+	('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? &
+	('ON' 'UPDATE' onUpdateNow?='NOW')? &
+	(physicalNameOverride=STRING)? &
+	('BITS' '=' bits=INT)? &
+	('PRECISION' '=' precision=INT ',' scale=INT)? &
+	('MAXLENGTH' '=' maxLength=INT)? &
+	('LENGTHBITS' '=' lengthBits=INT)? &
+	('CHARACTER' 'SET' '=' characterSet=STRING)? &
+	('COLLATION' '=' collation=STRING)? &
+	('COMMENT' '=' comment=STRING)? &
+	('CONSTRAINT_NAME' '=' constraintName=STRING)?)
+	']')?;
+
+SqmlTableRow:
+	'ROW' '(' values+=SqmlTableRowValue (',' values+=SqmlTableRowValue)* ')'
+;
+
+SqmlTableRowValue:
+	literal=SqmlLiteral | null?='NULL'
+;
+
+enum SqmlForeignKeyAction:
+	CASCADE='CASCADE' |
+	NO_ACTION='NO_ACTION' |
+	RESTRICT='RESTRICT' |
+	SET_DEFAULT='SET_DEFAULT' |
+	SET_NULL='SET_NULL';
+
+SqmlDefaultValue returns ISqmlDefaultValue:
+	SqmlRowConstructorDefaultValue
+	| SqmlLiteralDefaultValue
+	| SqmlValueReferenceDefaultValue;
+
+SqmlRowConstructorDefaultValue:
+	{SqmlRowConstructorDefaultValue} '(' (valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
+	')';
+
+SqmlLiteralDefaultValue:
+	minus?='-'? literal=SqmlLiteral;
+
+SqmlValueReferenceDefaultValue:
+	valueReference=SqmlValueReference;
+
+SqmlTableKey:
+	('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey})
+	columns+=[ISqmlTableColumn|ID]*
+	('AS' name=ID)?;
+
+/* -------------------- query -------------------- */
+//
+SqmlQuery:
+	'QUERY' name=ID '{'
+	(parameters+=SqmlQueryParameter)*
+	select=SqmlSelect
+	'}';
+
+SqmlQueryParameter:
+	optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID;
+
+/* -------------------- function -------------------- */
+//
+SqmlFunction:
+	'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName
+	'(' (parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)? ')' '{'
+	(expression=SqmlExpression | 'SQL' sql=SqmlSql)
+	'}';
+
+SqmlFunctionParameter:
+	typeReference=SqmlTypeReference name=ID;
+
+SqmlSql:
+	{SqmlSql} '{' (tokens+=SqmlSqlToken)* '}';
+
+SqmlSqlToken returns ISqmlModelElement:
+	=> SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral | SqmlSqlSymbol;
+
+SqmlSqlKeyword:
+	keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
+		| 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
+		| 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT' 
+		| 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION' 
+		| 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS' 
+		| 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT'| 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
+		| 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW' 
+		| 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
+		| 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
+		| 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE'
+	);
+
+SqmlSqlId:
+	identifier=ID;
+
+SqmlSqlSymbol:
+	symbolText=('+' | '-' | '*' | '/' | '%'
+	| '|' | '&' | '^' | '~'
+	| '(' | ')' | '.' | ','
+	| '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=');
+
+SqmlSqlStringLiteral:
+	string=STRING;
+
+SqmlSqlNumberLiteral:
+	integer=INT | decimal=DECIMAL;
+
+/* -------------------- select statement -------------------- */
+//
+SqmlSelect:
+	parts+=SqmlSelectPart+;
+
+SqmlSelectPart returns ISqmlSelectPart:
+	SqmlSelectIf
+	| SqmlSelectClause
+	| SqmlFromClause
+	| SqmlJoinClause
+	| SqmlWhereClause
+	| SqmlGroupByClause
+	| SqmlHavingClause
+	| SqmlOrderByClause;
+
+SqmlSelectIf:
+	'#' 'IF' condition=SqmlStaticExpression '{'
+	parts+=SqmlSelectPart*
+	'}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?;
+
+SqmlSelectElseIf:
+	'ELSE' 'IF' condition=SqmlStaticExpression '{'
+	parts+=SqmlSelectPart*
+	'}';
+
+SqmlSelectElse:
+	{SqmlSelectElse}
+	'ELSE' '{'
+	parts+=SqmlSelectPart*
+	'}';
+
+SqmlSelectClause:
+	'SELECT' distinct?='DISTINCT'? columns+=SqmlSelectColumn (',' columns+=SqmlSelectColumn)*;
+
+SqmlSelectColumn:
+	expression=SqmlExpression ('AS' alias=ID)? ('TITLE' title=STRING)?;
+
+SqmlFromClause:
+	'FROM' variable=(SqmlTableVariable | SqmlSubSelectVariable);
+
+SqmlForeignKeyVariable:
+	variable=[ISqmlVariable] '.' column=[ISqmlColumn] 'AS'? name=ID;
+
+SqmlTableVariable:
+	table=[ISqmlTable] 'AS'? name=ID;
+
+SqmlSubSelectVariable:
+	'(' subSelect=SqmlSelect ')' 'AS'? name=ID;
+
+SqmlJoinClause:
+	leftJoin?='LEFT'? 'JOIN' variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable) ('ON'
+	conditions+=SqmlExpression)*;
+
+SqmlWhereClause:
+	'WHERE' condition=SqmlExpression;
+
+SqmlGroupByClause:
+	'GROUP' 'BY' expressions+=SqmlExpression (',' expressions+=SqmlExpression)*;
+
+SqmlHavingClause:
+	'HAVING' condition=SqmlExpression;
+
+SqmlOrderByClause:
+	'ORDER' 'BY' expressions+=SqmlOrderByExpression (',' expressions+=SqmlOrderByExpression)*;
+
+SqmlOrderByExpression:
+	expression=SqmlExpression ('ASC' | (descending?='DESC'))?;
+
+/* -------------------- expressions -------------------- */
+//
+SqmlExpression returns ISqmlExpression:
+	SqmlOr;
+
+SqmlOr returns ISqmlExpression:
+	SqmlAnd ({SqmlOr.left=current} 'OR' right=SqmlAnd)*;
+
+SqmlAnd returns ISqmlExpression:
+	SqmlCondition ({SqmlAnd.left=current} 'AND' right=SqmlCondition)*;
+
+SqmlCondition returns ISqmlExpression:
+	{SqmlNot} 'NOT' condition=SqmlCondition |
+	{SqmlExists} 'EXISTS' subSelect=SqmlSubSelect |
+	SqmlOperand ({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
+	{SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? |
+	{SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL' |
+	{SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
+	{SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
+	{SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand)?;
+
+SqmlOperand returns ISqmlExpression:
+	SqmlAddition;
+
+SqmlAddition returns ISqmlExpression:
+	SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
+	right=SqmlMultiplication)*;
+
+SqmlMultiplication returns ISqmlExpression:
+	SqmlPrimay ({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*;
+
+SqmlPrimay returns ISqmlExpression:
+	SqmlRowConstructor |
+	SqmlNegation |
+	SqmlValueReference |
+	SqmlFunctionCall |
+	SqmlGroupConcat |
+	SqmlCase |
+	SqmlIf |
+	SqmlIfNull |
+	SqmlStaticIf |
+	SqmlStaticVariableReference |
+	SqmlLiteral;
+
+SqmlSubSelect:
+	'(' select=SqmlSelect ')';
+
+SqmlStaticVariableReference:
+	nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable|ID];
+
+SqmlRowConstructor:
+	explicit?='ROW'? '(' expressions+=SqmlExpression (',' expressions+=SqmlExpression)* ')';
+
+SqmlNegation:
+	'-' expression=SqmlPrimay;
+
+SqmlFunctionCall:
+	function=[SqmlFunction|ID] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')';
+
+SqmlGroupConcat:
+	'GROUP_CONCAT' '('
+	distinct?='DISTINCT'?
+	expressions+=SqmlOperand (',' expressions+=SqmlOperand)*
+	('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (',' orderByExpressions+=SqmlOrderByExpression)*)?
+	('SEPARATOR' separator=STRING)?
+	')';
+
+SqmlCase:
+	'CASE' operand=SqmlExpression? (whens+=SqmlCaseWhen)+ ('ELSE' elseExpression=SqmlExpression)? 'END';
+	
+SqmlCaseWhen:
+	'WHEN' whenExpression=SqmlExpression 'THEN' thenExpression=SqmlExpression;
+
+SqmlIf:
+	'IF' '(' condition=SqmlExpression ',' thenExpression=SqmlExpression ',' elseExpression=SqmlExpression ')';
+
+SqmlIfNull:
+	'IFNULL' '(' testExpression=SqmlExpression ',' thenExpression=SqmlExpression ')';
+
+SqmlStaticIf:
+	'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}'
+	(=>('ELSE' 'IF') conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')*
+	('ELSE' '{' elseExpression=SqmlExpression '}')?;
+
+SqmlStaticExpression returns ISqmlStaticExpression:
+	SqmlStaticOr;
+
+SqmlStaticOr returns ISqmlStaticExpression:
+	SqmlStaticAnd ({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*;
+
+SqmlStaticAnd returns ISqmlStaticExpression:
+	SqmlStaticAtom ({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*;
+
+SqmlStaticAtom returns ISqmlStaticExpression:
+	SqmlStaticParentheses |
+	SqmlStaticIsEmpty |
+	SqmlStaticIsNull |
+	SqmlStaticIsTrue;
+
+SqmlStaticIsEmpty:
+	parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'EMPTY';
+
+SqmlStaticIsNull:
+	parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'NULL';
+
+SqmlStaticIsTrue:
+	not?='NOT'? parameterReference=SqmlStaticVariableReference;
+
+SqmlStaticParentheses:
+	'(' expression=SqmlStaticExpression ')';
+
+SqmlValueReference:
+	nextIteration?='NEXT'? path=SqmlPath dotStar?=('.*')?;
+
+SqmlPath:
+	target=[ISqmlModelElement|ID] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement|ID])*;
+
+/* -------------------- literals -------------------- */
+//
+SqmlLiteral returns ISqmlLiteral:
+	SqmlIntegerLiteral |
+	SqmlLongLiteral |
+	SqmlFloatLiteral |
+	SqmlDoubleLiteral |
+	SqmlDecimalLiteral |
+	SqmlStringLiteral |
+	SqmlBooleanLiteral;
+
+SqmlIntegerLiteral:
+	value=INT;
+
+SqmlLongLiteral:
+	value=LONG;
+
+SqmlFloatLiteral:
+	value=FLOAT;
+
+SqmlDoubleLiteral:
+	value=DOUBLE;
+
+SqmlDecimalLiteral:
+	value=DECIMAL;
+
+SqmlStringLiteral:
+	value=STRING;
+
+SqmlBooleanLiteral:
+	{SqmlBooleanLiteral} (^true?='TRUE')
+	| 'FALSE' {SqmlBooleanLiteral};
+
+/* -------------------- terminals -------------------- */
+//
+terminal LONG returns ecore::ELong:
+	INT 'L';
+
+terminal FLOAT returns ecore::EBigDecimal:
+	INT 'f' | DECIMAL 'f';
+
+terminal DOUBLE returns ecore::EBigDecimal:
+	INT 'd' | DECIMAL 'd';
+
+terminal DECIMAL returns ecore::EBigDecimal:
+	INT '.' INT;
+
+SqmlFunctionName:
+	ID | SqmlComparisonOperator | SqmlAdditionOperator | SqmlMultiplicationOperator;
+
+SqmlComparisonOperator:
+	'=' | '!=' | '<' | '<=' | '>' | '>=';
+
+SqmlAdditionOperator:
+	'+' | '-';
+
+SqmlMultiplicationOperator:
+	'*' | '/' | '%';
+
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?;
+
+QualifiedName:
+	ID ('.' ID)*;

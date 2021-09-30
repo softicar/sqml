@@ -1,0 +1,64 @@
+package com.softicar.sqml.model.functions
+
+import com.softicar.sqml.model.externals.BigDecimal
+import com.softicar.sqml.model.files.SqmlFileElement
+import com.softicar.sqml.model.interfaces.ISqmlExpression
+import com.softicar.sqml.model.interfaces.ISqmlFunction
+import com.softicar.sqml.model.interfaces.ISqmlFunctionCall
+import com.softicar.sqml.model.interfaces.ISqmlFunctionParameter
+import com.softicar.sqml.model.interfaces.ISqmlModelElement
+import com.softicar.sqml.model.interfaces.ISqmlSql
+import com.softicar.sqml.model.interfaces.ISqmlSqlId
+import com.softicar.sqml.model.interfaces.ISqmlSqlKeyword
+import com.softicar.sqml.model.interfaces.ISqmlSqlNumberLiteral
+import com.softicar.sqml.model.interfaces.ISqmlSqlStringLiteral
+import com.softicar.sqml.model.interfaces.ISqmlSqlSymbol
+import com.softicar.sqml.model.interfaces.ISqmlTypeReference
+
+class SqmlFunction extends SqmlFileElement, ISqmlFunction {
+	contains ISqmlTypeReference returnType
+	contains SqmlFunctionParameter[] parameters opposite function
+	contains ISqmlSql sql
+	contains ISqmlExpression expression
+
+	op String toString() {
+		SqmlFunctionMethods.getDisplayName(this)
+	}
+}
+
+class SqmlFunctionCall extends ISqmlFunctionCall {
+	refers ISqmlFunction function
+	contains ISqmlExpression[] arguments
+}
+
+class SqmlFunctionParameter extends ISqmlFunctionParameter {
+	String name
+	refers SqmlFunction function opposite parameters
+	contains ISqmlTypeReference typeReference
+}
+
+
+class SqmlSql extends ISqmlSql {
+	contains ISqmlModelElement[] tokens
+}
+
+class SqmlSqlId extends ISqmlSqlId {
+	String identifier
+}
+
+class SqmlSqlKeyword extends ISqmlSqlKeyword {
+	String keywordText
+}
+
+class SqmlSqlNumberLiteral extends ISqmlSqlNumberLiteral {
+	Integer integer
+	BigDecimal decimal
+}
+
+class SqmlSqlStringLiteral extends ISqmlSqlStringLiteral {
+	String string
+}
+
+class SqmlSqlSymbol extends ISqmlSqlSymbol {
+	String symbolText
+}

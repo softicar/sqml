@@ -1,0 +1,259 @@
+package com.softicar.sqml.model.interfaces
+
+// conditions
+import com.softicar.sqml.model.conditions.ISqmlAnd
+import com.softicar.sqml.model.conditions.ISqmlBetween
+import com.softicar.sqml.model.conditions.ISqmlComparison
+import com.softicar.sqml.model.conditions.ISqmlCondition
+import com.softicar.sqml.model.conditions.ISqmlExists
+import com.softicar.sqml.model.conditions.ISqmlIn
+import com.softicar.sqml.model.conditions.ISqmlIsNull
+import com.softicar.sqml.model.conditions.ISqmlLike
+import com.softicar.sqml.model.conditions.ISqmlNot
+import com.softicar.sqml.model.conditions.ISqmlOr
+import com.softicar.sqml.model.conditions.ISqmlRegexp
+
+// expressions
+import com.softicar.sqml.model.expressions.ISqmlAddition
+import com.softicar.sqml.model.expressions.ISqmlCase
+import com.softicar.sqml.model.expressions.ISqmlCaseWhen
+import com.softicar.sqml.model.expressions.ISqmlBinaryOperation
+import com.softicar.sqml.model.expressions.ISqmlExpression
+import com.softicar.sqml.model.expressions.ISqmlGroupConcat
+import com.softicar.sqml.model.expressions.ISqmlIf
+import com.softicar.sqml.model.expressions.ISqmlIfNull
+import com.softicar.sqml.model.expressions.ISqmlMultiplication
+import com.softicar.sqml.model.expressions.ISqmlNegation
+import com.softicar.sqml.model.expressions.ISqmlStaticVariableReference
+import com.softicar.sqml.model.expressions.ISqmlPath
+import com.softicar.sqml.model.expressions.ISqmlRowConstructor
+import com.softicar.sqml.model.expressions.ISqmlStaticAnd
+import com.softicar.sqml.model.expressions.ISqmlStaticExpression
+import com.softicar.sqml.model.expressions.ISqmlStaticIf
+import com.softicar.sqml.model.expressions.ISqmlStaticIsEmpty
+import com.softicar.sqml.model.expressions.ISqmlStaticIsNull
+import com.softicar.sqml.model.expressions.ISqmlStaticIsTrue
+import com.softicar.sqml.model.expressions.ISqmlStaticOr
+import com.softicar.sqml.model.expressions.ISqmlStaticParameterTest
+import com.softicar.sqml.model.expressions.ISqmlStaticParentheses
+import com.softicar.sqml.model.expressions.ISqmlSubSelect
+import com.softicar.sqml.model.expressions.ISqmlUnaryOperation
+import com.softicar.sqml.model.expressions.ISqmlValueReference
+
+// files
+import com.softicar.sqml.model.files.ISqmlFile
+import com.softicar.sqml.model.files.ISqmlFileElement
+import com.softicar.sqml.model.files.ISqmlImport
+import com.softicar.sqml.model.files.ISqmlPackageDeclaration
+
+// functions
+import com.softicar.sqml.model.functions.ISqmlFunction
+import com.softicar.sqml.model.functions.ISqmlFunctionCall
+import com.softicar.sqml.model.functions.ISqmlFunctionParameter
+import com.softicar.sqml.model.functions.ISqmlSql
+import com.softicar.sqml.model.functions.ISqmlSqlId
+import com.softicar.sqml.model.functions.ISqmlSqlKeyword
+import com.softicar.sqml.model.functions.ISqmlSqlNumberLiteral
+import com.softicar.sqml.model.functions.ISqmlSqlStringLiteral
+import com.softicar.sqml.model.functions.ISqmlSqlSymbol
+
+// literals
+import com.softicar.sqml.model.literals.ISqmlBooleanLiteral
+import com.softicar.sqml.model.literals.ISqmlDecimalLiteral
+import com.softicar.sqml.model.literals.ISqmlDoubleLiteral
+import com.softicar.sqml.model.literals.ISqmlFloatLiteral
+import com.softicar.sqml.model.literals.ISqmlIntegerLiteral
+import com.softicar.sqml.model.literals.ISqmlLiteral
+import com.softicar.sqml.model.literals.ISqmlLongLiteral
+import com.softicar.sqml.model.literals.ISqmlStringLiteral
+
+// miscellaneous
+import com.softicar.sqml.model.ISqmlColumn
+import com.softicar.sqml.model.ISqmlGeneratable
+import com.softicar.sqml.model.ISqmlGlobalObject
+import com.softicar.sqml.model.ISqmlModelElement
+import com.softicar.sqml.model.ISqmlModelVisitor
+import com.softicar.sqml.model.ISqmlStaticVariable 
+import com.softicar.sqml.model.ISqmlTabular
+import com.softicar.sqml.model.ISqmlValue
+
+// queries
+import com.softicar.sqml.model.queries.ISqmlQuery
+import com.softicar.sqml.model.queries.ISqmlQueryParameter
+
+// selects
+import com.softicar.sqml.model.selects.ISqmlForeignKeyVariable
+import com.softicar.sqml.model.selects.ISqmlFromClause
+import com.softicar.sqml.model.selects.ISqmlGroupByClause
+import com.softicar.sqml.model.selects.ISqmlHavingClause
+import com.softicar.sqml.model.selects.ISqmlJoinClause
+import com.softicar.sqml.model.selects.ISqmlOrderByClause
+import com.softicar.sqml.model.selects.ISqmlOrderByExpression
+import com.softicar.sqml.model.selects.ISqmlSelect
+import com.softicar.sqml.model.selects.ISqmlSelectBlock
+import com.softicar.sqml.model.selects.ISqmlSelectClause
+import com.softicar.sqml.model.selects.ISqmlSelectColumn
+import com.softicar.sqml.model.selects.ISqmlSelectElse
+import com.softicar.sqml.model.selects.ISqmlSelectElseIf
+import com.softicar.sqml.model.selects.ISqmlSelectIf
+import com.softicar.sqml.model.selects.ISqmlSelectPart
+import com.softicar.sqml.model.selects.ISqmlSubSelectVariable
+import com.softicar.sqml.model.selects.ISqmlTableVariable
+import com.softicar.sqml.model.selects.ISqmlWhereClause
+import com.softicar.sqml.model.selects.ISqmlVariable
+
+// tables
+import com.softicar.sqml.model.tables.ISqmlDefaultValue
+import com.softicar.sqml.model.tables.ISqmlIndexKey
+import com.softicar.sqml.model.tables.ISqmlLiteralDefaultValue
+import com.softicar.sqml.model.tables.ISqmlRowConstructorDefaultValue
+import com.softicar.sqml.model.tables.ISqmlTable
+import com.softicar.sqml.model.tables.ISqmlTableColumn
+import com.softicar.sqml.model.tables.ISqmlTableKey
+import com.softicar.sqml.model.tables.ISqmlTableRow
+import com.softicar.sqml.model.tables.ISqmlTableRowValue
+import com.softicar.sqml.model.tables.ISqmlUniqueKey
+import com.softicar.sqml.model.tables.ISqmlValueReferenceDefaultValue
+
+// types 
+import com.softicar.sqml.model.types.ISqmlEnum
+import com.softicar.sqml.model.types.ISqmlEnumerator
+import com.softicar.sqml.model.types.ISqmlTopLevelTypeDefinition
+import com.softicar.sqml.model.types.ISqmlType
+import com.softicar.sqml.model.types.ISqmlTypeDefinition
+import com.softicar.sqml.model.types.ISqmlTypeReference
+import com.softicar.sqml.model.types.ISqmlValueType
+
+// validation
+import com.softicar.sqml.model.validation.ISqmlIssueAcceptor
+import com.softicar.sqml.model.validation.ISqmlValidatable
+
+// ---------------- INTERFACES ---------------- //
+
+// conditions
+interface ISqmlAnd extends ISqmlCondition wraps ISqmlAnd {}
+interface ISqmlBetween extends ISqmlCondition wraps ISqmlBetween {}
+interface ISqmlComparison extends ISqmlBinaryOperation, ISqmlCondition wraps ISqmlComparison {}
+interface ISqmlCondition extends ISqmlExpression wraps ISqmlCondition {}
+interface ISqmlExists extends ISqmlCondition wraps ISqmlExists {}
+interface ISqmlIn extends ISqmlCondition wraps ISqmlIn {}
+interface ISqmlIsNull extends ISqmlCondition wraps ISqmlIsNull {}
+interface ISqmlLike extends ISqmlCondition wraps ISqmlLike {}
+interface ISqmlNot extends ISqmlCondition wraps ISqmlNot {}
+interface ISqmlOr extends ISqmlCondition wraps ISqmlOr {}
+interface ISqmlRegexp extends ISqmlCondition wraps ISqmlRegexp {}
+
+// expressions
+interface ISqmlAddition extends ISqmlBinaryOperation wraps ISqmlAddition {}
+interface ISqmlCase extends ISqmlExpression wraps ISqmlCase {}
+interface ISqmlCaseWhen extends ISqmlModelElement wraps ISqmlCaseWhen {}
+interface ISqmlBinaryOperation extends ISqmlFunctionCall wraps ISqmlBinaryOperation {}
+interface ISqmlExpression extends ISqmlValue, ISqmlModelElement wraps ISqmlExpression {}
+interface ISqmlGroupConcat extends ISqmlExpression wraps ISqmlGroupConcat {}
+interface ISqmlIf extends ISqmlExpression wraps ISqmlIf {}
+interface ISqmlIfNull extends ISqmlExpression wraps ISqmlIfNull {}
+interface ISqmlMultiplication extends ISqmlBinaryOperation wraps ISqmlMultiplication {}
+interface ISqmlNegation extends ISqmlUnaryOperation wraps ISqmlNegation {}
+interface ISqmlPath extends ISqmlValidatable, ISqmlModelElement wraps ISqmlPath {}
+interface ISqmlRowConstructor extends ISqmlExpression wraps ISqmlRowConstructor {}
+interface ISqmlStaticAnd extends ISqmlStaticExpression wraps ISqmlStaticAnd {}
+interface ISqmlStaticExpression wraps ISqmlStaticExpression {}
+interface ISqmlStaticIf extends ISqmlExpression wraps ISqmlStaticIf {}
+interface ISqmlStaticIsEmpty extends ISqmlStaticParameterTest wraps ISqmlStaticIsEmpty {}
+interface ISqmlStaticIsNull extends ISqmlStaticParameterTest wraps ISqmlStaticIsNull {}
+interface ISqmlStaticIsTrue extends ISqmlStaticParameterTest wraps ISqmlStaticIsTrue {}
+interface ISqmlStaticOr extends ISqmlStaticExpression wraps ISqmlStaticOr {}
+interface ISqmlStaticParameterTest extends ISqmlStaticExpression wraps ISqmlStaticParameterTest {}
+interface ISqmlStaticParentheses extends ISqmlStaticExpression wraps ISqmlStaticParentheses {}
+interface ISqmlStaticVariableReference extends ISqmlExpression, ISqmlStaticExpression wraps ISqmlStaticVariableReference {}
+interface ISqmlSubSelect extends ISqmlExpression wraps ISqmlSubSelect {}
+interface ISqmlUnaryOperation extends ISqmlExpression wraps ISqmlUnaryOperation {}
+interface ISqmlValueReference extends ISqmlValidatable, ISqmlExpression wraps ISqmlValueReference {}
+
+// files
+interface ISqmlFile extends ISqmlValidatable wraps ISqmlFile {}
+interface ISqmlFileElement extends ISqmlGlobalObject wraps ISqmlFileElement {}
+interface ISqmlImport extends ISqmlModelElement wraps ISqmlImport {}
+interface ISqmlPackageDeclaration wraps ISqmlPackageDeclaration {}
+
+// functions
+interface ISqmlFunction extends ISqmlFileElement, ISqmlGeneratable, ISqmlModelElement, ISqmlValidatable wraps ISqmlFunction {}
+interface ISqmlFunctionCall extends ISqmlExpression wraps ISqmlFunctionCall {}
+interface ISqmlFunctionParameter extends ISqmlValidatable, ISqmlStaticVariable wraps ISqmlFunctionParameter {}
+interface ISqmlSql wraps ISqmlSql {}
+interface ISqmlSqlId extends ISqmlModelElement wraps ISqmlSqlId {}
+interface ISqmlSqlKeyword extends ISqmlModelElement wraps ISqmlSqlKeyword {}
+interface ISqmlSqlNumberLiteral extends ISqmlModelElement wraps ISqmlSqlNumberLiteral {}
+interface ISqmlSqlStringLiteral extends ISqmlModelElement wraps ISqmlSqlStringLiteral {}
+interface ISqmlSqlSymbol extends ISqmlModelElement wraps ISqmlSqlSymbol {}
+
+// literals
+interface ISqmlBooleanLiteral extends ISqmlLiteral wraps ISqmlBooleanLiteral {}
+interface ISqmlDecimalLiteral extends ISqmlLiteral wraps ISqmlDecimalLiteral {}
+interface ISqmlDoubleLiteral extends ISqmlLiteral wraps ISqmlDoubleLiteral {}
+interface ISqmlFloatLiteral extends ISqmlLiteral wraps ISqmlFloatLiteral {}
+interface ISqmlIntegerLiteral extends ISqmlLiteral wraps ISqmlIntegerLiteral {}
+interface ISqmlLiteral extends ISqmlExpression wraps ISqmlLiteral<?> {}
+interface ISqmlLongLiteral extends ISqmlLiteral wraps ISqmlLongLiteral {}
+interface ISqmlStringLiteral extends ISqmlLiteral wraps ISqmlStringLiteral {}
+
+// miscellaneous
+interface ISqmlColumn extends ISqmlValue, ISqmlModelElement wraps ISqmlColumn {}
+interface ISqmlGeneratable wraps ISqmlGeneratable {}
+interface ISqmlGlobalObject wraps ISqmlGlobalObject {}
+interface ISqmlModelElement wraps ISqmlModelElement {}
+interface ISqmlModelVisitor wraps ISqmlModelVisitor {}
+interface ISqmlStaticVariable wraps ISqmlStaticVariable {}
+interface ISqmlTabular wraps ISqmlTabular {}
+interface ISqmlValue wraps ISqmlValue {}
+
+// queries
+interface ISqmlQuery extends ISqmlFileElement, ISqmlValidatable wraps ISqmlQuery {}
+interface ISqmlQueryParameter extends ISqmlValidatable, ISqmlStaticVariable wraps ISqmlQueryParameter {}
+
+// selects
+interface ISqmlForeignKeyVariable extends ISqmlVariable wraps ISqmlForeignKeyVariable {}
+interface ISqmlFromClause extends ISqmlSelectPart wraps ISqmlFromClause {}
+interface ISqmlGroupByClause extends ISqmlSelectPart wraps ISqmlGroupByClause {}
+interface ISqmlHavingClause extends ISqmlSelectPart wraps ISqmlHavingClause {}
+interface ISqmlJoinClause extends ISqmlValidatable, ISqmlSelectPart wraps ISqmlJoinClause {}
+interface ISqmlOrderByClause extends ISqmlSelectPart wraps ISqmlOrderByClause {}
+interface ISqmlOrderByExpression extends ISqmlModelElement wraps ISqmlOrderByExpression {}
+interface ISqmlSelect extends ISqmlExpression, ISqmlTabular, ISqmlSelectPart, ISqmlValidatable wraps ISqmlSelect {}
+interface ISqmlSelectBlock extends ISqmlSelectPart wraps ISqmlSelectBlock {}
+interface ISqmlSelectClause extends ISqmlSelectPart wraps ISqmlSelectClause {}
+interface ISqmlSelectColumn extends ISqmlValidatable, ISqmlColumn wraps ISqmlSelectColumn {}
+interface ISqmlSelectElse extends ISqmlSelectPart  wraps ISqmlSelectElse {}
+interface ISqmlSelectElseIf extends ISqmlSelectPart wraps ISqmlSelectElseIf {}
+interface ISqmlSelectIf extends ISqmlSelectPart wraps ISqmlSelectIf {}
+interface ISqmlSelectPart extends ISqmlModelElement wraps ISqmlSelectPart {}
+interface ISqmlSubSelectVariable extends ISqmlVariable wraps ISqmlSubSelectVariable {}
+interface ISqmlTableVariable extends ISqmlVariable wraps ISqmlTableVariable {}
+interface ISqmlVariable extends ISqmlGeneratable, ISqmlValue, ISqmlModelElement wraps ISqmlVariable {}
+interface ISqmlWhereClause extends ISqmlValidatable, ISqmlSelectPart wraps ISqmlWhereClause {}
+
+// tables 
+interface ISqmlDefaultValue extends ISqmlExpression wraps ISqmlDefaultValue {}
+interface ISqmlIndexKey extends ISqmlTableKey wraps ISqmlIndexKey {}
+interface ISqmlLiteralDefaultValue extends ISqmlDefaultValue wraps ISqmlLiteralDefaultValue {}
+interface ISqmlRowConstructorDefaultValue extends ISqmlDefaultValue wraps ISqmlRowConstructorDefaultValue {}
+interface ISqmlTable extends ISqmlFileElement, ISqmlTabular, ISqmlTypeDefinition wraps ISqmlTable {}
+interface ISqmlTableColumn extends ISqmlValidatable, ISqmlColumn wraps ISqmlTableColumn {}
+interface ISqmlTableKey extends ISqmlModelElement wraps ISqmlTableKey {}
+interface ISqmlTableRow wraps ISqmlTableRow {}
+interface ISqmlTableRowValue wraps ISqmlTableRowValue {}
+interface ISqmlUniqueKey extends ISqmlTableKey wraps ISqmlUniqueKey {}
+interface ISqmlValueReferenceDefaultValue extends ISqmlDefaultValue wraps ISqmlValueReferenceDefaultValue {}
+
+// types
+interface ISqmlEnum extends ISqmlTypeDefinition, ISqmlGlobalObject wraps ISqmlEnum {}
+interface ISqmlEnumerator extends ISqmlValidatable, ISqmlValue, ISqmlModelElement wraps ISqmlEnumerator {}
+interface ISqmlTopLevelTypeDefinition extends ISqmlTypeDefinition, ISqmlFileElement wraps ISqmlTopLevelTypeDefinition {}
+interface ISqmlType wraps ISqmlType {}
+interface ISqmlTypeDefinition extends ISqmlType, ISqmlModelElement wraps ISqmlTypeDefinition {}
+interface ISqmlTypeReference extends ISqmlModelElement wraps ISqmlTypeReference {}
+interface ISqmlValueType extends ISqmlFileElement, ISqmlTypeDefinition wraps ISqmlValueType {}
+
+// validation
+interface ISqmlIssueAcceptor wraps ISqmlIssueAcceptor {}
+interface ISqmlValidatable wraps ISqmlValidatable {}

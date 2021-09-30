@@ -1,0 +1,35 @@
+package com.softicar.sqml.model.types
+
+import com.softicar.sqml.model.files.SqmlFileElement
+import com.softicar.sqml.model.interfaces.ISqmlEnum
+import com.softicar.sqml.model.interfaces.ISqmlEnumerator
+import com.softicar.sqml.model.interfaces.ISqmlLiteral
+import com.softicar.sqml.model.interfaces.ISqmlTopLevelTypeDefinition
+import com.softicar.sqml.model.interfaces.ISqmlTypeDefinition
+import com.softicar.sqml.model.interfaces.ISqmlTypeReference
+import com.softicar.sqml.model.interfaces.ISqmlValueType
+
+abstract class AbstractSqmlTypeDefinition extends SqmlFileElement, ISqmlTopLevelTypeDefinition {
+}
+
+class SqmlValueType extends SqmlFileElement, ISqmlValueType {
+	// TODO
+}
+
+class SqmlEnum extends ISqmlEnum {
+	String name
+	contains ISqmlTypeReference typeReference
+	contains SqmlEnumerator[] enumerators opposite ^enum
+}
+
+class SqmlEnumerator extends ISqmlEnumerator {
+	container SqmlEnum ^enum opposite enumerators
+	String name
+	contains ISqmlLiteral value
+}
+
+class SqmlTypeReference extends ISqmlTypeReference {
+	boolean list
+	refers ISqmlTypeDefinition typeDefinition
+	contains ISqmlTypeReference[] typeParameters
+}

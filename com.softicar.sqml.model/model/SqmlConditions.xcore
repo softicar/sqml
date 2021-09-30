@@ -1,0 +1,69 @@
+package com.softicar.sqml.model.conditions
+
+import com.softicar.sqml.model.interfaces.ISqmlAnd
+import com.softicar.sqml.model.interfaces.ISqmlBetween
+import com.softicar.sqml.model.interfaces.ISqmlComparison
+import com.softicar.sqml.model.interfaces.ISqmlExists
+import com.softicar.sqml.model.interfaces.ISqmlExpression
+import com.softicar.sqml.model.interfaces.ISqmlFunction
+import com.softicar.sqml.model.interfaces.ISqmlIn
+import com.softicar.sqml.model.interfaces.ISqmlIsNull
+import com.softicar.sqml.model.interfaces.ISqmlLike
+import com.softicar.sqml.model.interfaces.ISqmlNot
+import com.softicar.sqml.model.interfaces.ISqmlOr
+import com.softicar.sqml.model.interfaces.ISqmlRegexp
+import com.softicar.sqml.model.interfaces.ISqmlSubSelect
+
+class SqmlAnd extends ISqmlAnd {
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+}
+
+class SqmlBetween extends ISqmlBetween {
+	contains ISqmlExpression operand
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+}
+
+class SqmlComparison extends ISqmlComparison {
+	refers ISqmlFunction function
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+}
+
+class SqmlExists extends ISqmlExists {
+	contains ISqmlSubSelect subSelect
+}
+
+class SqmlIn extends ISqmlIn {
+	boolean not
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+}
+
+class SqmlIsNull extends ISqmlIsNull {
+	boolean not
+	contains ISqmlExpression operand
+}
+
+class SqmlLike extends ISqmlLike {
+	boolean not
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+	String escape
+}
+
+class SqmlNot extends ISqmlNot {
+	contains ISqmlExpression condition
+}
+
+class SqmlOr extends ISqmlOr {
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+}
+
+class SqmlRegexp extends ISqmlRegexp {
+	boolean not
+	contains ISqmlExpression operand
+	contains ISqmlExpression regexp
+}

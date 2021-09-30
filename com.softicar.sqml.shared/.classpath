@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.sqml.builtin-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.code-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.container-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.core-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.date-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.io-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.math-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.string-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.testing-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.core-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.runtime-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.sql-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.structure-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/asm-9.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/byte-buddy-1.10.15.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/byte-buddy-agent-1.10.15.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/classgraph-4.8.90.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/h2-1.4.199.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/hamcrest-core-1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/HikariCP-3.4.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/junit-4.13.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/mariadb-java-client-2.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/mockito-core-3.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/objenesis-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

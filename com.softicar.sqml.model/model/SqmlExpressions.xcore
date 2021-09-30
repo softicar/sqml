@@ -1,0 +1,133 @@
+package com.softicar.sqml.model.expressions
+
+import com.softicar.sqml.model.interfaces.ISqmlAddition
+import com.softicar.sqml.model.interfaces.ISqmlCase
+import com.softicar.sqml.model.interfaces.ISqmlCaseWhen
+import com.softicar.sqml.model.interfaces.ISqmlBinaryOperation
+import com.softicar.sqml.model.interfaces.ISqmlExpression
+import com.softicar.sqml.model.interfaces.ISqmlFunction
+import com.softicar.sqml.model.interfaces.ISqmlGroupConcat
+import com.softicar.sqml.model.interfaces.ISqmlIf
+import com.softicar.sqml.model.interfaces.ISqmlIfNull
+import com.softicar.sqml.model.interfaces.ISqmlModelElement
+import com.softicar.sqml.model.interfaces.ISqmlMultiplication
+import com.softicar.sqml.model.interfaces.ISqmlNegation
+import com.softicar.sqml.model.interfaces.ISqmlOrderByExpression
+import com.softicar.sqml.model.interfaces.ISqmlStaticVariableReference
+import com.softicar.sqml.model.interfaces.ISqmlPath
+import com.softicar.sqml.model.interfaces.ISqmlRowConstructor
+import com.softicar.sqml.model.interfaces.ISqmlSelect
+import com.softicar.sqml.model.interfaces.ISqmlStaticAnd
+import com.softicar.sqml.model.interfaces.ISqmlStaticExpression
+import com.softicar.sqml.model.interfaces.ISqmlStaticIf
+import com.softicar.sqml.model.interfaces.ISqmlStaticIsEmpty
+import com.softicar.sqml.model.interfaces.ISqmlStaticIsNull
+import com.softicar.sqml.model.interfaces.ISqmlStaticIsTrue
+import com.softicar.sqml.model.interfaces.ISqmlStaticOr
+import com.softicar.sqml.model.interfaces.ISqmlStaticParentheses
+import com.softicar.sqml.model.interfaces.ISqmlStaticVariable
+import com.softicar.sqml.model.interfaces.ISqmlSubSelect
+import com.softicar.sqml.model.interfaces.ISqmlValueReference
+
+abstract class AbstractSqmlBinaryOperation extends ISqmlBinaryOperation {
+	refers ISqmlFunction function
+	contains ISqmlExpression left
+	contains ISqmlExpression right
+}
+
+class SqmlNegation extends ISqmlNegation {
+	contains ISqmlExpression expression
+}
+
+class SqmlAddition extends AbstractSqmlBinaryOperation, ISqmlAddition {}
+
+class SqmlMultiplication extends AbstractSqmlBinaryOperation, ISqmlMultiplication {}
+
+class SqmlStaticVariableReference extends ISqmlStaticVariableReference {
+	boolean nextIteration
+	refers ISqmlStaticVariable variable
+}
+
+class SqmlPath extends ISqmlPath {
+	contains SqmlPath parent
+	refers ISqmlModelElement target
+}
+
+class SqmlGroupConcat extends ISqmlGroupConcat {
+	boolean distinct
+	contains ISqmlExpression[] expressions
+	contains ISqmlOrderByExpression[] orderByExpressions
+	String separator
+}
+
+class SqmlCase extends ISqmlCase {
+	contains ISqmlExpression operand
+	contains SqmlCaseWhen[] whens
+	contains ISqmlExpression elseExpression
+}
+
+class SqmlCaseWhen extends ISqmlCaseWhen {
+	contains ISqmlExpression whenExpression
+	contains ISqmlExpression thenExpression
+}
+
+class SqmlIf extends ISqmlIf {
+	contains ISqmlExpression condition
+	contains ISqmlExpression thenExpression
+	contains ISqmlExpression elseExpression
+}
+
+class SqmlIfNull extends ISqmlIfNull {
+	contains ISqmlExpression testExpression
+	contains ISqmlExpression thenExpression
+}
+
+class SqmlRowConstructor extends ISqmlRowConstructor {
+	boolean explicit
+	contains ISqmlExpression[] expressions
+}
+
+class SqmlStaticAnd extends ISqmlStaticAnd {
+	contains ISqmlStaticExpression left
+	contains ISqmlStaticExpression right
+}
+
+class SqmlStaticIf extends ISqmlStaticIf {
+	contains ISqmlStaticExpression[] conditions
+	contains ISqmlExpression[] expressions
+	contains ISqmlExpression elseExpression
+}
+
+class SqmlStaticIsEmpty extends ISqmlStaticIsEmpty {
+	contains ISqmlStaticVariableReference parameterReference
+	boolean not
+}
+
+class SqmlStaticIsNull extends ISqmlStaticIsNull {
+	contains ISqmlStaticVariableReference parameterReference
+	boolean not
+}
+
+class SqmlStaticIsTrue extends ISqmlStaticIsTrue {
+	contains ISqmlStaticVariableReference parameterReference
+	boolean not
+}
+
+class SqmlStaticOr extends ISqmlStaticOr {
+	contains ISqmlStaticExpression left
+	contains ISqmlStaticExpression right
+}
+
+class SqmlStaticParentheses extends ISqmlStaticParentheses {
+	contains ISqmlStaticExpression expression
+}
+
+class SqmlSubSelect extends ISqmlSubSelect {
+	contains ISqmlSelect select
+}
+
+class SqmlValueReference extends ISqmlValueReference {
+	boolean nextIteration
+	boolean dotStar
+	contains SqmlPath path
+}
