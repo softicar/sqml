@@ -27,7 +27,7 @@ To write _SQML_ code, the following is required:
 
 ## Development
 
-To contribute to the source code, an installation of the [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/) is required with an installed [Xtext plugin](https://www.eclipse.org/Xtext/download.html).
+To contribute to the source code, an installation of the [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/) is required with an installed [Xtext plugin](https://www.eclipse.org/Xtext/download.html). Please keep our [code of conduct](CODE_OF_CONDUCT.md) in mind.
 
 ### Building
 
