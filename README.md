@@ -31,7 +31,7 @@ To contribute to the source code, an installation of the [Eclipse IDE for Java D
 
 ### Building
 
-To build the source code, the [SoftiCAR Gradle Plugins](https://github.com/SoftiCAR/com.softicar.gradle.plugin) and the [SoftiCAR Platform](https://github.com/SoftiCAR/com.softicar.platform) need to be available.
+To build the source code, the [SoftiCAR Gradle Plugins](https://github.com/softicar/gradle-plugins) and the [SoftiCAR Platform](https://github.com/softicar/platform) need to be available.
 
 :warning: Until our migration to _Github_ is complete, the file `.softicar/build.properties` needs to be configured and point to the location where to find the artifacts of the _SoftiCAR Gradle Plugins_ and _SoftiCAR Platform_.
 ```
