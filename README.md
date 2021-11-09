@@ -41,6 +41,10 @@ cd com.softicar.sqml.shared
 
 The projects can now be imported without errors into [Eclipse](https://www.eclipse.org/) with _Import ... Existing Projects into Workspace_. Future updates may require repeated execution of the `syncSharedDependencies` task when dependencies changed.
 
+### Testing
+
+Automated testing through the continuous integration workflow is currently not implemented. Thus testing must be executed manually from Eclipse on the projects `com.softicar.sqml.generator` and `com.softicar.sqml.tests`.
+
 ### Publishing
 
 Publication is done in three steps.
