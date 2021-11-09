@@ -31,7 +31,7 @@ To contribute to the source code, an installation of the [Eclipse IDE for Java D
 
 ### Building
 
-To build the source code, the the [SoftiCAR Platform](https://github.com/softicar/platform) needs to be available.
+To build the source code, the [SoftiCAR Platform](https://github.com/softicar/platform) needs to be accessible on [Maven Central](https://search.maven.org/).
 
 External dependencies are bundled by the `com.softicar.sqml.shared` subproject and dependency resolution is done by the [Gradle Build Tool](https://gradle.org/). To gather external dependencies, execute this:
 ```
@@ -43,7 +43,7 @@ The projects can now be imported without errors into [Eclipse](https://www.eclip
 
 ### Testing
 
-Automated testing through the continuous integration workflow is currently not implemented. Thus testing must be executed manually from Eclipse on the projects `com.softicar.sqml.generator` and `com.softicar.sqml.tests`.
+Automated testing through the continuous integration workflow is currently not implemented. Thus, testing must be executed manually from Eclipse on the projects `com.softicar.sqml.generator` and `com.softicar.sqml.tests`.
 
 ### Publishing
 
