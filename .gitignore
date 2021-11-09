@@ -1,9 +1,4 @@
-/.gradle/
-
 /*/bin/*
-/*/build/
-
 /*/plugin.xml_gen
-/build/
 
 org.eclipse.buildship.core.prefs
