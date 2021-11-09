@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.sqml.builtin-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.code-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.container-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.core-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.date-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.io-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.math-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.string-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.common.testing-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.core-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.runtime-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.sql-9.0.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/jars/com.softicar.platform.db.structure-9.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-code-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-container-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-core-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-date-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-io-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-math-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-string-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-common-testing-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-db-core-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-db-runtime-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-db-sql-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-db-sqml-builtin-10.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jars/platform-db-structure-10.0.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jars/asm-9.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jars/byte-buddy-1.10.15.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jars/byte-buddy-agent-1.10.15.jar"/>
