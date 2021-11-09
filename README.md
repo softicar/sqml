@@ -31,12 +31,7 @@ To contribute to the source code, an installation of the [Eclipse IDE for Java D
 
 ### Building
 
-To build the source code, the [SoftiCAR Gradle Plugins](https://github.com/softicar/gradle-plugins) and the [SoftiCAR Platform](https://github.com/softicar/platform) need to be available.
-
-:warning: Until our migration to _Github_ is complete, the file `.softicar/build.properties` needs to be configured and point to the location where to find the artifacts of the _SoftiCAR Gradle Plugins_ and _SoftiCAR Platform_.
-```
-com.softicar.ivy.repository.url = https://host/path/
-```
+To build the source code, the the [SoftiCAR Platform](https://github.com/softicar/platform) needs to be available.
 
 External dependencies are bundled by the `com.softicar.sqml.shared` subproject and dependency resolution is done by the [Gradle Build Tool](https://gradle.org/). To gather external dependencies, execute this:
 ```
@@ -44,7 +39,7 @@ cd com.softicar.sqml.shared
 ../gradlew syncSharedDependencies
 ```
 
-The projects can now be imported without errors into [Eclipse](https://www.eclipse.org/). Future updates may require repeated execution of the `syncSharedDependencies` task when dependencies changed.
+The projects can now be imported without errors into [Eclipse](https://www.eclipse.org/) with _Import ... Existing Projects into Workspace_. Future updates may require repeated execution of the `syncSharedDependencies` task when dependencies changed.
 
 ### Publishing
 
