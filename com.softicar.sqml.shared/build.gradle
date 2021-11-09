@@ -7,8 +7,8 @@ repositories {
 }
 
 dependencies {
-	shared "com.softicar:com.softicar.platform.db.runtime:${versions.libraries}"
-	shared "com.softicar:com.softicar.platform.db.sqml.builtin:${versions.libraries}"
+	shared "com.softicar.platform:platform-db-runtime:${versions.platform}"
+	shared "com.softicar.platform:platform-db-sqml-builtin:${versions.platform}"
 	shared "org.mariadb.jdbc:mariadb-java-client:$versions.mariadbJavaClient"
 }
 

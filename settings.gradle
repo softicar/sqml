@@ -1,2 +1,2 @@
-rootProject.name='com.softicar.sqml'
+rootProject.name='sqml'
 include 'com.softicar.sqml.shared'
