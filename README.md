@@ -36,7 +36,7 @@ To build the source code, the [SoftiCAR Platform](https://github.com/softicar/pl
 External dependencies are bundled by the `com.softicar.sqml.shared` subproject and dependency resolution is done by the [Gradle Build Tool](https://gradle.org/). To gather external dependencies, execute this:
 ```
 cd com.softicar.sqml.shared
-../gradlew syncSharedDependencies
+./gradlew syncSharedDependencies
 ```
 
 The projects can now be imported without errors into [Eclipse](https://www.eclipse.org/) with _Import ... Existing Projects into Workspace_. Future updates may require repeated execution of the `syncSharedDependencies` task when dependencies changed.

@@ -1,3 +1,10 @@
+project.ext {
+	versions = [
+		platform: "10.0.1",
+		mariadbJavaClient: "2.6.0",
+	]
+}
+
 configurations {
 	shared
 }
