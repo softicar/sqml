@@ -23,7 +23,7 @@ To write _SQML_ code, the following is required:
 - [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/), e.g. 2020-09 (4.17) or higher
 - _SQML Eclipse Plugin_
 
-:warning: There is currently no publicly available update site to download the _SQML Eclipse Plugin_ from. This will change when our migration to _Github_ is completed. Until then, an organization has to build and publish the plugin internally.
+The _SQML Eclipse Plugin_ can be installed from our [Eclipse update site](https://softicar.github.io/sqml/).
 
 ## Development
 
@@ -44,15 +44,3 @@ The projects can now be imported without errors into [Eclipse](https://www.eclip
 ### Testing
 
 Automated testing through the continuous integration workflow is currently not implemented. Thus, testing must be executed manually from Eclipse on the projects `com.softicar.sqml.generator` and `com.softicar.sqml.tests`.
-
-### Publishing
-
-Publication is done in three steps.
-1. First generate the artifacts by opening the file `com.softicar.sqml.site/site.xml` in _Eclipse_ and pressing the `Build All` button.
-2. Upload the artifacts by executing the `com.softicar.sqml.site/upload` script.
-3. Cleanup everything by running the `com.softicar.sqml.site/cleanup` script.
-
-For the `upload` script to work, the `~/.softicar/build.properties` file needs to be configured:
-```
-com.softicar.sqml.upload.url = <user>@<host>:/<path>/
-```
