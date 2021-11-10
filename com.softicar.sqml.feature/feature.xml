@@ -7,16 +7,15 @@
       os="linux,macosx,win32"
       nl="en_US">
 
-   <description url="http://sqml.softicar.com/">
-      This feature provides parser, editor, content assist for SQML
-(Softicar Query and Modeling Language).
+   <description url="https://github.com/softicar/sqml">
+      This feature provides parser, editor, content assist for SQML.
    </description>
 
-   <copyright url="http://sqml.softicar.com/copyright">
+   <copyright>
       Copyright (c) 2021 Prevent DEV GmbH
    </copyright>
 
-   <license url="http://sqml.softicar.com/license">
+   <license url="">
       MIT License
 
 Copyright (c) 2021 Prevent DEV GmbH
@@ -42,6 +41,7 @@ SOFTWARE.
 
    <url>
       <update url="https://softicar.github.io/sqml/com.softicar.sqml.site/"/>
+      <discovery label="SQML Eclipse Plugin" url="https://github.com/softicar/sqml"/>
    </url>
 
    <requires>
