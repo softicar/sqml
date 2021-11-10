@@ -1,4 +1,4 @@
-# How to Contribute to the SoftiCAR SQML
+# How to Contribute to SQML
 
 First of all, thank you for taking the time to contribute!
 
