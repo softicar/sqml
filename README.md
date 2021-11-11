@@ -7,12 +7,12 @@ The _SQML Eclipse Plugin_ is an [Eclipse](https://www.eclipse.org/) plugin that 
 The _SQML Eclipse Plugin_ provides the following features.
 
 - Tables
-  - database table structures can be defined and validated
+  - Database table structures can be defined and validated
   - [Java](https://en.wikipedia.org/wiki/Java) code can be generated to query and write table records
-  - `CREATE TABLE`-statements can be generated to initialize a [DBMS](https://en.wikipedia.org/wiki/Database) instance
+  - `CREATE TABLE` statements can be generated to initialize a [DBMS](https://en.wikipedia.org/wiki/Database) instance
 - Queries
-  - queries can be defined in an [SQL](https://en.wikipedia.org/wiki/SQL)-like manner
-  - queries can be validated with respect to the defined table structures
+  - Queries can be defined in an [SQL](https://en.wikipedia.org/wiki/SQL)-like manner
+  - Queries can be validated with respect to the defined table structures
   - [Java](https://en.wikipedia.org/wiki/Java) code can be generated to execute the queries
 
 ## 2 Runtime Requirements
