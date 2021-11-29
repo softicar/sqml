@@ -9,7 +9,7 @@ The _SQML Eclipse Plugin_ provides the following features.
 - Tables
   - Database table structures can be defined and validated
   - [Java](https://en.wikipedia.org/wiki/Java) code is generated from table definitions.
-  - The generated code realizes the [Active Record pattern](https://en.wikipedia.org/wiki/Active_record_pattern). It enables [object-relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), and [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on database records. 
+  - The generated code realizes the [Active Record pattern](https://en.wikipedia.org/wiki/Active_record_pattern). It enables [object-relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), and [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on database records.
   - `CREATE TABLE` statements can be generated to initialize a [DBMS](https://en.wikipedia.org/wiki/Database) instance.
 - Queries
   - Queries can be defined in an [SQL](https://en.wikipedia.org/wiki/SQL)-like manner
