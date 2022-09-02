@@ -1,7 +1,7 @@
 project.ext {
 	versions = [
 		platform: "21.1.2",
-		mariadbJavaClient: "2.6.0",
+		mariadbJavaClient: "2.7.0",
 	]
 }
 
@@ -14,8 +14,8 @@ repositories {
 }
 
 dependencies {
-	shared "com.softicar.platform:platform-db-runtime:${versions.platform}"
-	shared "com.softicar.platform:platform-db-sqml-builtin:${versions.platform}"
+	shared "com.softicar.platform:platform-db-runtime:$versions.platform"
+	shared "com.softicar.platform:platform-db-sqml-builtin:$versions.platform"
 	shared "org.mariadb.jdbc:mariadb-java-client:$versions.mariadbJavaClient"
 }
 
