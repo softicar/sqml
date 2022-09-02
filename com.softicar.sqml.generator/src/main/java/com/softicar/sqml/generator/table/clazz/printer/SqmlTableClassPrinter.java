@@ -477,7 +477,7 @@ public class SqmlTableClassPrinter extends SqmlJavaCodePrinter implements ISqmlT
 		for (ISqmlTableClassFieldPrinter fieldPrinter: fieldPrinters) {
 			printlnIndented(
 				2,
-				".where(%s.equal(%s))",
+				".where(%s.isEqual(%s))",
 				SqmlTableClassFieldUtils.getStaticFinalName(fieldPrinter),
 				SqmlTableClassFieldUtils.getLocalName(fieldPrinter));
 		}
