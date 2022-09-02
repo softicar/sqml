@@ -10,6 +10,7 @@ public enum SqmlTableClassVersionEnum implements ISqmlGeneratorVersion {
 	VERSION_20200922(20200922),
 	VERSION_20201015(20201015),
 	VERSION_20201127(20201127),
+	VERSION_20220902(20220902),
 	// add versions as needed
 	;
 
