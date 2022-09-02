@@ -475,14 +475,23 @@ public class SqmlTableClassPrinter extends SqmlJavaCodePrinter implements ISqmlT
 		println("return TABLE//");
 		printlnIndented(2, ".createSelect()");
 		for (ISqmlTableClassFieldPrinter fieldPrinter: fieldPrinters) {
-			printlnIndented(
+			printlnIndented(//
 				2,
-				".where(%s.equal(%s))",
+				getLoadByFunctionCondition(),
 				SqmlTableClassFieldUtils.getStaticFinalName(fieldPrinter),
 				SqmlTableClassFieldUtils.getLocalName(fieldPrinter));
 		}
 		printlnIndented(2, ".getOne();");
 		endBlock();
+	}
+
+	private String getLoadByFunctionCondition() {
+
+		if (config.getVersion().isBefore(SqmlTableClassVersionEnum.VERSION_20220902)) {
+			return ".where(%s.equal(%s))";
+		} else {
+			return ".where(%s.isEqual(%s))";
+		}
 	}
 
 	private void printGettersAndSetters() {
