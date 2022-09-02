@@ -1,6 +1,6 @@
 project.ext {
 	versions = [
-		platform: "10.0.1",
+		platform: "21.1.2",
 		mariadbJavaClient: "2.6.0",
 	]
 }
