@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.softicar.sqml_3.0.0.jar" id="com.softicar.sqml" version="3.0.0" os="linux,macosx,win32" nl="en_US">
+   <feature url="features/com.softicar.sqml_3.0.1.jar" id="com.softicar.sqml" version="3.0.1" os="linux,macosx,win32" nl="en_US">
       <category name="com.softicar.sqml"/>
    </feature>
    <category-def name="com.softicar.sqml" label="com.softicar.sqml">
