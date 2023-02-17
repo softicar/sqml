@@ -47,26 +47,26 @@ public class SqmlDistinctColumnValuesTest extends AbstractSqmlTest {
 	@Test
 	public void testIdColumn() {
 
-		assertSelect(ID_COLUMN, "SELECT DISTINCT x.id FROM (%s) x", EXPECTED_SELECT);
+		assertSelect(ID_COLUMN, "SELECT DISTINCT x.id FROM (%s) x WHERE x.id IS NOT NULL", EXPECTED_SELECT);
 	}
 
 	@Test
 	public void testIdColumnWithLimit() {
 
 		limit = 20;
-		assertSelect(ID_COLUMN, "SELECT DISTINCT x.id FROM (%s) x LIMIT 20", EXPECTED_SELECT);
+		assertSelect(ID_COLUMN, "SELECT DISTINCT x.id FROM (%s) x WHERE x.id IS NOT NULL LIMIT 20", EXPECTED_SELECT);
 	}
 
 	@Test
 	public void testStringColumn() {
 
-		assertSelect(STRING_COLUMN, "SELECT DISTINCT x.name FROM (%s) x", EXPECTED_SELECT);
+		assertSelect(STRING_COLUMN, "SELECT DISTINCT x.name FROM (%s) x WHERE x.name IS NOT NULL", EXPECTED_SELECT);
 	}
 
 	@Test
 	public void testStubColumn() {
 
-		assertSelect(STUB_COLUMN, "SELECT DISTINCT x.bar FROM (%s) x", EXPECTED_SELECT);
+		assertSelect(STUB_COLUMN, "SELECT DISTINCT x.bar FROM (%s) x WHERE x.bar IS NOT NULL", EXPECTED_SELECT);
 	}
 
 	@Test

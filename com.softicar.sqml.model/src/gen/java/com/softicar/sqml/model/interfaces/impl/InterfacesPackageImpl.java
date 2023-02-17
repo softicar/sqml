@@ -894,7 +894,6 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	private InterfacesPackageImpl() {
 		super(eNS_URI, InterfacesFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

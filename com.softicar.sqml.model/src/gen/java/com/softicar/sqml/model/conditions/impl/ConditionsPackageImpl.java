@@ -120,7 +120,6 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	private ConditionsPackageImpl() {
 		super(eNS_URI, ConditionsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

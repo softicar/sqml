@@ -1,8 +1,8 @@
-package com.softicar.sqml.ui.contentassist.antlr.internal;
+package com.softicar.sqml.ide.contentassist.antlr.internal;
 
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
-import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
 
 
 import org.antlr.runtime.*;
@@ -2331,8 +2331,8 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_LONG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20303:11: ( RULE_INT 'L' )
-            // InternalSqml.g:20303:13: RULE_INT 'L'
+            // InternalSqml.g:17732:11: ( RULE_INT 'L' )
+            // InternalSqml.g:17732:13: RULE_INT 'L'
             {
             mRULE_INT(); 
             match('L'); 
@@ -2352,15 +2352,15 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20305:12: ( ( RULE_INT 'f' | RULE_DECIMAL 'f' ) )
-            // InternalSqml.g:20305:14: ( RULE_INT 'f' | RULE_DECIMAL 'f' )
+            // InternalSqml.g:17734:12: ( ( RULE_INT 'f' | RULE_DECIMAL 'f' ) )
+            // InternalSqml.g:17734:14: ( RULE_INT 'f' | RULE_DECIMAL 'f' )
             {
-            // InternalSqml.g:20305:14: ( RULE_INT 'f' | RULE_DECIMAL 'f' )
+            // InternalSqml.g:17734:14: ( RULE_INT 'f' | RULE_DECIMAL 'f' )
             int alt1=2;
             alt1 = dfa1.predict(input);
             switch (alt1) {
                 case 1 :
-                    // InternalSqml.g:20305:15: RULE_INT 'f'
+                    // InternalSqml.g:17734:15: RULE_INT 'f'
                     {
                     mRULE_INT(); 
                     match('f'); 
@@ -2368,7 +2368,7 @@ public class InternalSqmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSqml.g:20305:28: RULE_DECIMAL 'f'
+                    // InternalSqml.g:17734:28: RULE_DECIMAL 'f'
                     {
                     mRULE_DECIMAL(); 
                     match('f'); 
@@ -2394,15 +2394,15 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20307:13: ( ( RULE_INT 'd' | RULE_DECIMAL 'd' ) )
-            // InternalSqml.g:20307:15: ( RULE_INT 'd' | RULE_DECIMAL 'd' )
+            // InternalSqml.g:17736:13: ( ( RULE_INT 'd' | RULE_DECIMAL 'd' ) )
+            // InternalSqml.g:17736:15: ( RULE_INT 'd' | RULE_DECIMAL 'd' )
             {
-            // InternalSqml.g:20307:15: ( RULE_INT 'd' | RULE_DECIMAL 'd' )
+            // InternalSqml.g:17736:15: ( RULE_INT 'd' | RULE_DECIMAL 'd' )
             int alt2=2;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // InternalSqml.g:20307:16: RULE_INT 'd'
+                    // InternalSqml.g:17736:16: RULE_INT 'd'
                     {
                     mRULE_INT(); 
                     match('d'); 
@@ -2410,7 +2410,7 @@ public class InternalSqmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSqml.g:20307:29: RULE_DECIMAL 'd'
+                    // InternalSqml.g:17736:29: RULE_DECIMAL 'd'
                     {
                     mRULE_DECIMAL(); 
                     match('d'); 
@@ -2436,8 +2436,8 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20309:14: ( RULE_INT '.' RULE_INT )
-            // InternalSqml.g:20309:16: RULE_INT '.' RULE_INT
+            // InternalSqml.g:17738:14: ( RULE_INT '.' RULE_INT )
+            // InternalSqml.g:17738:16: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -2458,10 +2458,10 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20311:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSqml.g:20311:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSqml.g:17740:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSqml.g:17740:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalSqml.g:20311:11: ( '^' )?
+            // InternalSqml.g:17740:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2470,7 +2470,7 @@ public class InternalSqmlLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalSqml.g:20311:11: '^'
+                    // InternalSqml.g:17740:11: '^'
                     {
                     match('^'); 
 
@@ -2488,7 +2488,7 @@ public class InternalSqmlLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSqml.g:20311:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSqml.g:17740:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -2537,10 +2537,10 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20313:10: ( ( '0' .. '9' )+ )
-            // InternalSqml.g:20313:12: ( '0' .. '9' )+
+            // InternalSqml.g:17742:10: ( ( '0' .. '9' )+ )
+            // InternalSqml.g:17742:12: ( '0' .. '9' )+
             {
-            // InternalSqml.g:20313:12: ( '0' .. '9' )+
+            // InternalSqml.g:17742:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -2554,7 +2554,7 @@ public class InternalSqmlLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalSqml.g:20313:13: '0' .. '9'
+            	    // InternalSqml.g:17742:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2586,10 +2586,10 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20315:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalSqml.g:20315:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSqml.g:17744:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalSqml.g:17744:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalSqml.g:20315:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSqml.g:17744:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2607,10 +2607,10 @@ public class InternalSqmlLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalSqml.g:20315:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalSqml.g:17744:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalSqml.g:20315:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalSqml.g:17744:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -2626,7 +2626,7 @@ public class InternalSqmlLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalSqml.g:20315:21: '\\\\' .
+                    	    // InternalSqml.g:17744:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2634,7 +2634,7 @@ public class InternalSqmlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSqml.g:20315:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalSqml.g:17744:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2659,10 +2659,10 @@ public class InternalSqmlLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSqml.g:20315:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalSqml.g:17744:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalSqml.g:20315:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalSqml.g:17744:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -2678,7 +2678,7 @@ public class InternalSqmlLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalSqml.g:20315:54: '\\\\' .
+                    	    // InternalSqml.g:17744:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2686,7 +2686,7 @@ public class InternalSqmlLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSqml.g:20315:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalSqml.g:17744:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2729,12 +2729,12 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20317:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSqml.g:20317:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSqml.g:17746:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSqml.g:17746:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalSqml.g:20317:24: ( options {greedy=false; } : . )*
+            // InternalSqml.g:17746:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -2759,7 +2759,7 @@ public class InternalSqmlLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalSqml.g:20317:52: .
+            	    // InternalSqml.g:17746:52: .
             	    {
             	    matchAny(); 
 
@@ -2789,12 +2789,12 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20319:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalSqml.g:20319:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalSqml.g:17748:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalSqml.g:17748:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalSqml.g:20319:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalSqml.g:17748:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -2807,7 +2807,7 @@ public class InternalSqmlLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalSqml.g:20319:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalSqml.g:17748:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2827,7 +2827,7 @@ public class InternalSqmlLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalSqml.g:20319:40: ( ( '\\r' )? '\\n' )?
+            // InternalSqml.g:17748:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2836,9 +2836,9 @@ public class InternalSqmlLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalSqml.g:20319:41: ( '\\r' )? '\\n'
+                    // InternalSqml.g:17748:41: ( '\\r' )? '\\n'
                     {
-                    // InternalSqml.g:20319:41: ( '\\r' )?
+                    // InternalSqml.g:17748:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2847,7 +2847,7 @@ public class InternalSqmlLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalSqml.g:20319:41: '\\r'
+                            // InternalSqml.g:17748:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2879,10 +2879,10 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20321:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalSqml.g:20321:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSqml.g:17750:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSqml.g:17750:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalSqml.g:20321:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSqml.g:17750:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -2936,8 +2936,8 @@ public class InternalSqmlLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSqml.g:20323:16: ( . )
-            // InternalSqml.g:20323:18: .
+            // InternalSqml.g:17752:16: ( . )
+            // InternalSqml.g:17752:18: .
             {
             matchAny(); 
 
@@ -3826,7 +3826,7 @@ public class InternalSqmlLexer extends Lexer {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "20305:14: ( RULE_INT 'f' | RULE_DECIMAL 'f' )";
+            return "17734:14: ( RULE_INT 'f' | RULE_DECIMAL 'f' )";
         }
     }
     static final String DFA2_eotS =
@@ -3878,7 +3878,7 @@ public class InternalSqmlLexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "20307:15: ( RULE_INT 'd' | RULE_DECIMAL 'd' )";
+            return "17736:15: ( RULE_INT 'd' | RULE_DECIMAL 'd' )";
         }
     }
     static final String DFA14_eotS =

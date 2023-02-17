@@ -97,7 +97,6 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	private LiteralsPackageImpl() {
 		super(eNS_URI, LiteralsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

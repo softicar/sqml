@@ -208,7 +208,6 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	private ExpressionsPackageImpl() {
 		super(eNS_URI, ExpressionsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

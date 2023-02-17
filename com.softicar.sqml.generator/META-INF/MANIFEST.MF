@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: com.softicar.sqml.generator;singleton:=true
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: com.softicar.sqml.model;visibility:=reexport,
  com.google.inject;bundle-version="3.0.0"
 Export-Package: com.softicar.sqml.generator.common,

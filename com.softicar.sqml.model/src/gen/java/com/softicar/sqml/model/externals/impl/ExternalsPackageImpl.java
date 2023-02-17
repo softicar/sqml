@@ -150,7 +150,6 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	private ExternalsPackageImpl() {
 		super(eNS_URI, ExternalsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

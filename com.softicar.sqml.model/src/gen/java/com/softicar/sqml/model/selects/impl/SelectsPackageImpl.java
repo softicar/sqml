@@ -180,7 +180,6 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	private SelectsPackageImpl() {
 		super(eNS_URI, SelectsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

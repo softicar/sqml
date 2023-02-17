@@ -3,20 +3,29 @@
  */
 package com.softicar.sqml.services;
 
-import com.google.inject.Singleton;
 import com.google.inject.Inject;
-
+import com.google.inject.Singleton;
 import java.util.List;
-
-import org.eclipse.xtext.*;
-import org.eclipse.xtext.service.GrammarProvider;
-import org.eclipse.xtext.service.AbstractElementFinder.*;
-
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
+import org.eclipse.xtext.Grammar;
+import org.eclipse.xtext.GrammarUtil;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.UnorderedGroup;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder;
+import org.eclipse.xtext.service.GrammarProvider;
 
 @Singleton
-public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
-	
+public class SqmlGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
 	public class SqmlFileElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFile");
@@ -28,35 +37,37 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cElementsSqmlFileElementParserRuleCall_2_0 = (RuleCall)cElementsAssignment_2.eContents().get(0);
 		
-		///* -------------------- file -------------------- */ //
+		///* -------------------- file -------------------- */
+		////
 		//SqmlFile:
-		//	packageDeclaration=SqmlPackageDeclaration
-		//	imports+=SqmlImport*
-		//	elements+=SqmlFileElement*;
+		//    packageDeclaration=SqmlPackageDeclaration
+		//    (imports+=SqmlImport)*
+		//    (elements+=SqmlFileElement)*;
 		@Override public ParserRule getRule() { return rule; }
-
-		//packageDeclaration=SqmlPackageDeclaration imports+=SqmlImport* elements+=SqmlFileElement*
+		
+		//packageDeclaration=SqmlPackageDeclaration
+		//(imports+=SqmlImport)*
+		//(elements+=SqmlFileElement)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//packageDeclaration=SqmlPackageDeclaration
 		public Assignment getPackageDeclarationAssignment_0() { return cPackageDeclarationAssignment_0; }
-
+		
 		//SqmlPackageDeclaration
 		public RuleCall getPackageDeclarationSqmlPackageDeclarationParserRuleCall_0_0() { return cPackageDeclarationSqmlPackageDeclarationParserRuleCall_0_0; }
-
-		//imports+=SqmlImport*
+		
+		//(imports+=SqmlImport)*
 		public Assignment getImportsAssignment_1() { return cImportsAssignment_1; }
-
+		
 		//SqmlImport
 		public RuleCall getImportsSqmlImportParserRuleCall_1_0() { return cImportsSqmlImportParserRuleCall_1_0; }
-
-		//elements+=SqmlFileElement*
+		
+		//(elements+=SqmlFileElement)*
 		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
-
+		
 		//SqmlFileElement
 		public RuleCall getElementsSqmlFileElementParserRuleCall_2_0() { return cElementsSqmlFileElementParserRuleCall_2_0; }
 	}
-
 	public class SqmlPackageDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlPackageDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -65,22 +76,21 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//SqmlPackageDeclaration:
-		//	'PACKAGE' name=QualifiedName;
+		//    'PACKAGE' name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'PACKAGE' name=QualifiedName
 		public Group getGroup() { return cGroup; }
-
+		
 		//'PACKAGE'
 		public Keyword getPACKAGEKeyword_0() { return cPACKAGEKeyword_0; }
-
+		
 		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
+		
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 	}
-
 	public class SqmlImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlImport");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -90,25 +100,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetISqmlGlobalObjectQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cTargetISqmlGlobalObjectCrossReference_1_0.eContents().get(1);
 		
 		//SqmlImport:
-		//	'IMPORT' target=[ISqmlGlobalObject|QualifiedName];
+		//    'IMPORT' target=[ISqmlGlobalObject|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'IMPORT' target=[ISqmlGlobalObject|QualifiedName]
 		public Group getGroup() { return cGroup; }
-
+		
 		//'IMPORT'
 		public Keyword getIMPORTKeyword_0() { return cIMPORTKeyword_0; }
-
+		
 		//target=[ISqmlGlobalObject|QualifiedName]
 		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
-
+		
 		//[ISqmlGlobalObject|QualifiedName]
 		public CrossReference getTargetISqmlGlobalObjectCrossReference_1_0() { return cTargetISqmlGlobalObjectCrossReference_1_0; }
-
+		
 		//QualifiedName
 		public RuleCall getTargetISqmlGlobalObjectQualifiedNameParserRuleCall_1_0_1() { return cTargetISqmlGlobalObjectQualifiedNameParserRuleCall_1_0_1; }
 	}
-
 	public class SqmlFileElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFileElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -118,25 +127,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlFunctionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//SqmlFileElement:
-		//	SqmlValueType | SqmlTable | SqmlQuery | SqmlFunction;
+		//    SqmlValueType | SqmlTable | SqmlQuery | SqmlFunction;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlValueType | SqmlTable | SqmlQuery | SqmlFunction
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//SqmlValueType
 		public RuleCall getSqmlValueTypeParserRuleCall_0() { return cSqmlValueTypeParserRuleCall_0; }
-
+		
 		//SqmlTable
 		public RuleCall getSqmlTableParserRuleCall_1() { return cSqmlTableParserRuleCall_1; }
-
+		
 		//SqmlQuery
 		public RuleCall getSqmlQueryParserRuleCall_2() { return cSqmlQueryParserRuleCall_2; }
-
+		
 		//SqmlFunction
 		public RuleCall getSqmlFunctionParserRuleCall_3() { return cSqmlFunctionParserRuleCall_3; }
 	}
-
 	public class SqmlTypeReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTypeReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -158,63 +166,64 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		
 		//SqmlTypeReference:
-		//	typeDefinition=[ISqmlTypeDefinition|QualifiedName] ('<' typeParameters+=SqmlTypeReference (','
-		//	typeParameters+=SqmlTypeReference)* '>')? (list?='[' ']')?;
+		//    typeDefinition=[ISqmlTypeDefinition|QualifiedName]
+		//    ('<' typeParameters+=SqmlTypeReference (',' typeParameters+=SqmlTypeReference)* '>')?
+		//    (list?='[' ']')?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//typeDefinition=[ISqmlTypeDefinition|QualifiedName] ('<' typeParameters+=SqmlTypeReference (','
-		//typeParameters+=SqmlTypeReference)* '>')? (list?='[' ']')?
+		
+		//typeDefinition=[ISqmlTypeDefinition|QualifiedName]
+		//('<' typeParameters+=SqmlTypeReference (',' typeParameters+=SqmlTypeReference)* '>')?
+		//(list?='[' ']')?
 		public Group getGroup() { return cGroup; }
-
+		
 		//typeDefinition=[ISqmlTypeDefinition|QualifiedName]
 		public Assignment getTypeDefinitionAssignment_0() { return cTypeDefinitionAssignment_0; }
-
+		
 		//[ISqmlTypeDefinition|QualifiedName]
 		public CrossReference getTypeDefinitionISqmlTypeDefinitionCrossReference_0_0() { return cTypeDefinitionISqmlTypeDefinitionCrossReference_0_0; }
-
+		
 		//QualifiedName
 		public RuleCall getTypeDefinitionISqmlTypeDefinitionQualifiedNameParserRuleCall_0_0_1() { return cTypeDefinitionISqmlTypeDefinitionQualifiedNameParserRuleCall_0_0_1; }
-
+		
 		//('<' typeParameters+=SqmlTypeReference (',' typeParameters+=SqmlTypeReference)* '>')?
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//'<'
 		public Keyword getLessThanSignKeyword_1_0() { return cLessThanSignKeyword_1_0; }
-
+		
 		//typeParameters+=SqmlTypeReference
 		public Assignment getTypeParametersAssignment_1_1() { return cTypeParametersAssignment_1_1; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getTypeParametersSqmlTypeReferenceParserRuleCall_1_1_0() { return cTypeParametersSqmlTypeReferenceParserRuleCall_1_1_0; }
-
+		
 		//(',' typeParameters+=SqmlTypeReference)*
 		public Group getGroup_1_2() { return cGroup_1_2; }
-
+		
 		//','
 		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
-
+		
 		//typeParameters+=SqmlTypeReference
 		public Assignment getTypeParametersAssignment_1_2_1() { return cTypeParametersAssignment_1_2_1; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getTypeParametersSqmlTypeReferenceParserRuleCall_1_2_1_0() { return cTypeParametersSqmlTypeReferenceParserRuleCall_1_2_1_0; }
-
+		
 		//'>'
 		public Keyword getGreaterThanSignKeyword_1_3() { return cGreaterThanSignKeyword_1_3; }
-
+		
 		//(list?='[' ']')?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//list?='['
 		public Assignment getListAssignment_2_0() { return cListAssignment_2_0; }
-
+		
 		//'['
 		public Keyword getListLeftSquareBracketKeyword_2_0_0() { return cListLeftSquareBracketKeyword_2_0_0; }
-
+		
 		//']'
 		public Keyword getRightSquareBracketKeyword_2_1() { return cRightSquareBracketKeyword_2_1; }
 	}
-
 	public class SqmlValueTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlValueType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -224,37 +233,38 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		///* -------------------- table and value type -------------------- */ //
+		///* -------------------- table and value type -------------------- */
+		////
 		//SqmlValueType:
-		//	'VALUETYPE' name=ID '{'
-		//	//	'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
-		//	//	'sqltype' sqlType=STRING
-		//	'}';
+		//    'VALUETYPE' name=ID '{'
+		//    //    'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
+		//    //    'sqltype' sqlType=STRING
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'VALUETYPE' name=ID '{' //	'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
-		////	'sqltype' sqlType=STRING
+		
+		//'VALUETYPE' name=ID '{'
+		////    'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
+		////    'sqltype' sqlType=STRING
 		//'}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'VALUETYPE'
 		public Keyword getVALUETYPEKeyword_0() { return cVALUETYPEKeyword_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
-		////	'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
-		////	'sqltype' sqlType=STRING
+		
+		////    'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
+		////    'sqltype' sqlType=STRING
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
-
 	public class SqmlEnumElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlEnum");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -271,48 +281,49 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SqmlEnum:
-		//	'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{'
-		//	enumerators+=SqmlEnumerator*
-		//	'}';
+		//    'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{'
+		//    (enumerators+=SqmlEnumerator)*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{' enumerators+=SqmlEnumerator* '}'
+		
+		//'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{'
+		//(enumerators+=SqmlEnumerator)*
+		//'}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'ENUM'
 		public Keyword getENUMKeyword_0() { return cENUMKeyword_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
+		
 		//('ON' typeReference=SqmlTypeReference)?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//'ON'
 		public Keyword getONKeyword_2_0() { return cONKeyword_2_0; }
-
+		
 		//typeReference=SqmlTypeReference
 		public Assignment getTypeReferenceAssignment_2_1() { return cTypeReferenceAssignment_2_1; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getTypeReferenceSqmlTypeReferenceParserRuleCall_2_1_0() { return cTypeReferenceSqmlTypeReferenceParserRuleCall_2_1_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
-		//enumerators+=SqmlEnumerator*
+		
+		//(enumerators+=SqmlEnumerator)*
 		public Assignment getEnumeratorsAssignment_4() { return cEnumeratorsAssignment_4; }
-
+		
 		//SqmlEnumerator
 		public RuleCall getEnumeratorsSqmlEnumeratorParserRuleCall_4_0() { return cEnumeratorsSqmlEnumeratorParserRuleCall_4_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-
 	public class SqmlEnumeratorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlEnumerator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -324,31 +335,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueSqmlLiteralParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		
 		//SqmlEnumerator:
-		//	name=ID ('=' value=SqmlLiteral)?;
+		//    name=ID ('=' value=SqmlLiteral)?;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//name=ID ('=' value=SqmlLiteral)?
 		public Group getGroup() { return cGroup; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
-
+		
 		//('=' value=SqmlLiteral)?
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_1_0() { return cEqualsSignKeyword_1_0; }
-
+		
 		//value=SqmlLiteral
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
-
+		
 		//SqmlLiteral
 		public RuleCall getValueSqmlLiteralParserRuleCall_1_1_0() { return cValueSqmlLiteralParserRuleCall_1_1_0; }
 	}
-
 	public class SqmlTableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -371,70 +381,73 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//SqmlTable:
-		//	enumTable?='ENUM'? 'TABLE' name=ID physicalNameOverride=STRING '{'
-		//	columns+=SqmlTableColumn*
-		//	tableKeys+=SqmlTableKey*
-		//	enums+=SqmlEnum*
-		//	rows+=SqmlTableRow*
-		//	'}';
+		//    (enumTable?='ENUM')? 'TABLE' name=ID physicalNameOverride=STRING '{'
+		//    (columns+=SqmlTableColumn)*
+		//    (tableKeys+=SqmlTableKey)*
+		//    (enums+=SqmlEnum)*
+		//    (rows+=SqmlTableRow)*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//enumTable?='ENUM'? 'TABLE' name=ID physicalNameOverride=STRING '{' columns+=SqmlTableColumn* tableKeys+=SqmlTableKey*
-		//enums+=SqmlEnum* rows+=SqmlTableRow* '}'
+		
+		//(enumTable?='ENUM')? 'TABLE' name=ID physicalNameOverride=STRING '{'
+		//(columns+=SqmlTableColumn)*
+		//(tableKeys+=SqmlTableKey)*
+		//(enums+=SqmlEnum)*
+		//(rows+=SqmlTableRow)*
+		//'}'
 		public Group getGroup() { return cGroup; }
-
-		//enumTable?='ENUM'?
+		
+		//(enumTable?='ENUM')?
 		public Assignment getEnumTableAssignment_0() { return cEnumTableAssignment_0; }
-
+		
 		//'ENUM'
 		public Keyword getEnumTableENUMKeyword_0_0() { return cEnumTableENUMKeyword_0_0; }
-
+		
 		//'TABLE'
 		public Keyword getTABLEKeyword_1() { return cTABLEKeyword_1; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-
+		
 		//physicalNameOverride=STRING
 		public Assignment getPhysicalNameOverrideAssignment_3() { return cPhysicalNameOverrideAssignment_3; }
-
+		
 		//STRING
 		public RuleCall getPhysicalNameOverrideSTRINGTerminalRuleCall_3_0() { return cPhysicalNameOverrideSTRINGTerminalRuleCall_3_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
-
-		//columns+=SqmlTableColumn*
+		
+		//(columns+=SqmlTableColumn)*
 		public Assignment getColumnsAssignment_5() { return cColumnsAssignment_5; }
-
+		
 		//SqmlTableColumn
 		public RuleCall getColumnsSqmlTableColumnParserRuleCall_5_0() { return cColumnsSqmlTableColumnParserRuleCall_5_0; }
-
-		//tableKeys+=SqmlTableKey*
+		
+		//(tableKeys+=SqmlTableKey)*
 		public Assignment getTableKeysAssignment_6() { return cTableKeysAssignment_6; }
-
+		
 		//SqmlTableKey
 		public RuleCall getTableKeysSqmlTableKeyParserRuleCall_6_0() { return cTableKeysSqmlTableKeyParserRuleCall_6_0; }
-
-		//enums+=SqmlEnum*
+		
+		//(enums+=SqmlEnum)*
 		public Assignment getEnumsAssignment_7() { return cEnumsAssignment_7; }
-
+		
 		//SqmlEnum
 		public RuleCall getEnumsSqmlEnumParserRuleCall_7_0() { return cEnumsSqmlEnumParserRuleCall_7_0; }
-
-		//rows+=SqmlTableRow*
+		
+		//(rows+=SqmlTableRow)*
 		public Assignment getRowsAssignment_8() { return cRowsAssignment_8; }
-
+		
 		//SqmlTableRow
 		public RuleCall getRowsSqmlTableRowParserRuleCall_8_0() { return cRowsSqmlTableRowParserRuleCall_8_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
-
 	public class SqmlTableColumnElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTableColumn");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -530,307 +543,350 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//SqmlTableColumn:
-		//	primaryKey?='PK'?
-		//	typeReference=SqmlTypeReference name=ID ('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW'
-		//	| serial?='SERIAL' | baseColumn?='BASE'))? ('[' (nullable?='NULLABLE'? & timestamp?='TIMESTAMP'? &
-		//	unsigned?='UNSIGNED'? & ('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE'
-		//	onUpdateAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE' onUpdateNow?='NOW')? & physicalNameOverride=STRING? & ('BITS'
-		//	'=' bits=INT)? & ('PRECISION' '=' precision=INT ',' scale=INT)? & ('MAXLENGTH' '=' maxLength=INT)? & ('LENGTHBITS' '='
-		//	lengthBits=INT)? & ('CHARACTER' 'SET' '=' characterSet=STRING)? & ('COLLATION' '=' collation=STRING)? & ('COMMENT' '='
-		//	comment=STRING)? & ('CONSTRAINT_NAME' '=' constraintName=STRING)?)
-		//	']')?;
+		//    primaryKey?='PK'?
+		//    typeReference=SqmlTypeReference name=ID
+		//    ('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE'))?
+		//    ('['
+		//    ((nullable?='NULLABLE')? &
+		//    (timestamp?='TIMESTAMP')? &
+		//    (unsigned?='UNSIGNED')? &
+		//    ('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? &
+		//    ('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? &
+		//    ('ON' 'UPDATE' onUpdateNow?='NOW')? &
+		//    (physicalNameOverride=STRING)? &
+		//    ('BITS' '=' bits=INT)? &
+		//    ('PRECISION' '=' precision=INT ',' scale=INT)? &
+		//    ('MAXLENGTH' '=' maxLength=INT)? &
+		//    ('LENGTHBITS' '=' lengthBits=INT)? &
+		//    ('CHARACTER' 'SET' '=' characterSet=STRING)? &
+		//    ('COLLATION' '=' collation=STRING)? &
+		//    ('COMMENT' '=' comment=STRING)? &
+		//    ('CONSTRAINT_NAME' '=' constraintName=STRING)?)
+		//    ']')?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//primaryKey?='PK'? typeReference=SqmlTypeReference name=ID ('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' |
-		//defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE'))? ('[' (nullable?='NULLABLE'? & timestamp?='TIMESTAMP'? &
-		//unsigned?='UNSIGNED'? & ('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE'
-		//onUpdateAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE' onUpdateNow?='NOW')? & physicalNameOverride=STRING? & ('BITS'
-		//'=' bits=INT)? & ('PRECISION' '=' precision=INT ',' scale=INT)? & ('MAXLENGTH' '=' maxLength=INT)? & ('LENGTHBITS' '='
-		//lengthBits=INT)? & ('CHARACTER' 'SET' '=' characterSet=STRING)? & ('COLLATION' '=' collation=STRING)? & ('COMMENT' '='
-		//comment=STRING)? & ('CONSTRAINT_NAME' '=' constraintName=STRING)?) ']')?
+		
+		//primaryKey?='PK'?
+		//typeReference=SqmlTypeReference name=ID
+		//('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE'))?
+		//('['
+		//((nullable?='NULLABLE')? &
+		//(timestamp?='TIMESTAMP')? &
+		//(unsigned?='UNSIGNED')? &
+		//('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? &
+		//('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? &
+		//('ON' 'UPDATE' onUpdateNow?='NOW')? &
+		//(physicalNameOverride=STRING)? &
+		//('BITS' '=' bits=INT)? &
+		//('PRECISION' '=' precision=INT ',' scale=INT)? &
+		//('MAXLENGTH' '=' maxLength=INT)? &
+		//('LENGTHBITS' '=' lengthBits=INT)? &
+		//('CHARACTER' 'SET' '=' characterSet=STRING)? &
+		//('COLLATION' '=' collation=STRING)? &
+		//('COMMENT' '=' comment=STRING)? &
+		//('CONSTRAINT_NAME' '=' constraintName=STRING)?)
+		//']')?
 		public Group getGroup() { return cGroup; }
-
+		
 		//primaryKey?='PK'?
 		public Assignment getPrimaryKeyAssignment_0() { return cPrimaryKeyAssignment_0; }
-
+		
 		//'PK'
 		public Keyword getPrimaryKeyPKKeyword_0_0() { return cPrimaryKeyPKKeyword_0_0; }
-
+		
 		//typeReference=SqmlTypeReference
 		public Assignment getTypeReferenceAssignment_1() { return cTypeReferenceAssignment_1; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getTypeReferenceSqmlTypeReferenceParserRuleCall_1_0() { return cTypeReferenceSqmlTypeReferenceParserRuleCall_1_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-
+		
 		//('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE'))?
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_3_0() { return cEqualsSignKeyword_3_0; }
-
+		
 		//(defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE')
 		public Alternatives getAlternatives_3_1() { return cAlternatives_3_1; }
-
+		
 		//defaultValue=SqmlDefaultValue
 		public Assignment getDefaultValueAssignment_3_1_0() { return cDefaultValueAssignment_3_1_0; }
-
+		
 		//SqmlDefaultValue
 		public RuleCall getDefaultValueSqmlDefaultValueParserRuleCall_3_1_0_0() { return cDefaultValueSqmlDefaultValueParserRuleCall_3_1_0_0; }
-
+		
 		//defaultNull?='NULL'
 		public Assignment getDefaultNullAssignment_3_1_1() { return cDefaultNullAssignment_3_1_1; }
-
+		
 		//'NULL'
 		public Keyword getDefaultNullNULLKeyword_3_1_1_0() { return cDefaultNullNULLKeyword_3_1_1_0; }
-
+		
 		//defaultNow?='NOW'
 		public Assignment getDefaultNowAssignment_3_1_2() { return cDefaultNowAssignment_3_1_2; }
-
+		
 		//'NOW'
 		public Keyword getDefaultNowNOWKeyword_3_1_2_0() { return cDefaultNowNOWKeyword_3_1_2_0; }
-
+		
 		//serial?='SERIAL'
 		public Assignment getSerialAssignment_3_1_3() { return cSerialAssignment_3_1_3; }
-
+		
 		//'SERIAL'
 		public Keyword getSerialSERIALKeyword_3_1_3_0() { return cSerialSERIALKeyword_3_1_3_0; }
-
+		
 		//baseColumn?='BASE'
 		public Assignment getBaseColumnAssignment_3_1_4() { return cBaseColumnAssignment_3_1_4; }
-
+		
 		//'BASE'
 		public Keyword getBaseColumnBASEKeyword_3_1_4_0() { return cBaseColumnBASEKeyword_3_1_4_0; }
-
-		//('[' (nullable?='NULLABLE'? & timestamp?='TIMESTAMP'? & unsigned?='UNSIGNED'? & ('ON' 'DELETE'
-		//onDeleteAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE'
-		//onUpdateNow?='NOW')? & physicalNameOverride=STRING? & ('BITS' '=' bits=INT)? & ('PRECISION' '=' precision=INT ','
-		//scale=INT)? & ('MAXLENGTH' '=' maxLength=INT)? & ('LENGTHBITS' '=' lengthBits=INT)? & ('CHARACTER' 'SET' '='
-		//characterSet=STRING)? & ('COLLATION' '=' collation=STRING)? & ('COMMENT' '=' comment=STRING)? & ('CONSTRAINT_NAME' '='
-		//constraintName=STRING)?) ']')?
+		
+		//('['
+		//((nullable?='NULLABLE')? &
+		//(timestamp?='TIMESTAMP')? &
+		//(unsigned?='UNSIGNED')? &
+		//('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? &
+		//('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? &
+		//('ON' 'UPDATE' onUpdateNow?='NOW')? &
+		//(physicalNameOverride=STRING)? &
+		//('BITS' '=' bits=INT)? &
+		//('PRECISION' '=' precision=INT ',' scale=INT)? &
+		//('MAXLENGTH' '=' maxLength=INT)? &
+		//('LENGTHBITS' '=' lengthBits=INT)? &
+		//('CHARACTER' 'SET' '=' characterSet=STRING)? &
+		//('COLLATION' '=' collation=STRING)? &
+		//('COMMENT' '=' comment=STRING)? &
+		//('CONSTRAINT_NAME' '=' constraintName=STRING)?)
+		//']')?
 		public Group getGroup_4() { return cGroup_4; }
-
+		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_4_0() { return cLeftSquareBracketKeyword_4_0; }
-
-		//(nullable?='NULLABLE'? & timestamp?='TIMESTAMP'? & unsigned?='UNSIGNED'? & ('ON' 'DELETE'
-		//onDeleteAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE'
-		//onUpdateNow?='NOW')? & physicalNameOverride=STRING? & ('BITS' '=' bits=INT)? & ('PRECISION' '=' precision=INT ','
-		//scale=INT)? & ('MAXLENGTH' '=' maxLength=INT)? & ('LENGTHBITS' '=' lengthBits=INT)? & ('CHARACTER' 'SET' '='
-		//characterSet=STRING)? & ('COLLATION' '=' collation=STRING)? & ('COMMENT' '=' comment=STRING)? & ('CONSTRAINT_NAME' '='
-		//constraintName=STRING)?)
+		
+		//((nullable?='NULLABLE')? &
+		//(timestamp?='TIMESTAMP')? &
+		//(unsigned?='UNSIGNED')? &
+		//('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? &
+		//('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? &
+		//('ON' 'UPDATE' onUpdateNow?='NOW')? &
+		//(physicalNameOverride=STRING)? &
+		//('BITS' '=' bits=INT)? &
+		//('PRECISION' '=' precision=INT ',' scale=INT)? &
+		//('MAXLENGTH' '=' maxLength=INT)? &
+		//('LENGTHBITS' '=' lengthBits=INT)? &
+		//('CHARACTER' 'SET' '=' characterSet=STRING)? &
+		//('COLLATION' '=' collation=STRING)? &
+		//('COMMENT' '=' comment=STRING)? &
+		//('CONSTRAINT_NAME' '=' constraintName=STRING)?)
 		public UnorderedGroup getUnorderedGroup_4_1() { return cUnorderedGroup_4_1; }
-
-		//nullable?='NULLABLE'?
+		
+		//(nullable?='NULLABLE')?
 		public Assignment getNullableAssignment_4_1_0() { return cNullableAssignment_4_1_0; }
-
+		
 		//'NULLABLE'
 		public Keyword getNullableNULLABLEKeyword_4_1_0_0() { return cNullableNULLABLEKeyword_4_1_0_0; }
-
-		//timestamp?='TIMESTAMP'?
+		
+		//(timestamp?='TIMESTAMP')?
 		public Assignment getTimestampAssignment_4_1_1() { return cTimestampAssignment_4_1_1; }
-
+		
 		//'TIMESTAMP'
 		public Keyword getTimestampTIMESTAMPKeyword_4_1_1_0() { return cTimestampTIMESTAMPKeyword_4_1_1_0; }
-
-		//unsigned?='UNSIGNED'?
+		
+		//(unsigned?='UNSIGNED')?
 		public Assignment getUnsignedAssignment_4_1_2() { return cUnsignedAssignment_4_1_2; }
-
+		
 		//'UNSIGNED'
 		public Keyword getUnsignedUNSIGNEDKeyword_4_1_2_0() { return cUnsignedUNSIGNEDKeyword_4_1_2_0; }
-
+		
 		//('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)?
 		public Group getGroup_4_1_3() { return cGroup_4_1_3; }
-
+		
 		//'ON'
 		public Keyword getONKeyword_4_1_3_0() { return cONKeyword_4_1_3_0; }
-
+		
 		//'DELETE'
 		public Keyword getDELETEKeyword_4_1_3_1() { return cDELETEKeyword_4_1_3_1; }
-
+		
 		//onDeleteAction=SqmlForeignKeyAction
 		public Assignment getOnDeleteActionAssignment_4_1_3_2() { return cOnDeleteActionAssignment_4_1_3_2; }
-
+		
 		//SqmlForeignKeyAction
 		public RuleCall getOnDeleteActionSqmlForeignKeyActionEnumRuleCall_4_1_3_2_0() { return cOnDeleteActionSqmlForeignKeyActionEnumRuleCall_4_1_3_2_0; }
-
+		
 		//('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)?
 		public Group getGroup_4_1_4() { return cGroup_4_1_4; }
-
+		
 		//'ON'
 		public Keyword getONKeyword_4_1_4_0() { return cONKeyword_4_1_4_0; }
-
+		
 		//'UPDATE'
 		public Keyword getUPDATEKeyword_4_1_4_1() { return cUPDATEKeyword_4_1_4_1; }
-
+		
 		//onUpdateAction=SqmlForeignKeyAction
 		public Assignment getOnUpdateActionAssignment_4_1_4_2() { return cOnUpdateActionAssignment_4_1_4_2; }
-
+		
 		//SqmlForeignKeyAction
 		public RuleCall getOnUpdateActionSqmlForeignKeyActionEnumRuleCall_4_1_4_2_0() { return cOnUpdateActionSqmlForeignKeyActionEnumRuleCall_4_1_4_2_0; }
-
+		
 		//('ON' 'UPDATE' onUpdateNow?='NOW')?
 		public Group getGroup_4_1_5() { return cGroup_4_1_5; }
-
+		
 		//'ON'
 		public Keyword getONKeyword_4_1_5_0() { return cONKeyword_4_1_5_0; }
-
+		
 		//'UPDATE'
 		public Keyword getUPDATEKeyword_4_1_5_1() { return cUPDATEKeyword_4_1_5_1; }
-
+		
 		//onUpdateNow?='NOW'
 		public Assignment getOnUpdateNowAssignment_4_1_5_2() { return cOnUpdateNowAssignment_4_1_5_2; }
-
+		
 		//'NOW'
 		public Keyword getOnUpdateNowNOWKeyword_4_1_5_2_0() { return cOnUpdateNowNOWKeyword_4_1_5_2_0; }
-
-		//physicalNameOverride=STRING?
+		
+		//(physicalNameOverride=STRING)?
 		public Assignment getPhysicalNameOverrideAssignment_4_1_6() { return cPhysicalNameOverrideAssignment_4_1_6; }
-
+		
 		//STRING
 		public RuleCall getPhysicalNameOverrideSTRINGTerminalRuleCall_4_1_6_0() { return cPhysicalNameOverrideSTRINGTerminalRuleCall_4_1_6_0; }
-
+		
 		//('BITS' '=' bits=INT)?
 		public Group getGroup_4_1_7() { return cGroup_4_1_7; }
-
+		
 		//'BITS'
 		public Keyword getBITSKeyword_4_1_7_0() { return cBITSKeyword_4_1_7_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_7_1() { return cEqualsSignKeyword_4_1_7_1; }
-
+		
 		//bits=INT
 		public Assignment getBitsAssignment_4_1_7_2() { return cBitsAssignment_4_1_7_2; }
-
+		
 		//INT
 		public RuleCall getBitsINTTerminalRuleCall_4_1_7_2_0() { return cBitsINTTerminalRuleCall_4_1_7_2_0; }
-
+		
 		//('PRECISION' '=' precision=INT ',' scale=INT)?
 		public Group getGroup_4_1_8() { return cGroup_4_1_8; }
-
+		
 		//'PRECISION'
 		public Keyword getPRECISIONKeyword_4_1_8_0() { return cPRECISIONKeyword_4_1_8_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_8_1() { return cEqualsSignKeyword_4_1_8_1; }
-
+		
 		//precision=INT
 		public Assignment getPrecisionAssignment_4_1_8_2() { return cPrecisionAssignment_4_1_8_2; }
-
+		
 		//INT
 		public RuleCall getPrecisionINTTerminalRuleCall_4_1_8_2_0() { return cPrecisionINTTerminalRuleCall_4_1_8_2_0; }
-
+		
 		//','
 		public Keyword getCommaKeyword_4_1_8_3() { return cCommaKeyword_4_1_8_3; }
-
+		
 		//scale=INT
 		public Assignment getScaleAssignment_4_1_8_4() { return cScaleAssignment_4_1_8_4; }
-
+		
 		//INT
 		public RuleCall getScaleINTTerminalRuleCall_4_1_8_4_0() { return cScaleINTTerminalRuleCall_4_1_8_4_0; }
-
+		
 		//('MAXLENGTH' '=' maxLength=INT)?
 		public Group getGroup_4_1_9() { return cGroup_4_1_9; }
-
+		
 		//'MAXLENGTH'
 		public Keyword getMAXLENGTHKeyword_4_1_9_0() { return cMAXLENGTHKeyword_4_1_9_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_9_1() { return cEqualsSignKeyword_4_1_9_1; }
-
+		
 		//maxLength=INT
 		public Assignment getMaxLengthAssignment_4_1_9_2() { return cMaxLengthAssignment_4_1_9_2; }
-
+		
 		//INT
 		public RuleCall getMaxLengthINTTerminalRuleCall_4_1_9_2_0() { return cMaxLengthINTTerminalRuleCall_4_1_9_2_0; }
-
+		
 		//('LENGTHBITS' '=' lengthBits=INT)?
 		public Group getGroup_4_1_10() { return cGroup_4_1_10; }
-
+		
 		//'LENGTHBITS'
 		public Keyword getLENGTHBITSKeyword_4_1_10_0() { return cLENGTHBITSKeyword_4_1_10_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_10_1() { return cEqualsSignKeyword_4_1_10_1; }
-
+		
 		//lengthBits=INT
 		public Assignment getLengthBitsAssignment_4_1_10_2() { return cLengthBitsAssignment_4_1_10_2; }
-
+		
 		//INT
 		public RuleCall getLengthBitsINTTerminalRuleCall_4_1_10_2_0() { return cLengthBitsINTTerminalRuleCall_4_1_10_2_0; }
-
+		
 		//('CHARACTER' 'SET' '=' characterSet=STRING)?
 		public Group getGroup_4_1_11() { return cGroup_4_1_11; }
-
+		
 		//'CHARACTER'
 		public Keyword getCHARACTERKeyword_4_1_11_0() { return cCHARACTERKeyword_4_1_11_0; }
-
+		
 		//'SET'
 		public Keyword getSETKeyword_4_1_11_1() { return cSETKeyword_4_1_11_1; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_11_2() { return cEqualsSignKeyword_4_1_11_2; }
-
+		
 		//characterSet=STRING
 		public Assignment getCharacterSetAssignment_4_1_11_3() { return cCharacterSetAssignment_4_1_11_3; }
-
+		
 		//STRING
 		public RuleCall getCharacterSetSTRINGTerminalRuleCall_4_1_11_3_0() { return cCharacterSetSTRINGTerminalRuleCall_4_1_11_3_0; }
-
+		
 		//('COLLATION' '=' collation=STRING)?
 		public Group getGroup_4_1_12() { return cGroup_4_1_12; }
-
+		
 		//'COLLATION'
 		public Keyword getCOLLATIONKeyword_4_1_12_0() { return cCOLLATIONKeyword_4_1_12_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_12_1() { return cEqualsSignKeyword_4_1_12_1; }
-
+		
 		//collation=STRING
 		public Assignment getCollationAssignment_4_1_12_2() { return cCollationAssignment_4_1_12_2; }
-
+		
 		//STRING
 		public RuleCall getCollationSTRINGTerminalRuleCall_4_1_12_2_0() { return cCollationSTRINGTerminalRuleCall_4_1_12_2_0; }
-
+		
 		//('COMMENT' '=' comment=STRING)?
 		public Group getGroup_4_1_13() { return cGroup_4_1_13; }
-
+		
 		//'COMMENT'
 		public Keyword getCOMMENTKeyword_4_1_13_0() { return cCOMMENTKeyword_4_1_13_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_13_1() { return cEqualsSignKeyword_4_1_13_1; }
-
+		
 		//comment=STRING
 		public Assignment getCommentAssignment_4_1_13_2() { return cCommentAssignment_4_1_13_2; }
-
+		
 		//STRING
 		public RuleCall getCommentSTRINGTerminalRuleCall_4_1_13_2_0() { return cCommentSTRINGTerminalRuleCall_4_1_13_2_0; }
-
+		
 		//('CONSTRAINT_NAME' '=' constraintName=STRING)?
 		public Group getGroup_4_1_14() { return cGroup_4_1_14; }
-
+		
 		//'CONSTRAINT_NAME'
 		public Keyword getCONSTRAINT_NAMEKeyword_4_1_14_0() { return cCONSTRAINT_NAMEKeyword_4_1_14_0; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_4_1_14_1() { return cEqualsSignKeyword_4_1_14_1; }
-
+		
 		//constraintName=STRING
 		public Assignment getConstraintNameAssignment_4_1_14_2() { return cConstraintNameAssignment_4_1_14_2; }
-
+		
 		//STRING
 		public RuleCall getConstraintNameSTRINGTerminalRuleCall_4_1_14_2_0() { return cConstraintNameSTRINGTerminalRuleCall_4_1_14_2_0; }
-
+		
 		//']'
 		public Keyword getRightSquareBracketKeyword_4_2() { return cRightSquareBracketKeyword_4_2; }
 	}
-
 	public class SqmlTableRowElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTableRow");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -845,40 +901,40 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SqmlTableRow:
-		//	'ROW' '(' values+=SqmlTableRowValue (',' values+=SqmlTableRowValue)* ')';
+		//    'ROW' '(' values+=SqmlTableRowValue (',' values+=SqmlTableRowValue)* ')'
+		//;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'ROW' '(' values+=SqmlTableRowValue (',' values+=SqmlTableRowValue)* ')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'ROW'
 		public Keyword getROWKeyword_0() { return cROWKeyword_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//values+=SqmlTableRowValue
 		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
-
+		
 		//SqmlTableRowValue
 		public RuleCall getValuesSqmlTableRowValueParserRuleCall_2_0() { return cValuesSqmlTableRowValueParserRuleCall_2_0; }
-
+		
 		//(',' values+=SqmlTableRowValue)*
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
+		
 		//values+=SqmlTableRowValue
 		public Assignment getValuesAssignment_3_1() { return cValuesAssignment_3_1; }
-
+		
 		//SqmlTableRowValue
 		public RuleCall getValuesSqmlTableRowValueParserRuleCall_3_1_0() { return cValuesSqmlTableRowValueParserRuleCall_3_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
-
 	public class SqmlTableRowValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTableRowValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -888,25 +944,25 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNullNULLKeyword_1_0 = (Keyword)cNullAssignment_1.eContents().get(0);
 		
 		//SqmlTableRowValue:
-		//	literal=SqmlLiteral | null?='NULL';
+		//    literal=SqmlLiteral | null?='NULL'
+		//;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//literal=SqmlLiteral | null?='NULL'
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//literal=SqmlLiteral
 		public Assignment getLiteralAssignment_0() { return cLiteralAssignment_0; }
-
+		
 		//SqmlLiteral
 		public RuleCall getLiteralSqmlLiteralParserRuleCall_0_0() { return cLiteralSqmlLiteralParserRuleCall_0_0; }
-
+		
 		//null?='NULL'
 		public Assignment getNullAssignment_1() { return cNullAssignment_1; }
-
+		
 		//'NULL'
 		public Keyword getNullNULLKeyword_1_0() { return cNullNULLKeyword_1_0; }
 	}
-
 	public class SqmlDefaultValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlDefaultValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -914,25 +970,26 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlLiteralDefaultValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cSqmlValueReferenceDefaultValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//SqmlDefaultValue ISqmlDefaultValue:
-		//	SqmlRowConstructorDefaultValue
-		//	| SqmlLiteralDefaultValue
-		//	| SqmlValueReferenceDefaultValue;
+		//SqmlDefaultValue returns ISqmlDefaultValue:
+		//    SqmlRowConstructorDefaultValue
+		//    | SqmlLiteralDefaultValue
+		//    | SqmlValueReferenceDefaultValue;
 		@Override public ParserRule getRule() { return rule; }
-
-		//SqmlRowConstructorDefaultValue | SqmlLiteralDefaultValue | SqmlValueReferenceDefaultValue
+		
+		//SqmlRowConstructorDefaultValue
+		//| SqmlLiteralDefaultValue
+		//| SqmlValueReferenceDefaultValue
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//SqmlRowConstructorDefaultValue
 		public RuleCall getSqmlRowConstructorDefaultValueParserRuleCall_0() { return cSqmlRowConstructorDefaultValueParserRuleCall_0; }
-
+		
 		//SqmlLiteralDefaultValue
 		public RuleCall getSqmlLiteralDefaultValueParserRuleCall_1() { return cSqmlLiteralDefaultValueParserRuleCall_1; }
-
+		
 		//SqmlValueReferenceDefaultValue
 		public RuleCall getSqmlValueReferenceDefaultValueParserRuleCall_2() { return cSqmlValueReferenceDefaultValueParserRuleCall_2; }
 	}
-
 	public class SqmlRowConstructorDefaultValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlRowConstructorDefaultValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -948,45 +1005,44 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SqmlRowConstructorDefaultValue:
-		//	{SqmlRowConstructorDefaultValue} '(' (valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
-		//	')';
+		//    {SqmlRowConstructorDefaultValue} '(' (valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
+		//    ')';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//{SqmlRowConstructorDefaultValue} '(' (valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
 		//')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//{SqmlRowConstructorDefaultValue}
 		public Action getSqmlRowConstructorDefaultValueAction_0() { return cSqmlRowConstructorDefaultValueAction_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//(valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//valueReferences+=SqmlValueReference
 		public Assignment getValueReferencesAssignment_2_0() { return cValueReferencesAssignment_2_0; }
-
+		
 		//SqmlValueReference
 		public RuleCall getValueReferencesSqmlValueReferenceParserRuleCall_2_0_0() { return cValueReferencesSqmlValueReferenceParserRuleCall_2_0_0; }
-
+		
 		//(',' valueReferences+=SqmlValueReference)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
-
+		
 		//','
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
-
+		
 		//valueReferences+=SqmlValueReference
 		public Assignment getValueReferencesAssignment_2_1_1() { return cValueReferencesAssignment_2_1_1; }
-
+		
 		//SqmlValueReference
 		public RuleCall getValueReferencesSqmlValueReferenceParserRuleCall_2_1_1_0() { return cValueReferencesSqmlValueReferenceParserRuleCall_2_1_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
-
 	public class SqmlLiteralDefaultValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlLiteralDefaultValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -996,41 +1052,39 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralSqmlLiteralParserRuleCall_1_0 = (RuleCall)cLiteralAssignment_1.eContents().get(0);
 		
 		//SqmlLiteralDefaultValue:
-		//	minus?='-'? literal=SqmlLiteral;
+		//    minus?='-'? literal=SqmlLiteral;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//minus?='-'? literal=SqmlLiteral
 		public Group getGroup() { return cGroup; }
-
+		
 		//minus?='-'?
 		public Assignment getMinusAssignment_0() { return cMinusAssignment_0; }
-
+		
 		//'-'
 		public Keyword getMinusHyphenMinusKeyword_0_0() { return cMinusHyphenMinusKeyword_0_0; }
-
+		
 		//literal=SqmlLiteral
 		public Assignment getLiteralAssignment_1() { return cLiteralAssignment_1; }
-
+		
 		//SqmlLiteral
 		public RuleCall getLiteralSqmlLiteralParserRuleCall_1_0() { return cLiteralSqmlLiteralParserRuleCall_1_0; }
 	}
-
 	public class SqmlValueReferenceDefaultValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlValueReferenceDefaultValue");
 		private final Assignment cValueReferenceAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueReferenceSqmlValueReferenceParserRuleCall_0 = (RuleCall)cValueReferenceAssignment.eContents().get(0);
 		
 		//SqmlValueReferenceDefaultValue:
-		//	valueReference=SqmlValueReference;
+		//    valueReference=SqmlValueReference;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//valueReference=SqmlValueReference
 		public Assignment getValueReferenceAssignment() { return cValueReferenceAssignment; }
-
+		
 		//SqmlValueReference
 		public RuleCall getValueReferenceSqmlValueReferenceParserRuleCall_0() { return cValueReferenceSqmlValueReferenceParserRuleCall_0; }
 	}
-
 	public class SqmlTableKeyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTableKey");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1050,55 +1104,58 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		
 		//SqmlTableKey:
-		//	('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey}) columns+=[ISqmlTableColumn]* ('AS' name=ID)?;
+		//    ('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey})
+		//    columns+=[ISqmlTableColumn|ID]*
+		//    ('AS' name=ID)?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey}) columns+=[ISqmlTableColumn]* ('AS' name=ID)?
+		
+		//('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey})
+		//columns+=[ISqmlTableColumn|ID]*
+		//('AS' name=ID)?
 		public Group getGroup() { return cGroup; }
-
+		
 		//('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey})
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-
+		
 		//'UK' {SqmlUniqueKey}
 		public Group getGroup_0_0() { return cGroup_0_0; }
-
+		
 		//'UK'
 		public Keyword getUKKeyword_0_0_0() { return cUKKeyword_0_0_0; }
-
+		
 		//{SqmlUniqueKey}
 		public Action getSqmlUniqueKeyAction_0_0_1() { return cSqmlUniqueKeyAction_0_0_1; }
-
+		
 		//'IK' {SqmlIndexKey}
 		public Group getGroup_0_1() { return cGroup_0_1; }
-
+		
 		//'IK'
 		public Keyword getIKKeyword_0_1_0() { return cIKKeyword_0_1_0; }
-
+		
 		//{SqmlIndexKey}
 		public Action getSqmlIndexKeyAction_0_1_1() { return cSqmlIndexKeyAction_0_1_1; }
-
-		//columns+=[ISqmlTableColumn]*
+		
+		//columns+=[ISqmlTableColumn|ID]*
 		public Assignment getColumnsAssignment_1() { return cColumnsAssignment_1; }
-
-		//[ISqmlTableColumn]
+		
+		//[ISqmlTableColumn|ID]
 		public CrossReference getColumnsISqmlTableColumnCrossReference_1_0() { return cColumnsISqmlTableColumnCrossReference_1_0; }
-
+		
 		//ID
 		public RuleCall getColumnsISqmlTableColumnIDTerminalRuleCall_1_0_1() { return cColumnsISqmlTableColumnIDTerminalRuleCall_1_0_1; }
-
+		
 		//('AS' name=ID)?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//'AS'
 		public Keyword getASKeyword_2_0() { return cASKeyword_2_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_1_0() { return cNameIDTerminalRuleCall_2_1_0; }
 	}
-
 	public class SqmlQueryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlQuery");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1112,45 +1169,48 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSelectSqmlSelectParserRuleCall_4_0 = (RuleCall)cSelectAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		///* -------------------- query -------------------- */ //
+		///* -------------------- query -------------------- */
+		////
 		//SqmlQuery:
-		//	'QUERY' name=ID '{'
-		//	parameters+=SqmlQueryParameter*
-		//	select=SqmlSelect
-		//	'}';
+		//    'QUERY' name=ID '{'
+		//    (parameters+=SqmlQueryParameter)*
+		//    select=SqmlSelect
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'QUERY' name=ID '{' parameters+=SqmlQueryParameter* select=SqmlSelect '}'
+		
+		//'QUERY' name=ID '{'
+		//(parameters+=SqmlQueryParameter)*
+		//select=SqmlSelect
+		//'}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'QUERY'
 		public Keyword getQUERYKeyword_0() { return cQUERYKeyword_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
-		//parameters+=SqmlQueryParameter*
+		
+		//(parameters+=SqmlQueryParameter)*
 		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
-
+		
 		//SqmlQueryParameter
 		public RuleCall getParametersSqmlQueryParameterParserRuleCall_3_0() { return cParametersSqmlQueryParameterParserRuleCall_3_0; }
-
+		
 		//select=SqmlSelect
 		public Assignment getSelectAssignment_4() { return cSelectAssignment_4; }
-
+		
 		//SqmlSelect
 		public RuleCall getSelectSqmlSelectParserRuleCall_4_0() { return cSelectSqmlSelectParserRuleCall_4_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-
 	public class SqmlQueryParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlQueryParameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1162,31 +1222,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//SqmlQueryParameter:
-		//	optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID;
+		//    optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID
 		public Group getGroup() { return cGroup; }
-
+		
 		//optional?='OPTIONAL'?
 		public Assignment getOptionalAssignment_0() { return cOptionalAssignment_0; }
-
+		
 		//'OPTIONAL'
 		public Keyword getOptionalOPTIONALKeyword_0_0() { return cOptionalOPTIONALKeyword_0_0; }
-
+		
 		//typeReference=SqmlTypeReference
 		public Assignment getTypeReferenceAssignment_1() { return cTypeReferenceAssignment_1; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getTypeReferenceSqmlTypeReferenceParserRuleCall_1_0() { return cTypeReferenceSqmlTypeReferenceParserRuleCall_1_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
-
 	public class SqmlFunctionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFunction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1214,88 +1273,90 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqlSqmlSqlParserRuleCall_7_1_1_0 = (RuleCall)cSqlAssignment_7_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		///* -------------------- function -------------------- */ //
+		///* -------------------- function -------------------- */
+		////
 		//SqmlFunction:
-		//	'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName
-		//	'(' (parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)? ')' '{' (expression=SqmlExpression |
-		//	'SQL' sql=SqmlSql)
-		//	'}';
+		//    'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName
+		//    '(' (parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)? ')' '{'
+		//    (expression=SqmlExpression | 'SQL' sql=SqmlSql)
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName '(' (parameters+=SqmlFunctionParameter (','
-		//parameters+=SqmlFunctionParameter)*)? ')' '{' (expression=SqmlExpression | 'SQL' sql=SqmlSql) '}'
+		
+		//'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName
+		//'(' (parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)? ')' '{'
+		//(expression=SqmlExpression | 'SQL' sql=SqmlSql)
+		//'}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'FUNCTION'
 		public Keyword getFUNCTIONKeyword_0() { return cFUNCTIONKeyword_0; }
-
+		
 		//returnType=SqmlTypeReference
 		public Assignment getReturnTypeAssignment_1() { return cReturnTypeAssignment_1; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getReturnTypeSqmlTypeReferenceParserRuleCall_1_0() { return cReturnTypeSqmlTypeReferenceParserRuleCall_1_0; }
-
+		
 		//name=SqmlFunctionName
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
+		
 		//SqmlFunctionName
 		public RuleCall getNameSqmlFunctionNameParserRuleCall_2_0() { return cNameSqmlFunctionNameParserRuleCall_2_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
-
+		
 		//(parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)?
 		public Group getGroup_4() { return cGroup_4; }
-
+		
 		//parameters+=SqmlFunctionParameter
 		public Assignment getParametersAssignment_4_0() { return cParametersAssignment_4_0; }
-
+		
 		//SqmlFunctionParameter
 		public RuleCall getParametersSqmlFunctionParameterParserRuleCall_4_0_0() { return cParametersSqmlFunctionParameterParserRuleCall_4_0_0; }
-
+		
 		//(',' parameters+=SqmlFunctionParameter)*
 		public Group getGroup_4_1() { return cGroup_4_1; }
-
+		
 		//','
 		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
-
+		
 		//parameters+=SqmlFunctionParameter
 		public Assignment getParametersAssignment_4_1_1() { return cParametersAssignment_4_1_1; }
-
+		
 		//SqmlFunctionParameter
 		public RuleCall getParametersSqmlFunctionParameterParserRuleCall_4_1_1_0() { return cParametersSqmlFunctionParameterParserRuleCall_4_1_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
-
+		
 		//(expression=SqmlExpression | 'SQL' sql=SqmlSql)
 		public Alternatives getAlternatives_7() { return cAlternatives_7; }
-
+		
 		//expression=SqmlExpression
 		public Assignment getExpressionAssignment_7_0() { return cExpressionAssignment_7_0; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionSqmlExpressionParserRuleCall_7_0_0() { return cExpressionSqmlExpressionParserRuleCall_7_0_0; }
-
+		
 		//'SQL' sql=SqmlSql
 		public Group getGroup_7_1() { return cGroup_7_1; }
-
+		
 		//'SQL'
 		public Keyword getSQLKeyword_7_1_0() { return cSQLKeyword_7_1_0; }
-
+		
 		//sql=SqmlSql
 		public Assignment getSqlAssignment_7_1_1() { return cSqlAssignment_7_1_1; }
-
+		
 		//SqmlSql
 		public RuleCall getSqlSqmlSqlParserRuleCall_7_1_1_0() { return cSqlSqmlSqlParserRuleCall_7_1_1_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
-
 	public class SqmlFunctionParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFunctionParameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1305,25 +1366,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//SqmlFunctionParameter:
-		//	typeReference=SqmlTypeReference name=ID;
+		//    typeReference=SqmlTypeReference name=ID;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//typeReference=SqmlTypeReference name=ID
 		public Group getGroup() { return cGroup; }
-
+		
 		//typeReference=SqmlTypeReference
 		public Assignment getTypeReferenceAssignment_0() { return cTypeReferenceAssignment_0; }
-
+		
 		//SqmlTypeReference
 		public RuleCall getTypeReferenceSqmlTypeReferenceParserRuleCall_0_0() { return cTypeReferenceSqmlTypeReferenceParserRuleCall_0_0; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
-
 	public class SqmlSqlElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSql");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1334,28 +1394,27 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SqmlSql:
-		//	{SqmlSql} '{' tokens+=SqmlSqlToken* '}';
+		//    {SqmlSql} '{' (tokens+=SqmlSqlToken)* '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//{SqmlSql} '{' tokens+=SqmlSqlToken* '}'
+		
+		//{SqmlSql} '{' (tokens+=SqmlSqlToken)* '}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//{SqmlSql}
 		public Action getSqmlSqlAction_0() { return cSqmlSqlAction_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//tokens+=SqmlSqlToken*
+		
+		//(tokens+=SqmlSqlToken)*
 		public Assignment getTokensAssignment_2() { return cTokensAssignment_2; }
-
+		
 		//SqmlSqlToken
 		public RuleCall getTokensSqmlSqlTokenParserRuleCall_2_0() { return cTokensSqmlSqlTokenParserRuleCall_2_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
-
 	public class SqmlSqlTokenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSqlToken");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1366,34 +1425,31 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlSqlStringLiteralParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cSqmlSqlSymbolParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
-		//SqmlSqlToken ISqmlModelElement:
-		//	=> SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral |
-		//	SqmlSqlSymbol;
+		//SqmlSqlToken returns ISqmlModelElement:
+		//    => SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral | SqmlSqlSymbol;
 		@Override public ParserRule getRule() { return rule; }
-
-		//=> SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral |
-		//SqmlSqlSymbol
+		
+		//=> SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral | SqmlSqlSymbol
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//=> SqmlStaticVariableReference
 		public RuleCall getSqmlStaticVariableReferenceParserRuleCall_0() { return cSqmlStaticVariableReferenceParserRuleCall_0; }
-
+		
 		//SqmlSqlKeyword
 		public RuleCall getSqmlSqlKeywordParserRuleCall_1() { return cSqmlSqlKeywordParserRuleCall_1; }
-
+		
 		//SqmlSqlId
 		public RuleCall getSqmlSqlIdParserRuleCall_2() { return cSqmlSqlIdParserRuleCall_2; }
-
+		
 		//SqmlSqlNumberLiteral
 		public RuleCall getSqmlSqlNumberLiteralParserRuleCall_3() { return cSqmlSqlNumberLiteralParserRuleCall_3; }
-
+		
 		//SqmlSqlStringLiteral
 		public RuleCall getSqmlSqlStringLiteralParserRuleCall_4() { return cSqmlSqlStringLiteralParserRuleCall_4; }
-
+		
 		//SqmlSqlSymbol
 		public RuleCall getSqmlSqlSymbolParserRuleCall_5() { return cSqmlSqlSymbolParserRuleCall_5; }
 	}
-
 	public class SqmlSqlKeywordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSqlKeyword");
 		private final Assignment cKeywordTextAssignment = (Assignment)rule.eContents().get(1);
@@ -1478,288 +1534,294 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cKeywordTextWHEREKeyword_0_77 = (Keyword)cKeywordTextAlternatives_0.eContents().get(77);
 		
 		//SqmlSqlKeyword:
-		//	keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
-		//	| 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
-		//	| 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT'
-		//	| 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION'
-		//	| 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS'
-		//	| 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT' | 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
-		//	| 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW'
-		//	| 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
-		//	| 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
-		//	| 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE');
+		//    keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
+		//        | 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
+		//        | 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT'
+		//        | 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION'
+		//        | 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS'
+		//        | 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT'| 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
+		//        | 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW'
+		//        | 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
+		//        | 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
+		//        | 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE'
+		//    );
 		@Override public ParserRule getRule() { return rule; }
-
-		//keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY' | 'CASCADE' | 'CASE' | 'CHARACTER' |
-		//'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME' | 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT' | 'ELSE' | 'EMPTY' | 'END' |
-		//'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION' | 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' |
-		//'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS' | 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT' | 'NO_ACTION'
-		//| 'NOT' | 'NOW' | 'NULL' | 'NULLABLE' | 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' |
-		//'REGEXP' | 'RESTRICT' | 'ROW' | 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' |
-		//'STATIC' | 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE' | 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' |
-		//'WHERE')
+		
+		//keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
+		//    | 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
+		//    | 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT'
+		//    | 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION'
+		//    | 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS'
+		//    | 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT'| 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
+		//    | 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW'
+		//    | 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
+		//    | 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
+		//    | 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE'
+		//)
 		public Assignment getKeywordTextAssignment() { return cKeywordTextAssignment; }
-
-		//('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY' | 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' |
-		//'COMMENT' | 'CONSTRAINT_NAME' | 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT' | 'ELSE' | 'EMPTY' | 'END' | 'ENUM' |
-		//'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION' | 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' |
-		//'IK' | 'IMPORT' | 'IN' | 'IS' | 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT' | 'NO_ACTION' | 'NOT' |
-		//'NOW' | 'NULL' | 'NULLABLE' | 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP'
-		//| 'RESTRICT' | 'ROW' | 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC' |
-		//'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE' | 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE')
+		
+		//('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
+		//        | 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
+		//        | 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT'
+		//        | 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION'
+		//        | 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS'
+		//        | 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT'| 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
+		//        | 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW'
+		//        | 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
+		//        | 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
+		//        | 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE'
+		//    )
 		public Alternatives getKeywordTextAlternatives_0() { return cKeywordTextAlternatives_0; }
-
+		
 		//'ACTION'
 		public Keyword getKeywordTextACTIONKeyword_0_0() { return cKeywordTextACTIONKeyword_0_0; }
-
+		
 		//'AND'
 		public Keyword getKeywordTextANDKeyword_0_1() { return cKeywordTextANDKeyword_0_1; }
-
+		
 		//'AS'
 		public Keyword getKeywordTextASKeyword_0_2() { return cKeywordTextASKeyword_0_2; }
-
+		
 		//'ASC'
 		public Keyword getKeywordTextASCKeyword_0_3() { return cKeywordTextASCKeyword_0_3; }
-
+		
 		//'BASE'
 		public Keyword getKeywordTextBASEKeyword_0_4() { return cKeywordTextBASEKeyword_0_4; }
-
+		
 		//'BETWEEN'
 		public Keyword getKeywordTextBETWEENKeyword_0_5() { return cKeywordTextBETWEENKeyword_0_5; }
-
+		
 		//'BITS'
 		public Keyword getKeywordTextBITSKeyword_0_6() { return cKeywordTextBITSKeyword_0_6; }
-
+		
 		//'BY'
 		public Keyword getKeywordTextBYKeyword_0_7() { return cKeywordTextBYKeyword_0_7; }
-
+		
 		//'CASCADE'
 		public Keyword getKeywordTextCASCADEKeyword_0_8() { return cKeywordTextCASCADEKeyword_0_8; }
-
+		
 		//'CASE'
 		public Keyword getKeywordTextCASEKeyword_0_9() { return cKeywordTextCASEKeyword_0_9; }
-
+		
 		//'CHARACTER'
 		public Keyword getKeywordTextCHARACTERKeyword_0_10() { return cKeywordTextCHARACTERKeyword_0_10; }
-
+		
 		//'COLLATION'
 		public Keyword getKeywordTextCOLLATIONKeyword_0_11() { return cKeywordTextCOLLATIONKeyword_0_11; }
-
+		
 		//'COMMENT'
 		public Keyword getKeywordTextCOMMENTKeyword_0_12() { return cKeywordTextCOMMENTKeyword_0_12; }
-
+		
 		//'CONSTRAINT_NAME'
 		public Keyword getKeywordTextCONSTRAINT_NAMEKeyword_0_13() { return cKeywordTextCONSTRAINT_NAMEKeyword_0_13; }
-
+		
 		//'DEFAULT'
 		public Keyword getKeywordTextDEFAULTKeyword_0_14() { return cKeywordTextDEFAULTKeyword_0_14; }
-
+		
 		//'DELETE'
 		public Keyword getKeywordTextDELETEKeyword_0_15() { return cKeywordTextDELETEKeyword_0_15; }
-
+		
 		//'DESC'
 		public Keyword getKeywordTextDESCKeyword_0_16() { return cKeywordTextDESCKeyword_0_16; }
-
+		
 		//'DISTINCT'
 		public Keyword getKeywordTextDISTINCTKeyword_0_17() { return cKeywordTextDISTINCTKeyword_0_17; }
-
+		
 		//'ELSE'
 		public Keyword getKeywordTextELSEKeyword_0_18() { return cKeywordTextELSEKeyword_0_18; }
-
+		
 		//'EMPTY'
 		public Keyword getKeywordTextEMPTYKeyword_0_19() { return cKeywordTextEMPTYKeyword_0_19; }
-
+		
 		//'END'
 		public Keyword getKeywordTextENDKeyword_0_20() { return cKeywordTextENDKeyword_0_20; }
-
+		
 		//'ENUM'
 		public Keyword getKeywordTextENUMKeyword_0_21() { return cKeywordTextENUMKeyword_0_21; }
-
+		
 		//'ESCAPE'
 		public Keyword getKeywordTextESCAPEKeyword_0_22() { return cKeywordTextESCAPEKeyword_0_22; }
-
+		
 		//'EXISTS'
 		public Keyword getKeywordTextEXISTSKeyword_0_23() { return cKeywordTextEXISTSKeyword_0_23; }
-
+		
 		//'FALSE'
 		public Keyword getKeywordTextFALSEKeyword_0_24() { return cKeywordTextFALSEKeyword_0_24; }
-
+		
 		//'FOR'
 		public Keyword getKeywordTextFORKeyword_0_25() { return cKeywordTextFORKeyword_0_25; }
-
+		
 		//'FROM'
 		public Keyword getKeywordTextFROMKeyword_0_26() { return cKeywordTextFROMKeyword_0_26; }
-
+		
 		//'FUNCTION'
 		public Keyword getKeywordTextFUNCTIONKeyword_0_27() { return cKeywordTextFUNCTIONKeyword_0_27; }
-
+		
 		//'GROUP'
 		public Keyword getKeywordTextGROUPKeyword_0_28() { return cKeywordTextGROUPKeyword_0_28; }
-
+		
 		//'GROUP_CONCAT'
 		public Keyword getKeywordTextGROUP_CONCATKeyword_0_29() { return cKeywordTextGROUP_CONCATKeyword_0_29; }
-
+		
 		//'HAVING'
 		public Keyword getKeywordTextHAVINGKeyword_0_30() { return cKeywordTextHAVINGKeyword_0_30; }
-
+		
 		//'IF'
 		public Keyword getKeywordTextIFKeyword_0_31() { return cKeywordTextIFKeyword_0_31; }
-
+		
 		//'IFNULL'
 		public Keyword getKeywordTextIFNULLKeyword_0_32() { return cKeywordTextIFNULLKeyword_0_32; }
-
+		
 		//'IK'
 		public Keyword getKeywordTextIKKeyword_0_33() { return cKeywordTextIKKeyword_0_33; }
-
+		
 		//'IMPORT'
 		public Keyword getKeywordTextIMPORTKeyword_0_34() { return cKeywordTextIMPORTKeyword_0_34; }
-
+		
 		//'IN'
 		public Keyword getKeywordTextINKeyword_0_35() { return cKeywordTextINKeyword_0_35; }
-
+		
 		//'IS'
 		public Keyword getKeywordTextISKeyword_0_36() { return cKeywordTextISKeyword_0_36; }
-
+		
 		//'JOIN'
 		public Keyword getKeywordTextJOINKeyword_0_37() { return cKeywordTextJOINKeyword_0_37; }
-
+		
 		//'LEFT'
 		public Keyword getKeywordTextLEFTKeyword_0_38() { return cKeywordTextLEFTKeyword_0_38; }
-
+		
 		//'LENGTHBITS'
 		public Keyword getKeywordTextLENGTHBITSKeyword_0_39() { return cKeywordTextLENGTHBITSKeyword_0_39; }
-
+		
 		//'LIKE'
 		public Keyword getKeywordTextLIKEKeyword_0_40() { return cKeywordTextLIKEKeyword_0_40; }
-
+		
 		//'MAXLENGTH'
 		public Keyword getKeywordTextMAXLENGTHKeyword_0_41() { return cKeywordTextMAXLENGTHKeyword_0_41; }
-
+		
 		//'NEXT'
 		public Keyword getKeywordTextNEXTKeyword_0_42() { return cKeywordTextNEXTKeyword_0_42; }
-
+		
 		//'NO_ACTION'
 		public Keyword getKeywordTextNO_ACTIONKeyword_0_43() { return cKeywordTextNO_ACTIONKeyword_0_43; }
-
+		
 		//'NOT'
 		public Keyword getKeywordTextNOTKeyword_0_44() { return cKeywordTextNOTKeyword_0_44; }
-
+		
 		//'NOW'
 		public Keyword getKeywordTextNOWKeyword_0_45() { return cKeywordTextNOWKeyword_0_45; }
-
+		
 		//'NULL'
 		public Keyword getKeywordTextNULLKeyword_0_46() { return cKeywordTextNULLKeyword_0_46; }
-
+		
 		//'NULLABLE'
 		public Keyword getKeywordTextNULLABLEKeyword_0_47() { return cKeywordTextNULLABLEKeyword_0_47; }
-
+		
 		//'ON'
 		public Keyword getKeywordTextONKeyword_0_48() { return cKeywordTextONKeyword_0_48; }
-
+		
 		//'OPTIONAL'
 		public Keyword getKeywordTextOPTIONALKeyword_0_49() { return cKeywordTextOPTIONALKeyword_0_49; }
-
+		
 		//'OR'
 		public Keyword getKeywordTextORKeyword_0_50() { return cKeywordTextORKeyword_0_50; }
-
+		
 		//'ORDER'
 		public Keyword getKeywordTextORDERKeyword_0_51() { return cKeywordTextORDERKeyword_0_51; }
-
+		
 		//'PACKAGE'
 		public Keyword getKeywordTextPACKAGEKeyword_0_52() { return cKeywordTextPACKAGEKeyword_0_52; }
-
+		
 		//'PK'
 		public Keyword getKeywordTextPKKeyword_0_53() { return cKeywordTextPKKeyword_0_53; }
-
+		
 		//'PRECISION'
 		public Keyword getKeywordTextPRECISIONKeyword_0_54() { return cKeywordTextPRECISIONKeyword_0_54; }
-
+		
 		//'QUERY'
 		public Keyword getKeywordTextQUERYKeyword_0_55() { return cKeywordTextQUERYKeyword_0_55; }
-
+		
 		//'REGEXP'
 		public Keyword getKeywordTextREGEXPKeyword_0_56() { return cKeywordTextREGEXPKeyword_0_56; }
-
+		
 		//'RESTRICT'
 		public Keyword getKeywordTextRESTRICTKeyword_0_57() { return cKeywordTextRESTRICTKeyword_0_57; }
-
+		
 		//'ROW'
 		public Keyword getKeywordTextROWKeyword_0_58() { return cKeywordTextROWKeyword_0_58; }
-
+		
 		//'SELECT'
 		public Keyword getKeywordTextSELECTKeyword_0_59() { return cKeywordTextSELECTKeyword_0_59; }
-
+		
 		//'SEPARATOR'
 		public Keyword getKeywordTextSEPARATORKeyword_0_60() { return cKeywordTextSEPARATORKeyword_0_60; }
-
+		
 		//'SERIAL'
 		public Keyword getKeywordTextSERIALKeyword_0_61() { return cKeywordTextSERIALKeyword_0_61; }
-
+		
 		//'SET'
 		public Keyword getKeywordTextSETKeyword_0_62() { return cKeywordTextSETKeyword_0_62; }
-
+		
 		//'SET_DEFAULT'
 		public Keyword getKeywordTextSET_DEFAULTKeyword_0_63() { return cKeywordTextSET_DEFAULTKeyword_0_63; }
-
+		
 		//'SET_NULL'
 		public Keyword getKeywordTextSET_NULLKeyword_0_64() { return cKeywordTextSET_NULLKeyword_0_64; }
-
+		
 		//'SQL'
 		public Keyword getKeywordTextSQLKeyword_0_65() { return cKeywordTextSQLKeyword_0_65; }
-
+		
 		//'STATIC'
 		public Keyword getKeywordTextSTATICKeyword_0_66() { return cKeywordTextSTATICKeyword_0_66; }
-
+		
 		//'TABLE'
 		public Keyword getKeywordTextTABLEKeyword_0_67() { return cKeywordTextTABLEKeyword_0_67; }
-
+		
 		//'THEN'
 		public Keyword getKeywordTextTHENKeyword_0_68() { return cKeywordTextTHENKeyword_0_68; }
-
+		
 		//'TIMESTAMP'
 		public Keyword getKeywordTextTIMESTAMPKeyword_0_69() { return cKeywordTextTIMESTAMPKeyword_0_69; }
-
+		
 		//'TITLE'
 		public Keyword getKeywordTextTITLEKeyword_0_70() { return cKeywordTextTITLEKeyword_0_70; }
-
+		
 		//'TRUE'
 		public Keyword getKeywordTextTRUEKeyword_0_71() { return cKeywordTextTRUEKeyword_0_71; }
-
+		
 		//'UK'
 		public Keyword getKeywordTextUKKeyword_0_72() { return cKeywordTextUKKeyword_0_72; }
-
+		
 		//'UNSIGNED'
 		public Keyword getKeywordTextUNSIGNEDKeyword_0_73() { return cKeywordTextUNSIGNEDKeyword_0_73; }
-
+		
 		//'UPDATE'
 		public Keyword getKeywordTextUPDATEKeyword_0_74() { return cKeywordTextUPDATEKeyword_0_74; }
-
+		
 		//'VALUETYPE'
 		public Keyword getKeywordTextVALUETYPEKeyword_0_75() { return cKeywordTextVALUETYPEKeyword_0_75; }
-
+		
 		//'WHEN'
 		public Keyword getKeywordTextWHENKeyword_0_76() { return cKeywordTextWHENKeyword_0_76; }
-
+		
 		//'WHERE'
 		public Keyword getKeywordTextWHEREKeyword_0_77() { return cKeywordTextWHEREKeyword_0_77; }
 	}
-
 	public class SqmlSqlIdElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSqlId");
 		private final Assignment cIdentifierAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cIdentifierIDTerminalRuleCall_0 = (RuleCall)cIdentifierAssignment.eContents().get(0);
 		
 		//SqmlSqlId:
-		//	identifier=ID;
+		//    identifier=ID;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//identifier=ID
 		public Assignment getIdentifierAssignment() { return cIdentifierAssignment; }
-
+		
 		//ID
 		public RuleCall getIdentifierIDTerminalRuleCall_0() { return cIdentifierIDTerminalRuleCall_0; }
 	}
-
 	public class SqmlSqlSymbolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSqlSymbol");
 		private final Assignment cSymbolTextAssignment = (Assignment)rule.eContents().get(1);
@@ -1786,97 +1848,99 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSymbolTextGreaterThanSignEqualsSignKeyword_0_19 = (Keyword)cSymbolTextAlternatives_0.eContents().get(19);
 		
 		//SqmlSqlSymbol:
-		//	symbolText=('+' | '-' | '*' | '/' | '%'
-		//	| '|' | '&' | '^' | '~'
-		//	| '(' | ')' | '.' | ','
-		//	| '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=');
+		//    symbolText=('+' | '-' | '*' | '/' | '%'
+		//    | '|' | '&' | '^' | '~'
+		//    | '(' | ')' | '.' | ','
+		//    | '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=');
 		@Override public ParserRule getRule() { return rule; }
-
-		//symbolText=('+' | '-' | '*' | '/' | '%' | '|' | '&' | '^' | '~' | '(' | ')' | '.' | ',' | '=' | '<>' | '!=' | '<' | '<='
-		//| '>' | '>=')
+		
+		//symbolText=('+' | '-' | '*' | '/' | '%'
+		//| '|' | '&' | '^' | '~'
+		//| '(' | ')' | '.' | ','
+		//| '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=')
 		public Assignment getSymbolTextAssignment() { return cSymbolTextAssignment; }
-
-		//('+' | '-' | '*' | '/' | '%' | '|' | '&' | '^' | '~' | '(' | ')' | '.' | ',' | '=' | '<>' | '!=' | '<' | '<=' | '>' |
-		//'>=')
+		
+		//('+' | '-' | '*' | '/' | '%'
+		//    | '|' | '&' | '^' | '~'
+		//    | '(' | ')' | '.' | ','
+		//    | '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=')
 		public Alternatives getSymbolTextAlternatives_0() { return cSymbolTextAlternatives_0; }
-
+		
 		//'+'
 		public Keyword getSymbolTextPlusSignKeyword_0_0() { return cSymbolTextPlusSignKeyword_0_0; }
-
+		
 		//'-'
 		public Keyword getSymbolTextHyphenMinusKeyword_0_1() { return cSymbolTextHyphenMinusKeyword_0_1; }
-
+		
 		//'*'
 		public Keyword getSymbolTextAsteriskKeyword_0_2() { return cSymbolTextAsteriskKeyword_0_2; }
-
+		
 		//'/'
 		public Keyword getSymbolTextSolidusKeyword_0_3() { return cSymbolTextSolidusKeyword_0_3; }
-
+		
 		//'%'
 		public Keyword getSymbolTextPercentSignKeyword_0_4() { return cSymbolTextPercentSignKeyword_0_4; }
-
+		
 		//'|'
 		public Keyword getSymbolTextVerticalLineKeyword_0_5() { return cSymbolTextVerticalLineKeyword_0_5; }
-
+		
 		//'&'
 		public Keyword getSymbolTextAmpersandKeyword_0_6() { return cSymbolTextAmpersandKeyword_0_6; }
-
+		
 		//'^'
 		public Keyword getSymbolTextCircumflexAccentKeyword_0_7() { return cSymbolTextCircumflexAccentKeyword_0_7; }
-
+		
 		//'~'
 		public Keyword getSymbolTextTildeKeyword_0_8() { return cSymbolTextTildeKeyword_0_8; }
-
+		
 		//'('
 		public Keyword getSymbolTextLeftParenthesisKeyword_0_9() { return cSymbolTextLeftParenthesisKeyword_0_9; }
-
+		
 		//')'
 		public Keyword getSymbolTextRightParenthesisKeyword_0_10() { return cSymbolTextRightParenthesisKeyword_0_10; }
-
+		
 		//'.'
 		public Keyword getSymbolTextFullStopKeyword_0_11() { return cSymbolTextFullStopKeyword_0_11; }
-
+		
 		//','
 		public Keyword getSymbolTextCommaKeyword_0_12() { return cSymbolTextCommaKeyword_0_12; }
-
+		
 		//'='
 		public Keyword getSymbolTextEqualsSignKeyword_0_13() { return cSymbolTextEqualsSignKeyword_0_13; }
-
+		
 		//'<>'
 		public Keyword getSymbolTextLessThanSignGreaterThanSignKeyword_0_14() { return cSymbolTextLessThanSignGreaterThanSignKeyword_0_14; }
-
+		
 		//'!='
 		public Keyword getSymbolTextExclamationMarkEqualsSignKeyword_0_15() { return cSymbolTextExclamationMarkEqualsSignKeyword_0_15; }
-
+		
 		//'<'
 		public Keyword getSymbolTextLessThanSignKeyword_0_16() { return cSymbolTextLessThanSignKeyword_0_16; }
-
+		
 		//'<='
 		public Keyword getSymbolTextLessThanSignEqualsSignKeyword_0_17() { return cSymbolTextLessThanSignEqualsSignKeyword_0_17; }
-
+		
 		//'>'
 		public Keyword getSymbolTextGreaterThanSignKeyword_0_18() { return cSymbolTextGreaterThanSignKeyword_0_18; }
-
+		
 		//'>='
 		public Keyword getSymbolTextGreaterThanSignEqualsSignKeyword_0_19() { return cSymbolTextGreaterThanSignEqualsSignKeyword_0_19; }
 	}
-
 	public class SqmlSqlStringLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSqlStringLiteral");
 		private final Assignment cStringAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cStringSTRINGTerminalRuleCall_0 = (RuleCall)cStringAssignment.eContents().get(0);
 		
 		//SqmlSqlStringLiteral:
-		//	string=STRING;
+		//    string=STRING;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//string=STRING
 		public Assignment getStringAssignment() { return cStringAssignment; }
-
+		
 		//STRING
 		public RuleCall getStringSTRINGTerminalRuleCall_0() { return cStringSTRINGTerminalRuleCall_0; }
 	}
-
 	public class SqmlSqlNumberLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSqlNumberLiteral");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1886,42 +1950,41 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDecimalDECIMALTerminalRuleCall_1_0 = (RuleCall)cDecimalAssignment_1.eContents().get(0);
 		
 		//SqmlSqlNumberLiteral:
-		//	integer=INT | decimal=DECIMAL;
+		//    integer=INT | decimal=DECIMAL;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//integer=INT | decimal=DECIMAL
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//integer=INT
 		public Assignment getIntegerAssignment_0() { return cIntegerAssignment_0; }
-
+		
 		//INT
 		public RuleCall getIntegerINTTerminalRuleCall_0_0() { return cIntegerINTTerminalRuleCall_0_0; }
-
+		
 		//decimal=DECIMAL
 		public Assignment getDecimalAssignment_1() { return cDecimalAssignment_1; }
-
+		
 		//DECIMAL
 		public RuleCall getDecimalDECIMALTerminalRuleCall_1_0() { return cDecimalDECIMALTerminalRuleCall_1_0; }
 	}
-
 	public class SqmlSelectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelect");
 		private final Assignment cPartsAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cPartsSqmlSelectPartParserRuleCall_0 = (RuleCall)cPartsAssignment.eContents().get(0);
 		
-		///* -------------------- select statement -------------------- */ //
+		///* -------------------- select statement -------------------- */
+		////
 		//SqmlSelect:
-		//	parts+=SqmlSelectPart+;
+		//    parts+=SqmlSelectPart+;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//parts+=SqmlSelectPart+
 		public Assignment getPartsAssignment() { return cPartsAssignment; }
-
+		
 		//SqmlSelectPart
 		public RuleCall getPartsSqmlSelectPartParserRuleCall_0() { return cPartsSqmlSelectPartParserRuleCall_0; }
 	}
-
 	public class SqmlSelectPartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelectPart");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1934,46 +1997,51 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlHavingClauseParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cSqmlOrderByClauseParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
-		//SqmlSelectPart ISqmlSelectPart:
-		//	SqmlSelectIf
-		//	| SqmlSelectClause
-		//	| SqmlFromClause
-		//	| SqmlJoinClause
-		//	| SqmlWhereClause
-		//	| SqmlGroupByClause
-		//	| SqmlHavingClause
-		//	| SqmlOrderByClause;
+		//SqmlSelectPart returns ISqmlSelectPart:
+		//    SqmlSelectIf
+		//    | SqmlSelectClause
+		//    | SqmlFromClause
+		//    | SqmlJoinClause
+		//    | SqmlWhereClause
+		//    | SqmlGroupByClause
+		//    | SqmlHavingClause
+		//    | SqmlOrderByClause;
 		@Override public ParserRule getRule() { return rule; }
-
-		//SqmlSelectIf | SqmlSelectClause | SqmlFromClause | SqmlJoinClause | SqmlWhereClause | SqmlGroupByClause |
-		//SqmlHavingClause | SqmlOrderByClause
+		
+		//SqmlSelectIf
+		//| SqmlSelectClause
+		//| SqmlFromClause
+		//| SqmlJoinClause
+		//| SqmlWhereClause
+		//| SqmlGroupByClause
+		//| SqmlHavingClause
+		//| SqmlOrderByClause
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//SqmlSelectIf
 		public RuleCall getSqmlSelectIfParserRuleCall_0() { return cSqmlSelectIfParserRuleCall_0; }
-
+		
 		//SqmlSelectClause
 		public RuleCall getSqmlSelectClauseParserRuleCall_1() { return cSqmlSelectClauseParserRuleCall_1; }
-
+		
 		//SqmlFromClause
 		public RuleCall getSqmlFromClauseParserRuleCall_2() { return cSqmlFromClauseParserRuleCall_2; }
-
+		
 		//SqmlJoinClause
 		public RuleCall getSqmlJoinClauseParserRuleCall_3() { return cSqmlJoinClauseParserRuleCall_3; }
-
+		
 		//SqmlWhereClause
 		public RuleCall getSqmlWhereClauseParserRuleCall_4() { return cSqmlWhereClauseParserRuleCall_4; }
-
+		
 		//SqmlGroupByClause
 		public RuleCall getSqmlGroupByClauseParserRuleCall_5() { return cSqmlGroupByClauseParserRuleCall_5; }
-
+		
 		//SqmlHavingClause
 		public RuleCall getSqmlHavingClauseParserRuleCall_6() { return cSqmlHavingClauseParserRuleCall_6; }
-
+		
 		//SqmlOrderByClause
 		public RuleCall getSqmlOrderByClauseParserRuleCall_7() { return cSqmlOrderByClauseParserRuleCall_7; }
 	}
-
 	public class SqmlSelectIfElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelectIf");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1991,51 +2059,52 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cElseSqmlSelectElseParserRuleCall_7_0 = (RuleCall)cElseAssignment_7.eContents().get(0);
 		
 		//SqmlSelectIf:
-		//	'#' 'IF' condition=SqmlStaticExpression '{'
-		//	parts+=SqmlSelectPart*
-		//	'}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?;
+		//    '#' 'IF' condition=SqmlStaticExpression '{'
+		//    parts+=SqmlSelectPart*
+		//    '}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//'#' 'IF' condition=SqmlStaticExpression '{' parts+=SqmlSelectPart* '}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?
+		
+		//'#' 'IF' condition=SqmlStaticExpression '{'
+		//parts+=SqmlSelectPart*
+		//'}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?
 		public Group getGroup() { return cGroup; }
-
+		
 		//'#'
 		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
-
+		
 		//'IF'
 		public Keyword getIFKeyword_1() { return cIFKeyword_1; }
-
+		
 		//condition=SqmlStaticExpression
 		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
-
+		
 		//SqmlStaticExpression
 		public RuleCall getConditionSqmlStaticExpressionParserRuleCall_2_0() { return cConditionSqmlStaticExpressionParserRuleCall_2_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
+		
 		//parts+=SqmlSelectPart*
 		public Assignment getPartsAssignment_4() { return cPartsAssignment_4; }
-
+		
 		//SqmlSelectPart
 		public RuleCall getPartsSqmlSelectPartParserRuleCall_4_0() { return cPartsSqmlSelectPartParserRuleCall_4_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-
+		
 		//elseIfs+=SqmlSelectElseIf*
 		public Assignment getElseIfsAssignment_6() { return cElseIfsAssignment_6; }
-
+		
 		//SqmlSelectElseIf
 		public RuleCall getElseIfsSqmlSelectElseIfParserRuleCall_6_0() { return cElseIfsSqmlSelectElseIfParserRuleCall_6_0; }
-
+		
 		//else=SqmlSelectElse?
 		public Assignment getElseAssignment_7() { return cElseAssignment_7; }
-
+		
 		//SqmlSelectElse
 		public RuleCall getElseSqmlSelectElseParserRuleCall_7_0() { return cElseSqmlSelectElseParserRuleCall_7_0; }
 	}
-
 	public class SqmlSelectElseIfElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelectElseIf");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2049,39 +2118,40 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SqmlSelectElseIf:
-		//	'ELSE' 'IF' condition=SqmlStaticExpression '{'
-		//	parts+=SqmlSelectPart*
-		//	'}';
+		//    'ELSE' 'IF' condition=SqmlStaticExpression '{'
+		//    parts+=SqmlSelectPart*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'ELSE' 'IF' condition=SqmlStaticExpression '{' parts+=SqmlSelectPart* '}'
+		
+		//'ELSE' 'IF' condition=SqmlStaticExpression '{'
+		//parts+=SqmlSelectPart*
+		//'}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'ELSE'
 		public Keyword getELSEKeyword_0() { return cELSEKeyword_0; }
-
+		
 		//'IF'
 		public Keyword getIFKeyword_1() { return cIFKeyword_1; }
-
+		
 		//condition=SqmlStaticExpression
 		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
-
+		
 		//SqmlStaticExpression
 		public RuleCall getConditionSqmlStaticExpressionParserRuleCall_2_0() { return cConditionSqmlStaticExpressionParserRuleCall_2_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
+		
 		//parts+=SqmlSelectPart*
 		public Assignment getPartsAssignment_4() { return cPartsAssignment_4; }
-
+		
 		//SqmlSelectPart
 		public RuleCall getPartsSqmlSelectPartParserRuleCall_4_0() { return cPartsSqmlSelectPartParserRuleCall_4_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-
 	public class SqmlSelectElseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelectElse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2093,34 +2163,36 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SqmlSelectElse:
-		//	{SqmlSelectElse}
-		//	'ELSE' '{'
-		//	parts+=SqmlSelectPart*
-		//	'}';
+		//    {SqmlSelectElse}
+		//    'ELSE' '{'
+		//    parts+=SqmlSelectPart*
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
-
-		//{SqmlSelectElse} 'ELSE' '{' parts+=SqmlSelectPart* '}'
+		
+		//{SqmlSelectElse}
+		//'ELSE' '{'
+		//parts+=SqmlSelectPart*
+		//'}'
 		public Group getGroup() { return cGroup; }
-
+		
 		//{SqmlSelectElse}
 		public Action getSqmlSelectElseAction_0() { return cSqmlSelectElseAction_0; }
-
+		
 		//'ELSE'
 		public Keyword getELSEKeyword_1() { return cELSEKeyword_1; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-
+		
 		//parts+=SqmlSelectPart*
 		public Assignment getPartsAssignment_3() { return cPartsAssignment_3; }
-
+		
 		//SqmlSelectPart
 		public RuleCall getPartsSqmlSelectPartParserRuleCall_3_0() { return cPartsSqmlSelectPartParserRuleCall_3_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
-
 	public class SqmlSelectClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelectClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2135,40 +2207,39 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cColumnsSqmlSelectColumnParserRuleCall_3_1_0 = (RuleCall)cColumnsAssignment_3_1.eContents().get(0);
 		
 		//SqmlSelectClause:
-		//	'SELECT' distinct?='DISTINCT'? columns+=SqmlSelectColumn (',' columns+=SqmlSelectColumn)*;
+		//    'SELECT' distinct?='DISTINCT'? columns+=SqmlSelectColumn (',' columns+=SqmlSelectColumn)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'SELECT' distinct?='DISTINCT'? columns+=SqmlSelectColumn (',' columns+=SqmlSelectColumn)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//'SELECT'
 		public Keyword getSELECTKeyword_0() { return cSELECTKeyword_0; }
-
+		
 		//distinct?='DISTINCT'?
 		public Assignment getDistinctAssignment_1() { return cDistinctAssignment_1; }
-
+		
 		//'DISTINCT'
 		public Keyword getDistinctDISTINCTKeyword_1_0() { return cDistinctDISTINCTKeyword_1_0; }
-
+		
 		//columns+=SqmlSelectColumn
 		public Assignment getColumnsAssignment_2() { return cColumnsAssignment_2; }
-
+		
 		//SqmlSelectColumn
 		public RuleCall getColumnsSqmlSelectColumnParserRuleCall_2_0() { return cColumnsSqmlSelectColumnParserRuleCall_2_0; }
-
+		
 		//(',' columns+=SqmlSelectColumn)*
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
+		
 		//columns+=SqmlSelectColumn
 		public Assignment getColumnsAssignment_3_1() { return cColumnsAssignment_3_1; }
-
+		
 		//SqmlSelectColumn
 		public RuleCall getColumnsSqmlSelectColumnParserRuleCall_3_1_0() { return cColumnsSqmlSelectColumnParserRuleCall_3_1_0; }
 	}
-
 	public class SqmlSelectColumnElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSelectColumn");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2184,43 +2255,42 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTitleSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cTitleAssignment_2_1.eContents().get(0);
 		
 		//SqmlSelectColumn:
-		//	expression=SqmlExpression ('AS' alias=ID)? ('TITLE' title=STRING)?;
+		//    expression=SqmlExpression ('AS' alias=ID)? ('TITLE' title=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//expression=SqmlExpression ('AS' alias=ID)? ('TITLE' title=STRING)?
 		public Group getGroup() { return cGroup; }
-
+		
 		//expression=SqmlExpression
 		public Assignment getExpressionAssignment_0() { return cExpressionAssignment_0; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionSqmlExpressionParserRuleCall_0_0() { return cExpressionSqmlExpressionParserRuleCall_0_0; }
-
+		
 		//('AS' alias=ID)?
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//'AS'
 		public Keyword getASKeyword_1_0() { return cASKeyword_1_0; }
-
+		
 		//alias=ID
 		public Assignment getAliasAssignment_1_1() { return cAliasAssignment_1_1; }
-
+		
 		//ID
 		public RuleCall getAliasIDTerminalRuleCall_1_1_0() { return cAliasIDTerminalRuleCall_1_1_0; }
-
+		
 		//('TITLE' title=STRING)?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//'TITLE'
 		public Keyword getTITLEKeyword_2_0() { return cTITLEKeyword_2_0; }
-
+		
 		//title=STRING
 		public Assignment getTitleAssignment_2_1() { return cTitleAssignment_2_1; }
-
+		
 		//STRING
 		public RuleCall getTitleSTRINGTerminalRuleCall_2_1_0() { return cTitleSTRINGTerminalRuleCall_2_1_0; }
 	}
-
 	public class SqmlFromClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFromClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2231,28 +2301,27 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableSqmlSubSelectVariableParserRuleCall_1_0_1 = (RuleCall)cVariableAlternatives_1_0.eContents().get(1);
 		
 		//SqmlFromClause:
-		//	'FROM' variable=(SqmlTableVariable | SqmlSubSelectVariable);
+		//    'FROM' variable=(SqmlTableVariable | SqmlSubSelectVariable);
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'FROM' variable=(SqmlTableVariable | SqmlSubSelectVariable)
 		public Group getGroup() { return cGroup; }
-
+		
 		//'FROM'
 		public Keyword getFROMKeyword_0() { return cFROMKeyword_0; }
-
+		
 		//variable=(SqmlTableVariable | SqmlSubSelectVariable)
 		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
-
+		
 		//(SqmlTableVariable | SqmlSubSelectVariable)
 		public Alternatives getVariableAlternatives_1_0() { return cVariableAlternatives_1_0; }
-
+		
 		//SqmlTableVariable
 		public RuleCall getVariableSqmlTableVariableParserRuleCall_1_0_0() { return cVariableSqmlTableVariableParserRuleCall_1_0_0; }
-
+		
 		//SqmlSubSelectVariable
 		public RuleCall getVariableSqmlSubSelectVariableParserRuleCall_1_0_1() { return cVariableSqmlSubSelectVariableParserRuleCall_1_0_1; }
 	}
-
 	public class SqmlForeignKeyVariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlForeignKeyVariable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2268,43 +2337,42 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		
 		//SqmlForeignKeyVariable:
-		//	variable=[ISqmlVariable] '.' column=[ISqmlColumn] 'AS'? name=ID;
+		//    variable=[ISqmlVariable] '.' column=[ISqmlColumn] 'AS'? name=ID;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//variable=[ISqmlVariable] '.' column=[ISqmlColumn] 'AS'? name=ID
 		public Group getGroup() { return cGroup; }
-
+		
 		//variable=[ISqmlVariable]
 		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
-
+		
 		//[ISqmlVariable]
 		public CrossReference getVariableISqmlVariableCrossReference_0_0() { return cVariableISqmlVariableCrossReference_0_0; }
-
+		
 		//ID
 		public RuleCall getVariableISqmlVariableIDTerminalRuleCall_0_0_1() { return cVariableISqmlVariableIDTerminalRuleCall_0_0_1; }
-
+		
 		//'.'
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
-
+		
 		//column=[ISqmlColumn]
 		public Assignment getColumnAssignment_2() { return cColumnAssignment_2; }
-
+		
 		//[ISqmlColumn]
 		public CrossReference getColumnISqmlColumnCrossReference_2_0() { return cColumnISqmlColumnCrossReference_2_0; }
-
+		
 		//ID
 		public RuleCall getColumnISqmlColumnIDTerminalRuleCall_2_0_1() { return cColumnISqmlColumnIDTerminalRuleCall_2_0_1; }
-
+		
 		//'AS'?
 		public Keyword getASKeyword_3() { return cASKeyword_3; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_0() { return cNameIDTerminalRuleCall_4_0; }
 	}
-
 	public class SqmlTableVariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlTableVariable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2316,31 +2384,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//SqmlTableVariable:
-		//	table=[ISqmlTable] 'AS'? name=ID;
+		//    table=[ISqmlTable] 'AS'? name=ID;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//table=[ISqmlTable] 'AS'? name=ID
 		public Group getGroup() { return cGroup; }
-
+		
 		//table=[ISqmlTable]
 		public Assignment getTableAssignment_0() { return cTableAssignment_0; }
-
+		
 		//[ISqmlTable]
 		public CrossReference getTableISqmlTableCrossReference_0_0() { return cTableISqmlTableCrossReference_0_0; }
-
+		
 		//ID
 		public RuleCall getTableISqmlTableIDTerminalRuleCall_0_0_1() { return cTableISqmlTableIDTerminalRuleCall_0_0_1; }
-
+		
 		//'AS'?
 		public Keyword getASKeyword_1() { return cASKeyword_1; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
-
 	public class SqmlSubSelectVariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSubSelectVariable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2353,34 +2420,33 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		
 		//SqmlSubSelectVariable:
-		//	'(' subSelect=SqmlSelect ')' 'AS'? name=ID;
+		//    '(' subSelect=SqmlSelect ')' 'AS'? name=ID;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'(' subSelect=SqmlSelect ')' 'AS'? name=ID
 		public Group getGroup() { return cGroup; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
-
+		
 		//subSelect=SqmlSelect
 		public Assignment getSubSelectAssignment_1() { return cSubSelectAssignment_1; }
-
+		
 		//SqmlSelect
 		public RuleCall getSubSelectSqmlSelectParserRuleCall_1_0() { return cSubSelectSqmlSelectParserRuleCall_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
-
+		
 		//'AS'?
 		public Keyword getASKeyword_3() { return cASKeyword_3; }
-
+		
 		//name=ID
 		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
-
+		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_4_0() { return cNameIDTerminalRuleCall_4_0; }
 	}
-
 	public class SqmlJoinClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlJoinClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2398,51 +2464,51 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionsSqmlExpressionParserRuleCall_3_1_0 = (RuleCall)cConditionsAssignment_3_1.eContents().get(0);
 		
 		//SqmlJoinClause:
-		//	leftJoin?='LEFT'? 'JOIN' variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable) ('ON'
-		//	conditions+=SqmlExpression)*;
+		//    leftJoin?='LEFT'? 'JOIN' variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable) ('ON'
+		//    conditions+=SqmlExpression)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//leftJoin?='LEFT'? 'JOIN' variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable) ('ON'
 		//conditions+=SqmlExpression)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//leftJoin?='LEFT'?
 		public Assignment getLeftJoinAssignment_0() { return cLeftJoinAssignment_0; }
-
+		
 		//'LEFT'
 		public Keyword getLeftJoinLEFTKeyword_0_0() { return cLeftJoinLEFTKeyword_0_0; }
-
+		
 		//'JOIN'
 		public Keyword getJOINKeyword_1() { return cJOINKeyword_1; }
-
+		
 		//variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable)
 		public Assignment getVariableAssignment_2() { return cVariableAssignment_2; }
-
+		
 		//(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable)
 		public Alternatives getVariableAlternatives_2_0() { return cVariableAlternatives_2_0; }
-
+		
 		//SqmlForeignKeyVariable
 		public RuleCall getVariableSqmlForeignKeyVariableParserRuleCall_2_0_0() { return cVariableSqmlForeignKeyVariableParserRuleCall_2_0_0; }
-
+		
 		//SqmlTableVariable
 		public RuleCall getVariableSqmlTableVariableParserRuleCall_2_0_1() { return cVariableSqmlTableVariableParserRuleCall_2_0_1; }
-
+		
 		//SqmlSubSelectVariable
 		public RuleCall getVariableSqmlSubSelectVariableParserRuleCall_2_0_2() { return cVariableSqmlSubSelectVariableParserRuleCall_2_0_2; }
-
-		//('ON' conditions+=SqmlExpression)*
+		
+		//('ON'
+		//   conditions+=SqmlExpression)*
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//'ON'
 		public Keyword getONKeyword_3_0() { return cONKeyword_3_0; }
-
+		
 		//conditions+=SqmlExpression
 		public Assignment getConditionsAssignment_3_1() { return cConditionsAssignment_3_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getConditionsSqmlExpressionParserRuleCall_3_1_0() { return cConditionsSqmlExpressionParserRuleCall_3_1_0; }
 	}
-
 	public class SqmlWhereClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlWhereClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2451,22 +2517,21 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionSqmlExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
 		
 		//SqmlWhereClause:
-		//	'WHERE' condition=SqmlExpression;
+		//    'WHERE' condition=SqmlExpression;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'WHERE' condition=SqmlExpression
 		public Group getGroup() { return cGroup; }
-
+		
 		//'WHERE'
 		public Keyword getWHEREKeyword_0() { return cWHEREKeyword_0; }
-
+		
 		//condition=SqmlExpression
 		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getConditionSqmlExpressionParserRuleCall_1_0() { return cConditionSqmlExpressionParserRuleCall_1_0; }
 	}
-
 	public class SqmlGroupByClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlGroupByClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2480,37 +2545,36 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionsSqmlExpressionParserRuleCall_3_1_0 = (RuleCall)cExpressionsAssignment_3_1.eContents().get(0);
 		
 		//SqmlGroupByClause:
-		//	'GROUP' 'BY' expressions+=SqmlExpression (',' expressions+=SqmlExpression)*;
+		//    'GROUP' 'BY' expressions+=SqmlExpression (',' expressions+=SqmlExpression)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'GROUP' 'BY' expressions+=SqmlExpression (',' expressions+=SqmlExpression)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//'GROUP'
 		public Keyword getGROUPKeyword_0() { return cGROUPKeyword_0; }
-
+		
 		//'BY'
 		public Keyword getBYKeyword_1() { return cBYKeyword_1; }
-
+		
 		//expressions+=SqmlExpression
 		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionsSqmlExpressionParserRuleCall_2_0() { return cExpressionsSqmlExpressionParserRuleCall_2_0; }
-
+		
 		//(',' expressions+=SqmlExpression)*
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
+		
 		//expressions+=SqmlExpression
 		public Assignment getExpressionsAssignment_3_1() { return cExpressionsAssignment_3_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionsSqmlExpressionParserRuleCall_3_1_0() { return cExpressionsSqmlExpressionParserRuleCall_3_1_0; }
 	}
-
 	public class SqmlHavingClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlHavingClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2519,22 +2583,21 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionSqmlExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
 		
 		//SqmlHavingClause:
-		//	'HAVING' condition=SqmlExpression;
+		//    'HAVING' condition=SqmlExpression;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'HAVING' condition=SqmlExpression
 		public Group getGroup() { return cGroup; }
-
+		
 		//'HAVING'
 		public Keyword getHAVINGKeyword_0() { return cHAVINGKeyword_0; }
-
+		
 		//condition=SqmlExpression
 		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getConditionSqmlExpressionParserRuleCall_1_0() { return cConditionSqmlExpressionParserRuleCall_1_0; }
 	}
-
 	public class SqmlOrderByClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlOrderByClause");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2548,37 +2611,36 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionsSqmlOrderByExpressionParserRuleCall_3_1_0 = (RuleCall)cExpressionsAssignment_3_1.eContents().get(0);
 		
 		//SqmlOrderByClause:
-		//	'ORDER' 'BY' expressions+=SqmlOrderByExpression (',' expressions+=SqmlOrderByExpression)*;
+		//    'ORDER' 'BY' expressions+=SqmlOrderByExpression (',' expressions+=SqmlOrderByExpression)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'ORDER' 'BY' expressions+=SqmlOrderByExpression (',' expressions+=SqmlOrderByExpression)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//'ORDER'
 		public Keyword getORDERKeyword_0() { return cORDERKeyword_0; }
-
+		
 		//'BY'
 		public Keyword getBYKeyword_1() { return cBYKeyword_1; }
-
+		
 		//expressions+=SqmlOrderByExpression
 		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
-
+		
 		//SqmlOrderByExpression
 		public RuleCall getExpressionsSqmlOrderByExpressionParserRuleCall_2_0() { return cExpressionsSqmlOrderByExpressionParserRuleCall_2_0; }
-
+		
 		//(',' expressions+=SqmlOrderByExpression)*
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
+		
 		//expressions+=SqmlOrderByExpression
 		public Assignment getExpressionsAssignment_3_1() { return cExpressionsAssignment_3_1; }
-
+		
 		//SqmlOrderByExpression
 		public RuleCall getExpressionsSqmlOrderByExpressionParserRuleCall_3_1_0() { return cExpressionsSqmlOrderByExpressionParserRuleCall_3_1_0; }
 	}
-
 	public class SqmlOrderByExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlOrderByExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2590,44 +2652,43 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDescendingDESCKeyword_1_1_0 = (Keyword)cDescendingAssignment_1_1.eContents().get(0);
 		
 		//SqmlOrderByExpression:
-		//	expression=SqmlExpression ('ASC' | descending?='DESC')?;
+		//    expression=SqmlExpression ('ASC' | (descending?='DESC'))?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//expression=SqmlExpression ('ASC' | descending?='DESC')?
+		
+		//expression=SqmlExpression ('ASC' | (descending?='DESC'))?
 		public Group getGroup() { return cGroup; }
-
+		
 		//expression=SqmlExpression
 		public Assignment getExpressionAssignment_0() { return cExpressionAssignment_0; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionSqmlExpressionParserRuleCall_0_0() { return cExpressionSqmlExpressionParserRuleCall_0_0; }
-
-		//('ASC' | descending?='DESC')?
+		
+		//('ASC' | (descending?='DESC'))?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
+		
 		//'ASC'
 		public Keyword getASCKeyword_1_0() { return cASCKeyword_1_0; }
-
-		//descending?='DESC'
+		
+		//(descending?='DESC')
 		public Assignment getDescendingAssignment_1_1() { return cDescendingAssignment_1_1; }
-
+		
 		//'DESC'
 		public Keyword getDescendingDESCKeyword_1_1_0() { return cDescendingDESCKeyword_1_1_0; }
 	}
-
 	public class SqmlExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlExpression");
 		private final RuleCall cSqmlOrParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		///* -------------------- expressions -------------------- */ //
-		//SqmlExpression ISqmlExpression:
-		//	SqmlOr;
+		///* -------------------- expressions -------------------- */
+		////
+		//SqmlExpression returns ISqmlExpression:
+		//    SqmlOr;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlOr
 		public RuleCall getSqmlOrParserRuleCall() { return cSqmlOrParserRuleCall; }
 	}
-
 	public class SqmlOrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlOr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2638,32 +2699,31 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightSqmlAndParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//SqmlOr ISqmlExpression:
-		//	SqmlAnd ({SqmlOr.left=current} 'OR' right=SqmlAnd)*;
+		//SqmlOr returns ISqmlExpression:
+		//    SqmlAnd ({SqmlOr.left=current} 'OR' right=SqmlAnd)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlAnd ({SqmlOr.left=current} 'OR' right=SqmlAnd)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//SqmlAnd
 		public RuleCall getSqmlAndParserRuleCall_0() { return cSqmlAndParserRuleCall_0; }
-
+		
 		//({SqmlOr.left=current} 'OR' right=SqmlAnd)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlOr.left=current}
 		public Action getSqmlOrLeftAction_1_0() { return cSqmlOrLeftAction_1_0; }
-
+		
 		//'OR'
 		public Keyword getORKeyword_1_1() { return cORKeyword_1_1; }
-
+		
 		//right=SqmlAnd
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
+		
 		//SqmlAnd
 		public RuleCall getRightSqmlAndParserRuleCall_1_2_0() { return cRightSqmlAndParserRuleCall_1_2_0; }
 	}
-
 	public class SqmlAndElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlAnd");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2674,32 +2734,31 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightSqmlConditionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//SqmlAnd ISqmlExpression:
-		//	SqmlCondition ({SqmlAnd.left=current} 'AND' right=SqmlCondition)*;
+		//SqmlAnd returns ISqmlExpression:
+		//    SqmlCondition ({SqmlAnd.left=current} 'AND' right=SqmlCondition)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlCondition ({SqmlAnd.left=current} 'AND' right=SqmlCondition)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//SqmlCondition
 		public RuleCall getSqmlConditionParserRuleCall_0() { return cSqmlConditionParserRuleCall_0; }
-
+		
 		//({SqmlAnd.left=current} 'AND' right=SqmlCondition)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlAnd.left=current}
 		public Action getSqmlAndLeftAction_1_0() { return cSqmlAndLeftAction_1_0; }
-
+		
 		//'AND'
 		public Keyword getANDKeyword_1_1() { return cANDKeyword_1_1; }
-
+		
 		//right=SqmlCondition
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
+		
 		//SqmlCondition
 		public RuleCall getRightSqmlConditionParserRuleCall_1_2_0() { return cRightSqmlConditionParserRuleCall_1_2_0; }
 	}
-
 	public class SqmlConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlCondition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -2766,230 +2825,234 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRegexpAssignment_2_1_5_3 = (Assignment)cGroup_2_1_5.eContents().get(3);
 		private final RuleCall cRegexpSqmlOperandParserRuleCall_2_1_5_3_0 = (RuleCall)cRegexpAssignment_2_1_5_3.eContents().get(0);
 		
-		//SqmlCondition ISqmlExpression:
-		//	{SqmlNot} 'NOT' condition=SqmlCondition | {SqmlExists} 'EXISTS' subSelect=SqmlSubSelect | SqmlOperand
-		//	({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
-		//	{SqmlLike.left=current} not?='NOT'? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? | {SqmlIsNull.operand=current}
-		//	'IS' not?='NOT'? 'NULL' | {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
-		//	{SqmlIn.left=current} not?='NOT'? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
-		//	{SqmlRegexp.operand=current} not?='NOT'? 'REGEXP' regexp=SqmlOperand)?;
+		//SqmlCondition returns ISqmlExpression:
+		//    {SqmlNot} 'NOT' condition=SqmlCondition |
+		//    {SqmlExists} 'EXISTS' subSelect=SqmlSubSelect |
+		//    SqmlOperand ({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
+		//    {SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? |
+		//    {SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL' |
+		//    {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
+		//    {SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
+		//    {SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand)?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//{SqmlNot} 'NOT' condition=SqmlCondition | {SqmlExists} 'EXISTS' subSelect=SqmlSubSelect | SqmlOperand
-		//({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
-		//{SqmlLike.left=current} not?='NOT'? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? | {SqmlIsNull.operand=current}
-		//'IS' not?='NOT'? 'NULL' | {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
-		//{SqmlIn.left=current} not?='NOT'? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
-		//{SqmlRegexp.operand=current} not?='NOT'? 'REGEXP' regexp=SqmlOperand)?
+		
+		//{SqmlNot} 'NOT' condition=SqmlCondition |
+		//{SqmlExists} 'EXISTS' subSelect=SqmlSubSelect |
+		//SqmlOperand ({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
+		//{SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? |
+		//{SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL' |
+		//{SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
+		//{SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
+		//{SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand)?
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//{SqmlNot} 'NOT' condition=SqmlCondition
 		public Group getGroup_0() { return cGroup_0; }
-
+		
 		//{SqmlNot}
 		public Action getSqmlNotAction_0_0() { return cSqmlNotAction_0_0; }
-
+		
 		//'NOT'
 		public Keyword getNOTKeyword_0_1() { return cNOTKeyword_0_1; }
-
+		
 		//condition=SqmlCondition
 		public Assignment getConditionAssignment_0_2() { return cConditionAssignment_0_2; }
-
+		
 		//SqmlCondition
 		public RuleCall getConditionSqmlConditionParserRuleCall_0_2_0() { return cConditionSqmlConditionParserRuleCall_0_2_0; }
-
+		
 		//{SqmlExists} 'EXISTS' subSelect=SqmlSubSelect
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlExists}
 		public Action getSqmlExistsAction_1_0() { return cSqmlExistsAction_1_0; }
-
+		
 		//'EXISTS'
 		public Keyword getEXISTSKeyword_1_1() { return cEXISTSKeyword_1_1; }
-
+		
 		//subSelect=SqmlSubSelect
 		public Assignment getSubSelectAssignment_1_2() { return cSubSelectAssignment_1_2; }
-
+		
 		//SqmlSubSelect
 		public RuleCall getSubSelectSqmlSubSelectParserRuleCall_1_2_0() { return cSubSelectSqmlSubSelectParserRuleCall_1_2_0; }
-
+		
 		//SqmlOperand ({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
-		//{SqmlLike.left=current} not?='NOT'? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? | {SqmlIsNull.operand=current}
-		//'IS' not?='NOT'? 'NULL' | {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
-		//{SqmlIn.left=current} not?='NOT'? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
-		//{SqmlRegexp.operand=current} not?='NOT'? 'REGEXP' regexp=SqmlOperand)?
+		//{SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? |
+		//{SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL' |
+		//{SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
+		//{SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
+		//{SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand)?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//SqmlOperand
 		public RuleCall getSqmlOperandParserRuleCall_2_0() { return cSqmlOperandParserRuleCall_2_0; }
-
+		
 		//({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
-		//{SqmlLike.left=current} not?='NOT'? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? | {SqmlIsNull.operand=current}
-		//'IS' not?='NOT'? 'NULL' | {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
-		//{SqmlIn.left=current} not?='NOT'? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
-		//{SqmlRegexp.operand=current} not?='NOT'? 'REGEXP' regexp=SqmlOperand)?
+		//   {SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? |
+		//   {SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL' |
+		//   {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
+		//   {SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
+		//   {SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand)?
 		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
-
+		
 		//{SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand
 		public Group getGroup_2_1_0() { return cGroup_2_1_0; }
-
+		
 		//{SqmlComparison.left=current}
 		public Action getSqmlComparisonLeftAction_2_1_0_0() { return cSqmlComparisonLeftAction_2_1_0_0; }
-
+		
 		//function=[SqmlFunction|SqmlComparisonOperator]
 		public Assignment getFunctionAssignment_2_1_0_1() { return cFunctionAssignment_2_1_0_1; }
-
+		
 		//[SqmlFunction|SqmlComparisonOperator]
 		public CrossReference getFunctionSqmlFunctionCrossReference_2_1_0_1_0() { return cFunctionSqmlFunctionCrossReference_2_1_0_1_0; }
-
+		
 		//SqmlComparisonOperator
 		public RuleCall getFunctionSqmlFunctionSqmlComparisonOperatorParserRuleCall_2_1_0_1_0_1() { return cFunctionSqmlFunctionSqmlComparisonOperatorParserRuleCall_2_1_0_1_0_1; }
-
+		
 		//right=SqmlOperand
 		public Assignment getRightAssignment_2_1_0_2() { return cRightAssignment_2_1_0_2; }
-
+		
 		//SqmlOperand
 		public RuleCall getRightSqmlOperandParserRuleCall_2_1_0_2_0() { return cRightSqmlOperandParserRuleCall_2_1_0_2_0; }
-
-		//{SqmlLike.left=current} not?='NOT'? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)?
+		
+		//{SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)?
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
-
+		
 		//{SqmlLike.left=current}
 		public Action getSqmlLikeLeftAction_2_1_1_0() { return cSqmlLikeLeftAction_2_1_1_0; }
-
-		//not?='NOT'?
+		
+		//(not?='NOT')?
 		public Assignment getNotAssignment_2_1_1_1() { return cNotAssignment_2_1_1_1; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_2_1_1_1_0() { return cNotNOTKeyword_2_1_1_1_0; }
-
+		
 		//'LIKE'
 		public Keyword getLIKEKeyword_2_1_1_2() { return cLIKEKeyword_2_1_1_2; }
-
+		
 		//right=SqmlOperand
 		public Assignment getRightAssignment_2_1_1_3() { return cRightAssignment_2_1_1_3; }
-
+		
 		//SqmlOperand
 		public RuleCall getRightSqmlOperandParserRuleCall_2_1_1_3_0() { return cRightSqmlOperandParserRuleCall_2_1_1_3_0; }
-
+		
 		//('ESCAPE' escape=STRING)?
 		public Group getGroup_2_1_1_4() { return cGroup_2_1_1_4; }
-
+		
 		//'ESCAPE'
 		public Keyword getESCAPEKeyword_2_1_1_4_0() { return cESCAPEKeyword_2_1_1_4_0; }
-
+		
 		//escape=STRING
 		public Assignment getEscapeAssignment_2_1_1_4_1() { return cEscapeAssignment_2_1_1_4_1; }
-
+		
 		//STRING
 		public RuleCall getEscapeSTRINGTerminalRuleCall_2_1_1_4_1_0() { return cEscapeSTRINGTerminalRuleCall_2_1_1_4_1_0; }
-
-		//{SqmlIsNull.operand=current} 'IS' not?='NOT'? 'NULL'
+		
+		//{SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL'
 		public Group getGroup_2_1_2() { return cGroup_2_1_2; }
-
+		
 		//{SqmlIsNull.operand=current}
 		public Action getSqmlIsNullOperandAction_2_1_2_0() { return cSqmlIsNullOperandAction_2_1_2_0; }
-
+		
 		//'IS'
 		public Keyword getISKeyword_2_1_2_1() { return cISKeyword_2_1_2_1; }
-
-		//not?='NOT'?
+		
+		//(not?='NOT')?
 		public Assignment getNotAssignment_2_1_2_2() { return cNotAssignment_2_1_2_2; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_2_1_2_2_0() { return cNotNOTKeyword_2_1_2_2_0; }
-
+		
 		//'NULL'
 		public Keyword getNULLKeyword_2_1_2_3() { return cNULLKeyword_2_1_2_3; }
-
+		
 		//{SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand
 		public Group getGroup_2_1_3() { return cGroup_2_1_3; }
-
+		
 		//{SqmlBetween.operand=current}
 		public Action getSqmlBetweenOperandAction_2_1_3_0() { return cSqmlBetweenOperandAction_2_1_3_0; }
-
+		
 		//'BETWEEN'
 		public Keyword getBETWEENKeyword_2_1_3_1() { return cBETWEENKeyword_2_1_3_1; }
-
+		
 		//left=SqmlOperand
 		public Assignment getLeftAssignment_2_1_3_2() { return cLeftAssignment_2_1_3_2; }
-
+		
 		//SqmlOperand
 		public RuleCall getLeftSqmlOperandParserRuleCall_2_1_3_2_0() { return cLeftSqmlOperandParserRuleCall_2_1_3_2_0; }
-
+		
 		//'AND'
 		public Keyword getANDKeyword_2_1_3_3() { return cANDKeyword_2_1_3_3; }
-
+		
 		//right=SqmlOperand
 		public Assignment getRightAssignment_2_1_3_4() { return cRightAssignment_2_1_3_4; }
-
+		
 		//SqmlOperand
 		public RuleCall getRightSqmlOperandParserRuleCall_2_1_3_4_0() { return cRightSqmlOperandParserRuleCall_2_1_3_4_0; }
-
-		//{SqmlIn.left=current} not?='NOT'? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor)
+		
+		//{SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor)
 		public Group getGroup_2_1_4() { return cGroup_2_1_4; }
-
+		
 		//{SqmlIn.left=current}
 		public Action getSqmlInLeftAction_2_1_4_0() { return cSqmlInLeftAction_2_1_4_0; }
-
-		//not?='NOT'?
+		
+		//(not?='NOT')?
 		public Assignment getNotAssignment_2_1_4_1() { return cNotAssignment_2_1_4_1; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_2_1_4_1_0() { return cNotNOTKeyword_2_1_4_1_0; }
-
+		
 		//'IN'
 		public Keyword getINKeyword_2_1_4_2() { return cINKeyword_2_1_4_2; }
-
+		
 		//right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor)
 		public Assignment getRightAssignment_2_1_4_3() { return cRightAssignment_2_1_4_3; }
-
+		
 		//(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor)
 		public Alternatives getRightAlternatives_2_1_4_3_0() { return cRightAlternatives_2_1_4_3_0; }
-
+		
 		//SqmlStaticVariableReference
 		public RuleCall getRightSqmlStaticVariableReferenceParserRuleCall_2_1_4_3_0_0() { return cRightSqmlStaticVariableReferenceParserRuleCall_2_1_4_3_0_0; }
-
+		
 		//SqmlSubSelect
 		public RuleCall getRightSqmlSubSelectParserRuleCall_2_1_4_3_0_1() { return cRightSqmlSubSelectParserRuleCall_2_1_4_3_0_1; }
-
+		
 		//SqmlRowConstructor
 		public RuleCall getRightSqmlRowConstructorParserRuleCall_2_1_4_3_0_2() { return cRightSqmlRowConstructorParserRuleCall_2_1_4_3_0_2; }
-
-		//{SqmlRegexp.operand=current} not?='NOT'? 'REGEXP' regexp=SqmlOperand
+		
+		//{SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand
 		public Group getGroup_2_1_5() { return cGroup_2_1_5; }
-
+		
 		//{SqmlRegexp.operand=current}
 		public Action getSqmlRegexpOperandAction_2_1_5_0() { return cSqmlRegexpOperandAction_2_1_5_0; }
-
-		//not?='NOT'?
+		
+		//(not?='NOT')?
 		public Assignment getNotAssignment_2_1_5_1() { return cNotAssignment_2_1_5_1; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_2_1_5_1_0() { return cNotNOTKeyword_2_1_5_1_0; }
-
+		
 		//'REGEXP'
 		public Keyword getREGEXPKeyword_2_1_5_2() { return cREGEXPKeyword_2_1_5_2; }
-
+		
 		//regexp=SqmlOperand
 		public Assignment getRegexpAssignment_2_1_5_3() { return cRegexpAssignment_2_1_5_3; }
-
+		
 		//SqmlOperand
 		public RuleCall getRegexpSqmlOperandParserRuleCall_2_1_5_3_0() { return cRegexpSqmlOperandParserRuleCall_2_1_5_3_0; }
 	}
-
 	public class SqmlOperandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlOperand");
 		private final RuleCall cSqmlAdditionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//SqmlOperand ISqmlExpression:
-		//	SqmlAddition;
+		//SqmlOperand returns ISqmlExpression:
+		//    SqmlAddition;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlAddition
 		public RuleCall getSqmlAdditionParserRuleCall() { return cSqmlAdditionParserRuleCall; }
 	}
-
 	public class SqmlAdditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlAddition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3002,39 +3065,40 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightSqmlMultiplicationParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//SqmlAddition ISqmlExpression:
-		//	SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
-		//	right=SqmlMultiplication)*;
+		//SqmlAddition returns ISqmlExpression:
+		//    SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
+		//    right=SqmlMultiplication)*;
 		@Override public ParserRule getRule() { return rule; }
-
-		//SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator] right=SqmlMultiplication)*
+		
+		//SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
+		//right=SqmlMultiplication)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//SqmlMultiplication
 		public RuleCall getSqmlMultiplicationParserRuleCall_0() { return cSqmlMultiplicationParserRuleCall_0; }
-
-		//({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator] right=SqmlMultiplication)*
+		
+		//({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
+		//   right=SqmlMultiplication)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlAddition.left=current}
 		public Action getSqmlAdditionLeftAction_1_0() { return cSqmlAdditionLeftAction_1_0; }
-
+		
 		//function=[SqmlFunction|SqmlAdditionOperator]
 		public Assignment getFunctionAssignment_1_1() { return cFunctionAssignment_1_1; }
-
+		
 		//[SqmlFunction|SqmlAdditionOperator]
 		public CrossReference getFunctionSqmlFunctionCrossReference_1_1_0() { return cFunctionSqmlFunctionCrossReference_1_1_0; }
-
+		
 		//SqmlAdditionOperator
 		public RuleCall getFunctionSqmlFunctionSqmlAdditionOperatorParserRuleCall_1_1_0_1() { return cFunctionSqmlFunctionSqmlAdditionOperatorParserRuleCall_1_1_0_1; }
-
+		
 		//right=SqmlMultiplication
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
+		
 		//SqmlMultiplication
 		public RuleCall getRightSqmlMultiplicationParserRuleCall_1_2_0() { return cRightSqmlMultiplicationParserRuleCall_1_2_0; }
 	}
-
 	public class SqmlMultiplicationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlMultiplication");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3047,38 +3111,37 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightSqmlPrimayParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//SqmlMultiplication ISqmlExpression:
-		//	SqmlPrimay ({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*;
+		//SqmlMultiplication returns ISqmlExpression:
+		//    SqmlPrimay ({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlPrimay ({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//SqmlPrimay
 		public RuleCall getSqmlPrimayParserRuleCall_0() { return cSqmlPrimayParserRuleCall_0; }
-
+		
 		//({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlMultiplication.left=current}
 		public Action getSqmlMultiplicationLeftAction_1_0() { return cSqmlMultiplicationLeftAction_1_0; }
-
+		
 		//function=[SqmlFunction|SqmlMultiplicationOperator]
 		public Assignment getFunctionAssignment_1_1() { return cFunctionAssignment_1_1; }
-
+		
 		//[SqmlFunction|SqmlMultiplicationOperator]
 		public CrossReference getFunctionSqmlFunctionCrossReference_1_1_0() { return cFunctionSqmlFunctionCrossReference_1_1_0; }
-
+		
 		//SqmlMultiplicationOperator
 		public RuleCall getFunctionSqmlFunctionSqmlMultiplicationOperatorParserRuleCall_1_1_0_1() { return cFunctionSqmlFunctionSqmlMultiplicationOperatorParserRuleCall_1_1_0_1; }
-
+		
 		//right=SqmlPrimay
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
+		
 		//SqmlPrimay
 		public RuleCall getRightSqmlPrimayParserRuleCall_1_2_0() { return cRightSqmlPrimayParserRuleCall_1_2_0; }
 	}
-
 	public class SqmlPrimayElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlPrimay");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -3094,49 +3157,66 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlStaticVariableReferenceParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cSqmlLiteralParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
-		//SqmlPrimay ISqmlExpression:
-		//	SqmlRowConstructor | SqmlNegation | SqmlValueReference | SqmlFunctionCall | SqmlGroupConcat | SqmlCase | SqmlIf |
-		//	SqmlIfNull | SqmlStaticIf | SqmlStaticVariableReference | SqmlLiteral;
+		//SqmlPrimay returns ISqmlExpression:
+		//    SqmlRowConstructor |
+		//    SqmlNegation |
+		//    SqmlValueReference |
+		//    SqmlFunctionCall |
+		//    SqmlGroupConcat |
+		//    SqmlCase |
+		//    SqmlIf |
+		//    SqmlIfNull |
+		//    SqmlStaticIf |
+		//    SqmlStaticVariableReference |
+		//    SqmlLiteral;
 		@Override public ParserRule getRule() { return rule; }
-
-		//SqmlRowConstructor | SqmlNegation | SqmlValueReference | SqmlFunctionCall | SqmlGroupConcat | SqmlCase | SqmlIf |
-		//SqmlIfNull | SqmlStaticIf | SqmlStaticVariableReference | SqmlLiteral
+		
+		//SqmlRowConstructor |
+		//SqmlNegation |
+		//SqmlValueReference |
+		//SqmlFunctionCall |
+		//SqmlGroupConcat |
+		//SqmlCase |
+		//SqmlIf |
+		//SqmlIfNull |
+		//SqmlStaticIf |
+		//SqmlStaticVariableReference |
+		//SqmlLiteral
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//SqmlRowConstructor
 		public RuleCall getSqmlRowConstructorParserRuleCall_0() { return cSqmlRowConstructorParserRuleCall_0; }
-
+		
 		//SqmlNegation
 		public RuleCall getSqmlNegationParserRuleCall_1() { return cSqmlNegationParserRuleCall_1; }
-
+		
 		//SqmlValueReference
 		public RuleCall getSqmlValueReferenceParserRuleCall_2() { return cSqmlValueReferenceParserRuleCall_2; }
-
+		
 		//SqmlFunctionCall
 		public RuleCall getSqmlFunctionCallParserRuleCall_3() { return cSqmlFunctionCallParserRuleCall_3; }
-
+		
 		//SqmlGroupConcat
 		public RuleCall getSqmlGroupConcatParserRuleCall_4() { return cSqmlGroupConcatParserRuleCall_4; }
-
+		
 		//SqmlCase
 		public RuleCall getSqmlCaseParserRuleCall_5() { return cSqmlCaseParserRuleCall_5; }
-
+		
 		//SqmlIf
 		public RuleCall getSqmlIfParserRuleCall_6() { return cSqmlIfParserRuleCall_6; }
-
+		
 		//SqmlIfNull
 		public RuleCall getSqmlIfNullParserRuleCall_7() { return cSqmlIfNullParserRuleCall_7; }
-
+		
 		//SqmlStaticIf
 		public RuleCall getSqmlStaticIfParserRuleCall_8() { return cSqmlStaticIfParserRuleCall_8; }
-
+		
 		//SqmlStaticVariableReference
 		public RuleCall getSqmlStaticVariableReferenceParserRuleCall_9() { return cSqmlStaticVariableReferenceParserRuleCall_9; }
-
+		
 		//SqmlLiteral
 		public RuleCall getSqmlLiteralParserRuleCall_10() { return cSqmlLiteralParserRuleCall_10; }
 	}
-
 	public class SqmlSubSelectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlSubSelect");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3146,25 +3226,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//SqmlSubSelect:
-		//	'(' select=SqmlSelect ')';
+		//    '(' select=SqmlSelect ')';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'(' select=SqmlSelect ')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
-
+		
 		//select=SqmlSelect
 		public Assignment getSelectAssignment_1() { return cSelectAssignment_1; }
-
+		
 		//SqmlSelect
 		public RuleCall getSelectSqmlSelectParserRuleCall_1_0() { return cSelectSqmlSelectParserRuleCall_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
 	}
-
 	public class SqmlStaticVariableReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticVariableReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3176,31 +3255,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariableISqmlStaticVariableIDTerminalRuleCall_2_0_1 = (RuleCall)cVariableISqmlStaticVariableCrossReference_2_0.eContents().get(1);
 		
 		//SqmlStaticVariableReference:
-		//	nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable];
+		//    nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable|ID];
 		@Override public ParserRule getRule() { return rule; }
-
-		//nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable]
+		
+		//nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable|ID]
 		public Group getGroup() { return cGroup; }
-
+		
 		//nextIteration?='NEXT'?
 		public Assignment getNextIterationAssignment_0() { return cNextIterationAssignment_0; }
-
+		
 		//'NEXT'
 		public Keyword getNextIterationNEXTKeyword_0_0() { return cNextIterationNEXTKeyword_0_0; }
-
+		
 		//'$'
 		public Keyword getDollarSignKeyword_1() { return cDollarSignKeyword_1; }
-
-		//variable=[ISqmlStaticVariable]
+		
+		//variable=[ISqmlStaticVariable|ID]
 		public Assignment getVariableAssignment_2() { return cVariableAssignment_2; }
-
-		//[ISqmlStaticVariable]
+		
+		//[ISqmlStaticVariable|ID]
 		public CrossReference getVariableISqmlStaticVariableCrossReference_2_0() { return cVariableISqmlStaticVariableCrossReference_2_0; }
-
+		
 		//ID
 		public RuleCall getVariableISqmlStaticVariableIDTerminalRuleCall_2_0_1() { return cVariableISqmlStaticVariableIDTerminalRuleCall_2_0_1; }
 	}
-
 	public class SqmlRowConstructorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlRowConstructor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3216,43 +3294,42 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SqmlRowConstructor:
-		//	explicit?='ROW'? '(' expressions+=SqmlExpression (',' expressions+=SqmlExpression)* ')';
+		//    explicit?='ROW'? '(' expressions+=SqmlExpression (',' expressions+=SqmlExpression)* ')';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//explicit?='ROW'? '(' expressions+=SqmlExpression (',' expressions+=SqmlExpression)* ')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//explicit?='ROW'?
 		public Assignment getExplicitAssignment_0() { return cExplicitAssignment_0; }
-
+		
 		//'ROW'
 		public Keyword getExplicitROWKeyword_0_0() { return cExplicitROWKeyword_0_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//expressions+=SqmlExpression
 		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionsSqmlExpressionParserRuleCall_2_0() { return cExpressionsSqmlExpressionParserRuleCall_2_0; }
-
+		
 		//(',' expressions+=SqmlExpression)*
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
+		
 		//expressions+=SqmlExpression
 		public Assignment getExpressionsAssignment_3_1() { return cExpressionsAssignment_3_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionsSqmlExpressionParserRuleCall_3_1_0() { return cExpressionsSqmlExpressionParserRuleCall_3_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
-
 	public class SqmlNegationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlNegation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3261,22 +3338,21 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionSqmlPrimayParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
 		
 		//SqmlNegation:
-		//	'-' expression=SqmlPrimay;
+		//    '-' expression=SqmlPrimay;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'-' expression=SqmlPrimay
 		public Group getGroup() { return cGroup; }
-
+		
 		//'-'
 		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-
+		
 		//expression=SqmlPrimay
 		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
-
+		
 		//SqmlPrimay
 		public RuleCall getExpressionSqmlPrimayParserRuleCall_1_0() { return cExpressionSqmlPrimayParserRuleCall_1_0; }
 	}
-
 	public class SqmlFunctionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFunctionCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3294,49 +3370,48 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SqmlFunctionCall:
-		//	function=[SqmlFunction] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')';
+		//    function=[SqmlFunction|ID] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')';
 		@Override public ParserRule getRule() { return rule; }
-
-		//function=[SqmlFunction] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')'
+		
+		//function=[SqmlFunction|ID] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')'
 		public Group getGroup() { return cGroup; }
-
-		//function=[SqmlFunction]
+		
+		//function=[SqmlFunction|ID]
 		public Assignment getFunctionAssignment_0() { return cFunctionAssignment_0; }
-
-		//[SqmlFunction]
+		
+		//[SqmlFunction|ID]
 		public CrossReference getFunctionSqmlFunctionCrossReference_0_0() { return cFunctionSqmlFunctionCrossReference_0_0; }
-
+		
 		//ID
 		public RuleCall getFunctionSqmlFunctionIDTerminalRuleCall_0_0_1() { return cFunctionSqmlFunctionIDTerminalRuleCall_0_0_1; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//(arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)?
 		public Group getGroup_2() { return cGroup_2; }
-
+		
 		//arguments+=SqmlOperand
 		public Assignment getArgumentsAssignment_2_0() { return cArgumentsAssignment_2_0; }
-
+		
 		//SqmlOperand
 		public RuleCall getArgumentsSqmlOperandParserRuleCall_2_0_0() { return cArgumentsSqmlOperandParserRuleCall_2_0_0; }
-
+		
 		//(',' arguments+=SqmlOperand)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
-
+		
 		//','
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
-
+		
 		//arguments+=SqmlOperand
 		public Assignment getArgumentsAssignment_2_1_1() { return cArgumentsAssignment_2_1_1; }
-
+		
 		//SqmlOperand
 		public RuleCall getArgumentsSqmlOperandParserRuleCall_2_1_1_0() { return cArgumentsSqmlOperandParserRuleCall_2_1_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
-
 	public class SqmlGroupConcatElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlGroupConcat");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3366,91 +3441,94 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SqmlGroupConcat:
-		//	'GROUP_CONCAT' '('
-		//	distinct?='DISTINCT'?
-		//	expressions+=SqmlOperand (',' expressions+=SqmlOperand)* ('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (','
-		//	orderByExpressions+=SqmlOrderByExpression)*)? ('SEPARATOR' separator=STRING)?
-		//	')';
+		//    'GROUP_CONCAT' '('
+		//    distinct?='DISTINCT'?
+		//    expressions+=SqmlOperand (',' expressions+=SqmlOperand)*
+		//    ('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (',' orderByExpressions+=SqmlOrderByExpression)*)?
+		//    ('SEPARATOR' separator=STRING)?
+		//    ')';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'GROUP_CONCAT' '(' distinct?='DISTINCT'? expressions+=SqmlOperand (',' expressions+=SqmlOperand)* ('ORDER' 'BY'
-		//orderByExpressions+=SqmlOrderByExpression (',' orderByExpressions+=SqmlOrderByExpression)*)? ('SEPARATOR'
-		//separator=STRING)? ')'
+		
+		//'GROUP_CONCAT' '('
+		//distinct?='DISTINCT'?
+		//expressions+=SqmlOperand (',' expressions+=SqmlOperand)*
+		//('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (',' orderByExpressions+=SqmlOrderByExpression)*)?
+		//('SEPARATOR' separator=STRING)?
+		//')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'GROUP_CONCAT'
 		public Keyword getGROUP_CONCATKeyword_0() { return cGROUP_CONCATKeyword_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//distinct?='DISTINCT'?
 		public Assignment getDistinctAssignment_2() { return cDistinctAssignment_2; }
-
+		
 		//'DISTINCT'
 		public Keyword getDistinctDISTINCTKeyword_2_0() { return cDistinctDISTINCTKeyword_2_0; }
-
+		
 		//expressions+=SqmlOperand
 		public Assignment getExpressionsAssignment_3() { return cExpressionsAssignment_3; }
-
+		
 		//SqmlOperand
 		public RuleCall getExpressionsSqmlOperandParserRuleCall_3_0() { return cExpressionsSqmlOperandParserRuleCall_3_0; }
-
+		
 		//(',' expressions+=SqmlOperand)*
 		public Group getGroup_4() { return cGroup_4; }
-
+		
 		//','
 		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
-
+		
 		//expressions+=SqmlOperand
 		public Assignment getExpressionsAssignment_4_1() { return cExpressionsAssignment_4_1; }
-
+		
 		//SqmlOperand
 		public RuleCall getExpressionsSqmlOperandParserRuleCall_4_1_0() { return cExpressionsSqmlOperandParserRuleCall_4_1_0; }
-
+		
 		//('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (',' orderByExpressions+=SqmlOrderByExpression)*)?
 		public Group getGroup_5() { return cGroup_5; }
-
+		
 		//'ORDER'
 		public Keyword getORDERKeyword_5_0() { return cORDERKeyword_5_0; }
-
+		
 		//'BY'
 		public Keyword getBYKeyword_5_1() { return cBYKeyword_5_1; }
-
+		
 		//orderByExpressions+=SqmlOrderByExpression
 		public Assignment getOrderByExpressionsAssignment_5_2() { return cOrderByExpressionsAssignment_5_2; }
-
+		
 		//SqmlOrderByExpression
 		public RuleCall getOrderByExpressionsSqmlOrderByExpressionParserRuleCall_5_2_0() { return cOrderByExpressionsSqmlOrderByExpressionParserRuleCall_5_2_0; }
-
+		
 		//(',' orderByExpressions+=SqmlOrderByExpression)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
-
+		
 		//','
 		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
-
+		
 		//orderByExpressions+=SqmlOrderByExpression
 		public Assignment getOrderByExpressionsAssignment_5_3_1() { return cOrderByExpressionsAssignment_5_3_1; }
-
+		
 		//SqmlOrderByExpression
 		public RuleCall getOrderByExpressionsSqmlOrderByExpressionParserRuleCall_5_3_1_0() { return cOrderByExpressionsSqmlOrderByExpressionParserRuleCall_5_3_1_0; }
-
+		
 		//('SEPARATOR' separator=STRING)?
 		public Group getGroup_6() { return cGroup_6; }
-
+		
 		//'SEPARATOR'
 		public Keyword getSEPARATORKeyword_6_0() { return cSEPARATORKeyword_6_0; }
-
+		
 		//separator=STRING
 		public Assignment getSeparatorAssignment_6_1() { return cSeparatorAssignment_6_1; }
-
+		
 		//STRING
 		public RuleCall getSeparatorSTRINGTerminalRuleCall_6_1_0() { return cSeparatorSTRINGTerminalRuleCall_6_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
-
 	public class SqmlCaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlCase");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3466,43 +3544,42 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cENDKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SqmlCase:
-		//	'CASE' operand=SqmlExpression? whens+=SqmlCaseWhen+ ('ELSE' elseExpression=SqmlExpression)? 'END';
+		//    'CASE' operand=SqmlExpression? (whens+=SqmlCaseWhen)+ ('ELSE' elseExpression=SqmlExpression)? 'END';
 		@Override public ParserRule getRule() { return rule; }
-
-		//'CASE' operand=SqmlExpression? whens+=SqmlCaseWhen+ ('ELSE' elseExpression=SqmlExpression)? 'END'
+		
+		//'CASE' operand=SqmlExpression? (whens+=SqmlCaseWhen)+ ('ELSE' elseExpression=SqmlExpression)? 'END'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'CASE'
 		public Keyword getCASEKeyword_0() { return cCASEKeyword_0; }
-
+		
 		//operand=SqmlExpression?
 		public Assignment getOperandAssignment_1() { return cOperandAssignment_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getOperandSqmlExpressionParserRuleCall_1_0() { return cOperandSqmlExpressionParserRuleCall_1_0; }
-
-		//whens+=SqmlCaseWhen+
+		
+		//(whens+=SqmlCaseWhen)+
 		public Assignment getWhensAssignment_2() { return cWhensAssignment_2; }
-
+		
 		//SqmlCaseWhen
 		public RuleCall getWhensSqmlCaseWhenParserRuleCall_2_0() { return cWhensSqmlCaseWhenParserRuleCall_2_0; }
-
+		
 		//('ELSE' elseExpression=SqmlExpression)?
 		public Group getGroup_3() { return cGroup_3; }
-
+		
 		//'ELSE'
 		public Keyword getELSEKeyword_3_0() { return cELSEKeyword_3_0; }
-
+		
 		//elseExpression=SqmlExpression
 		public Assignment getElseExpressionAssignment_3_1() { return cElseExpressionAssignment_3_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getElseExpressionSqmlExpressionParserRuleCall_3_1_0() { return cElseExpressionSqmlExpressionParserRuleCall_3_1_0; }
-
+		
 		//'END'
 		public Keyword getENDKeyword_4() { return cENDKeyword_4; }
 	}
-
 	public class SqmlCaseWhenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlCaseWhen");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3514,31 +3591,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cThenExpressionSqmlExpressionParserRuleCall_3_0 = (RuleCall)cThenExpressionAssignment_3.eContents().get(0);
 		
 		//SqmlCaseWhen:
-		//	'WHEN' whenExpression=SqmlExpression 'THEN' thenExpression=SqmlExpression;
+		//    'WHEN' whenExpression=SqmlExpression 'THEN' thenExpression=SqmlExpression;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'WHEN' whenExpression=SqmlExpression 'THEN' thenExpression=SqmlExpression
 		public Group getGroup() { return cGroup; }
-
+		
 		//'WHEN'
 		public Keyword getWHENKeyword_0() { return cWHENKeyword_0; }
-
+		
 		//whenExpression=SqmlExpression
 		public Assignment getWhenExpressionAssignment_1() { return cWhenExpressionAssignment_1; }
-
+		
 		//SqmlExpression
 		public RuleCall getWhenExpressionSqmlExpressionParserRuleCall_1_0() { return cWhenExpressionSqmlExpressionParserRuleCall_1_0; }
-
+		
 		//'THEN'
 		public Keyword getTHENKeyword_2() { return cTHENKeyword_2; }
-
+		
 		//thenExpression=SqmlExpression
 		public Assignment getThenExpressionAssignment_3() { return cThenExpressionAssignment_3; }
-
+		
 		//SqmlExpression
 		public RuleCall getThenExpressionSqmlExpressionParserRuleCall_3_0() { return cThenExpressionSqmlExpressionParserRuleCall_3_0; }
 	}
-
 	public class SqmlIfElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlIf");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3555,46 +3631,45 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SqmlIf:
-		//	'IF' '(' condition=SqmlExpression ',' thenExpression=SqmlExpression ',' elseExpression=SqmlExpression ')';
+		//    'IF' '(' condition=SqmlExpression ',' thenExpression=SqmlExpression ',' elseExpression=SqmlExpression ')';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'IF' '(' condition=SqmlExpression ',' thenExpression=SqmlExpression ',' elseExpression=SqmlExpression ')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'IF'
 		public Keyword getIFKeyword_0() { return cIFKeyword_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//condition=SqmlExpression
 		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
-
+		
 		//SqmlExpression
 		public RuleCall getConditionSqmlExpressionParserRuleCall_2_0() { return cConditionSqmlExpressionParserRuleCall_2_0; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
+		
 		//thenExpression=SqmlExpression
 		public Assignment getThenExpressionAssignment_4() { return cThenExpressionAssignment_4; }
-
+		
 		//SqmlExpression
 		public RuleCall getThenExpressionSqmlExpressionParserRuleCall_4_0() { return cThenExpressionSqmlExpressionParserRuleCall_4_0; }
-
+		
 		//','
 		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
-
+		
 		//elseExpression=SqmlExpression
 		public Assignment getElseExpressionAssignment_6() { return cElseExpressionAssignment_6; }
-
+		
 		//SqmlExpression
 		public RuleCall getElseExpressionSqmlExpressionParserRuleCall_6_0() { return cElseExpressionSqmlExpressionParserRuleCall_6_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
-
 	public class SqmlIfNullElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlIfNull");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3608,37 +3683,36 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SqmlIfNull:
-		//	'IFNULL' '(' testExpression=SqmlExpression ',' thenExpression=SqmlExpression ')';
+		//    'IFNULL' '(' testExpression=SqmlExpression ',' thenExpression=SqmlExpression ')';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'IFNULL' '(' testExpression=SqmlExpression ',' thenExpression=SqmlExpression ')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'IFNULL'
 		public Keyword getIFNULLKeyword_0() { return cIFNULLKeyword_0; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-
+		
 		//testExpression=SqmlExpression
 		public Assignment getTestExpressionAssignment_2() { return cTestExpressionAssignment_2; }
-
+		
 		//SqmlExpression
 		public RuleCall getTestExpressionSqmlExpressionParserRuleCall_2_0() { return cTestExpressionSqmlExpressionParserRuleCall_2_0; }
-
+		
 		//','
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-
+		
 		//thenExpression=SqmlExpression
 		public Assignment getThenExpressionAssignment_4() { return cThenExpressionAssignment_4; }
-
+		
 		//SqmlExpression
 		public RuleCall getThenExpressionSqmlExpressionParserRuleCall_4_0() { return cThenExpressionSqmlExpressionParserRuleCall_4_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
-
 	public class SqmlStaticIfElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticIf");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3669,103 +3743,102 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
 		
 		//SqmlStaticIf:
-		//	'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}' (=> ('ELSE' 'IF')
-		//	conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')* ('ELSE' '{' elseExpression=SqmlExpression
-		//	'}')?;
+		//    'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}'
+		//    (=>('ELSE' 'IF') conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')*
+		//    ('ELSE' '{' elseExpression=SqmlExpression '}')?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}' (=> ('ELSE' 'IF')
-		//conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')* ('ELSE' '{' elseExpression=SqmlExpression '}')?
+		
+		//'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}'
+		//(=>('ELSE' 'IF') conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')*
+		//('ELSE' '{' elseExpression=SqmlExpression '}')?
 		public Group getGroup() { return cGroup; }
-
+		
 		//'STATIC'
 		public Keyword getSTATICKeyword_0() { return cSTATICKeyword_0; }
-
+		
 		//'IF'
 		public Keyword getIFKeyword_1() { return cIFKeyword_1; }
-
+		
 		//conditions+=SqmlStaticExpression
 		public Assignment getConditionsAssignment_2() { return cConditionsAssignment_2; }
-
+		
 		//SqmlStaticExpression
 		public RuleCall getConditionsSqmlStaticExpressionParserRuleCall_2_0() { return cConditionsSqmlStaticExpressionParserRuleCall_2_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
+		
 		//expressions+=SqmlExpression
 		public Assignment getExpressionsAssignment_4() { return cExpressionsAssignment_4; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionsSqmlExpressionParserRuleCall_4_0() { return cExpressionsSqmlExpressionParserRuleCall_4_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-
-		//(=> ('ELSE' 'IF') conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')*
+		
+		//(=>('ELSE' 'IF') conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')*
 		public Group getGroup_6() { return cGroup_6; }
-
-		//=> ('ELSE' 'IF')
+		
+		//=>('ELSE' 'IF')
 		public Group getGroup_6_0() { return cGroup_6_0; }
-
-		//('ELSE' 'IF')
+		
+		//'ELSE' 'IF'
 		public Group getGroup_6_0_0() { return cGroup_6_0_0; }
-
+		
 		//'ELSE'
 		public Keyword getELSEKeyword_6_0_0_0() { return cELSEKeyword_6_0_0_0; }
-
+		
 		//'IF'
 		public Keyword getIFKeyword_6_0_0_1() { return cIFKeyword_6_0_0_1; }
-
+		
 		//conditions+=SqmlStaticExpression
 		public Assignment getConditionsAssignment_6_1() { return cConditionsAssignment_6_1; }
-
+		
 		//SqmlStaticExpression
 		public RuleCall getConditionsSqmlStaticExpressionParserRuleCall_6_1_0() { return cConditionsSqmlStaticExpressionParserRuleCall_6_1_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6_2() { return cLeftCurlyBracketKeyword_6_2; }
-
+		
 		//expressions+=SqmlExpression
 		public Assignment getExpressionsAssignment_6_3() { return cExpressionsAssignment_6_3; }
-
+		
 		//SqmlExpression
 		public RuleCall getExpressionsSqmlExpressionParserRuleCall_6_3_0() { return cExpressionsSqmlExpressionParserRuleCall_6_3_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
-
+		
 		//('ELSE' '{' elseExpression=SqmlExpression '}')?
 		public Group getGroup_7() { return cGroup_7; }
-
+		
 		//'ELSE'
 		public Keyword getELSEKeyword_7_0() { return cELSEKeyword_7_0; }
-
+		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
-
+		
 		//elseExpression=SqmlExpression
 		public Assignment getElseExpressionAssignment_7_2() { return cElseExpressionAssignment_7_2; }
-
+		
 		//SqmlExpression
 		public RuleCall getElseExpressionSqmlExpressionParserRuleCall_7_2_0() { return cElseExpressionSqmlExpressionParserRuleCall_7_2_0; }
-
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7_3() { return cRightCurlyBracketKeyword_7_3; }
 	}
-
 	public class SqmlStaticExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticExpression");
 		private final RuleCall cSqmlStaticOrParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//SqmlStaticExpression ISqmlStaticExpression:
-		//	SqmlStaticOr;
+		//SqmlStaticExpression returns ISqmlStaticExpression:
+		//    SqmlStaticOr;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlStaticOr
 		public RuleCall getSqmlStaticOrParserRuleCall() { return cSqmlStaticOrParserRuleCall; }
 	}
-
 	public class SqmlStaticOrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticOr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3776,32 +3849,31 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightSqmlStaticAndParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//SqmlStaticOr ISqmlStaticExpression:
-		//	SqmlStaticAnd ({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*;
+		//SqmlStaticOr returns ISqmlStaticExpression:
+		//    SqmlStaticAnd ({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlStaticAnd ({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//SqmlStaticAnd
 		public RuleCall getSqmlStaticAndParserRuleCall_0() { return cSqmlStaticAndParserRuleCall_0; }
-
+		
 		//({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlStaticOr.left=current}
 		public Action getSqmlStaticOrLeftAction_1_0() { return cSqmlStaticOrLeftAction_1_0; }
-
+		
 		//'OR'
 		public Keyword getORKeyword_1_1() { return cORKeyword_1_1; }
-
+		
 		//right=SqmlStaticAnd
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
+		
 		//SqmlStaticAnd
 		public RuleCall getRightSqmlStaticAndParserRuleCall_1_2_0() { return cRightSqmlStaticAndParserRuleCall_1_2_0; }
 	}
-
 	public class SqmlStaticAndElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticAnd");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3812,32 +3884,31 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightSqmlStaticAtomParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//SqmlStaticAnd ISqmlStaticExpression:
-		//	SqmlStaticAtom ({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*;
+		//SqmlStaticAnd returns ISqmlStaticExpression:
+		//    SqmlStaticAtom ({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//SqmlStaticAtom ({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//SqmlStaticAtom
 		public RuleCall getSqmlStaticAtomParserRuleCall_0() { return cSqmlStaticAtomParserRuleCall_0; }
-
+		
 		//({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlStaticAnd.left=current}
 		public Action getSqmlStaticAndLeftAction_1_0() { return cSqmlStaticAndLeftAction_1_0; }
-
+		
 		//'AND'
 		public Keyword getANDKeyword_1_1() { return cANDKeyword_1_1; }
-
+		
 		//right=SqmlStaticAtom
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
+		
 		//SqmlStaticAtom
 		public RuleCall getRightSqmlStaticAtomParserRuleCall_1_2_0() { return cRightSqmlStaticAtomParserRuleCall_1_2_0; }
 	}
-
 	public class SqmlStaticAtomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticAtom");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -3846,26 +3917,31 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlStaticIsNullParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cSqmlStaticIsTrueParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//SqmlStaticAtom ISqmlStaticExpression:
-		//	SqmlStaticParentheses | SqmlStaticIsEmpty | SqmlStaticIsNull | SqmlStaticIsTrue;
+		//SqmlStaticAtom returns ISqmlStaticExpression:
+		//    SqmlStaticParentheses |
+		//    SqmlStaticIsEmpty |
+		//    SqmlStaticIsNull |
+		//    SqmlStaticIsTrue;
 		@Override public ParserRule getRule() { return rule; }
-
-		//SqmlStaticParentheses | SqmlStaticIsEmpty | SqmlStaticIsNull | SqmlStaticIsTrue
+		
+		//SqmlStaticParentheses |
+		//SqmlStaticIsEmpty |
+		//SqmlStaticIsNull |
+		//SqmlStaticIsTrue
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//SqmlStaticParentheses
 		public RuleCall getSqmlStaticParenthesesParserRuleCall_0() { return cSqmlStaticParenthesesParserRuleCall_0; }
-
+		
 		//SqmlStaticIsEmpty
 		public RuleCall getSqmlStaticIsEmptyParserRuleCall_1() { return cSqmlStaticIsEmptyParserRuleCall_1; }
-
+		
 		//SqmlStaticIsNull
 		public RuleCall getSqmlStaticIsNullParserRuleCall_2() { return cSqmlStaticIsNullParserRuleCall_2; }
-
+		
 		//SqmlStaticIsTrue
 		public RuleCall getSqmlStaticIsTrueParserRuleCall_3() { return cSqmlStaticIsTrueParserRuleCall_3; }
 	}
-
 	public class SqmlStaticIsEmptyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticIsEmpty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3877,31 +3953,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEMPTYKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SqmlStaticIsEmpty:
-		//	parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'EMPTY';
+		//    parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'EMPTY';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'EMPTY'
 		public Group getGroup() { return cGroup; }
-
+		
 		//parameterReference=SqmlStaticVariableReference
 		public Assignment getParameterReferenceAssignment_0() { return cParameterReferenceAssignment_0; }
-
+		
 		//SqmlStaticVariableReference
 		public RuleCall getParameterReferenceSqmlStaticVariableReferenceParserRuleCall_0_0() { return cParameterReferenceSqmlStaticVariableReferenceParserRuleCall_0_0; }
-
+		
 		//'IS'
 		public Keyword getISKeyword_1() { return cISKeyword_1; }
-
+		
 		//not?='NOT'?
 		public Assignment getNotAssignment_2() { return cNotAssignment_2; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_2_0() { return cNotNOTKeyword_2_0; }
-
+		
 		//'EMPTY'
 		public Keyword getEMPTYKeyword_3() { return cEMPTYKeyword_3; }
 	}
-
 	public class SqmlStaticIsNullElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticIsNull");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3913,31 +3988,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNULLKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SqmlStaticIsNull:
-		//	parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'NULL';
+		//    parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'NULL';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'NULL'
 		public Group getGroup() { return cGroup; }
-
+		
 		//parameterReference=SqmlStaticVariableReference
 		public Assignment getParameterReferenceAssignment_0() { return cParameterReferenceAssignment_0; }
-
+		
 		//SqmlStaticVariableReference
 		public RuleCall getParameterReferenceSqmlStaticVariableReferenceParserRuleCall_0_0() { return cParameterReferenceSqmlStaticVariableReferenceParserRuleCall_0_0; }
-
+		
 		//'IS'
 		public Keyword getISKeyword_1() { return cISKeyword_1; }
-
+		
 		//not?='NOT'?
 		public Assignment getNotAssignment_2() { return cNotAssignment_2; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_2_0() { return cNotNOTKeyword_2_0; }
-
+		
 		//'NULL'
 		public Keyword getNULLKeyword_3() { return cNULLKeyword_3; }
 	}
-
 	public class SqmlStaticIsTrueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticIsTrue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3947,25 +4021,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParameterReferenceSqmlStaticVariableReferenceParserRuleCall_1_0 = (RuleCall)cParameterReferenceAssignment_1.eContents().get(0);
 		
 		//SqmlStaticIsTrue:
-		//	not?='NOT'? parameterReference=SqmlStaticVariableReference;
+		//    not?='NOT'? parameterReference=SqmlStaticVariableReference;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//not?='NOT'? parameterReference=SqmlStaticVariableReference
 		public Group getGroup() { return cGroup; }
-
+		
 		//not?='NOT'?
 		public Assignment getNotAssignment_0() { return cNotAssignment_0; }
-
+		
 		//'NOT'
 		public Keyword getNotNOTKeyword_0_0() { return cNotNOTKeyword_0_0; }
-
+		
 		//parameterReference=SqmlStaticVariableReference
 		public Assignment getParameterReferenceAssignment_1() { return cParameterReferenceAssignment_1; }
-
+		
 		//SqmlStaticVariableReference
 		public RuleCall getParameterReferenceSqmlStaticVariableReferenceParserRuleCall_1_0() { return cParameterReferenceSqmlStaticVariableReferenceParserRuleCall_1_0; }
 	}
-
 	public class SqmlStaticParenthesesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStaticParentheses");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3975,25 +4048,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//SqmlStaticParentheses:
-		//	'(' expression=SqmlStaticExpression ')';
+		//    '(' expression=SqmlStaticExpression ')';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'(' expression=SqmlStaticExpression ')'
 		public Group getGroup() { return cGroup; }
-
+		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
-
+		
 		//expression=SqmlStaticExpression
 		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
-
+		
 		//SqmlStaticExpression
 		public RuleCall getExpressionSqmlStaticExpressionParserRuleCall_1_0() { return cExpressionSqmlStaticExpressionParserRuleCall_1_0; }
-
+		
 		//')'
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
 	}
-
 	public class SqmlValueReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlValueReference");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -4005,31 +4077,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDotStarFullStopAsteriskKeyword_2_0 = (Keyword)cDotStarAssignment_2.eContents().get(0);
 		
 		//SqmlValueReference:
-		//	nextIteration?='NEXT'? path=SqmlPath dotStar?='.*'?;
+		//    nextIteration?='NEXT'? path=SqmlPath dotStar?=('.*')?;
 		@Override public ParserRule getRule() { return rule; }
-
-		//nextIteration?='NEXT'? path=SqmlPath dotStar?='.*'?
+		
+		//nextIteration?='NEXT'? path=SqmlPath dotStar?=('.*')?
 		public Group getGroup() { return cGroup; }
-
+		
 		//nextIteration?='NEXT'?
 		public Assignment getNextIterationAssignment_0() { return cNextIterationAssignment_0; }
-
+		
 		//'NEXT'
 		public Keyword getNextIterationNEXTKeyword_0_0() { return cNextIterationNEXTKeyword_0_0; }
-
+		
 		//path=SqmlPath
 		public Assignment getPathAssignment_1() { return cPathAssignment_1; }
-
+		
 		//SqmlPath
 		public RuleCall getPathSqmlPathParserRuleCall_1_0() { return cPathSqmlPathParserRuleCall_1_0; }
-
-		//dotStar?='.*'?
+		
+		//dotStar?=('.*')?
 		public Assignment getDotStarAssignment_2() { return cDotStarAssignment_2; }
-
-		//'.*'
+		
+		//('.*')
 		public Keyword getDotStarFullStopAsteriskKeyword_2_0() { return cDotStarFullStopAsteriskKeyword_2_0; }
 	}
-
 	public class SqmlPathElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlPath");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -4044,40 +4115,39 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetISqmlModelElementIDTerminalRuleCall_1_2_0_1 = (RuleCall)cTargetISqmlModelElementCrossReference_1_2_0.eContents().get(1);
 		
 		//SqmlPath:
-		//	target=[ISqmlModelElement] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement])*;
+		//    target=[ISqmlModelElement|ID] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement|ID])*;
 		@Override public ParserRule getRule() { return rule; }
-
-		//target=[ISqmlModelElement] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement])*
+		
+		//target=[ISqmlModelElement|ID] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement|ID])*
 		public Group getGroup() { return cGroup; }
-
-		//target=[ISqmlModelElement]
+		
+		//target=[ISqmlModelElement|ID]
 		public Assignment getTargetAssignment_0() { return cTargetAssignment_0; }
-
-		//[ISqmlModelElement]
+		
+		//[ISqmlModelElement|ID]
 		public CrossReference getTargetISqmlModelElementCrossReference_0_0() { return cTargetISqmlModelElementCrossReference_0_0; }
-
+		
 		//ID
 		public RuleCall getTargetISqmlModelElementIDTerminalRuleCall_0_0_1() { return cTargetISqmlModelElementIDTerminalRuleCall_0_0_1; }
-
-		//({SqmlPath.parent=current} '.' target=[ISqmlModelElement])*
+		
+		//({SqmlPath.parent=current} '.' target=[ISqmlModelElement|ID])*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//{SqmlPath.parent=current}
 		public Action getSqmlPathParentAction_1_0() { return cSqmlPathParentAction_1_0; }
-
+		
 		//'.'
 		public Keyword getFullStopKeyword_1_1() { return cFullStopKeyword_1_1; }
-
-		//target=[ISqmlModelElement]
+		
+		//target=[ISqmlModelElement|ID]
 		public Assignment getTargetAssignment_1_2() { return cTargetAssignment_1_2; }
-
-		//[ISqmlModelElement]
+		
+		//[ISqmlModelElement|ID]
 		public CrossReference getTargetISqmlModelElementCrossReference_1_2_0() { return cTargetISqmlModelElementCrossReference_1_2_0; }
-
+		
 		//ID
 		public RuleCall getTargetISqmlModelElementIDTerminalRuleCall_1_2_0_1() { return cTargetISqmlModelElementIDTerminalRuleCall_1_2_0_1; }
 	}
-
 	public class SqmlLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlLiteral");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4089,134 +4159,138 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlStringLiteralParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cSqmlBooleanLiteralParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
-		///* -------------------- literals -------------------- */ //
-		//SqmlLiteral ISqmlLiteral:
-		//	SqmlIntegerLiteral | SqmlLongLiteral | SqmlFloatLiteral | SqmlDoubleLiteral | SqmlDecimalLiteral | SqmlStringLiteral |
-		//	SqmlBooleanLiteral;
+		///* -------------------- literals -------------------- */
+		////
+		//SqmlLiteral returns ISqmlLiteral:
+		//    SqmlIntegerLiteral |
+		//    SqmlLongLiteral |
+		//    SqmlFloatLiteral |
+		//    SqmlDoubleLiteral |
+		//    SqmlDecimalLiteral |
+		//    SqmlStringLiteral |
+		//    SqmlBooleanLiteral;
 		@Override public ParserRule getRule() { return rule; }
-
-		//SqmlIntegerLiteral | SqmlLongLiteral | SqmlFloatLiteral | SqmlDoubleLiteral | SqmlDecimalLiteral | SqmlStringLiteral |
+		
+		//SqmlIntegerLiteral |
+		//SqmlLongLiteral |
+		//SqmlFloatLiteral |
+		//SqmlDoubleLiteral |
+		//SqmlDecimalLiteral |
+		//SqmlStringLiteral |
 		//SqmlBooleanLiteral
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//SqmlIntegerLiteral
 		public RuleCall getSqmlIntegerLiteralParserRuleCall_0() { return cSqmlIntegerLiteralParserRuleCall_0; }
-
+		
 		//SqmlLongLiteral
 		public RuleCall getSqmlLongLiteralParserRuleCall_1() { return cSqmlLongLiteralParserRuleCall_1; }
-
+		
 		//SqmlFloatLiteral
 		public RuleCall getSqmlFloatLiteralParserRuleCall_2() { return cSqmlFloatLiteralParserRuleCall_2; }
-
+		
 		//SqmlDoubleLiteral
 		public RuleCall getSqmlDoubleLiteralParserRuleCall_3() { return cSqmlDoubleLiteralParserRuleCall_3; }
-
+		
 		//SqmlDecimalLiteral
 		public RuleCall getSqmlDecimalLiteralParserRuleCall_4() { return cSqmlDecimalLiteralParserRuleCall_4; }
-
+		
 		//SqmlStringLiteral
 		public RuleCall getSqmlStringLiteralParserRuleCall_5() { return cSqmlStringLiteralParserRuleCall_5; }
-
+		
 		//SqmlBooleanLiteral
 		public RuleCall getSqmlBooleanLiteralParserRuleCall_6() { return cSqmlBooleanLiteralParserRuleCall_6; }
 	}
-
 	public class SqmlIntegerLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlIntegerLiteral");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//SqmlIntegerLiteral:
-		//	value=INT;
+		//    value=INT;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//value=INT
 		public Assignment getValueAssignment() { return cValueAssignment; }
-
+		
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
 	}
-
 	public class SqmlLongLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlLongLiteral");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueLONGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//SqmlLongLiteral:
-		//	value=LONG;
+		//    value=LONG;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//value=LONG
 		public Assignment getValueAssignment() { return cValueAssignment; }
-
+		
 		//LONG
 		public RuleCall getValueLONGTerminalRuleCall_0() { return cValueLONGTerminalRuleCall_0; }
 	}
-
 	public class SqmlFloatLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFloatLiteral");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueFLOATTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//SqmlFloatLiteral:
-		//	value=FLOAT;
+		//    value=FLOAT;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//value=FLOAT
 		public Assignment getValueAssignment() { return cValueAssignment; }
-
+		
 		//FLOAT
 		public RuleCall getValueFLOATTerminalRuleCall_0() { return cValueFLOATTerminalRuleCall_0; }
 	}
-
 	public class SqmlDoubleLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlDoubleLiteral");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueDOUBLETerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//SqmlDoubleLiteral:
-		//	value=DOUBLE;
+		//    value=DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//value=DOUBLE
 		public Assignment getValueAssignment() { return cValueAssignment; }
-
+		
 		//DOUBLE
 		public RuleCall getValueDOUBLETerminalRuleCall_0() { return cValueDOUBLETerminalRuleCall_0; }
 	}
-
 	public class SqmlDecimalLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlDecimalLiteral");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueDECIMALTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//SqmlDecimalLiteral:
-		//	value=DECIMAL;
+		//    value=DECIMAL;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//value=DECIMAL
 		public Assignment getValueAssignment() { return cValueAssignment; }
-
+		
 		//DECIMAL
 		public RuleCall getValueDECIMALTerminalRuleCall_0() { return cValueDECIMALTerminalRuleCall_0; }
 	}
-
 	public class SqmlStringLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlStringLiteral");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//SqmlStringLiteral:
-		//	value=STRING;
+		//    value=STRING;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//value=STRING
 		public Assignment getValueAssignment() { return cValueAssignment; }
-
+		
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
-
 	public class SqmlBooleanLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlBooleanLiteral");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4229,34 +4303,35 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cSqmlBooleanLiteralAction_1_1 = (Action)cGroup_1.eContents().get(1);
 		
 		//SqmlBooleanLiteral:
-		//	{SqmlBooleanLiteral} ^true?='TRUE' | 'FALSE' {SqmlBooleanLiteral};
+		//    {SqmlBooleanLiteral} (^true?='TRUE')
+		//    | 'FALSE' {SqmlBooleanLiteral};
 		@Override public ParserRule getRule() { return rule; }
-
-		//{SqmlBooleanLiteral} ^true?='TRUE' | 'FALSE' {SqmlBooleanLiteral}
+		
+		//{SqmlBooleanLiteral} (^true?='TRUE')
+		//| 'FALSE' {SqmlBooleanLiteral}
 		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//{SqmlBooleanLiteral} ^true?='TRUE'
+		
+		//{SqmlBooleanLiteral} (^true?='TRUE')
 		public Group getGroup_0() { return cGroup_0; }
-
+		
 		//{SqmlBooleanLiteral}
 		public Action getSqmlBooleanLiteralAction_0_0() { return cSqmlBooleanLiteralAction_0_0; }
-
-		//^true?='TRUE'
+		
+		//(^true?='TRUE')
 		public Assignment getTrueAssignment_0_1() { return cTrueAssignment_0_1; }
-
+		
 		//'TRUE'
 		public Keyword getTrueTRUEKeyword_0_1_0() { return cTrueTRUEKeyword_0_1_0; }
-
+		
 		//'FALSE' {SqmlBooleanLiteral}
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//'FALSE'
 		public Keyword getFALSEKeyword_1_0() { return cFALSEKeyword_1_0; }
-
+		
 		//{SqmlBooleanLiteral}
 		public Action getSqmlBooleanLiteralAction_1_1() { return cSqmlBooleanLiteralAction_1_1; }
 	}
-
 	public class SqmlFunctionNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlFunctionName");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4266,25 +4341,24 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSqmlMultiplicationOperatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//SqmlFunctionName:
-		//	ID | SqmlComparisonOperator | SqmlAdditionOperator | SqmlMultiplicationOperator;
+		//    ID | SqmlComparisonOperator | SqmlAdditionOperator | SqmlMultiplicationOperator;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//ID | SqmlComparisonOperator | SqmlAdditionOperator | SqmlMultiplicationOperator
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
+		
 		//SqmlComparisonOperator
 		public RuleCall getSqmlComparisonOperatorParserRuleCall_1() { return cSqmlComparisonOperatorParserRuleCall_1; }
-
+		
 		//SqmlAdditionOperator
 		public RuleCall getSqmlAdditionOperatorParserRuleCall_2() { return cSqmlAdditionOperatorParserRuleCall_2; }
-
+		
 		//SqmlMultiplicationOperator
 		public RuleCall getSqmlMultiplicationOperatorParserRuleCall_3() { return cSqmlMultiplicationOperatorParserRuleCall_3; }
 	}
-
 	public class SqmlComparisonOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlComparisonOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4296,31 +4370,30 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGreaterThanSignEqualsSignKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
 		//SqmlComparisonOperator:
-		//	'=' | '!=' | '<' | '<=' | '>' | '>=';
+		//    '=' | '!=' | '<' | '<=' | '>' | '>=';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'=' | '!=' | '<' | '<=' | '>' | '>='
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//'='
 		public Keyword getEqualsSignKeyword_0() { return cEqualsSignKeyword_0; }
-
+		
 		//'!='
 		public Keyword getExclamationMarkEqualsSignKeyword_1() { return cExclamationMarkEqualsSignKeyword_1; }
-
+		
 		//'<'
 		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
-
+		
 		//'<='
 		public Keyword getLessThanSignEqualsSignKeyword_3() { return cLessThanSignEqualsSignKeyword_3; }
-
+		
 		//'>'
 		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
-
+		
 		//'>='
 		public Keyword getGreaterThanSignEqualsSignKeyword_5() { return cGreaterThanSignEqualsSignKeyword_5; }
 	}
-
 	public class SqmlAdditionOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlAdditionOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4328,19 +4401,18 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//SqmlAdditionOperator:
-		//	'+' | '-';
+		//    '+' | '-';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'+' | '-'
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//'+'
 		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
-
+		
 		//'-'
 		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
 	}
-
 	public class SqmlMultiplicationOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlMultiplicationOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -4349,22 +4421,21 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPercentSignKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//SqmlMultiplicationOperator:
-		//	'*' | '/' | '%';
+		//    '*' | '/' | '%';
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//'*' | '/' | '%'
 		public Alternatives getAlternatives() { return cAlternatives; }
-
+		
 		//'*'
 		public Keyword getAsteriskKeyword_0() { return cAsteriskKeyword_0; }
-
+		
 		//'/'
 		public Keyword getSolidusKeyword_1() { return cSolidusKeyword_1; }
-
+		
 		//'%'
 		public Keyword getPercentSignKeyword_2() { return cPercentSignKeyword_2; }
 	}
-
 	public class QualifiedNameWithWildcardElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.QualifiedNameWithWildcard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -4372,19 +4443,18 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//QualifiedNameWithWildcard:
-		//	QualifiedName '.*'?;
+		//    QualifiedName '.*'?;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//QualifiedName '.*'?
 		public Group getGroup() { return cGroup; }
-
+		
 		//QualifiedName
 		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
-
+		
 		//'.*'?
 		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
-
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.QualifiedName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -4394,27 +4464,26 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedName:
-		//	ID ('.' ID)*;
+		//    ID ('.' ID)*;
 		@Override public ParserRule getRule() { return rule; }
-
+		
 		//ID ('.' ID)*
 		public Group getGroup() { return cGroup; }
-
+		
 		//ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
+		
 		//('.' ID)*
 		public Group getGroup_1() { return cGroup_1; }
-
+		
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
+		
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	
-	
-	public class SqmlForeignKeyActionElements extends AbstractEnumRuleElementFinder {
+	public class SqmlForeignKeyActionElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.softicar.sqml.Sqml.SqmlForeignKeyAction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cCASCADEEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
@@ -4429,43 +4498,47 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSET_NULLSET_NULLKeyword_4_0 = (Keyword)cSET_NULLEnumLiteralDeclaration_4.eContents().get(0);
 		
 		//enum SqmlForeignKeyAction:
-		//	CASCADE |
-		//	NO_ACTION |
-		//	RESTRICT |
-		//	SET_DEFAULT |
-		//	SET_NULL;
+		//    CASCADE='CASCADE' |
+		//    NO_ACTION='NO_ACTION' |
+		//    RESTRICT='RESTRICT' |
+		//    SET_DEFAULT='SET_DEFAULT' |
+		//    SET_NULL='SET_NULL';
 		public EnumRule getRule() { return rule; }
-
-		//CASCADE | NO_ACTION | RESTRICT | SET_DEFAULT | SET_NULL
+		
+		//CASCADE='CASCADE' |
+		//NO_ACTION='NO_ACTION' |
+		//RESTRICT='RESTRICT' |
+		//SET_DEFAULT='SET_DEFAULT' |
+		//SET_NULL='SET_NULL'
 		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//CASCADE
+		
+		//CASCADE='CASCADE'
 		public EnumLiteralDeclaration getCASCADEEnumLiteralDeclaration_0() { return cCASCADEEnumLiteralDeclaration_0; }
-
+		
 		//'CASCADE'
 		public Keyword getCASCADECASCADEKeyword_0_0() { return cCASCADECASCADEKeyword_0_0; }
-
-		//NO_ACTION
+		
+		//NO_ACTION='NO_ACTION'
 		public EnumLiteralDeclaration getNO_ACTIONEnumLiteralDeclaration_1() { return cNO_ACTIONEnumLiteralDeclaration_1; }
-
+		
 		//'NO_ACTION'
 		public Keyword getNO_ACTIONNO_ACTIONKeyword_1_0() { return cNO_ACTIONNO_ACTIONKeyword_1_0; }
-
-		//RESTRICT
+		
+		//RESTRICT='RESTRICT'
 		public EnumLiteralDeclaration getRESTRICTEnumLiteralDeclaration_2() { return cRESTRICTEnumLiteralDeclaration_2; }
-
+		
 		//'RESTRICT'
 		public Keyword getRESTRICTRESTRICTKeyword_2_0() { return cRESTRICTRESTRICTKeyword_2_0; }
-
-		//SET_DEFAULT
+		
+		//SET_DEFAULT='SET_DEFAULT'
 		public EnumLiteralDeclaration getSET_DEFAULTEnumLiteralDeclaration_3() { return cSET_DEFAULTEnumLiteralDeclaration_3; }
-
+		
 		//'SET_DEFAULT'
 		public Keyword getSET_DEFAULTSET_DEFAULTKeyword_3_0() { return cSET_DEFAULTSET_DEFAULTKeyword_3_0; }
-
-		//SET_NULL
+		
+		//SET_NULL='SET_NULL'
 		public EnumLiteralDeclaration getSET_NULLEnumLiteralDeclaration_4() { return cSET_NULLEnumLiteralDeclaration_4; }
-
+		
 		//'SET_NULL'
 		public Keyword getSET_NULLSET_NULLKeyword_4_0() { return cSET_NULLSET_NULLKeyword_4_0; }
 	}
@@ -4565,12 +4638,12 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameElements pQualifiedName;
 	
 	private final Grammar grammar;
-
+	
 	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public SqmlGrammarAccess(GrammarProvider grammarProvider,
-		TerminalsGrammarAccess gaTerminals) {
+			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pSqmlFile = new SqmlFileElements();
@@ -4689,17 +4762,18 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-
+	
 	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
 		return gaTerminals;
 	}
 
 	
-	///* -------------------- file -------------------- */ //
+	///* -------------------- file -------------------- */
+	////
 	//SqmlFile:
-	//	packageDeclaration=SqmlPackageDeclaration
-	//	imports+=SqmlImport*
-	//	elements+=SqmlFileElement*;
+	//    packageDeclaration=SqmlPackageDeclaration
+	//    (imports+=SqmlImport)*
+	//    (elements+=SqmlFileElement)*;
 	public SqmlFileElements getSqmlFileAccess() {
 		return pSqmlFile;
 	}
@@ -4707,9 +4781,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFileRule() {
 		return getSqmlFileAccess().getRule();
 	}
-
+	
 	//SqmlPackageDeclaration:
-	//	'PACKAGE' name=QualifiedName;
+	//    'PACKAGE' name=QualifiedName;
 	public SqmlPackageDeclarationElements getSqmlPackageDeclarationAccess() {
 		return pSqmlPackageDeclaration;
 	}
@@ -4717,9 +4791,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlPackageDeclarationRule() {
 		return getSqmlPackageDeclarationAccess().getRule();
 	}
-
+	
 	//SqmlImport:
-	//	'IMPORT' target=[ISqmlGlobalObject|QualifiedName];
+	//    'IMPORT' target=[ISqmlGlobalObject|QualifiedName];
 	public SqmlImportElements getSqmlImportAccess() {
 		return pSqmlImport;
 	}
@@ -4727,9 +4801,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlImportRule() {
 		return getSqmlImportAccess().getRule();
 	}
-
+	
 	//SqmlFileElement:
-	//	SqmlValueType | SqmlTable | SqmlQuery | SqmlFunction;
+	//    SqmlValueType | SqmlTable | SqmlQuery | SqmlFunction;
 	public SqmlFileElementElements getSqmlFileElementAccess() {
 		return pSqmlFileElement;
 	}
@@ -4737,10 +4811,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFileElementRule() {
 		return getSqmlFileElementAccess().getRule();
 	}
-
+	
 	//SqmlTypeReference:
-	//	typeDefinition=[ISqmlTypeDefinition|QualifiedName] ('<' typeParameters+=SqmlTypeReference (','
-	//	typeParameters+=SqmlTypeReference)* '>')? (list?='[' ']')?;
+	//    typeDefinition=[ISqmlTypeDefinition|QualifiedName]
+	//    ('<' typeParameters+=SqmlTypeReference (',' typeParameters+=SqmlTypeReference)* '>')?
+	//    (list?='[' ']')?;
 	public SqmlTypeReferenceElements getSqmlTypeReferenceAccess() {
 		return pSqmlTypeReference;
 	}
@@ -4748,13 +4823,14 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTypeReferenceRule() {
 		return getSqmlTypeReferenceAccess().getRule();
 	}
-
-	///* -------------------- table and value type -------------------- */ //
+	
+	///* -------------------- table and value type -------------------- */
+	////
 	//SqmlValueType:
-	//	'VALUETYPE' name=ID '{'
-	//	//	'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
-	//	//	'sqltype' sqlType=STRING
-	//	'}';
+	//    'VALUETYPE' name=ID '{'
+	//    //    'jvmtype' jvmType=[jvmTypes::JvmType|QualifiedName]
+	//    //    'sqltype' sqlType=STRING
+	//    '}';
 	public SqmlValueTypeElements getSqmlValueTypeAccess() {
 		return pSqmlValueType;
 	}
@@ -4762,11 +4838,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlValueTypeRule() {
 		return getSqmlValueTypeAccess().getRule();
 	}
-
+	
 	//SqmlEnum:
-	//	'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{'
-	//	enumerators+=SqmlEnumerator*
-	//	'}';
+	//    'ENUM' name=ID ('ON' typeReference=SqmlTypeReference)? '{'
+	//    (enumerators+=SqmlEnumerator)*
+	//    '}';
 	public SqmlEnumElements getSqmlEnumAccess() {
 		return pSqmlEnum;
 	}
@@ -4774,9 +4850,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlEnumRule() {
 		return getSqmlEnumAccess().getRule();
 	}
-
+	
 	//SqmlEnumerator:
-	//	name=ID ('=' value=SqmlLiteral)?;
+	//    name=ID ('=' value=SqmlLiteral)?;
 	public SqmlEnumeratorElements getSqmlEnumeratorAccess() {
 		return pSqmlEnumerator;
 	}
@@ -4784,14 +4860,14 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlEnumeratorRule() {
 		return getSqmlEnumeratorAccess().getRule();
 	}
-
+	
 	//SqmlTable:
-	//	enumTable?='ENUM'? 'TABLE' name=ID physicalNameOverride=STRING '{'
-	//	columns+=SqmlTableColumn*
-	//	tableKeys+=SqmlTableKey*
-	//	enums+=SqmlEnum*
-	//	rows+=SqmlTableRow*
-	//	'}';
+	//    (enumTable?='ENUM')? 'TABLE' name=ID physicalNameOverride=STRING '{'
+	//    (columns+=SqmlTableColumn)*
+	//    (tableKeys+=SqmlTableKey)*
+	//    (enums+=SqmlEnum)*
+	//    (rows+=SqmlTableRow)*
+	//    '}';
 	public SqmlTableElements getSqmlTableAccess() {
 		return pSqmlTable;
 	}
@@ -4799,17 +4875,28 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTableRule() {
 		return getSqmlTableAccess().getRule();
 	}
-
+	
 	//SqmlTableColumn:
-	//	primaryKey?='PK'?
-	//	typeReference=SqmlTypeReference name=ID ('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW'
-	//	| serial?='SERIAL' | baseColumn?='BASE'))? ('[' (nullable?='NULLABLE'? & timestamp?='TIMESTAMP'? &
-	//	unsigned?='UNSIGNED'? & ('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE'
-	//	onUpdateAction=SqmlForeignKeyAction)? & ('ON' 'UPDATE' onUpdateNow?='NOW')? & physicalNameOverride=STRING? & ('BITS'
-	//	'=' bits=INT)? & ('PRECISION' '=' precision=INT ',' scale=INT)? & ('MAXLENGTH' '=' maxLength=INT)? & ('LENGTHBITS' '='
-	//	lengthBits=INT)? & ('CHARACTER' 'SET' '=' characterSet=STRING)? & ('COLLATION' '=' collation=STRING)? & ('COMMENT' '='
-	//	comment=STRING)? & ('CONSTRAINT_NAME' '=' constraintName=STRING)?)
-	//	']')?;
+	//    primaryKey?='PK'?
+	//    typeReference=SqmlTypeReference name=ID
+	//    ('=' (defaultValue=SqmlDefaultValue | defaultNull?='NULL' | defaultNow?='NOW' | serial?='SERIAL' | baseColumn?='BASE'))?
+	//    ('['
+	//    ((nullable?='NULLABLE')? &
+	//    (timestamp?='TIMESTAMP')? &
+	//    (unsigned?='UNSIGNED')? &
+	//    ('ON' 'DELETE' onDeleteAction=SqmlForeignKeyAction)? &
+	//    ('ON' 'UPDATE' onUpdateAction=SqmlForeignKeyAction)? &
+	//    ('ON' 'UPDATE' onUpdateNow?='NOW')? &
+	//    (physicalNameOverride=STRING)? &
+	//    ('BITS' '=' bits=INT)? &
+	//    ('PRECISION' '=' precision=INT ',' scale=INT)? &
+	//    ('MAXLENGTH' '=' maxLength=INT)? &
+	//    ('LENGTHBITS' '=' lengthBits=INT)? &
+	//    ('CHARACTER' 'SET' '=' characterSet=STRING)? &
+	//    ('COLLATION' '=' collation=STRING)? &
+	//    ('COMMENT' '=' comment=STRING)? &
+	//    ('CONSTRAINT_NAME' '=' constraintName=STRING)?)
+	//    ']')?;
 	public SqmlTableColumnElements getSqmlTableColumnAccess() {
 		return pSqmlTableColumn;
 	}
@@ -4817,9 +4904,10 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTableColumnRule() {
 		return getSqmlTableColumnAccess().getRule();
 	}
-
+	
 	//SqmlTableRow:
-	//	'ROW' '(' values+=SqmlTableRowValue (',' values+=SqmlTableRowValue)* ')';
+	//    'ROW' '(' values+=SqmlTableRowValue (',' values+=SqmlTableRowValue)* ')'
+	//;
 	public SqmlTableRowElements getSqmlTableRowAccess() {
 		return pSqmlTableRow;
 	}
@@ -4827,9 +4915,10 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTableRowRule() {
 		return getSqmlTableRowAccess().getRule();
 	}
-
+	
 	//SqmlTableRowValue:
-	//	literal=SqmlLiteral | null?='NULL';
+	//    literal=SqmlLiteral | null?='NULL'
+	//;
 	public SqmlTableRowValueElements getSqmlTableRowValueAccess() {
 		return pSqmlTableRowValue;
 	}
@@ -4837,13 +4926,13 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTableRowValueRule() {
 		return getSqmlTableRowValueAccess().getRule();
 	}
-
+	
 	//enum SqmlForeignKeyAction:
-	//	CASCADE |
-	//	NO_ACTION |
-	//	RESTRICT |
-	//	SET_DEFAULT |
-	//	SET_NULL;
+	//    CASCADE='CASCADE' |
+	//    NO_ACTION='NO_ACTION' |
+	//    RESTRICT='RESTRICT' |
+	//    SET_DEFAULT='SET_DEFAULT' |
+	//    SET_NULL='SET_NULL';
 	public SqmlForeignKeyActionElements getSqmlForeignKeyActionAccess() {
 		return eSqmlForeignKeyAction;
 	}
@@ -4851,11 +4940,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public EnumRule getSqmlForeignKeyActionRule() {
 		return getSqmlForeignKeyActionAccess().getRule();
 	}
-
-	//SqmlDefaultValue ISqmlDefaultValue:
-	//	SqmlRowConstructorDefaultValue
-	//	| SqmlLiteralDefaultValue
-	//	| SqmlValueReferenceDefaultValue;
+	
+	//SqmlDefaultValue returns ISqmlDefaultValue:
+	//    SqmlRowConstructorDefaultValue
+	//    | SqmlLiteralDefaultValue
+	//    | SqmlValueReferenceDefaultValue;
 	public SqmlDefaultValueElements getSqmlDefaultValueAccess() {
 		return pSqmlDefaultValue;
 	}
@@ -4863,10 +4952,10 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlDefaultValueRule() {
 		return getSqmlDefaultValueAccess().getRule();
 	}
-
+	
 	//SqmlRowConstructorDefaultValue:
-	//	{SqmlRowConstructorDefaultValue} '(' (valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
-	//	')';
+	//    {SqmlRowConstructorDefaultValue} '(' (valueReferences+=SqmlValueReference (',' valueReferences+=SqmlValueReference)*)?
+	//    ')';
 	public SqmlRowConstructorDefaultValueElements getSqmlRowConstructorDefaultValueAccess() {
 		return pSqmlRowConstructorDefaultValue;
 	}
@@ -4874,9 +4963,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlRowConstructorDefaultValueRule() {
 		return getSqmlRowConstructorDefaultValueAccess().getRule();
 	}
-
+	
 	//SqmlLiteralDefaultValue:
-	//	minus?='-'? literal=SqmlLiteral;
+	//    minus?='-'? literal=SqmlLiteral;
 	public SqmlLiteralDefaultValueElements getSqmlLiteralDefaultValueAccess() {
 		return pSqmlLiteralDefaultValue;
 	}
@@ -4884,9 +4973,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlLiteralDefaultValueRule() {
 		return getSqmlLiteralDefaultValueAccess().getRule();
 	}
-
+	
 	//SqmlValueReferenceDefaultValue:
-	//	valueReference=SqmlValueReference;
+	//    valueReference=SqmlValueReference;
 	public SqmlValueReferenceDefaultValueElements getSqmlValueReferenceDefaultValueAccess() {
 		return pSqmlValueReferenceDefaultValue;
 	}
@@ -4894,9 +4983,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlValueReferenceDefaultValueRule() {
 		return getSqmlValueReferenceDefaultValueAccess().getRule();
 	}
-
+	
 	//SqmlTableKey:
-	//	('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey}) columns+=[ISqmlTableColumn]* ('AS' name=ID)?;
+	//    ('UK' {SqmlUniqueKey} | 'IK' {SqmlIndexKey})
+	//    columns+=[ISqmlTableColumn|ID]*
+	//    ('AS' name=ID)?;
 	public SqmlTableKeyElements getSqmlTableKeyAccess() {
 		return pSqmlTableKey;
 	}
@@ -4904,13 +4995,14 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTableKeyRule() {
 		return getSqmlTableKeyAccess().getRule();
 	}
-
-	///* -------------------- query -------------------- */ //
+	
+	///* -------------------- query -------------------- */
+	////
 	//SqmlQuery:
-	//	'QUERY' name=ID '{'
-	//	parameters+=SqmlQueryParameter*
-	//	select=SqmlSelect
-	//	'}';
+	//    'QUERY' name=ID '{'
+	//    (parameters+=SqmlQueryParameter)*
+	//    select=SqmlSelect
+	//    '}';
 	public SqmlQueryElements getSqmlQueryAccess() {
 		return pSqmlQuery;
 	}
@@ -4918,9 +5010,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlQueryRule() {
 		return getSqmlQueryAccess().getRule();
 	}
-
+	
 	//SqmlQueryParameter:
-	//	optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID;
+	//    optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID;
 	public SqmlQueryParameterElements getSqmlQueryParameterAccess() {
 		return pSqmlQueryParameter;
 	}
@@ -4928,13 +5020,14 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlQueryParameterRule() {
 		return getSqmlQueryParameterAccess().getRule();
 	}
-
-	///* -------------------- function -------------------- */ //
+	
+	///* -------------------- function -------------------- */
+	////
 	//SqmlFunction:
-	//	'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName
-	//	'(' (parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)? ')' '{' (expression=SqmlExpression |
-	//	'SQL' sql=SqmlSql)
-	//	'}';
+	//    'FUNCTION' returnType=SqmlTypeReference name=SqmlFunctionName
+	//    '(' (parameters+=SqmlFunctionParameter (',' parameters+=SqmlFunctionParameter)*)? ')' '{'
+	//    (expression=SqmlExpression | 'SQL' sql=SqmlSql)
+	//    '}';
 	public SqmlFunctionElements getSqmlFunctionAccess() {
 		return pSqmlFunction;
 	}
@@ -4942,9 +5035,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFunctionRule() {
 		return getSqmlFunctionAccess().getRule();
 	}
-
+	
 	//SqmlFunctionParameter:
-	//	typeReference=SqmlTypeReference name=ID;
+	//    typeReference=SqmlTypeReference name=ID;
 	public SqmlFunctionParameterElements getSqmlFunctionParameterAccess() {
 		return pSqmlFunctionParameter;
 	}
@@ -4952,9 +5045,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFunctionParameterRule() {
 		return getSqmlFunctionParameterAccess().getRule();
 	}
-
+	
 	//SqmlSql:
-	//	{SqmlSql} '{' tokens+=SqmlSqlToken* '}';
+	//    {SqmlSql} '{' (tokens+=SqmlSqlToken)* '}';
 	public SqmlSqlElements getSqmlSqlAccess() {
 		return pSqmlSql;
 	}
@@ -4962,10 +5055,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlRule() {
 		return getSqmlSqlAccess().getRule();
 	}
-
-	//SqmlSqlToken ISqmlModelElement:
-	//	=> SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral |
-	//	SqmlSqlSymbol;
+	
+	//SqmlSqlToken returns ISqmlModelElement:
+	//    => SqmlStaticVariableReference | SqmlSqlKeyword | SqmlSqlId | SqmlSqlNumberLiteral | SqmlSqlStringLiteral | SqmlSqlSymbol;
 	public SqmlSqlTokenElements getSqmlSqlTokenAccess() {
 		return pSqmlSqlToken;
 	}
@@ -4973,18 +5065,19 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlTokenRule() {
 		return getSqmlSqlTokenAccess().getRule();
 	}
-
+	
 	//SqmlSqlKeyword:
-	//	keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
-	//	| 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
-	//	| 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT'
-	//	| 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION'
-	//	| 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS'
-	//	| 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT' | 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
-	//	| 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW'
-	//	| 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
-	//	| 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
-	//	| 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE');
+	//    keywordText=('ACTION' | 'AND' | 'AS' | 'ASC' | 'BASE' | 'BETWEEN' | 'BITS' | 'BY'
+	//        | 'CASCADE' | 'CASE' | 'CHARACTER' | 'COLLATION' | 'COMMENT' | 'CONSTRAINT_NAME'
+	//        | 'DEFAULT' | 'DELETE' | 'DESC' | 'DISTINCT'
+	//        | 'ELSE' | 'EMPTY' | 'END' | 'ENUM' | 'ESCAPE' | 'EXISTS' | 'FALSE' | 'FOR' | 'FROM' | 'FUNCTION'
+	//        | 'GROUP' | 'GROUP_CONCAT' | 'HAVING' | 'IF' | 'IFNULL' | 'IK' | 'IMPORT' | 'IN' | 'IS'
+	//        | 'JOIN' | 'LEFT' | 'LENGTHBITS' | 'LIKE' | 'MAXLENGTH' | 'NEXT'| 'NO_ACTION' | 'NOT' | 'NOW' | 'NULL' | 'NULLABLE'
+	//        | 'ON' | 'OPTIONAL' | 'OR' | 'ORDER' | 'PACKAGE' | 'PK' | 'PRECISION' | 'QUERY' | 'REGEXP' | 'RESTRICT' | 'ROW'
+	//        | 'SELECT' | 'SEPARATOR' | 'SERIAL' | 'SET' | 'SET_DEFAULT' | 'SET_NULL' | 'SQL' | 'STATIC'
+	//        | 'TABLE' | 'THEN' | 'TIMESTAMP' | 'TITLE' | 'TRUE'
+	//        | 'UK' | 'UNSIGNED' | 'UPDATE' | 'VALUETYPE' | 'WHEN' | 'WHERE'
+	//    );
 	public SqmlSqlKeywordElements getSqmlSqlKeywordAccess() {
 		return pSqmlSqlKeyword;
 	}
@@ -4992,9 +5085,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlKeywordRule() {
 		return getSqmlSqlKeywordAccess().getRule();
 	}
-
+	
 	//SqmlSqlId:
-	//	identifier=ID;
+	//    identifier=ID;
 	public SqmlSqlIdElements getSqmlSqlIdAccess() {
 		return pSqmlSqlId;
 	}
@@ -5002,12 +5095,12 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlIdRule() {
 		return getSqmlSqlIdAccess().getRule();
 	}
-
+	
 	//SqmlSqlSymbol:
-	//	symbolText=('+' | '-' | '*' | '/' | '%'
-	//	| '|' | '&' | '^' | '~'
-	//	| '(' | ')' | '.' | ','
-	//	| '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=');
+	//    symbolText=('+' | '-' | '*' | '/' | '%'
+	//    | '|' | '&' | '^' | '~'
+	//    | '(' | ')' | '.' | ','
+	//    | '=' | '<>' | '!=' | '<' | '<=' | '>' | '>=');
 	public SqmlSqlSymbolElements getSqmlSqlSymbolAccess() {
 		return pSqmlSqlSymbol;
 	}
@@ -5015,9 +5108,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlSymbolRule() {
 		return getSqmlSqlSymbolAccess().getRule();
 	}
-
+	
 	//SqmlSqlStringLiteral:
-	//	string=STRING;
+	//    string=STRING;
 	public SqmlSqlStringLiteralElements getSqmlSqlStringLiteralAccess() {
 		return pSqmlSqlStringLiteral;
 	}
@@ -5025,9 +5118,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlStringLiteralRule() {
 		return getSqmlSqlStringLiteralAccess().getRule();
 	}
-
+	
 	//SqmlSqlNumberLiteral:
-	//	integer=INT | decimal=DECIMAL;
+	//    integer=INT | decimal=DECIMAL;
 	public SqmlSqlNumberLiteralElements getSqmlSqlNumberLiteralAccess() {
 		return pSqmlSqlNumberLiteral;
 	}
@@ -5035,10 +5128,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSqlNumberLiteralRule() {
 		return getSqmlSqlNumberLiteralAccess().getRule();
 	}
-
-	///* -------------------- select statement -------------------- */ //
+	
+	///* -------------------- select statement -------------------- */
+	////
 	//SqmlSelect:
-	//	parts+=SqmlSelectPart+;
+	//    parts+=SqmlSelectPart+;
 	public SqmlSelectElements getSqmlSelectAccess() {
 		return pSqmlSelect;
 	}
@@ -5046,16 +5140,16 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectRule() {
 		return getSqmlSelectAccess().getRule();
 	}
-
-	//SqmlSelectPart ISqmlSelectPart:
-	//	SqmlSelectIf
-	//	| SqmlSelectClause
-	//	| SqmlFromClause
-	//	| SqmlJoinClause
-	//	| SqmlWhereClause
-	//	| SqmlGroupByClause
-	//	| SqmlHavingClause
-	//	| SqmlOrderByClause;
+	
+	//SqmlSelectPart returns ISqmlSelectPart:
+	//    SqmlSelectIf
+	//    | SqmlSelectClause
+	//    | SqmlFromClause
+	//    | SqmlJoinClause
+	//    | SqmlWhereClause
+	//    | SqmlGroupByClause
+	//    | SqmlHavingClause
+	//    | SqmlOrderByClause;
 	public SqmlSelectPartElements getSqmlSelectPartAccess() {
 		return pSqmlSelectPart;
 	}
@@ -5063,11 +5157,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectPartRule() {
 		return getSqmlSelectPartAccess().getRule();
 	}
-
+	
 	//SqmlSelectIf:
-	//	'#' 'IF' condition=SqmlStaticExpression '{'
-	//	parts+=SqmlSelectPart*
-	//	'}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?;
+	//    '#' 'IF' condition=SqmlStaticExpression '{'
+	//    parts+=SqmlSelectPart*
+	//    '}' elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?;
 	public SqmlSelectIfElements getSqmlSelectIfAccess() {
 		return pSqmlSelectIf;
 	}
@@ -5075,11 +5169,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectIfRule() {
 		return getSqmlSelectIfAccess().getRule();
 	}
-
+	
 	//SqmlSelectElseIf:
-	//	'ELSE' 'IF' condition=SqmlStaticExpression '{'
-	//	parts+=SqmlSelectPart*
-	//	'}';
+	//    'ELSE' 'IF' condition=SqmlStaticExpression '{'
+	//    parts+=SqmlSelectPart*
+	//    '}';
 	public SqmlSelectElseIfElements getSqmlSelectElseIfAccess() {
 		return pSqmlSelectElseIf;
 	}
@@ -5087,12 +5181,12 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectElseIfRule() {
 		return getSqmlSelectElseIfAccess().getRule();
 	}
-
+	
 	//SqmlSelectElse:
-	//	{SqmlSelectElse}
-	//	'ELSE' '{'
-	//	parts+=SqmlSelectPart*
-	//	'}';
+	//    {SqmlSelectElse}
+	//    'ELSE' '{'
+	//    parts+=SqmlSelectPart*
+	//    '}';
 	public SqmlSelectElseElements getSqmlSelectElseAccess() {
 		return pSqmlSelectElse;
 	}
@@ -5100,9 +5194,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectElseRule() {
 		return getSqmlSelectElseAccess().getRule();
 	}
-
+	
 	//SqmlSelectClause:
-	//	'SELECT' distinct?='DISTINCT'? columns+=SqmlSelectColumn (',' columns+=SqmlSelectColumn)*;
+	//    'SELECT' distinct?='DISTINCT'? columns+=SqmlSelectColumn (',' columns+=SqmlSelectColumn)*;
 	public SqmlSelectClauseElements getSqmlSelectClauseAccess() {
 		return pSqmlSelectClause;
 	}
@@ -5110,9 +5204,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectClauseRule() {
 		return getSqmlSelectClauseAccess().getRule();
 	}
-
+	
 	//SqmlSelectColumn:
-	//	expression=SqmlExpression ('AS' alias=ID)? ('TITLE' title=STRING)?;
+	//    expression=SqmlExpression ('AS' alias=ID)? ('TITLE' title=STRING)?;
 	public SqmlSelectColumnElements getSqmlSelectColumnAccess() {
 		return pSqmlSelectColumn;
 	}
@@ -5120,9 +5214,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSelectColumnRule() {
 		return getSqmlSelectColumnAccess().getRule();
 	}
-
+	
 	//SqmlFromClause:
-	//	'FROM' variable=(SqmlTableVariable | SqmlSubSelectVariable);
+	//    'FROM' variable=(SqmlTableVariable | SqmlSubSelectVariable);
 	public SqmlFromClauseElements getSqmlFromClauseAccess() {
 		return pSqmlFromClause;
 	}
@@ -5130,9 +5224,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFromClauseRule() {
 		return getSqmlFromClauseAccess().getRule();
 	}
-
+	
 	//SqmlForeignKeyVariable:
-	//	variable=[ISqmlVariable] '.' column=[ISqmlColumn] 'AS'? name=ID;
+	//    variable=[ISqmlVariable] '.' column=[ISqmlColumn] 'AS'? name=ID;
 	public SqmlForeignKeyVariableElements getSqmlForeignKeyVariableAccess() {
 		return pSqmlForeignKeyVariable;
 	}
@@ -5140,9 +5234,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlForeignKeyVariableRule() {
 		return getSqmlForeignKeyVariableAccess().getRule();
 	}
-
+	
 	//SqmlTableVariable:
-	//	table=[ISqmlTable] 'AS'? name=ID;
+	//    table=[ISqmlTable] 'AS'? name=ID;
 	public SqmlTableVariableElements getSqmlTableVariableAccess() {
 		return pSqmlTableVariable;
 	}
@@ -5150,9 +5244,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlTableVariableRule() {
 		return getSqmlTableVariableAccess().getRule();
 	}
-
+	
 	//SqmlSubSelectVariable:
-	//	'(' subSelect=SqmlSelect ')' 'AS'? name=ID;
+	//    '(' subSelect=SqmlSelect ')' 'AS'? name=ID;
 	public SqmlSubSelectVariableElements getSqmlSubSelectVariableAccess() {
 		return pSqmlSubSelectVariable;
 	}
@@ -5160,10 +5254,10 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSubSelectVariableRule() {
 		return getSqmlSubSelectVariableAccess().getRule();
 	}
-
+	
 	//SqmlJoinClause:
-	//	leftJoin?='LEFT'? 'JOIN' variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable) ('ON'
-	//	conditions+=SqmlExpression)*;
+	//    leftJoin?='LEFT'? 'JOIN' variable=(SqmlForeignKeyVariable | SqmlTableVariable | SqmlSubSelectVariable) ('ON'
+	//    conditions+=SqmlExpression)*;
 	public SqmlJoinClauseElements getSqmlJoinClauseAccess() {
 		return pSqmlJoinClause;
 	}
@@ -5171,9 +5265,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlJoinClauseRule() {
 		return getSqmlJoinClauseAccess().getRule();
 	}
-
+	
 	//SqmlWhereClause:
-	//	'WHERE' condition=SqmlExpression;
+	//    'WHERE' condition=SqmlExpression;
 	public SqmlWhereClauseElements getSqmlWhereClauseAccess() {
 		return pSqmlWhereClause;
 	}
@@ -5181,9 +5275,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlWhereClauseRule() {
 		return getSqmlWhereClauseAccess().getRule();
 	}
-
+	
 	//SqmlGroupByClause:
-	//	'GROUP' 'BY' expressions+=SqmlExpression (',' expressions+=SqmlExpression)*;
+	//    'GROUP' 'BY' expressions+=SqmlExpression (',' expressions+=SqmlExpression)*;
 	public SqmlGroupByClauseElements getSqmlGroupByClauseAccess() {
 		return pSqmlGroupByClause;
 	}
@@ -5191,9 +5285,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlGroupByClauseRule() {
 		return getSqmlGroupByClauseAccess().getRule();
 	}
-
+	
 	//SqmlHavingClause:
-	//	'HAVING' condition=SqmlExpression;
+	//    'HAVING' condition=SqmlExpression;
 	public SqmlHavingClauseElements getSqmlHavingClauseAccess() {
 		return pSqmlHavingClause;
 	}
@@ -5201,9 +5295,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlHavingClauseRule() {
 		return getSqmlHavingClauseAccess().getRule();
 	}
-
+	
 	//SqmlOrderByClause:
-	//	'ORDER' 'BY' expressions+=SqmlOrderByExpression (',' expressions+=SqmlOrderByExpression)*;
+	//    'ORDER' 'BY' expressions+=SqmlOrderByExpression (',' expressions+=SqmlOrderByExpression)*;
 	public SqmlOrderByClauseElements getSqmlOrderByClauseAccess() {
 		return pSqmlOrderByClause;
 	}
@@ -5211,9 +5305,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlOrderByClauseRule() {
 		return getSqmlOrderByClauseAccess().getRule();
 	}
-
+	
 	//SqmlOrderByExpression:
-	//	expression=SqmlExpression ('ASC' | descending?='DESC')?;
+	//    expression=SqmlExpression ('ASC' | (descending?='DESC'))?;
 	public SqmlOrderByExpressionElements getSqmlOrderByExpressionAccess() {
 		return pSqmlOrderByExpression;
 	}
@@ -5221,10 +5315,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlOrderByExpressionRule() {
 		return getSqmlOrderByExpressionAccess().getRule();
 	}
-
-	///* -------------------- expressions -------------------- */ //
-	//SqmlExpression ISqmlExpression:
-	//	SqmlOr;
+	
+	///* -------------------- expressions -------------------- */
+	////
+	//SqmlExpression returns ISqmlExpression:
+	//    SqmlOr;
 	public SqmlExpressionElements getSqmlExpressionAccess() {
 		return pSqmlExpression;
 	}
@@ -5232,9 +5327,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlExpressionRule() {
 		return getSqmlExpressionAccess().getRule();
 	}
-
-	//SqmlOr ISqmlExpression:
-	//	SqmlAnd ({SqmlOr.left=current} 'OR' right=SqmlAnd)*;
+	
+	//SqmlOr returns ISqmlExpression:
+	//    SqmlAnd ({SqmlOr.left=current} 'OR' right=SqmlAnd)*;
 	public SqmlOrElements getSqmlOrAccess() {
 		return pSqmlOr;
 	}
@@ -5242,9 +5337,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlOrRule() {
 		return getSqmlOrAccess().getRule();
 	}
-
-	//SqmlAnd ISqmlExpression:
-	//	SqmlCondition ({SqmlAnd.left=current} 'AND' right=SqmlCondition)*;
+	
+	//SqmlAnd returns ISqmlExpression:
+	//    SqmlCondition ({SqmlAnd.left=current} 'AND' right=SqmlCondition)*;
 	public SqmlAndElements getSqmlAndAccess() {
 		return pSqmlAnd;
 	}
@@ -5252,14 +5347,16 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlAndRule() {
 		return getSqmlAndAccess().getRule();
 	}
-
-	//SqmlCondition ISqmlExpression:
-	//	{SqmlNot} 'NOT' condition=SqmlCondition | {SqmlExists} 'EXISTS' subSelect=SqmlSubSelect | SqmlOperand
-	//	({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
-	//	{SqmlLike.left=current} not?='NOT'? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? | {SqmlIsNull.operand=current}
-	//	'IS' not?='NOT'? 'NULL' | {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
-	//	{SqmlIn.left=current} not?='NOT'? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
-	//	{SqmlRegexp.operand=current} not?='NOT'? 'REGEXP' regexp=SqmlOperand)?;
+	
+	//SqmlCondition returns ISqmlExpression:
+	//    {SqmlNot} 'NOT' condition=SqmlCondition |
+	//    {SqmlExists} 'EXISTS' subSelect=SqmlSubSelect |
+	//    SqmlOperand ({SqmlComparison.left=current} function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand |
+	//    {SqmlLike.left=current} (not?='NOT')? 'LIKE' right=SqmlOperand ('ESCAPE' escape=STRING)? |
+	//    {SqmlIsNull.operand=current} 'IS' (not?='NOT')? 'NULL' |
+	//    {SqmlBetween.operand=current} 'BETWEEN' left=SqmlOperand 'AND' right=SqmlOperand |
+	//    {SqmlIn.left=current} (not?='NOT')? 'IN' right=(SqmlStaticVariableReference | SqmlSubSelect | SqmlRowConstructor) |
+	//    {SqmlRegexp.operand=current} (not?='NOT')? 'REGEXP' regexp=SqmlOperand)?;
 	public SqmlConditionElements getSqmlConditionAccess() {
 		return pSqmlCondition;
 	}
@@ -5267,9 +5364,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlConditionRule() {
 		return getSqmlConditionAccess().getRule();
 	}
-
-	//SqmlOperand ISqmlExpression:
-	//	SqmlAddition;
+	
+	//SqmlOperand returns ISqmlExpression:
+	//    SqmlAddition;
 	public SqmlOperandElements getSqmlOperandAccess() {
 		return pSqmlOperand;
 	}
@@ -5277,10 +5374,10 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlOperandRule() {
 		return getSqmlOperandAccess().getRule();
 	}
-
-	//SqmlAddition ISqmlExpression:
-	//	SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
-	//	right=SqmlMultiplication)*;
+	
+	//SqmlAddition returns ISqmlExpression:
+	//    SqmlMultiplication ({SqmlAddition.left=current} function=[SqmlFunction|SqmlAdditionOperator]
+	//    right=SqmlMultiplication)*;
 	public SqmlAdditionElements getSqmlAdditionAccess() {
 		return pSqmlAddition;
 	}
@@ -5288,9 +5385,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlAdditionRule() {
 		return getSqmlAdditionAccess().getRule();
 	}
-
-	//SqmlMultiplication ISqmlExpression:
-	//	SqmlPrimay ({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*;
+	
+	//SqmlMultiplication returns ISqmlExpression:
+	//    SqmlPrimay ({SqmlMultiplication.left=current} function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)*;
 	public SqmlMultiplicationElements getSqmlMultiplicationAccess() {
 		return pSqmlMultiplication;
 	}
@@ -5298,10 +5395,19 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlMultiplicationRule() {
 		return getSqmlMultiplicationAccess().getRule();
 	}
-
-	//SqmlPrimay ISqmlExpression:
-	//	SqmlRowConstructor | SqmlNegation | SqmlValueReference | SqmlFunctionCall | SqmlGroupConcat | SqmlCase | SqmlIf |
-	//	SqmlIfNull | SqmlStaticIf | SqmlStaticVariableReference | SqmlLiteral;
+	
+	//SqmlPrimay returns ISqmlExpression:
+	//    SqmlRowConstructor |
+	//    SqmlNegation |
+	//    SqmlValueReference |
+	//    SqmlFunctionCall |
+	//    SqmlGroupConcat |
+	//    SqmlCase |
+	//    SqmlIf |
+	//    SqmlIfNull |
+	//    SqmlStaticIf |
+	//    SqmlStaticVariableReference |
+	//    SqmlLiteral;
 	public SqmlPrimayElements getSqmlPrimayAccess() {
 		return pSqmlPrimay;
 	}
@@ -5309,9 +5415,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlPrimayRule() {
 		return getSqmlPrimayAccess().getRule();
 	}
-
+	
 	//SqmlSubSelect:
-	//	'(' select=SqmlSelect ')';
+	//    '(' select=SqmlSelect ')';
 	public SqmlSubSelectElements getSqmlSubSelectAccess() {
 		return pSqmlSubSelect;
 	}
@@ -5319,9 +5425,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlSubSelectRule() {
 		return getSqmlSubSelectAccess().getRule();
 	}
-
+	
 	//SqmlStaticVariableReference:
-	//	nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable];
+	//    nextIteration?='NEXT'? '$' variable=[ISqmlStaticVariable|ID];
 	public SqmlStaticVariableReferenceElements getSqmlStaticVariableReferenceAccess() {
 		return pSqmlStaticVariableReference;
 	}
@@ -5329,9 +5435,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticVariableReferenceRule() {
 		return getSqmlStaticVariableReferenceAccess().getRule();
 	}
-
+	
 	//SqmlRowConstructor:
-	//	explicit?='ROW'? '(' expressions+=SqmlExpression (',' expressions+=SqmlExpression)* ')';
+	//    explicit?='ROW'? '(' expressions+=SqmlExpression (',' expressions+=SqmlExpression)* ')';
 	public SqmlRowConstructorElements getSqmlRowConstructorAccess() {
 		return pSqmlRowConstructor;
 	}
@@ -5339,9 +5445,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlRowConstructorRule() {
 		return getSqmlRowConstructorAccess().getRule();
 	}
-
+	
 	//SqmlNegation:
-	//	'-' expression=SqmlPrimay;
+	//    '-' expression=SqmlPrimay;
 	public SqmlNegationElements getSqmlNegationAccess() {
 		return pSqmlNegation;
 	}
@@ -5349,9 +5455,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlNegationRule() {
 		return getSqmlNegationAccess().getRule();
 	}
-
+	
 	//SqmlFunctionCall:
-	//	function=[SqmlFunction] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')';
+	//    function=[SqmlFunction|ID] '(' (arguments+=SqmlOperand (',' arguments+=SqmlOperand)*)? ')';
 	public SqmlFunctionCallElements getSqmlFunctionCallAccess() {
 		return pSqmlFunctionCall;
 	}
@@ -5359,13 +5465,14 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFunctionCallRule() {
 		return getSqmlFunctionCallAccess().getRule();
 	}
-
+	
 	//SqmlGroupConcat:
-	//	'GROUP_CONCAT' '('
-	//	distinct?='DISTINCT'?
-	//	expressions+=SqmlOperand (',' expressions+=SqmlOperand)* ('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (','
-	//	orderByExpressions+=SqmlOrderByExpression)*)? ('SEPARATOR' separator=STRING)?
-	//	')';
+	//    'GROUP_CONCAT' '('
+	//    distinct?='DISTINCT'?
+	//    expressions+=SqmlOperand (',' expressions+=SqmlOperand)*
+	//    ('ORDER' 'BY' orderByExpressions+=SqmlOrderByExpression (',' orderByExpressions+=SqmlOrderByExpression)*)?
+	//    ('SEPARATOR' separator=STRING)?
+	//    ')';
 	public SqmlGroupConcatElements getSqmlGroupConcatAccess() {
 		return pSqmlGroupConcat;
 	}
@@ -5373,9 +5480,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlGroupConcatRule() {
 		return getSqmlGroupConcatAccess().getRule();
 	}
-
+	
 	//SqmlCase:
-	//	'CASE' operand=SqmlExpression? whens+=SqmlCaseWhen+ ('ELSE' elseExpression=SqmlExpression)? 'END';
+	//    'CASE' operand=SqmlExpression? (whens+=SqmlCaseWhen)+ ('ELSE' elseExpression=SqmlExpression)? 'END';
 	public SqmlCaseElements getSqmlCaseAccess() {
 		return pSqmlCase;
 	}
@@ -5383,9 +5490,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlCaseRule() {
 		return getSqmlCaseAccess().getRule();
 	}
-
+	
 	//SqmlCaseWhen:
-	//	'WHEN' whenExpression=SqmlExpression 'THEN' thenExpression=SqmlExpression;
+	//    'WHEN' whenExpression=SqmlExpression 'THEN' thenExpression=SqmlExpression;
 	public SqmlCaseWhenElements getSqmlCaseWhenAccess() {
 		return pSqmlCaseWhen;
 	}
@@ -5393,9 +5500,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlCaseWhenRule() {
 		return getSqmlCaseWhenAccess().getRule();
 	}
-
+	
 	//SqmlIf:
-	//	'IF' '(' condition=SqmlExpression ',' thenExpression=SqmlExpression ',' elseExpression=SqmlExpression ')';
+	//    'IF' '(' condition=SqmlExpression ',' thenExpression=SqmlExpression ',' elseExpression=SqmlExpression ')';
 	public SqmlIfElements getSqmlIfAccess() {
 		return pSqmlIf;
 	}
@@ -5403,9 +5510,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlIfRule() {
 		return getSqmlIfAccess().getRule();
 	}
-
+	
 	//SqmlIfNull:
-	//	'IFNULL' '(' testExpression=SqmlExpression ',' thenExpression=SqmlExpression ')';
+	//    'IFNULL' '(' testExpression=SqmlExpression ',' thenExpression=SqmlExpression ')';
 	public SqmlIfNullElements getSqmlIfNullAccess() {
 		return pSqmlIfNull;
 	}
@@ -5413,11 +5520,11 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlIfNullRule() {
 		return getSqmlIfNullAccess().getRule();
 	}
-
+	
 	//SqmlStaticIf:
-	//	'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}' (=> ('ELSE' 'IF')
-	//	conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')* ('ELSE' '{' elseExpression=SqmlExpression
-	//	'}')?;
+	//    'STATIC' 'IF' conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}'
+	//    (=>('ELSE' 'IF') conditions+=SqmlStaticExpression '{' expressions+=SqmlExpression '}')*
+	//    ('ELSE' '{' elseExpression=SqmlExpression '}')?;
 	public SqmlStaticIfElements getSqmlStaticIfAccess() {
 		return pSqmlStaticIf;
 	}
@@ -5425,9 +5532,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticIfRule() {
 		return getSqmlStaticIfAccess().getRule();
 	}
-
-	//SqmlStaticExpression ISqmlStaticExpression:
-	//	SqmlStaticOr;
+	
+	//SqmlStaticExpression returns ISqmlStaticExpression:
+	//    SqmlStaticOr;
 	public SqmlStaticExpressionElements getSqmlStaticExpressionAccess() {
 		return pSqmlStaticExpression;
 	}
@@ -5435,9 +5542,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticExpressionRule() {
 		return getSqmlStaticExpressionAccess().getRule();
 	}
-
-	//SqmlStaticOr ISqmlStaticExpression:
-	//	SqmlStaticAnd ({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*;
+	
+	//SqmlStaticOr returns ISqmlStaticExpression:
+	//    SqmlStaticAnd ({SqmlStaticOr.left=current} 'OR' right=SqmlStaticAnd)*;
 	public SqmlStaticOrElements getSqmlStaticOrAccess() {
 		return pSqmlStaticOr;
 	}
@@ -5445,9 +5552,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticOrRule() {
 		return getSqmlStaticOrAccess().getRule();
 	}
-
-	//SqmlStaticAnd ISqmlStaticExpression:
-	//	SqmlStaticAtom ({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*;
+	
+	//SqmlStaticAnd returns ISqmlStaticExpression:
+	//    SqmlStaticAtom ({SqmlStaticAnd.left=current} 'AND' right=SqmlStaticAtom)*;
 	public SqmlStaticAndElements getSqmlStaticAndAccess() {
 		return pSqmlStaticAnd;
 	}
@@ -5455,9 +5562,12 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticAndRule() {
 		return getSqmlStaticAndAccess().getRule();
 	}
-
-	//SqmlStaticAtom ISqmlStaticExpression:
-	//	SqmlStaticParentheses | SqmlStaticIsEmpty | SqmlStaticIsNull | SqmlStaticIsTrue;
+	
+	//SqmlStaticAtom returns ISqmlStaticExpression:
+	//    SqmlStaticParentheses |
+	//    SqmlStaticIsEmpty |
+	//    SqmlStaticIsNull |
+	//    SqmlStaticIsTrue;
 	public SqmlStaticAtomElements getSqmlStaticAtomAccess() {
 		return pSqmlStaticAtom;
 	}
@@ -5465,9 +5575,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticAtomRule() {
 		return getSqmlStaticAtomAccess().getRule();
 	}
-
+	
 	//SqmlStaticIsEmpty:
-	//	parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'EMPTY';
+	//    parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'EMPTY';
 	public SqmlStaticIsEmptyElements getSqmlStaticIsEmptyAccess() {
 		return pSqmlStaticIsEmpty;
 	}
@@ -5475,9 +5585,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticIsEmptyRule() {
 		return getSqmlStaticIsEmptyAccess().getRule();
 	}
-
+	
 	//SqmlStaticIsNull:
-	//	parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'NULL';
+	//    parameterReference=SqmlStaticVariableReference 'IS' not?='NOT'? 'NULL';
 	public SqmlStaticIsNullElements getSqmlStaticIsNullAccess() {
 		return pSqmlStaticIsNull;
 	}
@@ -5485,9 +5595,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticIsNullRule() {
 		return getSqmlStaticIsNullAccess().getRule();
 	}
-
+	
 	//SqmlStaticIsTrue:
-	//	not?='NOT'? parameterReference=SqmlStaticVariableReference;
+	//    not?='NOT'? parameterReference=SqmlStaticVariableReference;
 	public SqmlStaticIsTrueElements getSqmlStaticIsTrueAccess() {
 		return pSqmlStaticIsTrue;
 	}
@@ -5495,9 +5605,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticIsTrueRule() {
 		return getSqmlStaticIsTrueAccess().getRule();
 	}
-
+	
 	//SqmlStaticParentheses:
-	//	'(' expression=SqmlStaticExpression ')';
+	//    '(' expression=SqmlStaticExpression ')';
 	public SqmlStaticParenthesesElements getSqmlStaticParenthesesAccess() {
 		return pSqmlStaticParentheses;
 	}
@@ -5505,9 +5615,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStaticParenthesesRule() {
 		return getSqmlStaticParenthesesAccess().getRule();
 	}
-
+	
 	//SqmlValueReference:
-	//	nextIteration?='NEXT'? path=SqmlPath dotStar?='.*'?;
+	//    nextIteration?='NEXT'? path=SqmlPath dotStar?=('.*')?;
 	public SqmlValueReferenceElements getSqmlValueReferenceAccess() {
 		return pSqmlValueReference;
 	}
@@ -5515,9 +5625,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlValueReferenceRule() {
 		return getSqmlValueReferenceAccess().getRule();
 	}
-
+	
 	//SqmlPath:
-	//	target=[ISqmlModelElement] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement])*;
+	//    target=[ISqmlModelElement|ID] ({SqmlPath.parent=current} '.' target=[ISqmlModelElement|ID])*;
 	public SqmlPathElements getSqmlPathAccess() {
 		return pSqmlPath;
 	}
@@ -5525,11 +5635,17 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlPathRule() {
 		return getSqmlPathAccess().getRule();
 	}
-
-	///* -------------------- literals -------------------- */ //
-	//SqmlLiteral ISqmlLiteral:
-	//	SqmlIntegerLiteral | SqmlLongLiteral | SqmlFloatLiteral | SqmlDoubleLiteral | SqmlDecimalLiteral | SqmlStringLiteral |
-	//	SqmlBooleanLiteral;
+	
+	///* -------------------- literals -------------------- */
+	////
+	//SqmlLiteral returns ISqmlLiteral:
+	//    SqmlIntegerLiteral |
+	//    SqmlLongLiteral |
+	//    SqmlFloatLiteral |
+	//    SqmlDoubleLiteral |
+	//    SqmlDecimalLiteral |
+	//    SqmlStringLiteral |
+	//    SqmlBooleanLiteral;
 	public SqmlLiteralElements getSqmlLiteralAccess() {
 		return pSqmlLiteral;
 	}
@@ -5537,9 +5653,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlLiteralRule() {
 		return getSqmlLiteralAccess().getRule();
 	}
-
+	
 	//SqmlIntegerLiteral:
-	//	value=INT;
+	//    value=INT;
 	public SqmlIntegerLiteralElements getSqmlIntegerLiteralAccess() {
 		return pSqmlIntegerLiteral;
 	}
@@ -5547,9 +5663,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlIntegerLiteralRule() {
 		return getSqmlIntegerLiteralAccess().getRule();
 	}
-
+	
 	//SqmlLongLiteral:
-	//	value=LONG;
+	//    value=LONG;
 	public SqmlLongLiteralElements getSqmlLongLiteralAccess() {
 		return pSqmlLongLiteral;
 	}
@@ -5557,9 +5673,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlLongLiteralRule() {
 		return getSqmlLongLiteralAccess().getRule();
 	}
-
+	
 	//SqmlFloatLiteral:
-	//	value=FLOAT;
+	//    value=FLOAT;
 	public SqmlFloatLiteralElements getSqmlFloatLiteralAccess() {
 		return pSqmlFloatLiteral;
 	}
@@ -5567,9 +5683,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFloatLiteralRule() {
 		return getSqmlFloatLiteralAccess().getRule();
 	}
-
+	
 	//SqmlDoubleLiteral:
-	//	value=DOUBLE;
+	//    value=DOUBLE;
 	public SqmlDoubleLiteralElements getSqmlDoubleLiteralAccess() {
 		return pSqmlDoubleLiteral;
 	}
@@ -5577,9 +5693,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlDoubleLiteralRule() {
 		return getSqmlDoubleLiteralAccess().getRule();
 	}
-
+	
 	//SqmlDecimalLiteral:
-	//	value=DECIMAL;
+	//    value=DECIMAL;
 	public SqmlDecimalLiteralElements getSqmlDecimalLiteralAccess() {
 		return pSqmlDecimalLiteral;
 	}
@@ -5587,9 +5703,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlDecimalLiteralRule() {
 		return getSqmlDecimalLiteralAccess().getRule();
 	}
-
+	
 	//SqmlStringLiteral:
-	//	value=STRING;
+	//    value=STRING;
 	public SqmlStringLiteralElements getSqmlStringLiteralAccess() {
 		return pSqmlStringLiteral;
 	}
@@ -5597,9 +5713,10 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlStringLiteralRule() {
 		return getSqmlStringLiteralAccess().getRule();
 	}
-
+	
 	//SqmlBooleanLiteral:
-	//	{SqmlBooleanLiteral} ^true?='TRUE' | 'FALSE' {SqmlBooleanLiteral};
+	//    {SqmlBooleanLiteral} (^true?='TRUE')
+	//    | 'FALSE' {SqmlBooleanLiteral};
 	public SqmlBooleanLiteralElements getSqmlBooleanLiteralAccess() {
 		return pSqmlBooleanLiteral;
 	}
@@ -5607,33 +5724,35 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlBooleanLiteralRule() {
 		return getSqmlBooleanLiteralAccess().getRule();
 	}
-
+	
+	///* -------------------- terminals -------------------- */
+	////
 	//terminal LONG returns ecore::ELong:
-	//	INT 'L';
+	//    INT 'L';
 	public TerminalRule getLONGRule() {
 		return tLONG;
-	} 
-
+	}
+	
 	//terminal FLOAT returns ecore::EBigDecimal:
-	//	INT 'f' | DECIMAL 'f';
+	//    INT 'f' | DECIMAL 'f';
 	public TerminalRule getFLOATRule() {
 		return tFLOAT;
-	} 
-
+	}
+	
 	//terminal DOUBLE returns ecore::EBigDecimal:
-	//	INT 'd' | DECIMAL 'd';
+	//    INT 'd' | DECIMAL 'd';
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
-	} 
-
+	}
+	
 	//terminal DECIMAL returns ecore::EBigDecimal:
-	//	INT '.' INT;
+	//    INT '.' INT;
 	public TerminalRule getDECIMALRule() {
 		return tDECIMAL;
-	} 
-
+	}
+	
 	//SqmlFunctionName:
-	//	ID | SqmlComparisonOperator | SqmlAdditionOperator | SqmlMultiplicationOperator;
+	//    ID | SqmlComparisonOperator | SqmlAdditionOperator | SqmlMultiplicationOperator;
 	public SqmlFunctionNameElements getSqmlFunctionNameAccess() {
 		return pSqmlFunctionName;
 	}
@@ -5641,9 +5760,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlFunctionNameRule() {
 		return getSqmlFunctionNameAccess().getRule();
 	}
-
+	
 	//SqmlComparisonOperator:
-	//	'=' | '!=' | '<' | '<=' | '>' | '>=';
+	//    '=' | '!=' | '<' | '<=' | '>' | '>=';
 	public SqmlComparisonOperatorElements getSqmlComparisonOperatorAccess() {
 		return pSqmlComparisonOperator;
 	}
@@ -5651,9 +5770,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlComparisonOperatorRule() {
 		return getSqmlComparisonOperatorAccess().getRule();
 	}
-
+	
 	//SqmlAdditionOperator:
-	//	'+' | '-';
+	//    '+' | '-';
 	public SqmlAdditionOperatorElements getSqmlAdditionOperatorAccess() {
 		return pSqmlAdditionOperator;
 	}
@@ -5661,9 +5780,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlAdditionOperatorRule() {
 		return getSqmlAdditionOperatorAccess().getRule();
 	}
-
+	
 	//SqmlMultiplicationOperator:
-	//	'*' | '/' | '%';
+	//    '*' | '/' | '%';
 	public SqmlMultiplicationOperatorElements getSqmlMultiplicationOperatorAccess() {
 		return pSqmlMultiplicationOperator;
 	}
@@ -5671,9 +5790,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getSqmlMultiplicationOperatorRule() {
 		return getSqmlMultiplicationOperatorAccess().getRule();
 	}
-
+	
 	//QualifiedNameWithWildcard:
-	//	QualifiedName '.*'?;
+	//    QualifiedName '.*'?;
 	public QualifiedNameWithWildcardElements getQualifiedNameWithWildcardAccess() {
 		return pQualifiedNameWithWildcard;
 	}
@@ -5681,9 +5800,9 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getQualifiedNameWithWildcardRule() {
 		return getQualifiedNameWithWildcardAccess().getRule();
 	}
-
+	
 	//QualifiedName:
-	//	ID ('.' ID)*;
+	//    ID ('.' ID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return pQualifiedName;
 	}
@@ -5691,47 +5810,42 @@ public class SqmlGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getQualifiedNameRule() {
 		return getQualifiedNameAccess().getRule();
 	}
-
-	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+	
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
-	} 
-
-	//terminal INT returns ecore::EInt:
-	//	'0'..'9'+;
+	}
+	
+	//terminal INT returns ecore::EInt: ('0'..'9')+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
-	} 
-
+	}
+	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//            '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+	//            "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+	//        ;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
-	} 
-
-	//terminal ML_COMMENT:
-	//	'/*'->'*/';
+	}
+	
+	//terminal ML_COMMENT : '/*' -> '*/';
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
-	} 
-
-	//terminal SL_COMMENT:
-	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
+	}
+	
+	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
-	} 
-
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
+	}
+	
+	//terminal WS         : (' '|'\t'|'\r'|'\n')+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
-	} 
-
-	//terminal ANY_OTHER:
-	//	.;
+	}
+	
+	//terminal ANY_OTHER: .;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();
-	} 
+	}
 }

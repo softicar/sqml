@@ -64,39 +64,49 @@ public class SqmlSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     'AS'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     column=[ISqmlColumn|ID] (ambiguity) name=ID
+	 
+	 * </pre>
 	 */
 	protected void emit_SqmlForeignKeyVariable_ASKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     'ASC'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     expression=SqmlExpression (ambiguity) (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_SqmlOrderByExpression_ASCKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     'AS'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     subSelect=SqmlSelect ')' (ambiguity) name=ID
+	 
+	 * </pre>
 	 */
 	protected void emit_SqmlSubSelectVariable_ASKeyword_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     ('[' ']')?
 	 *
@@ -107,17 +117,22 @@ public class SqmlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     defaultValue=SqmlDefaultValue (ambiguity) (rule end)
 	 *     name=ID (ambiguity) (rule end)
 	 *     serial?='SERIAL' (ambiguity) (rule end)
+	 
+	 * </pre>
 	 */
 	protected void emit_SqmlTableColumn___LeftSquareBracketKeyword_4_0_RightSquareBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
+	 * <pre>
 	 * Ambiguous syntax:
 	 *     'AS'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     table=[ISqmlTable|ID] (ambiguity) name=ID
+	 
+	 * </pre>
 	 */
 	protected void emit_SqmlTableVariable_ASKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
