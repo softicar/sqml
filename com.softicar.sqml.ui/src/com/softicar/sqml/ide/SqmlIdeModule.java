@@ -4,8 +4,8 @@
 package com.softicar.sqml.ide;
 
 /**
- * Use this class to register ide components.
+ * Use this class to register IDE components.
  */
 public class SqmlIdeModule extends AbstractSqmlIdeModule {
-	// stub
+	// nothing to add
 }

@@ -16,7 +16,7 @@ public class SqmlIdeSetup extends SqmlStandaloneSetup {
 
 	@Override
 	public Injector createInjector() {
+
 		return Guice.createInjector(Modules2.mixin(new SqmlRuntimeModule(), new SqmlIdeModule()));
 	}
-	
 }

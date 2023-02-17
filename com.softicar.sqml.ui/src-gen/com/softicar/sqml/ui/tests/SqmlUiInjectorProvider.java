@@ -11,7 +11,7 @@ public class SqmlUiInjectorProvider implements IInjectorProvider {
 
 	@Override
 	public Injector getInjector() {
+
 		return SqmlActivator.getInstance().getInjector("com.softicar.sqml.Sqml");
 	}
-
 }

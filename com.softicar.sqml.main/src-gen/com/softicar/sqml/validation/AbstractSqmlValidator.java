@@ -9,9 +9,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.validation.AbstractDeclarativeValidator;
 
 public abstract class AbstractSqmlValidator extends AbstractDeclarativeValidator {
-	
+
 	@Override
 	protected List<EPackage> getEPackages() {
+
 		List<EPackage> result = new ArrayList<EPackage>();
 		result.add(EPackage.Registry.INSTANCE.getEPackage("com.softicar.sqml.model.files"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("com.softicar.sqml.model.types"));
