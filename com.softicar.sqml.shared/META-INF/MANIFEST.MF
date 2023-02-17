@@ -4,7 +4,7 @@ Bundle-Name: com.softicar.sqml.shared
 Bundle-SymbolicName: com.softicar.sqml.shared;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: SoftiCAR
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: lib/jars/asm-9.1.jar,
  lib/jars/byte-buddy-1.12.7.jar,
  lib/jars/byte-buddy-agent-1.12.7.jar,
@@ -348,6 +348,16 @@ Export-Package: com.softicar.platform.common.code,
  com.softicar.platform.db.structure.utils,
  com.softicar.platform.db.structure.view,
  org.junit,
+ org.junit.function,
+ org.junit.matchers,
+ org.junit.rules,
+ org.junit.runner,
+ org.junit.runner.manipulation,
+ org.junit.runner.notification,
+ org.junit.runners,
+ org.junit.runners.model,
+ org.junit.runners.parameterized,
+ org.junit.validator,
  org.mockito,
  org.mockito.hamcrest,
  org.mockito.invocation,

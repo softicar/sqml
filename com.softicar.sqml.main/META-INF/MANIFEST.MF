@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: com.softicar.sqml.main;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: com.softicar.sqml.generator;visibility:=reexport,
- org.antlr.runtime,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.core.resources,
  org.eclipse.core.runtime,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
@@ -20,13 +20,15 @@ Require-Bundle: com.softicar.sqml.generator;visibility:=reexport,
  org.eclipse.xtext.util;bundle-version="2.8.2",
  org.eclipse.xtext.common.types;bundle-version="2.8.2",
  org.eclipse.xtext.ecore;bundle-version="2.8.2",
- org.eclipse.xtext.generator;bundle-version="2.8.2";resolution:=optional,
- org.eclipse.xtext.xbase;bundle-version="2.8.2";resolution:=optional;visibility:=reexport,
- org.eclipse.xtext.xbase.lib;bundle-version="2.8.2";visibility:=reexport
+ org.eclipse.xtext.xbase;bundle-version="2.8.2";visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.8.2";visibility:=reexport,
+ org.eclipse.xtext.xtext.generator;bundle-version="2.29.0",
+ org.apache.commons.logging;bundle-version="1.2.0",
+ org.objectweb.asm;bundle-version="[9.4.0,9.5.0)";resolution:=optional
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: com.softicar.sqml,
- com.softicar.sqml.formatting,
+ com.softicar.sqml.formatting2,
  com.softicar.sqml.generation,
  com.softicar.sqml.linking,
  com.softicar.sqml.literals,

@@ -19,7 +19,6 @@ import com.softicar.sqml.scoping.SqmlQualifiedNameProvider;
 import com.softicar.sqml.scoping.SqmlResourceDescriptionManager;
 import com.softicar.sqml.scoping.SqmlResourceDescriptionStrategy;
 import com.softicar.sqml.scoping.SqmlScopeProvider;
-import com.softicar.sqml.validation.AbstractSqmlValidator;
 import com.softicar.sqml.validation.SqmlValidator;
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.generator.IGenerator;
@@ -51,7 +50,7 @@ public class SqmlRuntimeModule extends com.softicar.sqml.AbstractSqmlRuntimeModu
 
 	@Override
 	@org.eclipse.xtext.service.SingletonBinding(eager = true)
-	public Class<? extends AbstractSqmlValidator> bindAbstractSqmlValidator() {
+	public Class<? extends SqmlValidator> bindSqmlValidator() {
 
 		return SqmlValidator.class;
 	}

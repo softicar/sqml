@@ -2,7 +2,6 @@ package com.softicar.sqml.test.utils;
 
 import com.google.inject.Inject;
 import com.softicar.platform.common.testing.AbstractTest;
-import com.softicar.sqml.SqmlInjectorProvider;
 import com.softicar.sqml.model.builtin.SqmlBuiltInTypes;
 import com.softicar.sqml.model.conditions.ConditionsFactory;
 import com.softicar.sqml.model.conditions.ConditionsPackage;
@@ -16,6 +15,7 @@ import com.softicar.sqml.model.selects.ISqmlSelectColumn;
 import com.softicar.sqml.model.tables.ISqmlTable;
 import com.softicar.sqml.model.types.ISqmlType;
 import com.softicar.sqml.test.parser.SqmlTestParser;
+import com.softicar.sqml.tests.SqmlInjectorProvider;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.XtextRunner;
 import org.junit.runner.RunWith;

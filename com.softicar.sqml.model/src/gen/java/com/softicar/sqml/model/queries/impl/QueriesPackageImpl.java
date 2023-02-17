@@ -58,7 +58,6 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	private QueriesPackageImpl() {
 		super(eNS_URI, QueriesFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

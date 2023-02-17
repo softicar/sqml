@@ -117,7 +117,6 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	private FunctionsPackageImpl() {
 		super(eNS_URI, FunctionsFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -131,7 +131,6 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	private TablesPackageImpl() {
 		super(eNS_URI, TablesFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -7,7 +7,6 @@ import com.softicar.sqml.generator.table.structure.SqmlTableStructure;
 import com.softicar.sqml.model.files.ISqmlFile;
 import com.softicar.sqml.model.tables.ISqmlTable;
 import com.softicar.sqml.model.tables.SqmlMissingTargetTableOfForeignKeyException;
-import com.softicar.sqml.ui.internal.SqmlActivator;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -18,6 +17,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
 
 public class SqmlShowCreateTableDisplayer {
@@ -32,7 +32,7 @@ public class SqmlShowCreateTableDisplayer {
 
 	public void show(Collection<? extends IFile> files) {
 
-		Shell shell = SqmlActivator.getInstance().getWorkbench().getActiveWorkbenchWindow().getShell();
+		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		try {
 			new SqmlShowCreateTableDialog(shell, getShowCreateTableStatements(files)).open();
 		} catch (SqmlMissingTargetTableOfForeignKeyException exception) {

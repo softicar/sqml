@@ -389,6 +389,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlAddition
 	 *     SqmlOr returns SqmlAddition
@@ -408,6 +409,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlAddition_SqmlAddition_1_0 function=[SqmlFunction|SqmlAdditionOperator] right=SqmlMultiplication)
+	 * </pre>
 	 */
 	protected void sequence_SqmlAddition(ISerializationContext context, SqmlAddition semanticObject) {
 		if (errorAcceptor != null) {
@@ -427,6 +429,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlAnd
 	 *     SqmlOr returns SqmlAnd
@@ -436,6 +439,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlAnd_SqmlAnd_1_0 right=SqmlCondition)
+	 * </pre>
 	 */
 	protected void sequence_SqmlAnd(ISerializationContext context, SqmlAnd semanticObject) {
 		if (errorAcceptor != null) {
@@ -452,6 +456,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlBooleanLiteral
 	 *     SqmlOr returns SqmlBooleanLiteral
@@ -476,6 +481,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     true?='TRUE'?
+	 * </pre>
 	 */
 	protected void sequence_SqmlBooleanLiteral(ISerializationContext context, SqmlBooleanLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -483,11 +489,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlCaseWhen returns SqmlCaseWhen
 	 *
 	 * Constraint:
 	 *     (whenExpression=SqmlExpression thenExpression=SqmlExpression)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCaseWhen(ISerializationContext context, SqmlCaseWhen semanticObject) {
 		if (errorAcceptor != null) {
@@ -504,6 +512,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlCase
 	 *     SqmlOr returns SqmlCase
@@ -527,6 +536,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (operand=SqmlExpression? whens+=SqmlCaseWhen+ elseExpression=SqmlExpression?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCase(ISerializationContext context, SqmlCase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -534,6 +544,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlBetween
 	 *     SqmlOr returns SqmlBetween
@@ -544,6 +555,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (operand=SqmlCondition_SqmlBetween_2_1_3_0 left=SqmlOperand right=SqmlOperand)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlBetween semanticObject) {
 		if (errorAcceptor != null) {
@@ -563,6 +575,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlComparison
 	 *     SqmlOr returns SqmlComparison
@@ -573,6 +586,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlCondition_SqmlComparison_2_1_0_0 function=[SqmlFunction|SqmlComparisonOperator] right=SqmlOperand)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlComparison semanticObject) {
 		if (errorAcceptor != null) {
@@ -592,6 +606,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlExists
 	 *     SqmlOr returns SqmlExists
@@ -602,6 +617,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     subSelect=SqmlSubSelect
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlExists semanticObject) {
 		if (errorAcceptor != null) {
@@ -615,6 +631,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlIn
 	 *     SqmlOr returns SqmlIn
@@ -625,6 +642,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlCondition_SqmlIn_2_1_4_0 not?='NOT'? (right=SqmlStaticVariableReference | right=SqmlSubSelect | right=SqmlRowConstructor))
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlIn semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -632,6 +650,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlIsNull
 	 *     SqmlOr returns SqmlIsNull
@@ -642,6 +661,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (operand=SqmlCondition_SqmlIsNull_2_1_2_0 not?='NOT'?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlIsNull semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -649,6 +669,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlLike
 	 *     SqmlOr returns SqmlLike
@@ -659,6 +680,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlCondition_SqmlLike_2_1_1_0 not?='NOT'? right=SqmlOperand escape=STRING?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlLike semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -666,6 +688,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlNot
 	 *     SqmlOr returns SqmlNot
@@ -676,6 +699,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     condition=SqmlCondition
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlNot semanticObject) {
 		if (errorAcceptor != null) {
@@ -689,6 +713,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlRegexp
 	 *     SqmlOr returns SqmlRegexp
@@ -699,6 +724,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (operand=SqmlCondition_SqmlRegexp_2_1_5_0 not?='NOT'? regexp=SqmlOperand)
+	 * </pre>
 	 */
 	protected void sequence_SqmlCondition(ISerializationContext context, SqmlRegexp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -706,6 +732,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlDecimalLiteral
 	 *     SqmlOr returns SqmlDecimalLiteral
@@ -730,6 +757,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     value=DECIMAL
+	 * </pre>
 	 */
 	protected void sequence_SqmlDecimalLiteral(ISerializationContext context, SqmlDecimalLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -743,6 +771,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlDoubleLiteral
 	 *     SqmlOr returns SqmlDoubleLiteral
@@ -767,6 +796,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     value=DOUBLE
+	 * </pre>
 	 */
 	protected void sequence_SqmlDoubleLiteral(ISerializationContext context, SqmlDoubleLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -780,11 +810,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlEnum returns SqmlEnum
 	 *
 	 * Constraint:
 	 *     (name=ID typeReference=SqmlTypeReference? enumerators+=SqmlEnumerator*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlEnum(ISerializationContext context, SqmlEnum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -792,11 +824,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlEnumerator returns SqmlEnumerator
 	 *
 	 * Constraint:
 	 *     (name=ID value=SqmlLiteral?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlEnumerator(ISerializationContext context, SqmlEnumerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -804,11 +838,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlFile returns SqmlFile
 	 *
 	 * Constraint:
 	 *     (packageDeclaration=SqmlPackageDeclaration imports+=SqmlImport* elements+=SqmlFileElement*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlFile(ISerializationContext context, SqmlFile semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -816,6 +852,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlFloatLiteral
 	 *     SqmlOr returns SqmlFloatLiteral
@@ -840,6 +877,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     value=FLOAT
+	 * </pre>
 	 */
 	protected void sequence_SqmlFloatLiteral(ISerializationContext context, SqmlFloatLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -853,11 +891,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlForeignKeyVariable returns SqmlForeignKeyVariable
 	 *
 	 * Constraint:
 	 *     (variable=[ISqmlVariable|ID] column=[ISqmlColumn|ID] name=ID)
+	 * </pre>
 	 */
 	protected void sequence_SqmlForeignKeyVariable(ISerializationContext context, SqmlForeignKeyVariable semanticObject) {
 		if (errorAcceptor != null) {
@@ -877,12 +917,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlFromClause
 	 *     SqmlFromClause returns SqmlFromClause
 	 *
 	 * Constraint:
 	 *     (variable=SqmlTableVariable | variable=SqmlSubSelectVariable)
+	 * </pre>
 	 */
 	protected void sequence_SqmlFromClause(ISerializationContext context, SqmlFromClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -890,6 +932,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlFunctionCall
 	 *     SqmlOr returns SqmlFunctionCall
@@ -913,6 +956,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (function=[SqmlFunction|ID] (arguments+=SqmlOperand arguments+=SqmlOperand*)?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlFunctionCall(ISerializationContext context, SqmlFunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -920,11 +964,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlFunctionParameter returns SqmlFunctionParameter
 	 *
 	 * Constraint:
 	 *     (typeReference=SqmlTypeReference name=ID)
+	 * </pre>
 	 */
 	protected void sequence_SqmlFunctionParameter(ISerializationContext context, SqmlFunctionParameter semanticObject) {
 		if (errorAcceptor != null) {
@@ -941,6 +987,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlFileElement returns SqmlFunction
 	 *     SqmlFunction returns SqmlFunction
@@ -952,6 +999,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (parameters+=SqmlFunctionParameter parameters+=SqmlFunctionParameter*)? 
 	 *         (expression=SqmlExpression | sql=SqmlSql)
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlFunction(ISerializationContext context, SqmlFunction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -959,12 +1007,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlGroupByClause
 	 *     SqmlGroupByClause returns SqmlGroupByClause
 	 *
 	 * Constraint:
 	 *     (expressions+=SqmlExpression expressions+=SqmlExpression*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlGroupByClause(ISerializationContext context, SqmlGroupByClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -972,6 +1022,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlGroupConcat
 	 *     SqmlOr returns SqmlGroupConcat
@@ -1001,6 +1052,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (orderByExpressions+=SqmlOrderByExpression orderByExpressions+=SqmlOrderByExpression*)? 
 	 *         separator=STRING?
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlGroupConcat(ISerializationContext context, SqmlGroupConcat semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1008,12 +1060,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlHavingClause
 	 *     SqmlHavingClause returns SqmlHavingClause
 	 *
 	 * Constraint:
 	 *     condition=SqmlExpression
+	 * </pre>
 	 */
 	protected void sequence_SqmlHavingClause(ISerializationContext context, SqmlHavingClause semanticObject) {
 		if (errorAcceptor != null) {
@@ -1027,6 +1081,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlIfNull
 	 *     SqmlOr returns SqmlIfNull
@@ -1050,6 +1105,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (testExpression=SqmlExpression thenExpression=SqmlExpression)
+	 * </pre>
 	 */
 	protected void sequence_SqmlIfNull(ISerializationContext context, SqmlIfNull semanticObject) {
 		if (errorAcceptor != null) {
@@ -1066,6 +1122,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlIf
 	 *     SqmlOr returns SqmlIf
@@ -1089,6 +1146,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (condition=SqmlExpression thenExpression=SqmlExpression elseExpression=SqmlExpression)
+	 * </pre>
 	 */
 	protected void sequence_SqmlIf(ISerializationContext context, SqmlIf semanticObject) {
 		if (errorAcceptor != null) {
@@ -1108,11 +1166,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlImport returns SqmlImport
 	 *
 	 * Constraint:
 	 *     target=[ISqmlGlobalObject|QualifiedName]
+	 * </pre>
 	 */
 	protected void sequence_SqmlImport(ISerializationContext context, SqmlImport semanticObject) {
 		if (errorAcceptor != null) {
@@ -1126,6 +1186,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlIntegerLiteral
 	 *     SqmlOr returns SqmlIntegerLiteral
@@ -1150,6 +1211,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     value=INT
+	 * </pre>
 	 */
 	protected void sequence_SqmlIntegerLiteral(ISerializationContext context, SqmlIntegerLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -1163,12 +1225,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlJoinClause
 	 *     SqmlJoinClause returns SqmlJoinClause
 	 *
 	 * Constraint:
 	 *     (leftJoin?='LEFT'? (variable=SqmlForeignKeyVariable | variable=SqmlTableVariable | variable=SqmlSubSelectVariable) conditions+=SqmlExpression*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlJoinClause(ISerializationContext context, SqmlJoinClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1176,12 +1240,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlDefaultValue returns SqmlLiteralDefaultValue
 	 *     SqmlLiteralDefaultValue returns SqmlLiteralDefaultValue
 	 *
 	 * Constraint:
 	 *     (minus?='-'? literal=SqmlLiteral)
+	 * </pre>
 	 */
 	protected void sequence_SqmlLiteralDefaultValue(ISerializationContext context, SqmlLiteralDefaultValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1189,6 +1255,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlLongLiteral
 	 *     SqmlOr returns SqmlLongLiteral
@@ -1213,6 +1280,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     value=LONG
+	 * </pre>
 	 */
 	protected void sequence_SqmlLongLiteral(ISerializationContext context, SqmlLongLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -1226,6 +1294,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlMultiplication
 	 *     SqmlOr returns SqmlMultiplication
@@ -1247,6 +1316,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlMultiplication_SqmlMultiplication_1_0 function=[SqmlFunction|SqmlMultiplicationOperator] right=SqmlPrimay)
+	 * </pre>
 	 */
 	protected void sequence_SqmlMultiplication(ISerializationContext context, SqmlMultiplication semanticObject) {
 		if (errorAcceptor != null) {
@@ -1266,6 +1336,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlNegation
 	 *     SqmlOr returns SqmlNegation
@@ -1289,6 +1360,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     expression=SqmlPrimay
+	 * </pre>
 	 */
 	protected void sequence_SqmlNegation(ISerializationContext context, SqmlNegation semanticObject) {
 		if (errorAcceptor != null) {
@@ -1302,6 +1374,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlOr
 	 *     SqmlOr returns SqmlOr
@@ -1309,6 +1382,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlOr_SqmlOr_1_0 right=SqmlAnd)
+	 * </pre>
 	 */
 	protected void sequence_SqmlOr(ISerializationContext context, SqmlOr semanticObject) {
 		if (errorAcceptor != null) {
@@ -1325,12 +1399,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlOrderByClause
 	 *     SqmlOrderByClause returns SqmlOrderByClause
 	 *
 	 * Constraint:
 	 *     (expressions+=SqmlOrderByExpression expressions+=SqmlOrderByExpression*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlOrderByClause(ISerializationContext context, SqmlOrderByClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1338,11 +1414,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlOrderByExpression returns SqmlOrderByExpression
 	 *
 	 * Constraint:
 	 *     (expression=SqmlExpression descending?='DESC'?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlOrderByExpression(ISerializationContext context, SqmlOrderByExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1350,11 +1428,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlPackageDeclaration returns SqmlPackageDeclaration
 	 *
 	 * Constraint:
 	 *     name=QualifiedName
+	 * </pre>
 	 */
 	protected void sequence_SqmlPackageDeclaration(ISerializationContext context, SqmlPackageDeclaration semanticObject) {
 		if (errorAcceptor != null) {
@@ -1368,12 +1448,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlPath returns SqmlPath
 	 *     SqmlPath.SqmlPath_1_0 returns SqmlPath
 	 *
 	 * Constraint:
 	 *     (target=[ISqmlModelElement|ID] | (parent=SqmlPath_SqmlPath_1_0 target=[ISqmlModelElement|ID]))
+	 * </pre>
 	 */
 	protected void sequence_SqmlPath(ISerializationContext context, SqmlPath semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1381,11 +1463,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlQueryParameter returns SqmlQueryParameter
 	 *
 	 * Constraint:
 	 *     (optional?='OPTIONAL'? typeReference=SqmlTypeReference name=ID)
+	 * </pre>
 	 */
 	protected void sequence_SqmlQueryParameter(ISerializationContext context, SqmlQueryParameter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1393,12 +1477,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlFileElement returns SqmlQuery
 	 *     SqmlQuery returns SqmlQuery
 	 *
 	 * Constraint:
 	 *     (name=ID parameters+=SqmlQueryParameter* select=SqmlSelect)
+	 * </pre>
 	 */
 	protected void sequence_SqmlQuery(ISerializationContext context, SqmlQuery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1406,12 +1492,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlDefaultValue returns SqmlRowConstructorDefaultValue
 	 *     SqmlRowConstructorDefaultValue returns SqmlRowConstructorDefaultValue
 	 *
 	 * Constraint:
 	 *     (valueReferences+=SqmlValueReference valueReferences+=SqmlValueReference*)?
+	 * </pre>
 	 */
 	protected void sequence_SqmlRowConstructorDefaultValue(ISerializationContext context, SqmlRowConstructorDefaultValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1419,6 +1507,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlRowConstructor
 	 *     SqmlOr returns SqmlRowConstructor
@@ -1442,6 +1531,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (explicit?='ROW'? expressions+=SqmlExpression expressions+=SqmlExpression*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlRowConstructor(ISerializationContext context, SqmlRowConstructor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1449,12 +1539,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlSelectClause
 	 *     SqmlSelectClause returns SqmlSelectClause
 	 *
 	 * Constraint:
 	 *     (distinct?='DISTINCT'? columns+=SqmlSelectColumn columns+=SqmlSelectColumn*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlSelectClause(ISerializationContext context, SqmlSelectClause semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1462,11 +1554,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectColumn returns SqmlSelectColumn
 	 *
 	 * Constraint:
 	 *     (expression=SqmlExpression alias=ID? title=STRING?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlSelectColumn(ISerializationContext context, SqmlSelectColumn semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1474,11 +1568,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectElseIf returns SqmlSelectElseIf
 	 *
 	 * Constraint:
 	 *     (condition=SqmlStaticExpression parts+=SqmlSelectPart*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlSelectElseIf(ISerializationContext context, SqmlSelectElseIf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1486,11 +1582,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectElse returns SqmlSelectElse
 	 *
 	 * Constraint:
 	 *     parts+=SqmlSelectPart*
+	 * </pre>
 	 */
 	protected void sequence_SqmlSelectElse(ISerializationContext context, SqmlSelectElse semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1498,12 +1596,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlSelectIf
 	 *     SqmlSelectIf returns SqmlSelectIf
 	 *
 	 * Constraint:
 	 *     (condition=SqmlStaticExpression parts+=SqmlSelectPart* elseIfs+=SqmlSelectElseIf* else=SqmlSelectElse?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlSelectIf(ISerializationContext context, SqmlSelectIf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1511,11 +1611,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelect returns SqmlSelect
 	 *
 	 * Constraint:
 	 *     parts+=SqmlSelectPart+
+	 * </pre>
 	 */
 	protected void sequence_SqmlSelect(ISerializationContext context, SqmlSelect semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1523,12 +1625,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSqlToken returns SqmlSqlId
 	 *     SqmlSqlId returns SqmlSqlId
 	 *
 	 * Constraint:
 	 *     identifier=ID
+	 * </pre>
 	 */
 	protected void sequence_SqmlSqlId(ISerializationContext context, SqmlSqlId semanticObject) {
 		if (errorAcceptor != null) {
@@ -1542,6 +1646,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSqlToken returns SqmlSqlKeyword
 	 *     SqmlSqlKeyword returns SqmlSqlKeyword
@@ -1627,6 +1732,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         keywordText='WHEN' | 
 	 *         keywordText='WHERE'
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlSqlKeyword(ISerializationContext context, SqmlSqlKeyword semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1634,12 +1740,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSqlToken returns SqmlSqlNumberLiteral
 	 *     SqmlSqlNumberLiteral returns SqmlSqlNumberLiteral
 	 *
 	 * Constraint:
 	 *     (integer=INT | decimal=DECIMAL)
+	 * </pre>
 	 */
 	protected void sequence_SqmlSqlNumberLiteral(ISerializationContext context, SqmlSqlNumberLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1647,12 +1755,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSqlToken returns SqmlSqlStringLiteral
 	 *     SqmlSqlStringLiteral returns SqmlSqlStringLiteral
 	 *
 	 * Constraint:
 	 *     string=STRING
+	 * </pre>
 	 */
 	protected void sequence_SqmlSqlStringLiteral(ISerializationContext context, SqmlSqlStringLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -1666,6 +1776,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSqlToken returns SqmlSqlSymbol
 	 *     SqmlSqlSymbol returns SqmlSqlSymbol
@@ -1686,13 +1797,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         symbolText='.' | 
 	 *         symbolText=',' | 
 	 *         symbolText='=' | 
-	 *         symbolText='<>' | 
+	 *         symbolText='&lt;&gt;' | 
 	 *         symbolText='!=' | 
-	 *         symbolText='<' | 
-	 *         symbolText='<=' | 
-	 *         symbolText='>' | 
-	 *         symbolText='>='
+	 *         symbolText='&lt;' | 
+	 *         symbolText='&lt;=' | 
+	 *         symbolText='&gt;' | 
+	 *         symbolText='&gt;='
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlSqlSymbol(ISerializationContext context, SqmlSqlSymbol semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1700,11 +1812,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSql returns SqmlSql
 	 *
 	 * Constraint:
 	 *     tokens+=SqmlSqlToken*
+	 * </pre>
 	 */
 	protected void sequence_SqmlSql(ISerializationContext context, SqmlSql semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1712,6 +1826,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlStaticExpression returns SqmlStaticAnd
 	 *     SqmlStaticOr returns SqmlStaticAnd
@@ -1721,6 +1836,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlStaticAnd_SqmlStaticAnd_1_0 right=SqmlStaticAtom)
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticAnd(ISerializationContext context, SqmlStaticAnd semanticObject) {
 		if (errorAcceptor != null) {
@@ -1737,6 +1853,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlStaticIf
 	 *     SqmlOr returns SqmlStaticIf
@@ -1765,6 +1882,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (conditions+=SqmlStaticExpression expressions+=SqmlExpression)* 
 	 *         elseExpression=SqmlExpression?
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticIf(ISerializationContext context, SqmlStaticIf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1772,6 +1890,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlStaticExpression returns SqmlStaticIsEmpty
 	 *     SqmlStaticOr returns SqmlStaticIsEmpty
@@ -1783,6 +1902,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (parameterReference=SqmlStaticVariableReference not?='NOT'?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticIsEmpty(ISerializationContext context, SqmlStaticIsEmpty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1790,6 +1910,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlStaticExpression returns SqmlStaticIsNull
 	 *     SqmlStaticOr returns SqmlStaticIsNull
@@ -1801,6 +1922,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (parameterReference=SqmlStaticVariableReference not?='NOT'?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticIsNull(ISerializationContext context, SqmlStaticIsNull semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1808,6 +1930,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlStaticExpression returns SqmlStaticIsTrue
 	 *     SqmlStaticOr returns SqmlStaticIsTrue
@@ -1819,6 +1942,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (not?='NOT'? parameterReference=SqmlStaticVariableReference)
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticIsTrue(ISerializationContext context, SqmlStaticIsTrue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1826,6 +1950,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlStaticExpression returns SqmlStaticOr
 	 *     SqmlStaticOr returns SqmlStaticOr
@@ -1833,6 +1958,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (left=SqmlStaticOr_SqmlStaticOr_1_0 right=SqmlStaticAnd)
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticOr(ISerializationContext context, SqmlStaticOr semanticObject) {
 		if (errorAcceptor != null) {
@@ -1849,6 +1975,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlStaticExpression returns SqmlStaticParentheses
 	 *     SqmlStaticOr returns SqmlStaticParentheses
@@ -1860,6 +1987,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     expression=SqmlStaticExpression
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticParentheses(ISerializationContext context, SqmlStaticParentheses semanticObject) {
 		if (errorAcceptor != null) {
@@ -1873,6 +2001,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSqlToken returns SqmlStaticVariableReference
 	 *     SqmlExpression returns SqmlStaticVariableReference
@@ -1897,6 +2026,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (nextIteration?='NEXT'? variable=[ISqmlStaticVariable|ID])
+	 * </pre>
 	 */
 	protected void sequence_SqmlStaticVariableReference(ISerializationContext context, SqmlStaticVariableReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1904,6 +2034,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlStringLiteral
 	 *     SqmlOr returns SqmlStringLiteral
@@ -1928,6 +2059,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     value=STRING
+	 * </pre>
 	 */
 	protected void sequence_SqmlStringLiteral(ISerializationContext context, SqmlStringLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -1941,11 +2073,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSubSelectVariable returns SqmlSubSelectVariable
 	 *
 	 * Constraint:
 	 *     (subSelect=SqmlSelect name=ID)
+	 * </pre>
 	 */
 	protected void sequence_SqmlSubSelectVariable(ISerializationContext context, SqmlSubSelectVariable semanticObject) {
 		if (errorAcceptor != null) {
@@ -1962,11 +2096,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSubSelect returns SqmlSubSelect
 	 *
 	 * Constraint:
 	 *     select=SqmlSelect
+	 * </pre>
 	 */
 	protected void sequence_SqmlSubSelect(ISerializationContext context, SqmlSubSelect semanticObject) {
 		if (errorAcceptor != null) {
@@ -1980,6 +2116,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTableColumn returns SqmlTableColumn
 	 *
@@ -2010,6 +2147,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             nullable?='NULLABLE'?
 	 *         )*
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlTableColumn(ISerializationContext context, SqmlTableColumn semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2017,11 +2155,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTableKey returns SqmlIndexKey
 	 *
 	 * Constraint:
 	 *     (columns+=[ISqmlTableColumn|ID]* name=ID?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlTableKey(ISerializationContext context, SqmlIndexKey semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2029,11 +2169,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTableKey returns SqmlUniqueKey
 	 *
 	 * Constraint:
 	 *     (columns+=[ISqmlTableColumn|ID]* name=ID?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlTableKey(ISerializationContext context, SqmlUniqueKey semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2041,11 +2183,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTableRowValue returns SqmlTableRowValue
 	 *
 	 * Constraint:
 	 *     (literal=SqmlLiteral | null?='NULL')
+	 * </pre>
 	 */
 	protected void sequence_SqmlTableRowValue(ISerializationContext context, SqmlTableRowValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2053,11 +2197,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTableRow returns SqmlTableRow
 	 *
 	 * Constraint:
 	 *     (values+=SqmlTableRowValue values+=SqmlTableRowValue*)
+	 * </pre>
 	 */
 	protected void sequence_SqmlTableRow(ISerializationContext context, SqmlTableRow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2065,11 +2211,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTableVariable returns SqmlTableVariable
 	 *
 	 * Constraint:
 	 *     (table=[ISqmlTable|ID] name=ID)
+	 * </pre>
 	 */
 	protected void sequence_SqmlTableVariable(ISerializationContext context, SqmlTableVariable semanticObject) {
 		if (errorAcceptor != null) {
@@ -2086,6 +2234,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlFileElement returns SqmlTable
 	 *     SqmlTable returns SqmlTable
@@ -2100,6 +2249,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         enums+=SqmlEnum* 
 	 *         rows+=SqmlTableRow*
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_SqmlTable(ISerializationContext context, SqmlTable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2107,11 +2257,13 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlTypeReference returns SqmlTypeReference
 	 *
 	 * Constraint:
 	 *     (typeDefinition=[ISqmlTypeDefinition|QualifiedName] (typeParameters+=SqmlTypeReference typeParameters+=SqmlTypeReference*)? list?='['?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlTypeReference(ISerializationContext context, SqmlTypeReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2119,12 +2271,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlDefaultValue returns SqmlValueReferenceDefaultValue
 	 *     SqmlValueReferenceDefaultValue returns SqmlValueReferenceDefaultValue
 	 *
 	 * Constraint:
 	 *     valueReference=SqmlValueReference
+	 * </pre>
 	 */
 	protected void sequence_SqmlValueReferenceDefaultValue(ISerializationContext context, SqmlValueReferenceDefaultValue semanticObject) {
 		if (errorAcceptor != null) {
@@ -2138,6 +2292,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlExpression returns SqmlValueReference
 	 *     SqmlOr returns SqmlValueReference
@@ -2161,6 +2316,7 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (nextIteration?='NEXT'? path=SqmlPath dotStar?='.*'?)
+	 * </pre>
 	 */
 	protected void sequence_SqmlValueReference(ISerializationContext context, SqmlValueReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2168,12 +2324,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlFileElement returns SqmlValueType
 	 *     SqmlValueType returns SqmlValueType
 	 *
 	 * Constraint:
 	 *     name=ID
+	 * </pre>
 	 */
 	protected void sequence_SqmlValueType(ISerializationContext context, SqmlValueType semanticObject) {
 		if (errorAcceptor != null) {
@@ -2187,12 +2345,14 @@ public class SqmlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     SqmlSelectPart returns SqmlWhereClause
 	 *     SqmlWhereClause returns SqmlWhereClause
 	 *
 	 * Constraint:
 	 *     condition=SqmlExpression
+	 * </pre>
 	 */
 	protected void sequence_SqmlWhereClause(ISerializationContext context, SqmlWhereClause semanticObject) {
 		if (errorAcceptor != null) {

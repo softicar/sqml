@@ -72,7 +72,6 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	private FilesPackageImpl() {
 		super(eNS_URI, FilesFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

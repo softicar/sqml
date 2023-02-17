@@ -8,13 +8,14 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: com.softicar.sqml.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.workbench;resolution:=optional,
- org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.eclipse.xtext.testing,
  org.eclipse.xtext.junit4,
- com.softicar.sqml.main
-Bundle-RequiredExecutionEnvironment: JavaSE-15
-Export-Package: com.softicar.sqml,
- com.softicar.sqml.test.builder,
+ com.softicar.sqml.main,
+ org.eclipse.xtext.xbase.testing,
+ org.objectweb.asm;bundle-version="[9.4.0,9.5.0)";resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: com.softicar.sqml.test.builder,
  com.softicar.sqml.test.builtin,
  com.softicar.sqml.test.conditions,
  com.softicar.sqml.test.expressions,
@@ -33,11 +34,6 @@ Export-Package: com.softicar.sqml,
  com.softicar.sqml.test.selects,
  com.softicar.sqml.test.tables,
  com.softicar.sqml.test.types,
- com.softicar.sqml.test.utils
-Import-Package: org.junit.runner;version="4.5.0",
- org.junit.runner.manipulation;version="4.5.0",
- org.junit.runner.notification;version="4.5.0",
- org.junit.runners;version="4.5.0",
- org.junit.runners.model;version="4.5.0",
- org.hamcrest.core
+ com.softicar.sqml.test.utils,
+ com.softicar.sqml.tests;x-internal=true
 Automatic-Module-Name: com.softicar.sqml.tests

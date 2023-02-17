@@ -3,12 +3,11 @@
  */
 package com.softicar.sqml.ui;
 
+import com.google.inject.Injector;
+import com.softicar.sqml.ui.internal.SqmlActivator;
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
-
-import com.google.inject.Injector;
-
-import com.softicar.sqml.ui.internal.SqmlActivator;
+import org.osgi.framework.FrameworkUtil;
 
 /**
  * This class was generated. Customizations should only happen in a newly
@@ -18,12 +17,13 @@ public class SqmlExecutableExtensionFactory extends AbstractGuiceAwareExecutable
 
 	@Override
 	protected Bundle getBundle() {
-		return SqmlActivator.getInstance().getBundle();
+		return FrameworkUtil.getBundle(SqmlActivator.class);
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return SqmlActivator.getInstance().getInjector(SqmlActivator.COM_SOFTICAR_SQML_SQML);
+		SqmlActivator activator = SqmlActivator.getInstance();
+		return activator != null ? activator.getInjector(SqmlActivator.COM_SOFTICAR_SQML_SQML) : null;
 	}
-	
+
 }
