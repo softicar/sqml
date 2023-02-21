@@ -70,6 +70,40 @@ public class SqmlTableClassPrinterTest extends AbstractSqmlTableClassPrinterTest
 	}
 
 	@Test
+	public void testFieldGetterGeneration() {
+
+		config//
+			.setGenerateNullableGetter(true)
+			.setNullableGetterSuffix("OrNull")
+			.setGenerateOptionalGetter(true)
+			.setOptionalGetterSuffix("AsOptional")
+			.setGenerateThrowingGetter(true)
+			.setThrowingGetterSuffix("OrThrow");
+
+		String tableDefinition = new StringBuilder()
+			.append("CREATE TABLE `db`.`foo` (")
+			.append("    `id` INT NOT NULL AUTO_INCREMENT,")
+			.append("    `foo` INT,")
+			.append("    `bar` INT NOT NULL,")
+			.append("    PRIMARY KEY (`id`)")
+			.append("    KEY `foo` (`foo`)")
+			.append("    KEY `foobar` (`foo`,`bar`)")
+			.append(")")
+			.toString();
+
+		generateCode(tableDefinition)//
+			.assertLine("public final Integer getFooOrNull() {")
+			.assertLine("	return getValue(FOO);")
+			.assertLine("public final Integer getFooAsOptional() {")
+			.assertLine("	return getValueAsOptional(FOO);")
+			.assertLine("public final Integer getFooOrThrow() {")
+			.assertLine("	return getValueOrThrow(FOO);")
+			// BAR field is NOT NULL, so expect normal getter
+			.assertLine("public final Integer getBar() {")
+			.assertLine("	return getValue(BAR);");
+	}
+
+	@Test
 	public void testForeignKeyToDbRecordTable() {
 
 		addTable(

@@ -64,24 +64,47 @@ class SqmlTableClassFieldPrinter implements ISqmlTableClassFieldPrinter {
 	@Override
 	public final void printGetFunction() {
 
+		var config = classPrinter.getConfig();
+		var valueClassSimpleName = fieldDefinition.getValueClass().getSimpleName();
+
 		if (fieldDefinition.isIdField()) {
 			return;
 		} else if (fieldDefinition.isBaseField()) {
-			classPrinter.beginMethod("public final %s %s()", fieldDefinition.getValueClass().getSimpleName(), nameDeterminer.getGetFunctionName());
+			classPrinter.beginMethod("public final %s %s()", valueClassSimpleName, nameDeterminer.getGetFunctionName());
 			classPrinter.println("return pk();");
 			classPrinter.endBlock();
 			return;
 		}
 
-		if (fieldDefinition.isForeignObjectField() && classPrinter.getConfig().isGenerateGetIdMethods()) {
+		if (fieldDefinition.isForeignObjectField() && config.isGenerateGetIdMethods()) {
 			classPrinter.beginMethod("public final Integer %sID()", nameDeterminer.getGetFunctionName());
 			classPrinter.println("return getValueId(%s);", nameDeterminer.getStaticFinalName());
 			classPrinter.endBlock();
 		}
 
-		classPrinter.beginMethod("public final %s %s()", fieldDefinition.getValueClass().getSimpleName(), nameDeterminer.getGetFunctionName());
-		classPrinter.println("return getValue(%s);", nameDeterminer.getStaticFinalName());
-		classPrinter.endBlock();
+		if (fieldDefinition.getColumn().isNullable()) {
+			if (config.isGenerateNullableGetter()) {
+				classPrinter.beginMethod("public final %s %s%s()", valueClassSimpleName, nameDeterminer.getGetFunctionName(), config.getNullableGetterSuffix());
+				classPrinter.println("return getValue(%s);", nameDeterminer.getStaticFinalName());
+				classPrinter.endBlock();
+			}
+
+			if (config.isGenerateOptionalGetter()) {
+				classPrinter.beginMethod("public final %s %s%s()", valueClassSimpleName, nameDeterminer.getGetFunctionName(), config.getOptionalGetterSuffix());
+				classPrinter.println("return getValueAsOptional(%s);", nameDeterminer.getStaticFinalName());
+				classPrinter.endBlock();
+			}
+
+			if (config.isGenerateThrowingGetter()) {
+				classPrinter.beginMethod("public final %s %s%s()", valueClassSimpleName, nameDeterminer.getGetFunctionName(), config.getThrowingGetterSuffix());
+				classPrinter.println("return getValueOrThrow(%s);", nameDeterminer.getStaticFinalName());
+				classPrinter.endBlock();
+			}
+		} else {
+			classPrinter.beginMethod("public final %s %s()", valueClassSimpleName, nameDeterminer.getGetFunctionName());
+			classPrinter.println("return getValue(%s);", nameDeterminer.getStaticFinalName());
+			classPrinter.endBlock();
+		}
 	}
 
 	@Override

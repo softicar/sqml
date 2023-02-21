@@ -20,6 +20,18 @@ public interface ISqmlGeneratorPreferences {
 
 	boolean isGenerateGetIdMethods();
 
+	boolean isGenerateNullableGetter();
+
+	String getNullableGetterSuffix();
+
+	boolean isGenerateOptionalGetter();
+
+	String getOptionalGetterSuffix();
+
+	boolean isGenerateThrowingGetter();
+
+	String getThrowingGetterSuffix();
+
 	String getAnnotationForGeneratedClasses();
 
 	String getI18nClass();

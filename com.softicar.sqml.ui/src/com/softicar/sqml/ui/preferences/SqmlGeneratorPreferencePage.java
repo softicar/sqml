@@ -53,6 +53,42 @@ public class SqmlGeneratorPreferencePage extends AbstractPreferencePage {
 				getFieldEditorParent()));
 
 		addField(
+			new BooleanFieldEditor(//
+				SqmlPreferences.GENERATE_NULLABLE_GETTER,
+				"Generate get...OrNull Methods",
+				getFieldEditorParent()));
+
+		addField(
+			new StringFieldEditor(//
+				SqmlPreferences.NULLABLE_GETTER_SUFFIX,
+				"Suffix for get...OrNull Methods",
+				getFieldEditorParent()));
+
+		addField(
+			new BooleanFieldEditor(//
+				SqmlPreferences.GENERATE_OPTIONAL_GETTER,
+				"Generate get...AsOptional Methods",
+				getFieldEditorParent()));
+
+		addField(
+			new StringFieldEditor(//
+				SqmlPreferences.OPTIONAL_GETTER_SUFFIX,
+				"Suffix for get...AsOptional Methods",
+				getFieldEditorParent()));
+
+		addField(
+			new BooleanFieldEditor(//
+				SqmlPreferences.GENERATE_THROWING_GETTER,
+				"Generate get...OrThrow Methods",
+				getFieldEditorParent()));
+
+		addField(
+			new StringFieldEditor(//
+				SqmlPreferences.THROWING_GETTER_SUFFIX,
+				"Suffix for get...OrThrow Methods",
+				getFieldEditorParent()));
+
+		addField(
 			new IntegerFieldEditor(//
 				SqmlPreferences.GENERATED_QUERY_CODE_VERSION,
 				"Generated Query Code Version",

@@ -163,6 +163,42 @@ public class SqmlTableClassPrinterConfig implements ISqmlTableClassPrinterConfig
 	}
 
 	@Override
+	public boolean isGenerateNullableGetter() {
+
+		return preferences.isGenerateNullableGetter();
+	}
+
+	@Override
+	public String getNullableGetterSuffix() {
+
+		return preferences.getNullableGetterSuffix();
+	}
+
+	@Override
+	public boolean isGenerateOptionalGetter() {
+
+		return preferences.isGenerateOptionalGetter();
+	}
+
+	@Override
+	public String getOptionalGetterSuffix() {
+
+		return preferences.getOptionalGetterSuffix();
+	}
+
+	@Override
+	public boolean isGenerateThrowingGetter() {
+
+		return preferences.isGenerateThrowingGetter();
+	}
+
+	@Override
+	public String getThrowingGetterSuffix() {
+
+		return preferences.getThrowingGetterSuffix();
+	}
+
+	@Override
 	public Optional<JavaClassName> getAnnotationForGeneratedClasses() {
 
 		return preferences.getAnnotationForGeneratedClassesAsOptional();

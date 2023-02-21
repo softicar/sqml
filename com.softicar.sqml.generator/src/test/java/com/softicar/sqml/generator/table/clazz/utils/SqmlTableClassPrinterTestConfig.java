@@ -25,6 +25,12 @@ public class SqmlTableClassPrinterTestConfig implements ISqmlTableClassPrinterCo
 	private String i18nClass;
 	private String generatedCode;
 	private final SqmlImportOverrides importOverrides;
+	private boolean generateNullableGetter;
+	private String nullableGetterSuffix;
+	private boolean generateOptionalGetter;
+	private String optionalGetterSuffix;
+	private boolean generateThrowingGetter;
+	private String throwingGetterSuffix;
 
 	public SqmlTableClassPrinterTestConfig(DbTableName tableName) {
 
@@ -33,6 +39,12 @@ public class SqmlTableClassPrinterTestConfig implements ISqmlTableClassPrinterCo
 		this.tableName = tableName;
 		this.i18nClass = I18N_CLASS;
 		this.importOverrides = new SqmlImportOverrides();
+		this.generateNullableGetter = true;
+		this.nullableGetterSuffix = "";
+		this.generateOptionalGetter = false;
+		this.optionalGetterSuffix = "AsOptional";
+		this.generateThrowingGetter = false;
+		this.throwingGetterSuffix = "OrThrow";
 	}
 
 	@Override
@@ -141,8 +153,82 @@ public class SqmlTableClassPrinterTestConfig implements ISqmlTableClassPrinterCo
 	}
 
 	@Override
+	public boolean isGenerateNullableGetter() {
+
+		return generateNullableGetter;
+	}
+
+	@Override
+	public String getNullableGetterSuffix() {
+
+		return nullableGetterSuffix;
+	}
+
+	@Override
+	public boolean isGenerateOptionalGetter() {
+
+		return generateOptionalGetter;
+	}
+
+	@Override
+	public String getOptionalGetterSuffix() {
+
+		return optionalGetterSuffix;
+	}
+
+	@Override
+	public boolean isGenerateThrowingGetter() {
+
+		return generateThrowingGetter;
+	}
+
+	@Override
+	public String getThrowingGetterSuffix() {
+
+		return throwingGetterSuffix;
+	}
+
+	@Override
 	public SqmlImportOverrides getImportOverrides() {
 
 		return importOverrides;
+	}
+
+	// ------------------------------ setter ------------------------------ //
+
+	public SqmlTableClassPrinterTestConfig setGenerateNullableGetter(boolean generateNullableGetter) {
+
+		this.generateNullableGetter = generateNullableGetter;
+		return this;
+	}
+
+	public SqmlTableClassPrinterTestConfig setNullableGetterSuffix(String nullableGetterSuffix) {
+
+		this.nullableGetterSuffix = nullableGetterSuffix;
+		return this;
+	}
+
+	public SqmlTableClassPrinterTestConfig setGenerateOptionalGetter(boolean generateOptionalGetter) {
+
+		this.generateOptionalGetter = generateOptionalGetter;
+		return this;
+	}
+
+	public SqmlTableClassPrinterTestConfig setOptionalGetterSuffix(String optionalGetterSuffix) {
+
+		this.optionalGetterSuffix = optionalGetterSuffix;
+		return this;
+	}
+
+	public SqmlTableClassPrinterTestConfig setGenerateThrowingGetter(boolean generateThrowingGetter) {
+
+		this.generateThrowingGetter = generateThrowingGetter;
+		return this;
+	}
+
+	public SqmlTableClassPrinterTestConfig setThrowingGetterSuffix(String throwingGetterSuffix) {
+
+		this.throwingGetterSuffix = throwingGetterSuffix;
+		return this;
 	}
 }

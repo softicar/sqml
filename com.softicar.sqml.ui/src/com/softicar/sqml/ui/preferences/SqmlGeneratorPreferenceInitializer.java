@@ -18,6 +18,12 @@ public class SqmlGeneratorPreferenceInitializer implements IPreferenceStoreIniti
 		preferenceStore.setDefault(SqmlPreferences.GENERATE_SUPPRESS_ALL_WARNINGS_FOR_TABLES, defaultPreferences.isGenerateSuppressAllWarningsForTables());
 		preferenceStore.setDefault(SqmlPreferences.GENERATE_GET_BY_ID_METHOD, defaultPreferences.isGenerateGetByIdMethod());
 		preferenceStore.setDefault(SqmlPreferences.GENERATE_GET_ID_METHODS, defaultPreferences.isGenerateGetIdMethods());
+		preferenceStore.setDefault(SqmlPreferences.GENERATE_NULLABLE_GETTER, defaultPreferences.isGenerateNullableGetter());
+		preferenceStore.setDefault(SqmlPreferences.NULLABLE_GETTER_SUFFIX, defaultPreferences.getNullableGetterSuffix());
+		preferenceStore.setDefault(SqmlPreferences.GENERATE_OPTIONAL_GETTER, defaultPreferences.isGenerateOptionalGetter());
+		preferenceStore.setDefault(SqmlPreferences.OPTIONAL_GETTER_SUFFIX, defaultPreferences.getOptionalGetterSuffix());
+		preferenceStore.setDefault(SqmlPreferences.GENERATE_THROWING_GETTER, defaultPreferences.isGenerateThrowingGetter());
+		preferenceStore.setDefault(SqmlPreferences.THROWING_GETTER_SUFFIX, defaultPreferences.getThrowingGetterSuffix());
 		preferenceStore.setDefault(SqmlPreferences.GENERATED_QUERY_CODE_VERSION, defaultPreferences.getGeneratedQueryCodeVersion().getValue());
 		preferenceStore.setDefault(SqmlPreferences.GENERATED_TABLE_CODE_VERSION, defaultPreferences.getGeneratedTableCodeVersion().getValue());
 		preferenceStore.setDefault(SqmlPreferences.ANNOTATION_FOR_GENERATED_CLASSES, defaultPreferences.getAnnotationForGeneratedClasses());
