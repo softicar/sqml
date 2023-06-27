@@ -54,6 +54,42 @@ public class SqmlUiGeneratorPreferences implements ISqmlGeneratorPreferences {
 	}
 
 	@Override
+	public boolean isGenerateNullableGetter() {
+
+		return preferenceStore.getBoolean(SqmlPreferences.GENERATE_NULLABLE_GETTER);
+	}
+
+	@Override
+	public String getNullableGetterSuffix() {
+
+		return preferenceStore.getString(SqmlPreferences.NULLABLE_GETTER_SUFFIX);
+	}
+
+	@Override
+	public boolean isGenerateOptionalGetter() {
+
+		return preferenceStore.getBoolean(SqmlPreferences.GENERATE_OPTIONAL_GETTER);
+	}
+
+	@Override
+	public String getOptionalGetterSuffix() {
+
+		return preferenceStore.getString(SqmlPreferences.OPTIONAL_GETTER_SUFFIX);
+	}
+
+	@Override
+	public boolean isGenerateThrowingGetter() {
+
+		return preferenceStore.getBoolean(SqmlPreferences.GENERATE_THROWING_GETTER);
+	}
+
+	@Override
+	public String getThrowingGetterSuffix() {
+
+		return preferenceStore.getString(SqmlPreferences.THROWING_GETTER_SUFFIX);
+	}
+
+	@Override
 	public SqmlQueryClassVersion getGeneratedQueryCodeVersion() {
 
 		return new SqmlQueryClassVersion(preferenceStore.getInt(SqmlPreferences.GENERATED_QUERY_CODE_VERSION));

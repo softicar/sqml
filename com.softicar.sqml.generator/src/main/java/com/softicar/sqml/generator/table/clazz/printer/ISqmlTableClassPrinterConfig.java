@@ -140,6 +140,52 @@ public interface ISqmlTableClassPrinterConfig {
 	boolean isGenerateGetIdMethods();
 
 	/**
+	 * Determines if a <i>null</i>-returning getter method is generated for a
+	 * nullable field.
+	 *
+	 * @return <i>true</i> to generate; <i>false</i> to not generate
+	 */
+	boolean isGenerateNullableGetter();
+
+	/**
+	 * Defines the suffix for the <i>null</i>-returning getter method.
+	 *
+	 * @return the suffix (never <i>null</i>)
+	 */
+	String getNullableGetterSuffix();
+
+	/**
+	 * Determines if a {@link Optional}-returning getter method is generated for
+	 * a nullable field.
+	 *
+	 * @return <i>true</i> to generate; <i>false</i> to not generate
+	 */
+	boolean isGenerateOptionalGetter();
+
+	/**
+	 * Defines the suffix for the {@link Optional}-returning getter method.
+	 *
+	 * @return the suffix (never <i>null</i>)
+	 */
+	String getOptionalGetterSuffix();
+
+	/**
+	 * Determines if a throwing getter method is generated for a nullable field.
+	 * <p>
+	 * The getter method throws an exception if the field value is <i>null</i>.
+	 *
+	 * @return <i>true</i> to generate; <i>false</i> to not generate
+	 */
+	boolean isGenerateThrowingGetter();
+
+	/**
+	 * Defines the suffix for the throwing getter method.
+	 *
+	 * @return the suffix (never <i>null</i>)
+	 */
+	String getThrowingGetterSuffix();
+
+	/**
 	 * Returns the optional annotation class to annotate all generated classes.
 	 *
 	 * @return the optional full class path of the annotation class

@@ -18,6 +18,12 @@ public class SqmlPreferences {
 	public static final String GENERATE_SUPPRESS_ALL_WARNINGS_FOR_TABLES = GENERATOR_PREFIX + ".generateSuppressAllWarningsForTables";
 	public static final String GENERATE_GET_BY_ID_METHOD = GENERATOR_PREFIX + ".generateGetByIdMethod";
 	public static final String GENERATE_GET_ID_METHODS = GENERATOR_PREFIX + ".generateGetIdMethods";
+	public static final String GENERATE_NULLABLE_GETTER = GENERATOR_PREFIX + ".generateNullableGetter";
+	public static final String NULLABLE_GETTER_SUFFIX = GENERATOR_PREFIX + ".nullableGetterSuffix";
+	public static final String GENERATE_OPTIONAL_GETTER = GENERATOR_PREFIX + ".generateOptionalGetter";
+	public static final String OPTIONAL_GETTER_SUFFIX = GENERATOR_PREFIX + ".optionalGetterSuffix";
+	public static final String GENERATE_THROWING_GETTER = GENERATOR_PREFIX + ".generateThrowingGetter";
+	public static final String THROWING_GETTER_SUFFIX = GENERATOR_PREFIX + ".throwingGetterSuffix";
 	public static final String GENERATED_QUERY_CODE_VERSION = GENERATOR_PREFIX + ".generatedQueryClassVersion";
 	public static final String GENERATED_TABLE_CODE_VERSION = GENERATOR_PREFIX + ".generatedTableClassVersion";
 	public static final String ANNOTATION_FOR_GENERATED_CLASSES = GENERATOR_PREFIX + ".annotationForGeneratedClasses";
@@ -27,7 +33,7 @@ public class SqmlPreferences {
 	public static final String TABLE_CLASS_NAME_PREFIXES = GENERATOR_PREFIX + ".tableClassNamePrefixes";
 	public static final String IMPORT_OVERRIDES = GENERATOR_PREFIX + ".importOverrides";
 
-	// -------------------- validator -------------------- //
+	// -------------------- validation -------------------- //
 
 	public static final String VALIDATOR_PREFIX = SqmlUiPluginUtils.getPluginId() + ".validator";
 	public static final String MANDATORY_ID_COLUMN = VALIDATOR_PREFIX + ".mandatoryIdColumn";

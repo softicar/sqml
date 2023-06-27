@@ -50,6 +50,42 @@ public class SqmlDefaultGeneratorPreferences implements ISqmlGeneratorPreference
 	}
 
 	@Override
+	public boolean isGenerateNullableGetter() {
+
+		return true;
+	}
+
+	@Override
+	public String getNullableGetterSuffix() {
+
+		return "";
+	}
+
+	@Override
+	public boolean isGenerateOptionalGetter() {
+
+		return false;
+	}
+
+	@Override
+	public String getOptionalGetterSuffix() {
+
+		return "AsOptional";
+	}
+
+	@Override
+	public boolean isGenerateThrowingGetter() {
+
+		return false;
+	}
+
+	@Override
+	public String getThrowingGetterSuffix() {
+
+		return "OrThrow";
+	}
+
+	@Override
 	public SqmlQueryClassVersion getGeneratedQueryCodeVersion() {
 
 		return SqmlQueryClassVersion.getLatest();
