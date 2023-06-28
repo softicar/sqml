@@ -86,6 +86,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlNegation createSqmlNegation() {
 		SqmlNegationImpl sqmlNegation = new SqmlNegationImpl();
 		return sqmlNegation;
@@ -96,6 +97,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlAddition createSqmlAddition() {
 		SqmlAdditionImpl sqmlAddition = new SqmlAdditionImpl();
 		return sqmlAddition;
@@ -106,6 +108,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlMultiplication createSqmlMultiplication() {
 		SqmlMultiplicationImpl sqmlMultiplication = new SqmlMultiplicationImpl();
 		return sqmlMultiplication;
@@ -116,6 +119,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticVariableReference createSqmlStaticVariableReference() {
 		SqmlStaticVariableReferenceImpl sqmlStaticVariableReference = new SqmlStaticVariableReferenceImpl();
 		return sqmlStaticVariableReference;
@@ -126,6 +130,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlPath createSqmlPath() {
 		SqmlPathImpl sqmlPath = new SqmlPathImpl();
 		return sqmlPath;
@@ -136,6 +141,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlGroupConcat createSqmlGroupConcat() {
 		SqmlGroupConcatImpl sqmlGroupConcat = new SqmlGroupConcatImpl();
 		return sqmlGroupConcat;
@@ -146,6 +152,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlCase createSqmlCase() {
 		SqmlCaseImpl sqmlCase = new SqmlCaseImpl();
 		return sqmlCase;
@@ -156,6 +163,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlCaseWhen createSqmlCaseWhen() {
 		SqmlCaseWhenImpl sqmlCaseWhen = new SqmlCaseWhenImpl();
 		return sqmlCaseWhen;
@@ -166,6 +174,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlIf createSqmlIf() {
 		SqmlIfImpl sqmlIf = new SqmlIfImpl();
 		return sqmlIf;
@@ -176,6 +185,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlIfNull createSqmlIfNull() {
 		SqmlIfNullImpl sqmlIfNull = new SqmlIfNullImpl();
 		return sqmlIfNull;
@@ -186,6 +196,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlRowConstructor createSqmlRowConstructor() {
 		SqmlRowConstructorImpl sqmlRowConstructor = new SqmlRowConstructorImpl();
 		return sqmlRowConstructor;
@@ -196,6 +207,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticAnd createSqmlStaticAnd() {
 		SqmlStaticAndImpl sqmlStaticAnd = new SqmlStaticAndImpl();
 		return sqmlStaticAnd;
@@ -206,6 +218,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticIf createSqmlStaticIf() {
 		SqmlStaticIfImpl sqmlStaticIf = new SqmlStaticIfImpl();
 		return sqmlStaticIf;
@@ -216,6 +229,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticIsEmpty createSqmlStaticIsEmpty() {
 		SqmlStaticIsEmptyImpl sqmlStaticIsEmpty = new SqmlStaticIsEmptyImpl();
 		return sqmlStaticIsEmpty;
@@ -226,6 +240,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticIsNull createSqmlStaticIsNull() {
 		SqmlStaticIsNullImpl sqmlStaticIsNull = new SqmlStaticIsNullImpl();
 		return sqmlStaticIsNull;
@@ -236,6 +251,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticIsTrue createSqmlStaticIsTrue() {
 		SqmlStaticIsTrueImpl sqmlStaticIsTrue = new SqmlStaticIsTrueImpl();
 		return sqmlStaticIsTrue;
@@ -246,6 +262,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticOr createSqmlStaticOr() {
 		SqmlStaticOrImpl sqmlStaticOr = new SqmlStaticOrImpl();
 		return sqmlStaticOr;
@@ -256,6 +273,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStaticParentheses createSqmlStaticParentheses() {
 		SqmlStaticParenthesesImpl sqmlStaticParentheses = new SqmlStaticParenthesesImpl();
 		return sqmlStaticParentheses;
@@ -266,6 +284,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSubSelect createSqmlSubSelect() {
 		SqmlSubSelectImpl sqmlSubSelect = new SqmlSubSelectImpl();
 		return sqmlSubSelect;
@@ -276,6 +295,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlValueReference createSqmlValueReference() {
 		SqmlValueReferenceImpl sqmlValueReference = new SqmlValueReferenceImpl();
 		return sqmlValueReference;
@@ -286,6 +306,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExpressionsPackage getExpressionsPackage() {
 		return (ExpressionsPackage)getEPackage();
 	}

@@ -91,6 +91,7 @@ public class SqmlRowConstructorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isExplicit() {
 		return explicit;
 	}
@@ -100,6 +101,7 @@ public class SqmlRowConstructorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExplicit(boolean newExplicit) {
 		boolean oldExplicit = explicit;
 		explicit = newExplicit;
@@ -112,6 +114,7 @@ public class SqmlRowConstructorImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlExpression> getExpressions() {
 		if (expressions == null) {
 			expressions = new EObjectContainmentEList<ISqmlExpression>(ISqmlExpression.class, this, ExpressionsPackage.SQML_ROW_CONSTRUCTOR__EXPRESSIONS);

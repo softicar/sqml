@@ -63,6 +63,7 @@ public class SqmlStaticParenthesesImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticExpression getExpression() {
 		return expression;
 	}
@@ -87,6 +88,7 @@ public class SqmlStaticParenthesesImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(ISqmlStaticExpression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;

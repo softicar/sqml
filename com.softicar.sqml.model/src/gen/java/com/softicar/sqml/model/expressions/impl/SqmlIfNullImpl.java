@@ -74,6 +74,7 @@ public class SqmlIfNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getTestExpression() {
 		return testExpression;
 	}
@@ -98,6 +99,7 @@ public class SqmlIfNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTestExpression(ISqmlExpression newTestExpression) {
 		if (newTestExpression != testExpression) {
 			NotificationChain msgs = null;
@@ -117,6 +119,7 @@ public class SqmlIfNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getThenExpression() {
 		return thenExpression;
 	}
@@ -141,6 +144,7 @@ public class SqmlIfNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThenExpression(ISqmlExpression newThenExpression) {
 		if (newThenExpression != thenExpression) {
 			NotificationChain msgs = null;

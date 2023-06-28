@@ -91,6 +91,7 @@ public class SqmlSelectClauseImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDistinct() {
 		return distinct;
 	}
@@ -100,6 +101,7 @@ public class SqmlSelectClauseImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDistinct(boolean newDistinct) {
 		boolean oldDistinct = distinct;
 		distinct = newDistinct;
@@ -112,6 +114,7 @@ public class SqmlSelectClauseImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlSelectColumn> getColumns() {
 		if (columns == null) {
 			columns = new EObjectContainmentEList<SqmlSelectColumn>(SqmlSelectColumn.class, this, SelectsPackage.SQML_SELECT_CLAUSE__COLUMNS);

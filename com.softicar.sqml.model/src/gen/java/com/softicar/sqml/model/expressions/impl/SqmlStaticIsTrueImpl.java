@@ -84,6 +84,7 @@ public class SqmlStaticIsTrueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticVariableReference getParameterReference() {
 		return parameterReference;
 	}
@@ -108,6 +109,7 @@ public class SqmlStaticIsTrueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParameterReference(ISqmlStaticVariableReference newParameterReference) {
 		if (newParameterReference != parameterReference) {
 			NotificationChain msgs = null;
@@ -127,6 +129,7 @@ public class SqmlStaticIsTrueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNot() {
 		return not;
 	}
@@ -136,6 +139,7 @@ public class SqmlStaticIsTrueImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNot(boolean newNot) {
 		boolean oldNot = not;
 		not = newNot;

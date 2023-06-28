@@ -171,6 +171,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlAnd() {
 		return sqmlAndEClass;
 	}
@@ -180,6 +181,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlAnd_Left() {
 		return (EReference)sqmlAndEClass.getEStructuralFeatures().get(0);
 	}
@@ -189,6 +191,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlAnd_Right() {
 		return (EReference)sqmlAndEClass.getEStructuralFeatures().get(1);
 	}
@@ -198,6 +201,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlBetween() {
 		return sqmlBetweenEClass;
 	}
@@ -207,6 +211,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlBetween_Operand() {
 		return (EReference)sqmlBetweenEClass.getEStructuralFeatures().get(0);
 	}
@@ -216,6 +221,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlBetween_Left() {
 		return (EReference)sqmlBetweenEClass.getEStructuralFeatures().get(1);
 	}
@@ -225,6 +231,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlBetween_Right() {
 		return (EReference)sqmlBetweenEClass.getEStructuralFeatures().get(2);
 	}
@@ -234,6 +241,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlComparison() {
 		return sqmlComparisonEClass;
 	}
@@ -243,6 +251,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlComparison_Function() {
 		return (EReference)sqmlComparisonEClass.getEStructuralFeatures().get(0);
 	}
@@ -252,6 +261,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlComparison_Left() {
 		return (EReference)sqmlComparisonEClass.getEStructuralFeatures().get(1);
 	}
@@ -261,6 +271,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlComparison_Right() {
 		return (EReference)sqmlComparisonEClass.getEStructuralFeatures().get(2);
 	}
@@ -270,6 +281,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlExists() {
 		return sqmlExistsEClass;
 	}
@@ -279,6 +291,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlExists_SubSelect() {
 		return (EReference)sqmlExistsEClass.getEStructuralFeatures().get(0);
 	}
@@ -288,6 +301,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlIn() {
 		return sqmlInEClass;
 	}
@@ -297,6 +311,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlIn_Not() {
 		return (EAttribute)sqmlInEClass.getEStructuralFeatures().get(0);
 	}
@@ -306,6 +321,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIn_Left() {
 		return (EReference)sqmlInEClass.getEStructuralFeatures().get(1);
 	}
@@ -315,6 +331,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIn_Right() {
 		return (EReference)sqmlInEClass.getEStructuralFeatures().get(2);
 	}
@@ -324,6 +341,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlIsNull() {
 		return sqmlIsNullEClass;
 	}
@@ -333,6 +351,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlIsNull_Not() {
 		return (EAttribute)sqmlIsNullEClass.getEStructuralFeatures().get(0);
 	}
@@ -342,6 +361,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIsNull_Operand() {
 		return (EReference)sqmlIsNullEClass.getEStructuralFeatures().get(1);
 	}
@@ -351,6 +371,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlLike() {
 		return sqmlLikeEClass;
 	}
@@ -360,6 +381,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlLike_Not() {
 		return (EAttribute)sqmlLikeEClass.getEStructuralFeatures().get(0);
 	}
@@ -369,6 +391,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlLike_Left() {
 		return (EReference)sqmlLikeEClass.getEStructuralFeatures().get(1);
 	}
@@ -378,6 +401,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlLike_Right() {
 		return (EReference)sqmlLikeEClass.getEStructuralFeatures().get(2);
 	}
@@ -387,6 +411,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlLike_Escape() {
 		return (EAttribute)sqmlLikeEClass.getEStructuralFeatures().get(3);
 	}
@@ -396,6 +421,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlNot() {
 		return sqmlNotEClass;
 	}
@@ -405,6 +431,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlNot_Condition() {
 		return (EReference)sqmlNotEClass.getEStructuralFeatures().get(0);
 	}
@@ -414,6 +441,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlOr() {
 		return sqmlOrEClass;
 	}
@@ -423,6 +451,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlOr_Left() {
 		return (EReference)sqmlOrEClass.getEStructuralFeatures().get(0);
 	}
@@ -432,6 +461,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlOr_Right() {
 		return (EReference)sqmlOrEClass.getEStructuralFeatures().get(1);
 	}
@@ -441,6 +471,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlRegexp() {
 		return sqmlRegexpEClass;
 	}
@@ -450,6 +481,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlRegexp_Not() {
 		return (EAttribute)sqmlRegexpEClass.getEStructuralFeatures().get(0);
 	}
@@ -459,6 +491,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlRegexp_Operand() {
 		return (EReference)sqmlRegexpEClass.getEStructuralFeatures().get(1);
 	}
@@ -468,6 +501,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlRegexp_Regexp() {
 		return (EReference)sqmlRegexpEClass.getEStructuralFeatures().get(2);
 	}
@@ -477,6 +511,7 @@ public class ConditionsPackageImpl extends EPackageImpl implements ConditionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConditionsFactory getConditionsFactory() {
 		return (ConditionsFactory)getEFactoryInstance();
 	}

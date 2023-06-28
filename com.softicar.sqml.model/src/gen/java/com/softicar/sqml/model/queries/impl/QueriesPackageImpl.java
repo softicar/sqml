@@ -110,6 +110,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlQuery() {
 		return sqmlQueryEClass;
 	}
@@ -119,6 +120,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlQuery_Parameters() {
 		return (EReference)sqmlQueryEClass.getEStructuralFeatures().get(0);
 	}
@@ -128,6 +130,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlQuery_Select() {
 		return (EReference)sqmlQueryEClass.getEStructuralFeatures().get(1);
 	}
@@ -137,6 +140,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlQueryParameter() {
 		return sqmlQueryParameterEClass;
 	}
@@ -146,6 +150,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlQueryParameter_Name() {
 		return (EAttribute)sqmlQueryParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -155,6 +160,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlQueryParameter_Query() {
 		return (EReference)sqmlQueryParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -164,6 +170,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlQueryParameter_Optional() {
 		return (EAttribute)sqmlQueryParameterEClass.getEStructuralFeatures().get(2);
 	}
@@ -173,6 +180,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlQueryParameter_TypeReference() {
 		return (EReference)sqmlQueryParameterEClass.getEStructuralFeatures().get(3);
 	}
@@ -182,6 +190,7 @@ public class QueriesPackageImpl extends EPackageImpl implements QueriesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QueriesFactory getQueriesFactory() {
 		return (QueriesFactory)getEFactoryInstance();
 	}

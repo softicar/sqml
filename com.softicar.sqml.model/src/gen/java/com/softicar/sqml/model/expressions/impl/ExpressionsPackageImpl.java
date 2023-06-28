@@ -259,6 +259,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractSqmlBinaryOperation() {
 		return abstractSqmlBinaryOperationEClass;
 	}
@@ -268,6 +269,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractSqmlBinaryOperation_Function() {
 		return (EReference)abstractSqmlBinaryOperationEClass.getEStructuralFeatures().get(0);
 	}
@@ -277,6 +279,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractSqmlBinaryOperation_Left() {
 		return (EReference)abstractSqmlBinaryOperationEClass.getEStructuralFeatures().get(1);
 	}
@@ -286,6 +289,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractSqmlBinaryOperation_Right() {
 		return (EReference)abstractSqmlBinaryOperationEClass.getEStructuralFeatures().get(2);
 	}
@@ -295,6 +299,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlNegation() {
 		return sqmlNegationEClass;
 	}
@@ -304,6 +309,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlNegation_Expression() {
 		return (EReference)sqmlNegationEClass.getEStructuralFeatures().get(0);
 	}
@@ -313,6 +319,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlAddition() {
 		return sqmlAdditionEClass;
 	}
@@ -322,6 +329,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlMultiplication() {
 		return sqmlMultiplicationEClass;
 	}
@@ -331,6 +339,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticVariableReference() {
 		return sqmlStaticVariableReferenceEClass;
 	}
@@ -340,6 +349,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlStaticVariableReference_NextIteration() {
 		return (EAttribute)sqmlStaticVariableReferenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -349,6 +359,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticVariableReference_Variable() {
 		return (EReference)sqmlStaticVariableReferenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -358,6 +369,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlPath() {
 		return sqmlPathEClass;
 	}
@@ -367,6 +379,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlPath_Parent() {
 		return (EReference)sqmlPathEClass.getEStructuralFeatures().get(0);
 	}
@@ -376,6 +389,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlPath_Target() {
 		return (EReference)sqmlPathEClass.getEStructuralFeatures().get(1);
 	}
@@ -385,6 +399,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlGroupConcat() {
 		return sqmlGroupConcatEClass;
 	}
@@ -394,6 +409,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlGroupConcat_Distinct() {
 		return (EAttribute)sqmlGroupConcatEClass.getEStructuralFeatures().get(0);
 	}
@@ -403,6 +419,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlGroupConcat_Expressions() {
 		return (EReference)sqmlGroupConcatEClass.getEStructuralFeatures().get(1);
 	}
@@ -412,6 +429,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlGroupConcat_OrderByExpressions() {
 		return (EReference)sqmlGroupConcatEClass.getEStructuralFeatures().get(2);
 	}
@@ -421,6 +439,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlGroupConcat_Separator() {
 		return (EAttribute)sqmlGroupConcatEClass.getEStructuralFeatures().get(3);
 	}
@@ -430,6 +449,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlCase() {
 		return sqmlCaseEClass;
 	}
@@ -439,6 +459,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlCase_Operand() {
 		return (EReference)sqmlCaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -448,6 +469,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlCase_Whens() {
 		return (EReference)sqmlCaseEClass.getEStructuralFeatures().get(1);
 	}
@@ -457,6 +479,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlCase_ElseExpression() {
 		return (EReference)sqmlCaseEClass.getEStructuralFeatures().get(2);
 	}
@@ -466,6 +489,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlCaseWhen() {
 		return sqmlCaseWhenEClass;
 	}
@@ -475,6 +499,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlCaseWhen_WhenExpression() {
 		return (EReference)sqmlCaseWhenEClass.getEStructuralFeatures().get(0);
 	}
@@ -484,6 +509,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlCaseWhen_ThenExpression() {
 		return (EReference)sqmlCaseWhenEClass.getEStructuralFeatures().get(1);
 	}
@@ -493,6 +519,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlIf() {
 		return sqmlIfEClass;
 	}
@@ -502,6 +529,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIf_Condition() {
 		return (EReference)sqmlIfEClass.getEStructuralFeatures().get(0);
 	}
@@ -511,6 +539,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIf_ThenExpression() {
 		return (EReference)sqmlIfEClass.getEStructuralFeatures().get(1);
 	}
@@ -520,6 +549,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIf_ElseExpression() {
 		return (EReference)sqmlIfEClass.getEStructuralFeatures().get(2);
 	}
@@ -529,6 +559,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlIfNull() {
 		return sqmlIfNullEClass;
 	}
@@ -538,6 +569,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIfNull_TestExpression() {
 		return (EReference)sqmlIfNullEClass.getEStructuralFeatures().get(0);
 	}
@@ -547,6 +579,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlIfNull_ThenExpression() {
 		return (EReference)sqmlIfNullEClass.getEStructuralFeatures().get(1);
 	}
@@ -556,6 +589,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlRowConstructor() {
 		return sqmlRowConstructorEClass;
 	}
@@ -565,6 +599,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlRowConstructor_Explicit() {
 		return (EAttribute)sqmlRowConstructorEClass.getEStructuralFeatures().get(0);
 	}
@@ -574,6 +609,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlRowConstructor_Expressions() {
 		return (EReference)sqmlRowConstructorEClass.getEStructuralFeatures().get(1);
 	}
@@ -583,6 +619,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticAnd() {
 		return sqmlStaticAndEClass;
 	}
@@ -592,6 +629,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticAnd_Left() {
 		return (EReference)sqmlStaticAndEClass.getEStructuralFeatures().get(0);
 	}
@@ -601,6 +639,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticAnd_Right() {
 		return (EReference)sqmlStaticAndEClass.getEStructuralFeatures().get(1);
 	}
@@ -610,6 +649,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticIf() {
 		return sqmlStaticIfEClass;
 	}
@@ -619,6 +659,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticIf_Conditions() {
 		return (EReference)sqmlStaticIfEClass.getEStructuralFeatures().get(0);
 	}
@@ -628,6 +669,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticIf_Expressions() {
 		return (EReference)sqmlStaticIfEClass.getEStructuralFeatures().get(1);
 	}
@@ -637,6 +679,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticIf_ElseExpression() {
 		return (EReference)sqmlStaticIfEClass.getEStructuralFeatures().get(2);
 	}
@@ -646,6 +689,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticIsEmpty() {
 		return sqmlStaticIsEmptyEClass;
 	}
@@ -655,6 +699,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticIsEmpty_ParameterReference() {
 		return (EReference)sqmlStaticIsEmptyEClass.getEStructuralFeatures().get(0);
 	}
@@ -664,6 +709,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlStaticIsEmpty_Not() {
 		return (EAttribute)sqmlStaticIsEmptyEClass.getEStructuralFeatures().get(1);
 	}
@@ -673,6 +719,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticIsNull() {
 		return sqmlStaticIsNullEClass;
 	}
@@ -682,6 +729,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticIsNull_ParameterReference() {
 		return (EReference)sqmlStaticIsNullEClass.getEStructuralFeatures().get(0);
 	}
@@ -691,6 +739,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlStaticIsNull_Not() {
 		return (EAttribute)sqmlStaticIsNullEClass.getEStructuralFeatures().get(1);
 	}
@@ -700,6 +749,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticIsTrue() {
 		return sqmlStaticIsTrueEClass;
 	}
@@ -709,6 +759,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticIsTrue_ParameterReference() {
 		return (EReference)sqmlStaticIsTrueEClass.getEStructuralFeatures().get(0);
 	}
@@ -718,6 +769,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlStaticIsTrue_Not() {
 		return (EAttribute)sqmlStaticIsTrueEClass.getEStructuralFeatures().get(1);
 	}
@@ -727,6 +779,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticOr() {
 		return sqmlStaticOrEClass;
 	}
@@ -736,6 +789,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticOr_Left() {
 		return (EReference)sqmlStaticOrEClass.getEStructuralFeatures().get(0);
 	}
@@ -745,6 +799,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticOr_Right() {
 		return (EReference)sqmlStaticOrEClass.getEStructuralFeatures().get(1);
 	}
@@ -754,6 +809,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStaticParentheses() {
 		return sqmlStaticParenthesesEClass;
 	}
@@ -763,6 +819,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlStaticParentheses_Expression() {
 		return (EReference)sqmlStaticParenthesesEClass.getEStructuralFeatures().get(0);
 	}
@@ -772,6 +829,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSubSelect() {
 		return sqmlSubSelectEClass;
 	}
@@ -781,6 +839,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSubSelect_Select() {
 		return (EReference)sqmlSubSelectEClass.getEStructuralFeatures().get(0);
 	}
@@ -790,6 +849,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlValueReference() {
 		return sqmlValueReferenceEClass;
 	}
@@ -799,6 +859,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlValueReference_NextIteration() {
 		return (EAttribute)sqmlValueReferenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -808,6 +869,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlValueReference_DotStar() {
 		return (EAttribute)sqmlValueReferenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -817,6 +879,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlValueReference_Path() {
 		return (EReference)sqmlValueReferenceEClass.getEStructuralFeatures().get(2);
 	}
@@ -826,6 +889,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExpressionsFactory getExpressionsFactory() {
 		return (ExpressionsFactory)getEFactoryInstance();
 	}

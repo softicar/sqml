@@ -63,6 +63,7 @@ public class SqmlSelectElseIfImpl extends AbstractSqmlSelectBlockImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticExpression getCondition() {
 		return condition;
 	}
@@ -87,6 +88,7 @@ public class SqmlSelectElseIfImpl extends AbstractSqmlSelectBlockImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(ISqmlStaticExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;

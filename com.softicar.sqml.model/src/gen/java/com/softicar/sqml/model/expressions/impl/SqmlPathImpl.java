@@ -76,6 +76,7 @@ public class SqmlPathImpl extends MinimalEObjectImpl.Container implements SqmlPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlPath getParent() {
 		return parent;
 	}
@@ -100,6 +101,7 @@ public class SqmlPathImpl extends MinimalEObjectImpl.Container implements SqmlPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParent(SqmlPath newParent) {
 		if (newParent != parent) {
 			NotificationChain msgs = null;
@@ -119,6 +121,7 @@ public class SqmlPathImpl extends MinimalEObjectImpl.Container implements SqmlPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlModelElement getTarget() {
 		if (target != null && ((EObject)target).eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
@@ -145,6 +148,7 @@ public class SqmlPathImpl extends MinimalEObjectImpl.Container implements SqmlPa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(ISqmlModelElement newTarget) {
 		ISqmlModelElement oldTarget = target;
 		target = newTarget;

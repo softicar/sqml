@@ -105,6 +105,7 @@ public class SqmlValueReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNextIteration() {
 		return nextIteration;
 	}
@@ -114,6 +115,7 @@ public class SqmlValueReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNextIteration(boolean newNextIteration) {
 		boolean oldNextIteration = nextIteration;
 		nextIteration = newNextIteration;
@@ -126,6 +128,7 @@ public class SqmlValueReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDotStar() {
 		return dotStar;
 	}
@@ -135,6 +138,7 @@ public class SqmlValueReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDotStar(boolean newDotStar) {
 		boolean oldDotStar = dotStar;
 		dotStar = newDotStar;
@@ -147,6 +151,7 @@ public class SqmlValueReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlPath getPath() {
 		return path;
 	}
@@ -171,6 +176,7 @@ public class SqmlValueReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPath(SqmlPath newPath) {
 		if (newPath != path) {
 			NotificationChain msgs = null;

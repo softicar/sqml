@@ -63,6 +63,7 @@ public class SqmlNegationImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getExpression() {
 		return expression;
 	}
@@ -87,6 +88,7 @@ public class SqmlNegationImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(ISqmlExpression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;

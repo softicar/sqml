@@ -69,6 +69,7 @@ public class SqmlRowConstructorDefaultValueImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlValueReference> getValueReferences() {
 		if (valueReferences == null) {
 			valueReferences = new EObjectContainmentEList<ISqmlValueReference>(ISqmlValueReference.class, this, TablesPackage.SQML_ROW_CONSTRUCTOR_DEFAULT_VALUE__VALUE_REFERENCES);

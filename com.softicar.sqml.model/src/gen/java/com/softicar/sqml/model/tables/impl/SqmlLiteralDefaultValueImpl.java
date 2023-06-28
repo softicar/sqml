@@ -85,6 +85,7 @@ public class SqmlLiteralDefaultValueImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isMinus() {
 		return minus;
 	}
@@ -94,6 +95,7 @@ public class SqmlLiteralDefaultValueImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMinus(boolean newMinus) {
 		boolean oldMinus = minus;
 		minus = newMinus;
@@ -106,6 +108,7 @@ public class SqmlLiteralDefaultValueImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlLiteral<?> getLiteral() {
 		return literal;
 	}
@@ -130,6 +133,7 @@ public class SqmlLiteralDefaultValueImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLiteral(ISqmlLiteral<?> newLiteral) {
 		if (newLiteral != literal) {
 			NotificationChain msgs = null;

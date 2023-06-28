@@ -82,6 +82,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlForeignKeyVariable createSqmlForeignKeyVariable() {
 		SqmlForeignKeyVariableImpl sqmlForeignKeyVariable = new SqmlForeignKeyVariableImpl();
 		return sqmlForeignKeyVariable;
@@ -92,6 +93,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFromClause createSqmlFromClause() {
 		SqmlFromClauseImpl sqmlFromClause = new SqmlFromClauseImpl();
 		return sqmlFromClause;
@@ -102,6 +104,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlGroupByClause createSqmlGroupByClause() {
 		SqmlGroupByClauseImpl sqmlGroupByClause = new SqmlGroupByClauseImpl();
 		return sqmlGroupByClause;
@@ -112,6 +115,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlHavingClause createSqmlHavingClause() {
 		SqmlHavingClauseImpl sqmlHavingClause = new SqmlHavingClauseImpl();
 		return sqmlHavingClause;
@@ -122,6 +126,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlJoinClause createSqmlJoinClause() {
 		SqmlJoinClauseImpl sqmlJoinClause = new SqmlJoinClauseImpl();
 		return sqmlJoinClause;
@@ -132,6 +137,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlOrderByClause createSqmlOrderByClause() {
 		SqmlOrderByClauseImpl sqmlOrderByClause = new SqmlOrderByClauseImpl();
 		return sqmlOrderByClause;
@@ -142,6 +148,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlOrderByExpression createSqmlOrderByExpression() {
 		SqmlOrderByExpressionImpl sqmlOrderByExpression = new SqmlOrderByExpressionImpl();
 		return sqmlOrderByExpression;
@@ -152,6 +159,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSelect createSqmlSelect() {
 		SqmlSelectImpl sqmlSelect = new SqmlSelectImpl();
 		return sqmlSelect;
@@ -162,6 +170,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSelectClause createSqmlSelectClause() {
 		SqmlSelectClauseImpl sqmlSelectClause = new SqmlSelectClauseImpl();
 		return sqmlSelectClause;
@@ -172,6 +181,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSelectColumn createSqmlSelectColumn() {
 		SqmlSelectColumnImpl sqmlSelectColumn = new SqmlSelectColumnImpl();
 		return sqmlSelectColumn;
@@ -182,6 +192,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSelectElse createSqmlSelectElse() {
 		SqmlSelectElseImpl sqmlSelectElse = new SqmlSelectElseImpl();
 		return sqmlSelectElse;
@@ -192,6 +203,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSelectElseIf createSqmlSelectElseIf() {
 		SqmlSelectElseIfImpl sqmlSelectElseIf = new SqmlSelectElseIfImpl();
 		return sqmlSelectElseIf;
@@ -202,6 +214,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSelectIf createSqmlSelectIf() {
 		SqmlSelectIfImpl sqmlSelectIf = new SqmlSelectIfImpl();
 		return sqmlSelectIf;
@@ -212,6 +225,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSubSelectVariable createSqmlSubSelectVariable() {
 		SqmlSubSelectVariableImpl sqmlSubSelectVariable = new SqmlSubSelectVariableImpl();
 		return sqmlSubSelectVariable;
@@ -222,6 +236,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTableVariable createSqmlTableVariable() {
 		SqmlTableVariableImpl sqmlTableVariable = new SqmlTableVariableImpl();
 		return sqmlTableVariable;
@@ -232,6 +247,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlWhereClause createSqmlWhereClause() {
 		SqmlWhereClauseImpl sqmlWhereClause = new SqmlWhereClauseImpl();
 		return sqmlWhereClause;
@@ -242,6 +258,7 @@ public class SelectsFactoryImpl extends EFactoryImpl implements SelectsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SelectsPackage getSelectsPackage() {
 		return (SelectsPackage)getEPackage();
 	}

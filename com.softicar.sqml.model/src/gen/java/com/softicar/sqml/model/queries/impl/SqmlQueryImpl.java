@@ -84,6 +84,7 @@ public class SqmlQueryImpl extends SqmlFileElementImpl implements SqmlQuery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlQueryParameter> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentWithInverseEList<SqmlQueryParameter>(SqmlQueryParameter.class, this, QueriesPackage.SQML_QUERY__PARAMETERS, QueriesPackage.SQML_QUERY_PARAMETER__QUERY);
@@ -96,6 +97,7 @@ public class SqmlQueryImpl extends SqmlFileElementImpl implements SqmlQuery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlSelect getSelect() {
 		return select;
 	}
@@ -120,6 +122,7 @@ public class SqmlQueryImpl extends SqmlFileElementImpl implements SqmlQuery {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSelect(ISqmlSelect newSelect) {
 		if (newSelect != select) {
 			NotificationChain msgs = null;

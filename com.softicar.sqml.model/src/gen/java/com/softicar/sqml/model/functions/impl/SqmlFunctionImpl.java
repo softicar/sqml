@@ -112,6 +112,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTypeReference getReturnType() {
 		return returnType;
 	}
@@ -136,6 +137,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReturnType(ISqmlTypeReference newReturnType) {
 		if (newReturnType != returnType) {
 			NotificationChain msgs = null;
@@ -155,6 +157,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlFunctionParameter> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentWithInverseEList<SqmlFunctionParameter>(SqmlFunctionParameter.class, this, FunctionsPackage.SQML_FUNCTION__PARAMETERS, FunctionsPackage.SQML_FUNCTION_PARAMETER__FUNCTION);
@@ -167,6 +170,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlSql getSql() {
 		return sql;
 	}
@@ -191,6 +195,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSql(ISqmlSql newSql) {
 		if (newSql != sql) {
 			NotificationChain msgs = null;
@@ -210,6 +215,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getExpression() {
 		return expression;
 	}
@@ -234,6 +240,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(ISqmlExpression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
@@ -253,6 +260,7 @@ public class SqmlFunctionImpl extends SqmlFileElementImpl implements SqmlFunctio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		return SqmlFunctionMethods.getDisplayName(this);
 	}

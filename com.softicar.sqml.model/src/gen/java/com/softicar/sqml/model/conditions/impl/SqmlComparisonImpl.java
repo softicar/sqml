@@ -89,6 +89,7 @@ public class SqmlComparisonImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlFunction getFunction() {
 		if (function != null && ((EObject)function).eIsProxy()) {
 			InternalEObject oldFunction = (InternalEObject)function;
@@ -115,6 +116,7 @@ public class SqmlComparisonImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFunction(ISqmlFunction newFunction) {
 		ISqmlFunction oldFunction = function;
 		function = newFunction;
@@ -127,6 +129,7 @@ public class SqmlComparisonImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getLeft() {
 		return left;
 	}
@@ -151,6 +154,7 @@ public class SqmlComparisonImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(ISqmlExpression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -170,6 +174,7 @@ public class SqmlComparisonImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getRight() {
 		return right;
 	}
@@ -194,6 +199,7 @@ public class SqmlComparisonImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(ISqmlExpression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;

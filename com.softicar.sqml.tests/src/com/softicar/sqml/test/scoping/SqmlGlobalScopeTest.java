@@ -25,7 +25,7 @@ public class SqmlGlobalScopeTest extends AbstractSqmlScopeTest {
 			.getScope(//
 				queryFileResource,
 				ExpressionsPackage.eINSTANCE.getSqmlPath_Target(),
-				new TruePredicate<IEObjectDescription>());
+				new TruePredicate<>());
 		List<IEObjectDescription> descriptions = Lists.newArrayList(globalScope.getAllElements());
 
 		// check global scope

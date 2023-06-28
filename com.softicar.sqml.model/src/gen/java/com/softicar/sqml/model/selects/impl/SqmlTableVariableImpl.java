@@ -85,6 +85,7 @@ public class SqmlTableVariableImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -94,6 +95,7 @@ public class SqmlTableVariableImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -106,6 +108,7 @@ public class SqmlTableVariableImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTable getTable() {
 		if (table != null && ((EObject)table).eIsProxy()) {
 			InternalEObject oldTable = (InternalEObject)table;
@@ -132,6 +135,7 @@ public class SqmlTableVariableImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(ISqmlTable newTable) {
 		ISqmlTable oldTable = table;
 		table = newTable;

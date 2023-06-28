@@ -74,6 +74,7 @@ public class SqmlCaseWhenImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getWhenExpression() {
 		return whenExpression;
 	}
@@ -98,6 +99,7 @@ public class SqmlCaseWhenImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWhenExpression(ISqmlExpression newWhenExpression) {
 		if (newWhenExpression != whenExpression) {
 			NotificationChain msgs = null;
@@ -117,6 +119,7 @@ public class SqmlCaseWhenImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getThenExpression() {
 		return thenExpression;
 	}
@@ -141,6 +144,7 @@ public class SqmlCaseWhenImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThenExpression(ISqmlExpression newThenExpression) {
 		if (newThenExpression != thenExpression) {
 			NotificationChain msgs = null;

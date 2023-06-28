@@ -70,6 +70,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlValueType createSqmlValueType() {
 		SqmlValueTypeImpl sqmlValueType = new SqmlValueTypeImpl();
 		return sqmlValueType;
@@ -80,6 +81,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlEnum createSqmlEnum() {
 		SqmlEnumImpl sqmlEnum = new SqmlEnumImpl();
 		return sqmlEnum;
@@ -90,6 +92,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlEnumerator createSqmlEnumerator() {
 		SqmlEnumeratorImpl sqmlEnumerator = new SqmlEnumeratorImpl();
 		return sqmlEnumerator;
@@ -100,6 +103,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTypeReference createSqmlTypeReference() {
 		SqmlTypeReferenceImpl sqmlTypeReference = new SqmlTypeReferenceImpl();
 		return sqmlTypeReference;
@@ -110,6 +114,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypesPackage getTypesPackage() {
 		return (TypesPackage)getEPackage();
 	}

@@ -85,6 +85,7 @@ public class SqmlStaticVariableReferenceImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNextIteration() {
 		return nextIteration;
 	}
@@ -94,6 +95,7 @@ public class SqmlStaticVariableReferenceImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNextIteration(boolean newNextIteration) {
 		boolean oldNextIteration = nextIteration;
 		nextIteration = newNextIteration;
@@ -106,6 +108,7 @@ public class SqmlStaticVariableReferenceImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticVariable getVariable() {
 		if (variable != null && ((EObject)variable).eIsProxy()) {
 			InternalEObject oldVariable = (InternalEObject)variable;
@@ -132,6 +135,7 @@ public class SqmlStaticVariableReferenceImpl extends MinimalEObjectImpl.Containe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(ISqmlStaticVariable newVariable) {
 		ISqmlStaticVariable oldVariable = variable;
 		variable = newVariable;

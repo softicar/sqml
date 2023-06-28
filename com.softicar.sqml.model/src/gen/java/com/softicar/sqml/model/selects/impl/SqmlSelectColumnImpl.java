@@ -118,6 +118,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getAlias() {
 		return alias;
 	}
@@ -127,6 +128,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAlias(String newAlias) {
 		String oldAlias = alias;
 		alias = newAlias;
@@ -139,6 +141,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTitle() {
 		return title;
 	}
@@ -148,6 +151,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
@@ -160,6 +164,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getExpression() {
 		return expression;
 	}
@@ -184,6 +189,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(ISqmlExpression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
@@ -203,6 +209,7 @@ public class SqmlSelectColumnImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return SqmlSelectColumnMethods.getName(this);
 	}

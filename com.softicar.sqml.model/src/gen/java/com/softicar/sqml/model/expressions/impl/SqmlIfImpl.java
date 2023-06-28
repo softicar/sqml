@@ -85,6 +85,7 @@ public class SqmlIfImpl extends MinimalEObjectImpl.Container implements SqmlIf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getCondition() {
 		return condition;
 	}
@@ -109,6 +110,7 @@ public class SqmlIfImpl extends MinimalEObjectImpl.Container implements SqmlIf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(ISqmlExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
@@ -128,6 +130,7 @@ public class SqmlIfImpl extends MinimalEObjectImpl.Container implements SqmlIf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getThenExpression() {
 		return thenExpression;
 	}
@@ -152,6 +155,7 @@ public class SqmlIfImpl extends MinimalEObjectImpl.Container implements SqmlIf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThenExpression(ISqmlExpression newThenExpression) {
 		if (newThenExpression != thenExpression) {
 			NotificationChain msgs = null;
@@ -171,6 +175,7 @@ public class SqmlIfImpl extends MinimalEObjectImpl.Container implements SqmlIf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getElseExpression() {
 		return elseExpression;
 	}
@@ -195,6 +200,7 @@ public class SqmlIfImpl extends MinimalEObjectImpl.Container implements SqmlIf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElseExpression(ISqmlExpression newElseExpression) {
 		if (newElseExpression != elseExpression) {
 			NotificationChain msgs = null;

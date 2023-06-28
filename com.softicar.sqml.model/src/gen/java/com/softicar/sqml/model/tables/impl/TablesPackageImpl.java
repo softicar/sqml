@@ -183,6 +183,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlLiteralDefaultValue() {
 		return sqmlLiteralDefaultValueEClass;
 	}
@@ -192,6 +193,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlLiteralDefaultValue_Minus() {
 		return (EAttribute)sqmlLiteralDefaultValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -201,6 +203,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlLiteralDefaultValue_Literal() {
 		return (EReference)sqmlLiteralDefaultValueEClass.getEStructuralFeatures().get(1);
 	}
@@ -210,6 +213,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlRowConstructorDefaultValue() {
 		return sqmlRowConstructorDefaultValueEClass;
 	}
@@ -219,6 +223,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlRowConstructorDefaultValue_ValueReferences() {
 		return (EReference)sqmlRowConstructorDefaultValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -228,6 +233,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTable() {
 		return sqmlTableEClass;
 	}
@@ -237,6 +243,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTable_EnumTable() {
 		return (EAttribute)sqmlTableEClass.getEStructuralFeatures().get(0);
 	}
@@ -246,6 +253,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTable_PhysicalNameOverride() {
 		return (EAttribute)sqmlTableEClass.getEStructuralFeatures().get(1);
 	}
@@ -255,6 +263,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTable_Columns() {
 		return (EReference)sqmlTableEClass.getEStructuralFeatures().get(2);
 	}
@@ -264,6 +273,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTable_TableKeys() {
 		return (EReference)sqmlTableEClass.getEStructuralFeatures().get(3);
 	}
@@ -273,6 +283,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTable_Enums() {
 		return (EReference)sqmlTableEClass.getEStructuralFeatures().get(4);
 	}
@@ -282,6 +293,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTable_Rows() {
 		return (EReference)sqmlTableEClass.getEStructuralFeatures().get(5);
 	}
@@ -291,6 +303,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTableColumn() {
 		return sqmlTableColumnEClass;
 	}
@@ -300,6 +313,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableColumn_Table() {
 		return (EReference)sqmlTableColumnEClass.getEStructuralFeatures().get(0);
 	}
@@ -309,6 +323,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Name() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(1);
 	}
@@ -318,6 +333,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_PhysicalNameOverride() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(2);
 	}
@@ -327,6 +343,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableColumn_TypeReference() {
 		return (EReference)sqmlTableColumnEClass.getEStructuralFeatures().get(3);
 	}
@@ -336,6 +353,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_PrimaryKey() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(4);
 	}
@@ -345,6 +363,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Serial() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(5);
 	}
@@ -354,6 +373,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_BaseColumn() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(6);
 	}
@@ -363,6 +383,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Nullable() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(7);
 	}
@@ -372,6 +393,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Unsigned() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(8);
 	}
@@ -381,6 +403,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_OnDeleteAction() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(9);
 	}
@@ -390,6 +413,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_OnUpdateAction() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(10);
 	}
@@ -399,6 +423,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_DefaultNull() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(11);
 	}
@@ -408,6 +433,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_DefaultNow() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(12);
 	}
@@ -417,6 +443,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_OnUpdateNow() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(13);
 	}
@@ -426,6 +453,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Timestamp() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(14);
 	}
@@ -435,6 +463,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableColumn_DefaultValue() {
 		return (EReference)sqmlTableColumnEClass.getEStructuralFeatures().get(15);
 	}
@@ -444,6 +473,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Bits() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(16);
 	}
@@ -453,6 +483,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Precision() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(17);
 	}
@@ -462,6 +493,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Scale() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(18);
 	}
@@ -471,6 +503,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_MaxLength() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(19);
 	}
@@ -480,6 +513,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_LengthBits() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(20);
 	}
@@ -489,6 +523,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_CharacterSet() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(21);
 	}
@@ -498,6 +533,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Collation() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(22);
 	}
@@ -507,6 +543,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_Comment() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(23);
 	}
@@ -516,6 +553,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableColumn_ConstraintName() {
 		return (EAttribute)sqmlTableColumnEClass.getEStructuralFeatures().get(24);
 	}
@@ -525,6 +563,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTableKey() {
 		return sqmlTableKeyEClass;
 	}
@@ -534,6 +573,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableKey_Name() {
 		return (EAttribute)sqmlTableKeyEClass.getEStructuralFeatures().get(0);
 	}
@@ -543,6 +583,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableKey_Columns() {
 		return (EReference)sqmlTableKeyEClass.getEStructuralFeatures().get(1);
 	}
@@ -552,6 +593,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableKey_Table() {
 		return (EReference)sqmlTableKeyEClass.getEStructuralFeatures().get(2);
 	}
@@ -561,6 +603,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlUniqueKey() {
 		return sqmlUniqueKeyEClass;
 	}
@@ -570,6 +613,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlIndexKey() {
 		return sqmlIndexKeyEClass;
 	}
@@ -579,6 +623,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlValueReferenceDefaultValue() {
 		return sqmlValueReferenceDefaultValueEClass;
 	}
@@ -588,6 +633,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlValueReferenceDefaultValue_ValueReference() {
 		return (EReference)sqmlValueReferenceDefaultValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -597,6 +643,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTableRow() {
 		return sqmlTableRowEClass;
 	}
@@ -606,6 +653,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableRow_Table() {
 		return (EReference)sqmlTableRowEClass.getEStructuralFeatures().get(0);
 	}
@@ -615,6 +663,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableRow_Values() {
 		return (EReference)sqmlTableRowEClass.getEStructuralFeatures().get(1);
 	}
@@ -624,6 +673,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTableRowValue() {
 		return sqmlTableRowValueEClass;
 	}
@@ -633,6 +683,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableRowValue_Row() {
 		return (EReference)sqmlTableRowValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -642,6 +693,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableRowValue_Literal() {
 		return (EReference)sqmlTableRowValueEClass.getEStructuralFeatures().get(1);
 	}
@@ -651,6 +703,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableRowValue_Null() {
 		return (EAttribute)sqmlTableRowValueEClass.getEStructuralFeatures().get(2);
 	}
@@ -660,6 +713,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getSqmlForeignKeyAction() {
 		return sqmlForeignKeyActionEEnum;
 	}
@@ -669,6 +723,7 @@ public class TablesPackageImpl extends EPackageImpl implements TablesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TablesFactory getTablesFactory() {
 		return (TablesFactory)getEFactoryInstance();
 	}

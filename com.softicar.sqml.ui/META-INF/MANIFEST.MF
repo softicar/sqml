@@ -24,7 +24,8 @@ Require-Bundle: com.softicar.sqml.main;visibility:=reexport,
  org.eclipse.xtext.xbase.testing,
  org.eclipse.ui.workbench;resolution:=optional,
  org.eclipse.xtext.xbase.junit,
- org.eclipse.xtext.testing
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.ui.testing
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.ui.codemining;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-17

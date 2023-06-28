@@ -941,6 +941,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlAnd() {
 		return iSqmlAndEClass;
 	}
@@ -950,6 +951,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlBetween() {
 		return iSqmlBetweenEClass;
 	}
@@ -959,6 +961,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlComparison() {
 		return iSqmlComparisonEClass;
 	}
@@ -968,6 +971,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlCondition() {
 		return iSqmlConditionEClass;
 	}
@@ -977,6 +981,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlExists() {
 		return iSqmlExistsEClass;
 	}
@@ -986,6 +991,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIn() {
 		return iSqmlInEClass;
 	}
@@ -995,6 +1001,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIsNull() {
 		return iSqmlIsNullEClass;
 	}
@@ -1004,6 +1011,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlLike() {
 		return iSqmlLikeEClass;
 	}
@@ -1013,6 +1021,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlNot() {
 		return iSqmlNotEClass;
 	}
@@ -1022,6 +1031,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlOr() {
 		return iSqmlOrEClass;
 	}
@@ -1031,6 +1041,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlRegexp() {
 		return iSqmlRegexpEClass;
 	}
@@ -1040,6 +1051,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlAddition() {
 		return iSqmlAdditionEClass;
 	}
@@ -1049,6 +1061,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlCase() {
 		return iSqmlCaseEClass;
 	}
@@ -1058,6 +1071,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlCaseWhen() {
 		return iSqmlCaseWhenEClass;
 	}
@@ -1067,6 +1081,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlBinaryOperation() {
 		return iSqmlBinaryOperationEClass;
 	}
@@ -1076,6 +1091,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlExpression() {
 		return iSqmlExpressionEClass;
 	}
@@ -1085,6 +1101,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlGroupConcat() {
 		return iSqmlGroupConcatEClass;
 	}
@@ -1094,6 +1111,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIf() {
 		return iSqmlIfEClass;
 	}
@@ -1103,6 +1121,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIfNull() {
 		return iSqmlIfNullEClass;
 	}
@@ -1112,6 +1131,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlMultiplication() {
 		return iSqmlMultiplicationEClass;
 	}
@@ -1121,6 +1141,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlNegation() {
 		return iSqmlNegationEClass;
 	}
@@ -1130,6 +1151,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlPath() {
 		return iSqmlPathEClass;
 	}
@@ -1139,6 +1161,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlRowConstructor() {
 		return iSqmlRowConstructorEClass;
 	}
@@ -1148,6 +1171,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticAnd() {
 		return iSqmlStaticAndEClass;
 	}
@@ -1157,6 +1181,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticExpression() {
 		return iSqmlStaticExpressionEClass;
 	}
@@ -1166,6 +1191,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticIf() {
 		return iSqmlStaticIfEClass;
 	}
@@ -1175,6 +1201,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticIsEmpty() {
 		return iSqmlStaticIsEmptyEClass;
 	}
@@ -1184,6 +1211,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticIsNull() {
 		return iSqmlStaticIsNullEClass;
 	}
@@ -1193,6 +1221,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticIsTrue() {
 		return iSqmlStaticIsTrueEClass;
 	}
@@ -1202,6 +1231,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticOr() {
 		return iSqmlStaticOrEClass;
 	}
@@ -1211,6 +1241,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticParameterTest() {
 		return iSqmlStaticParameterTestEClass;
 	}
@@ -1220,6 +1251,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticParentheses() {
 		return iSqmlStaticParenthesesEClass;
 	}
@@ -1229,6 +1261,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticVariableReference() {
 		return iSqmlStaticVariableReferenceEClass;
 	}
@@ -1238,6 +1271,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSubSelect() {
 		return iSqmlSubSelectEClass;
 	}
@@ -1247,6 +1281,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlUnaryOperation() {
 		return iSqmlUnaryOperationEClass;
 	}
@@ -1256,6 +1291,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlValueReference() {
 		return iSqmlValueReferenceEClass;
 	}
@@ -1265,6 +1301,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFile() {
 		return iSqmlFileEClass;
 	}
@@ -1274,6 +1311,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFileElement() {
 		return iSqmlFileElementEClass;
 	}
@@ -1283,6 +1321,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlImport() {
 		return iSqmlImportEClass;
 	}
@@ -1292,6 +1331,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlPackageDeclaration() {
 		return iSqmlPackageDeclarationEClass;
 	}
@@ -1301,6 +1341,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFunction() {
 		return iSqmlFunctionEClass;
 	}
@@ -1310,6 +1351,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFunctionCall() {
 		return iSqmlFunctionCallEClass;
 	}
@@ -1319,6 +1361,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFunctionParameter() {
 		return iSqmlFunctionParameterEClass;
 	}
@@ -1328,6 +1371,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSql() {
 		return iSqmlSqlEClass;
 	}
@@ -1337,6 +1381,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSqlId() {
 		return iSqmlSqlIdEClass;
 	}
@@ -1346,6 +1391,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSqlKeyword() {
 		return iSqmlSqlKeywordEClass;
 	}
@@ -1355,6 +1401,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSqlNumberLiteral() {
 		return iSqmlSqlNumberLiteralEClass;
 	}
@@ -1364,6 +1411,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSqlStringLiteral() {
 		return iSqmlSqlStringLiteralEClass;
 	}
@@ -1373,6 +1421,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSqlSymbol() {
 		return iSqmlSqlSymbolEClass;
 	}
@@ -1382,6 +1431,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlBooleanLiteral() {
 		return iSqmlBooleanLiteralEClass;
 	}
@@ -1391,6 +1441,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlDecimalLiteral() {
 		return iSqmlDecimalLiteralEClass;
 	}
@@ -1400,6 +1451,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlDoubleLiteral() {
 		return iSqmlDoubleLiteralEClass;
 	}
@@ -1409,6 +1461,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFloatLiteral() {
 		return iSqmlFloatLiteralEClass;
 	}
@@ -1418,6 +1471,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIntegerLiteral() {
 		return iSqmlIntegerLiteralEClass;
 	}
@@ -1427,6 +1481,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlLiteral() {
 		return iSqmlLiteralEClass;
 	}
@@ -1436,6 +1491,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlLongLiteral() {
 		return iSqmlLongLiteralEClass;
 	}
@@ -1445,6 +1501,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStringLiteral() {
 		return iSqmlStringLiteralEClass;
 	}
@@ -1454,6 +1511,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlColumn() {
 		return iSqmlColumnEClass;
 	}
@@ -1463,6 +1521,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlGeneratable() {
 		return iSqmlGeneratableEClass;
 	}
@@ -1472,6 +1531,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlGlobalObject() {
 		return iSqmlGlobalObjectEClass;
 	}
@@ -1481,6 +1541,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlModelElement() {
 		return iSqmlModelElementEClass;
 	}
@@ -1490,6 +1551,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlModelVisitor() {
 		return iSqmlModelVisitorEClass;
 	}
@@ -1499,6 +1561,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlStaticVariable() {
 		return iSqmlStaticVariableEClass;
 	}
@@ -1508,6 +1571,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTabular() {
 		return iSqmlTabularEClass;
 	}
@@ -1517,6 +1581,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlValue() {
 		return iSqmlValueEClass;
 	}
@@ -1526,6 +1591,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlQuery() {
 		return iSqmlQueryEClass;
 	}
@@ -1535,6 +1601,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlQueryParameter() {
 		return iSqmlQueryParameterEClass;
 	}
@@ -1544,6 +1611,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlForeignKeyVariable() {
 		return iSqmlForeignKeyVariableEClass;
 	}
@@ -1553,6 +1621,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlFromClause() {
 		return iSqmlFromClauseEClass;
 	}
@@ -1562,6 +1631,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlGroupByClause() {
 		return iSqmlGroupByClauseEClass;
 	}
@@ -1571,6 +1641,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlHavingClause() {
 		return iSqmlHavingClauseEClass;
 	}
@@ -1580,6 +1651,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlJoinClause() {
 		return iSqmlJoinClauseEClass;
 	}
@@ -1589,6 +1661,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlOrderByClause() {
 		return iSqmlOrderByClauseEClass;
 	}
@@ -1598,6 +1671,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlOrderByExpression() {
 		return iSqmlOrderByExpressionEClass;
 	}
@@ -1607,6 +1681,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelect() {
 		return iSqmlSelectEClass;
 	}
@@ -1616,6 +1691,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectBlock() {
 		return iSqmlSelectBlockEClass;
 	}
@@ -1625,6 +1701,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectClause() {
 		return iSqmlSelectClauseEClass;
 	}
@@ -1634,6 +1711,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectColumn() {
 		return iSqmlSelectColumnEClass;
 	}
@@ -1643,6 +1721,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectElse() {
 		return iSqmlSelectElseEClass;
 	}
@@ -1652,6 +1731,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectElseIf() {
 		return iSqmlSelectElseIfEClass;
 	}
@@ -1661,6 +1741,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectIf() {
 		return iSqmlSelectIfEClass;
 	}
@@ -1670,6 +1751,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSelectPart() {
 		return iSqmlSelectPartEClass;
 	}
@@ -1679,6 +1761,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlSubSelectVariable() {
 		return iSqmlSubSelectVariableEClass;
 	}
@@ -1688,6 +1771,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTableVariable() {
 		return iSqmlTableVariableEClass;
 	}
@@ -1697,6 +1781,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlVariable() {
 		return iSqmlVariableEClass;
 	}
@@ -1706,6 +1791,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlWhereClause() {
 		return iSqmlWhereClauseEClass;
 	}
@@ -1715,6 +1801,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlDefaultValue() {
 		return iSqmlDefaultValueEClass;
 	}
@@ -1724,6 +1811,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIndexKey() {
 		return iSqmlIndexKeyEClass;
 	}
@@ -1733,6 +1821,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlLiteralDefaultValue() {
 		return iSqmlLiteralDefaultValueEClass;
 	}
@@ -1742,6 +1831,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlRowConstructorDefaultValue() {
 		return iSqmlRowConstructorDefaultValueEClass;
 	}
@@ -1751,6 +1841,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTable() {
 		return iSqmlTableEClass;
 	}
@@ -1760,6 +1851,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTableColumn() {
 		return iSqmlTableColumnEClass;
 	}
@@ -1769,6 +1861,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTableKey() {
 		return iSqmlTableKeyEClass;
 	}
@@ -1778,6 +1871,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTableRow() {
 		return iSqmlTableRowEClass;
 	}
@@ -1787,6 +1881,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTableRowValue() {
 		return iSqmlTableRowValueEClass;
 	}
@@ -1796,6 +1891,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlUniqueKey() {
 		return iSqmlUniqueKeyEClass;
 	}
@@ -1805,6 +1901,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlValueReferenceDefaultValue() {
 		return iSqmlValueReferenceDefaultValueEClass;
 	}
@@ -1814,6 +1911,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlEnum() {
 		return iSqmlEnumEClass;
 	}
@@ -1823,6 +1921,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlEnumerator() {
 		return iSqmlEnumeratorEClass;
 	}
@@ -1832,6 +1931,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTopLevelTypeDefinition() {
 		return iSqmlTopLevelTypeDefinitionEClass;
 	}
@@ -1841,6 +1941,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlType() {
 		return iSqmlTypeEClass;
 	}
@@ -1850,6 +1951,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTypeDefinition() {
 		return iSqmlTypeDefinitionEClass;
 	}
@@ -1859,6 +1961,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlTypeReference() {
 		return iSqmlTypeReferenceEClass;
 	}
@@ -1868,6 +1971,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlValueType() {
 		return iSqmlValueTypeEClass;
 	}
@@ -1877,6 +1981,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlIssueAcceptor() {
 		return iSqmlIssueAcceptorEClass;
 	}
@@ -1886,6 +1991,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getISqmlValidatable() {
 		return iSqmlValidatableEClass;
 	}
@@ -1895,6 +2001,7 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InterfacesFactory getInterfacesFactory() {
 		return (InterfacesFactory)getEFactoryInstance();
 	}

@@ -70,6 +70,7 @@ public class SqmlLongLiteralImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Long getValue() {
 		return value;
 	}
@@ -79,6 +80,7 @@ public class SqmlLongLiteralImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(Long newValue) {
 		Long oldValue = value;
 		value = newValue;

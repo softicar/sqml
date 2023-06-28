@@ -84,6 +84,7 @@ public class SqmlSubSelectVariableImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -93,6 +94,7 @@ public class SqmlSubSelectVariableImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -105,6 +107,7 @@ public class SqmlSubSelectVariableImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlSelect getSubSelect() {
 		return subSelect;
 	}
@@ -129,6 +132,7 @@ public class SqmlSubSelectVariableImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSubSelect(ISqmlSelect newSubSelect) {
 		if (newSubSelect != subSelect) {
 			NotificationChain msgs = null;

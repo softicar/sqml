@@ -93,6 +93,7 @@ public class SqmlSqlNumberLiteralImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getInteger() {
 		return integer;
 	}
@@ -102,6 +103,7 @@ public class SqmlSqlNumberLiteralImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInteger(Integer newInteger) {
 		Integer oldInteger = integer;
 		integer = newInteger;
@@ -114,6 +116,7 @@ public class SqmlSqlNumberLiteralImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BigDecimal getDecimal() {
 		return decimal;
 	}
@@ -123,6 +126,7 @@ public class SqmlSqlNumberLiteralImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDecimal(BigDecimal newDecimal) {
 		BigDecimal oldDecimal = decimal;
 		decimal = newDecimal;

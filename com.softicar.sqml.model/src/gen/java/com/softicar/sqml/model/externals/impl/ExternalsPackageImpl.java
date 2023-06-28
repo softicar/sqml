@@ -197,6 +197,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getBigDecimal() {
 		return bigDecimalEDataType;
 	}
@@ -206,6 +207,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getCollection() {
 		return collectionEDataType;
 	}
@@ -215,6 +217,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getISqmlJavaType() {
 		return iSqmlJavaTypeEDataType;
 	}
@@ -224,6 +227,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getISqmlSelectGenerator() {
 		return iSqmlSelectGeneratorEDataType;
 	}
@@ -233,6 +237,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaClass() {
 		return javaClassEDataType;
 	}
@@ -242,6 +247,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaClassName() {
 		return javaClassNameEDataType;
 	}
@@ -251,6 +257,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getJavaPackageName() {
 		return javaPackageNameEDataType;
 	}
@@ -260,6 +267,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getList() {
 		return listEDataType;
 	}
@@ -269,6 +277,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getQualifiedName() {
 		return qualifiedNameEDataType;
 	}
@@ -278,6 +287,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getSqlFieldType() {
 		return sqlFieldTypeEDataType;
 	}
@@ -287,6 +297,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getSqlKeyword() {
 		return sqlKeywordEDataType;
 	}
@@ -296,6 +307,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getSqlSymbol() {
 		return sqlSymbolEDataType;
 	}
@@ -305,6 +317,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getDbTableName() {
 		return dbTableNameEDataType;
 	}
@@ -314,6 +327,7 @@ public class ExternalsPackageImpl extends EPackageImpl implements ExternalsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalsFactory getExternalsFactory() {
 		return (ExternalsFactory)getEFactoryInstance();
 	}

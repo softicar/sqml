@@ -66,6 +66,7 @@ public class InterfacesFactoryImpl extends EFactoryImpl implements InterfacesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InterfacesPackage getInterfacesPackage() {
 		return (InterfacesPackage)getEPackage();
 	}

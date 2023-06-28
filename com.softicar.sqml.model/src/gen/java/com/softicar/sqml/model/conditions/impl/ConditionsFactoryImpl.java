@@ -76,6 +76,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlAnd createSqmlAnd() {
 		SqmlAndImpl sqmlAnd = new SqmlAndImpl();
 		return sqmlAnd;
@@ -86,6 +87,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlBetween createSqmlBetween() {
 		SqmlBetweenImpl sqmlBetween = new SqmlBetweenImpl();
 		return sqmlBetween;
@@ -96,6 +98,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlComparison createSqmlComparison() {
 		SqmlComparisonImpl sqmlComparison = new SqmlComparisonImpl();
 		return sqmlComparison;
@@ -106,6 +109,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlExists createSqmlExists() {
 		SqmlExistsImpl sqmlExists = new SqmlExistsImpl();
 		return sqmlExists;
@@ -116,6 +120,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlIn createSqmlIn() {
 		SqmlInImpl sqmlIn = new SqmlInImpl();
 		return sqmlIn;
@@ -126,6 +131,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlIsNull createSqmlIsNull() {
 		SqmlIsNullImpl sqmlIsNull = new SqmlIsNullImpl();
 		return sqmlIsNull;
@@ -136,6 +142,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlLike createSqmlLike() {
 		SqmlLikeImpl sqmlLike = new SqmlLikeImpl();
 		return sqmlLike;
@@ -146,6 +153,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlNot createSqmlNot() {
 		SqmlNotImpl sqmlNot = new SqmlNotImpl();
 		return sqmlNot;
@@ -156,6 +164,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlOr createSqmlOr() {
 		SqmlOrImpl sqmlOr = new SqmlOrImpl();
 		return sqmlOr;
@@ -166,6 +175,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlRegexp createSqmlRegexp() {
 		SqmlRegexpImpl sqmlRegexp = new SqmlRegexpImpl();
 		return sqmlRegexp;
@@ -176,6 +186,7 @@ public class ConditionsFactoryImpl extends EFactoryImpl implements ConditionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConditionsPackage getConditionsPackage() {
 		return (ConditionsPackage)getEPackage();
 	}

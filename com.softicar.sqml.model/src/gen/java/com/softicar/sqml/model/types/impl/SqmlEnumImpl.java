@@ -103,6 +103,7 @@ public class SqmlEnumImpl extends MinimalEObjectImpl.Container implements SqmlEn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -112,6 +113,7 @@ public class SqmlEnumImpl extends MinimalEObjectImpl.Container implements SqmlEn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -124,6 +126,7 @@ public class SqmlEnumImpl extends MinimalEObjectImpl.Container implements SqmlEn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTypeReference getTypeReference() {
 		return typeReference;
 	}
@@ -148,6 +151,7 @@ public class SqmlEnumImpl extends MinimalEObjectImpl.Container implements SqmlEn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeReference(ISqmlTypeReference newTypeReference) {
 		if (newTypeReference != typeReference) {
 			NotificationChain msgs = null;
@@ -167,6 +171,7 @@ public class SqmlEnumImpl extends MinimalEObjectImpl.Container implements SqmlEn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlEnumerator> getEnumerators() {
 		if (enumerators == null) {
 			enumerators = new EObjectContainmentWithInverseEList<SqmlEnumerator>(SqmlEnumerator.class, this, TypesPackage.SQML_ENUM__ENUMERATORS, TypesPackage.SQML_ENUMERATOR__ENUM);

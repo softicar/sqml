@@ -106,6 +106,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlLiteralDefaultValue createSqmlLiteralDefaultValue() {
 		SqmlLiteralDefaultValueImpl sqmlLiteralDefaultValue = new SqmlLiteralDefaultValueImpl();
 		return sqmlLiteralDefaultValue;
@@ -116,6 +117,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlRowConstructorDefaultValue createSqmlRowConstructorDefaultValue() {
 		SqmlRowConstructorDefaultValueImpl sqmlRowConstructorDefaultValue = new SqmlRowConstructorDefaultValueImpl();
 		return sqmlRowConstructorDefaultValue;
@@ -126,6 +128,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTable createSqmlTable() {
 		SqmlTableImpl sqmlTable = new SqmlTableImpl();
 		return sqmlTable;
@@ -136,6 +139,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTableColumn createSqmlTableColumn() {
 		SqmlTableColumnImpl sqmlTableColumn = new SqmlTableColumnImpl();
 		return sqmlTableColumn;
@@ -146,6 +150,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlUniqueKey createSqmlUniqueKey() {
 		SqmlUniqueKeyImpl sqmlUniqueKey = new SqmlUniqueKeyImpl();
 		return sqmlUniqueKey;
@@ -156,6 +161,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlIndexKey createSqmlIndexKey() {
 		SqmlIndexKeyImpl sqmlIndexKey = new SqmlIndexKeyImpl();
 		return sqmlIndexKey;
@@ -166,6 +172,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlValueReferenceDefaultValue createSqmlValueReferenceDefaultValue() {
 		SqmlValueReferenceDefaultValueImpl sqmlValueReferenceDefaultValue = new SqmlValueReferenceDefaultValueImpl();
 		return sqmlValueReferenceDefaultValue;
@@ -176,6 +183,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTableRow createSqmlTableRow() {
 		SqmlTableRowImpl sqmlTableRow = new SqmlTableRowImpl();
 		return sqmlTableRow;
@@ -186,6 +194,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTableRowValue createSqmlTableRowValue() {
 		SqmlTableRowValueImpl sqmlTableRowValue = new SqmlTableRowValueImpl();
 		return sqmlTableRowValue;
@@ -216,6 +225,7 @@ public class TablesFactoryImpl extends EFactoryImpl implements TablesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TablesPackage getTablesPackage() {
 		return (TablesPackage)getEPackage();
 	}

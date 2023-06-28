@@ -232,6 +232,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractSqmlSelectBlock() {
 		return abstractSqmlSelectBlockEClass;
 	}
@@ -241,6 +242,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractSqmlSelectBlock_Parts() {
 		return (EReference)abstractSqmlSelectBlockEClass.getEStructuralFeatures().get(0);
 	}
@@ -250,6 +252,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getAbstractSqmlSelectBlock__GetAllElements() {
 		return abstractSqmlSelectBlockEClass.getEOperations().get(0);
 	}
@@ -259,6 +262,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlForeignKeyVariable() {
 		return sqmlForeignKeyVariableEClass;
 	}
@@ -268,6 +272,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlForeignKeyVariable_Name() {
 		return (EAttribute)sqmlForeignKeyVariableEClass.getEStructuralFeatures().get(0);
 	}
@@ -277,6 +282,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlForeignKeyVariable_Variable() {
 		return (EReference)sqmlForeignKeyVariableEClass.getEStructuralFeatures().get(1);
 	}
@@ -286,6 +292,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlForeignKeyVariable_Column() {
 		return (EReference)sqmlForeignKeyVariableEClass.getEStructuralFeatures().get(2);
 	}
@@ -295,6 +302,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFromClause() {
 		return sqmlFromClauseEClass;
 	}
@@ -304,6 +312,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFromClause_Variable() {
 		return (EReference)sqmlFromClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -313,6 +322,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlGroupByClause() {
 		return sqmlGroupByClauseEClass;
 	}
@@ -322,6 +332,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlGroupByClause_Expressions() {
 		return (EReference)sqmlGroupByClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -331,6 +342,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlHavingClause() {
 		return sqmlHavingClauseEClass;
 	}
@@ -340,6 +352,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlHavingClause_Condition() {
 		return (EReference)sqmlHavingClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -349,6 +362,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlJoinClause() {
 		return sqmlJoinClauseEClass;
 	}
@@ -358,6 +372,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlJoinClause_LeftJoin() {
 		return (EAttribute)sqmlJoinClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -367,6 +382,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlJoinClause_Variable() {
 		return (EReference)sqmlJoinClauseEClass.getEStructuralFeatures().get(1);
 	}
@@ -376,6 +392,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlJoinClause_Conditions() {
 		return (EReference)sqmlJoinClauseEClass.getEStructuralFeatures().get(2);
 	}
@@ -385,6 +402,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlOrderByClause() {
 		return sqmlOrderByClauseEClass;
 	}
@@ -394,6 +412,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlOrderByClause_Expressions() {
 		return (EReference)sqmlOrderByClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -403,6 +422,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlOrderByExpression() {
 		return sqmlOrderByExpressionEClass;
 	}
@@ -412,6 +432,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlOrderByExpression_Expression() {
 		return (EReference)sqmlOrderByExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -421,6 +442,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlOrderByExpression_Descending() {
 		return (EAttribute)sqmlOrderByExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -430,6 +452,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSelect() {
 		return sqmlSelectEClass;
 	}
@@ -439,6 +462,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSelectClause() {
 		return sqmlSelectClauseEClass;
 	}
@@ -448,6 +472,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSelectClause_Distinct() {
 		return (EAttribute)sqmlSelectClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -457,6 +482,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSelectClause_Columns() {
 		return (EReference)sqmlSelectClauseEClass.getEStructuralFeatures().get(1);
 	}
@@ -466,6 +492,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSelectColumn() {
 		return sqmlSelectColumnEClass;
 	}
@@ -475,6 +502,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSelectColumn_Alias() {
 		return (EAttribute)sqmlSelectColumnEClass.getEStructuralFeatures().get(0);
 	}
@@ -484,6 +512,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSelectColumn_Title() {
 		return (EAttribute)sqmlSelectColumnEClass.getEStructuralFeatures().get(1);
 	}
@@ -493,6 +522,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSelectColumn_Expression() {
 		return (EReference)sqmlSelectColumnEClass.getEStructuralFeatures().get(2);
 	}
@@ -502,6 +532,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSelectColumn_Name() {
 		return (EAttribute)sqmlSelectColumnEClass.getEStructuralFeatures().get(3);
 	}
@@ -511,6 +542,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSelectElse() {
 		return sqmlSelectElseEClass;
 	}
@@ -520,6 +552,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSelectElseIf() {
 		return sqmlSelectElseIfEClass;
 	}
@@ -529,6 +562,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSelectElseIf_Condition() {
 		return (EReference)sqmlSelectElseIfEClass.getEStructuralFeatures().get(0);
 	}
@@ -538,6 +572,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSelectIf() {
 		return sqmlSelectIfEClass;
 	}
@@ -547,6 +582,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSelectIf_Condition() {
 		return (EReference)sqmlSelectIfEClass.getEStructuralFeatures().get(0);
 	}
@@ -556,6 +592,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSelectIf_ElseIfs() {
 		return (EReference)sqmlSelectIfEClass.getEStructuralFeatures().get(1);
 	}
@@ -565,6 +602,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSelectIf_Else() {
 		return (EReference)sqmlSelectIfEClass.getEStructuralFeatures().get(2);
 	}
@@ -574,6 +612,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getSqmlSelectIf__GetAllElements() {
 		return sqmlSelectIfEClass.getEOperations().get(0);
 	}
@@ -583,6 +622,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSubSelectVariable() {
 		return sqmlSubSelectVariableEClass;
 	}
@@ -592,6 +632,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSubSelectVariable_Name() {
 		return (EAttribute)sqmlSubSelectVariableEClass.getEStructuralFeatures().get(0);
 	}
@@ -601,6 +642,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSubSelectVariable_SubSelect() {
 		return (EReference)sqmlSubSelectVariableEClass.getEStructuralFeatures().get(1);
 	}
@@ -610,6 +652,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTableVariable() {
 		return sqmlTableVariableEClass;
 	}
@@ -619,6 +662,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTableVariable_Name() {
 		return (EAttribute)sqmlTableVariableEClass.getEStructuralFeatures().get(0);
 	}
@@ -628,6 +672,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTableVariable_Table() {
 		return (EReference)sqmlTableVariableEClass.getEStructuralFeatures().get(1);
 	}
@@ -637,6 +682,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlWhereClause() {
 		return sqmlWhereClauseEClass;
 	}
@@ -646,6 +692,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlWhereClause_Condition() {
 		return (EReference)sqmlWhereClauseEClass.getEStructuralFeatures().get(0);
 	}
@@ -655,6 +702,7 @@ public class SelectsPackageImpl extends EPackageImpl implements SelectsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SelectsFactory getSelectsFactory() {
 		return (SelectsFactory)getEFactoryInstance();
 	}

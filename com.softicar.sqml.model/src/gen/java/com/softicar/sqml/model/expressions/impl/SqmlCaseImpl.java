@@ -93,6 +93,7 @@ public class SqmlCaseImpl extends MinimalEObjectImpl.Container implements SqmlCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getOperand() {
 		return operand;
 	}
@@ -117,6 +118,7 @@ public class SqmlCaseImpl extends MinimalEObjectImpl.Container implements SqmlCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(ISqmlExpression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;
@@ -136,6 +138,7 @@ public class SqmlCaseImpl extends MinimalEObjectImpl.Container implements SqmlCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlCaseWhen> getWhens() {
 		if (whens == null) {
 			whens = new EObjectContainmentEList<SqmlCaseWhen>(SqmlCaseWhen.class, this, ExpressionsPackage.SQML_CASE__WHENS);
@@ -148,6 +151,7 @@ public class SqmlCaseImpl extends MinimalEObjectImpl.Container implements SqmlCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getElseExpression() {
 		return elseExpression;
 	}
@@ -172,6 +176,7 @@ public class SqmlCaseImpl extends MinimalEObjectImpl.Container implements SqmlCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElseExpression(ISqmlExpression newElseExpression) {
 		if (newElseExpression != elseExpression) {
 			NotificationChain msgs = null;

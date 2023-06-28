@@ -73,6 +73,7 @@ public class SqmlTableRowImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTable getTable() {
 		if (eContainerFeatureID() != TablesPackage.SQML_TABLE_ROW__TABLE) return null;
 		return (SqmlTable)eContainer();
@@ -103,6 +104,7 @@ public class SqmlTableRowImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(SqmlTable newTable) {
 		if (newTable != eInternalContainer() || (eContainerFeatureID() != TablesPackage.SQML_TABLE_ROW__TABLE && newTable != null)) {
 			if (EcoreUtil.isAncestor(this, newTable))
@@ -124,6 +126,7 @@ public class SqmlTableRowImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlTableRowValue> getValues() {
 		if (values == null) {
 			values = new EObjectContainmentWithInverseEList<SqmlTableRowValue>(SqmlTableRowValue.class, this, TablesPackage.SQML_TABLE_ROW__VALUES, TablesPackage.SQML_TABLE_ROW_VALUE__ROW);

@@ -93,6 +93,7 @@ public abstract class SqmlTableKeyImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -102,6 +103,7 @@ public abstract class SqmlTableKeyImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -114,6 +116,7 @@ public abstract class SqmlTableKeyImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlTableColumn> getColumns() {
 		if (columns == null) {
 			columns = new EObjectResolvingEList<ISqmlTableColumn>(ISqmlTableColumn.class, this, TablesPackage.SQML_TABLE_KEY__COLUMNS);
@@ -126,6 +129,7 @@ public abstract class SqmlTableKeyImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTable getTable() {
 		if (eContainerFeatureID() != TablesPackage.SQML_TABLE_KEY__TABLE) return null;
 		return (SqmlTable)eContainer();
@@ -156,6 +160,7 @@ public abstract class SqmlTableKeyImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(SqmlTable newTable) {
 		if (newTable != eInternalContainer() || (eContainerFeatureID() != TablesPackage.SQML_TABLE_KEY__TABLE && newTable != null)) {
 			if (EcoreUtil.isAncestor(this, newTable))

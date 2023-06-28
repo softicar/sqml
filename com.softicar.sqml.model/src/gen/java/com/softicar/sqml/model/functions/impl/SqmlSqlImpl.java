@@ -69,6 +69,7 @@ public class SqmlSqlImpl extends MinimalEObjectImpl.Container implements SqmlSql
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlModelElement> getTokens() {
 		if (tokens == null) {
 			tokens = new EObjectContainmentEList<ISqmlModelElement>(ISqmlModelElement.class, this, FunctionsPackage.SQML_SQL__TOKENS);

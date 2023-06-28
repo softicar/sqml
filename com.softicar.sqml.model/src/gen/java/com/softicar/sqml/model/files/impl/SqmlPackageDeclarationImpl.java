@@ -76,6 +76,7 @@ public class SqmlPackageDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFile getSqmlFile() {
 		if (eContainerFeatureID() != FilesPackage.SQML_PACKAGE_DECLARATION__SQML_FILE) return null;
 		return (SqmlFile)eContainer();
@@ -106,6 +107,7 @@ public class SqmlPackageDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSqmlFile(SqmlFile newSqmlFile) {
 		if (newSqmlFile != eInternalContainer() || (eContainerFeatureID() != FilesPackage.SQML_PACKAGE_DECLARATION__SQML_FILE && newSqmlFile != null)) {
 			if (EcoreUtil.isAncestor(this, newSqmlFile))
@@ -127,6 +129,7 @@ public class SqmlPackageDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -136,6 +139,7 @@ public class SqmlPackageDeclarationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

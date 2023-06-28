@@ -69,6 +69,7 @@ public class FilesFactoryImpl extends EFactoryImpl implements FilesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFile createSqmlFile() {
 		SqmlFileImpl sqmlFile = new SqmlFileImpl();
 		return sqmlFile;
@@ -79,6 +80,7 @@ public class FilesFactoryImpl extends EFactoryImpl implements FilesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlPackageDeclaration createSqmlPackageDeclaration() {
 		SqmlPackageDeclarationImpl sqmlPackageDeclaration = new SqmlPackageDeclarationImpl();
 		return sqmlPackageDeclaration;
@@ -89,6 +91,7 @@ public class FilesFactoryImpl extends EFactoryImpl implements FilesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlImport createSqmlImport() {
 		SqmlImportImpl sqmlImport = new SqmlImportImpl();
 		return sqmlImport;
@@ -99,6 +102,7 @@ public class FilesFactoryImpl extends EFactoryImpl implements FilesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FilesPackage getFilesPackage() {
 		return (FilesPackage)getEPackage();
 	}

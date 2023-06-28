@@ -75,6 +75,7 @@ public class SqmlOrImpl extends MinimalEObjectImpl.Container implements SqmlOr {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getLeft() {
 		return left;
 	}
@@ -99,6 +100,7 @@ public class SqmlOrImpl extends MinimalEObjectImpl.Container implements SqmlOr {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(ISqmlExpression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -118,6 +120,7 @@ public class SqmlOrImpl extends MinimalEObjectImpl.Container implements SqmlOr {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getRight() {
 		return right;
 	}
@@ -142,6 +145,7 @@ public class SqmlOrImpl extends MinimalEObjectImpl.Container implements SqmlOr {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(ISqmlExpression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;

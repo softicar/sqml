@@ -85,6 +85,7 @@ public class SqmlIsNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNot() {
 		return not;
 	}
@@ -94,6 +95,7 @@ public class SqmlIsNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNot(boolean newNot) {
 		boolean oldNot = not;
 		not = newNot;
@@ -106,6 +108,7 @@ public class SqmlIsNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getOperand() {
 		return operand;
 	}
@@ -130,6 +133,7 @@ public class SqmlIsNullImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(ISqmlExpression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;

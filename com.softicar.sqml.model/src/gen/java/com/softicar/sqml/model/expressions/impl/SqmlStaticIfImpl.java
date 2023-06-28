@@ -93,6 +93,7 @@ public class SqmlStaticIfImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlStaticExpression> getConditions() {
 		if (conditions == null) {
 			conditions = new EObjectContainmentEList<ISqmlStaticExpression>(ISqmlStaticExpression.class, this, ExpressionsPackage.SQML_STATIC_IF__CONDITIONS);
@@ -105,6 +106,7 @@ public class SqmlStaticIfImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlExpression> getExpressions() {
 		if (expressions == null) {
 			expressions = new EObjectContainmentEList<ISqmlExpression>(ISqmlExpression.class, this, ExpressionsPackage.SQML_STATIC_IF__EXPRESSIONS);
@@ -117,6 +119,7 @@ public class SqmlStaticIfImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getElseExpression() {
 		return elseExpression;
 	}
@@ -141,6 +144,7 @@ public class SqmlStaticIfImpl extends MinimalEObjectImpl.Container implements Sq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElseExpression(ISqmlExpression newElseExpression) {
 		if (newElseExpression != elseExpression) {
 			NotificationChain msgs = null;
