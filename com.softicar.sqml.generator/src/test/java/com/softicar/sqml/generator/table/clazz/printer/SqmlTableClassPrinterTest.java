@@ -92,9 +92,10 @@ public class SqmlTableClassPrinterTest extends AbstractSqmlTableClassPrinterTest
 			.toString();
 
 		generateCode(tableDefinition)//
+			.assertLine("import java.util.Optional;")
 			.assertLine("public final Integer getFooOrNull() {")
 			.assertLine("	return getValue(FOO);")
-			.assertLine("public final Integer getFooAsOptional() {")
+			.assertLine("public final Optional<Integer> getFooAsOptional() {")
 			.assertLine("	return getValueAsOptional(FOO);")
 			.assertLine("public final Integer getFooOrThrow() {")
 			.assertLine("	return getValueOrThrow(FOO);")
