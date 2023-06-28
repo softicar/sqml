@@ -70,6 +70,7 @@ public class SqmlIntegerLiteralImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getValue() {
 		return value;
 	}
@@ -79,6 +80,7 @@ public class SqmlIntegerLiteralImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(Integer newValue) {
 		Integer oldValue = value;
 		value = newValue;

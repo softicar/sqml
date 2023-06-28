@@ -70,6 +70,7 @@ public class SqmlSqlSymbolImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSymbolText() {
 		return symbolText;
 	}
@@ -79,6 +80,7 @@ public class SqmlSqlSymbolImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSymbolText(String newSymbolText) {
 		String oldSymbolText = symbolText;
 		symbolText = newSymbolText;

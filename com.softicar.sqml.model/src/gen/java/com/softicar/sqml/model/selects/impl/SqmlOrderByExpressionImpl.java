@@ -85,6 +85,7 @@ public class SqmlOrderByExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getExpression() {
 		return expression;
 	}
@@ -109,6 +110,7 @@ public class SqmlOrderByExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(ISqmlExpression newExpression) {
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
@@ -128,6 +130,7 @@ public class SqmlOrderByExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDescending() {
 		return descending;
 	}
@@ -137,6 +140,7 @@ public class SqmlOrderByExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescending(boolean newDescending) {
 		boolean oldDescending = descending;
 		descending = newDescending;

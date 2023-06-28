@@ -69,6 +69,7 @@ public class SqmlGroupByClauseImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlExpression> getExpressions() {
 		if (expressions == null) {
 			expressions = new EObjectContainmentEList<ISqmlExpression>(ISqmlExpression.class, this, SelectsPackage.SQML_GROUP_BY_CLAUSE__EXPRESSIONS);

@@ -68,6 +68,7 @@ public class QueriesFactoryImpl extends EFactoryImpl implements QueriesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlQuery createSqmlQuery() {
 		SqmlQueryImpl sqmlQuery = new SqmlQueryImpl();
 		return sqmlQuery;
@@ -78,6 +79,7 @@ public class QueriesFactoryImpl extends EFactoryImpl implements QueriesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlQueryParameter createSqmlQueryParameter() {
 		SqmlQueryParameterImpl sqmlQueryParameter = new SqmlQueryParameterImpl();
 		return sqmlQueryParameter;
@@ -88,6 +90,7 @@ public class QueriesFactoryImpl extends EFactoryImpl implements QueriesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public QueriesPackage getQueriesPackage() {
 		return (QueriesPackage)getEPackage();
 	}

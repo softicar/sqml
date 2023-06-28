@@ -543,6 +543,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTable getTable() {
 		if (eContainerFeatureID() != TablesPackage.SQML_TABLE_COLUMN__TABLE) return null;
 		return (SqmlTable)eContainer();
@@ -573,6 +574,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(SqmlTable newTable) {
 		if (newTable != eInternalContainer() || (eContainerFeatureID() != TablesPackage.SQML_TABLE_COLUMN__TABLE && newTable != null)) {
 			if (EcoreUtil.isAncestor(this, newTable))
@@ -594,6 +596,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -603,6 +606,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -615,6 +619,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPhysicalNameOverride() {
 		return physicalNameOverride;
 	}
@@ -624,6 +629,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPhysicalNameOverride(String newPhysicalNameOverride) {
 		String oldPhysicalNameOverride = physicalNameOverride;
 		physicalNameOverride = newPhysicalNameOverride;
@@ -636,6 +642,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTypeReference getTypeReference() {
 		return typeReference;
 	}
@@ -660,6 +667,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeReference(ISqmlTypeReference newTypeReference) {
 		if (newTypeReference != typeReference) {
 			NotificationChain msgs = null;
@@ -679,6 +687,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isPrimaryKey() {
 		return primaryKey;
 	}
@@ -688,6 +697,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPrimaryKey(boolean newPrimaryKey) {
 		boolean oldPrimaryKey = primaryKey;
 		primaryKey = newPrimaryKey;
@@ -700,6 +710,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSerial() {
 		return serial;
 	}
@@ -709,6 +720,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSerial(boolean newSerial) {
 		boolean oldSerial = serial;
 		serial = newSerial;
@@ -721,6 +733,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isBaseColumn() {
 		return baseColumn;
 	}
@@ -730,6 +743,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBaseColumn(boolean newBaseColumn) {
 		boolean oldBaseColumn = baseColumn;
 		baseColumn = newBaseColumn;
@@ -742,6 +756,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNullable() {
 		return nullable;
 	}
@@ -751,6 +766,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNullable(boolean newNullable) {
 		boolean oldNullable = nullable;
 		nullable = newNullable;
@@ -763,6 +779,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isUnsigned() {
 		return unsigned;
 	}
@@ -772,6 +789,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnsigned(boolean newUnsigned) {
 		boolean oldUnsigned = unsigned;
 		unsigned = newUnsigned;
@@ -784,6 +802,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlForeignKeyAction getOnDeleteAction() {
 		return onDeleteAction;
 	}
@@ -793,6 +812,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOnDeleteAction(SqmlForeignKeyAction newOnDeleteAction) {
 		SqmlForeignKeyAction oldOnDeleteAction = onDeleteAction;
 		onDeleteAction = newOnDeleteAction == null ? ON_DELETE_ACTION_EDEFAULT : newOnDeleteAction;
@@ -805,6 +825,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlForeignKeyAction getOnUpdateAction() {
 		return onUpdateAction;
 	}
@@ -814,6 +835,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOnUpdateAction(SqmlForeignKeyAction newOnUpdateAction) {
 		SqmlForeignKeyAction oldOnUpdateAction = onUpdateAction;
 		onUpdateAction = newOnUpdateAction == null ? ON_UPDATE_ACTION_EDEFAULT : newOnUpdateAction;
@@ -826,6 +848,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDefaultNull() {
 		return defaultNull;
 	}
@@ -835,6 +858,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefaultNull(boolean newDefaultNull) {
 		boolean oldDefaultNull = defaultNull;
 		defaultNull = newDefaultNull;
@@ -847,6 +871,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDefaultNow() {
 		return defaultNow;
 	}
@@ -856,6 +881,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefaultNow(boolean newDefaultNow) {
 		boolean oldDefaultNow = defaultNow;
 		defaultNow = newDefaultNow;
@@ -868,6 +894,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isOnUpdateNow() {
 		return onUpdateNow;
 	}
@@ -877,6 +904,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOnUpdateNow(boolean newOnUpdateNow) {
 		boolean oldOnUpdateNow = onUpdateNow;
 		onUpdateNow = newOnUpdateNow;
@@ -889,6 +917,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isTimestamp() {
 		return timestamp;
 	}
@@ -898,6 +927,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTimestamp(boolean newTimestamp) {
 		boolean oldTimestamp = timestamp;
 		timestamp = newTimestamp;
@@ -910,6 +940,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlDefaultValue getDefaultValue() {
 		return defaultValue;
 	}
@@ -934,6 +965,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDefaultValue(ISqmlDefaultValue newDefaultValue) {
 		if (newDefaultValue != defaultValue) {
 			NotificationChain msgs = null;
@@ -953,6 +985,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getBits() {
 		return bits;
 	}
@@ -962,6 +995,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBits(Integer newBits) {
 		Integer oldBits = bits;
 		bits = newBits;
@@ -974,6 +1008,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getPrecision() {
 		return precision;
 	}
@@ -983,6 +1018,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPrecision(Integer newPrecision) {
 		Integer oldPrecision = precision;
 		precision = newPrecision;
@@ -995,6 +1031,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getScale() {
 		return scale;
 	}
@@ -1004,6 +1041,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScale(Integer newScale) {
 		Integer oldScale = scale;
 		scale = newScale;
@@ -1016,6 +1054,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getMaxLength() {
 		return maxLength;
 	}
@@ -1025,6 +1064,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxLength(Integer newMaxLength) {
 		Integer oldMaxLength = maxLength;
 		maxLength = newMaxLength;
@@ -1037,6 +1077,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Integer getLengthBits() {
 		return lengthBits;
 	}
@@ -1046,6 +1087,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLengthBits(Integer newLengthBits) {
 		Integer oldLengthBits = lengthBits;
 		lengthBits = newLengthBits;
@@ -1058,6 +1100,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCharacterSet() {
 		return characterSet;
 	}
@@ -1067,6 +1110,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCharacterSet(String newCharacterSet) {
 		String oldCharacterSet = characterSet;
 		characterSet = newCharacterSet;
@@ -1079,6 +1123,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCollation() {
 		return collation;
 	}
@@ -1088,6 +1133,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCollation(String newCollation) {
 		String oldCollation = collation;
 		collation = newCollation;
@@ -1100,6 +1146,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getComment() {
 		return comment;
 	}
@@ -1109,6 +1156,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComment(String newComment) {
 		String oldComment = comment;
 		comment = newComment;
@@ -1121,6 +1169,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getConstraintName() {
 		return constraintName;
 	}
@@ -1130,6 +1179,7 @@ public class SqmlTableColumnImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConstraintName(String newConstraintName) {
 		String oldConstraintName = constraintName;
 		constraintName = newConstraintName;

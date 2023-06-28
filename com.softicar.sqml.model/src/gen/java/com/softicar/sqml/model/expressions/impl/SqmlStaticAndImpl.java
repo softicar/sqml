@@ -74,6 +74,7 @@ public class SqmlStaticAndImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticExpression getLeft() {
 		return left;
 	}
@@ -98,6 +99,7 @@ public class SqmlStaticAndImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(ISqmlStaticExpression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -117,6 +119,7 @@ public class SqmlStaticAndImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticExpression getRight() {
 		return right;
 	}
@@ -141,6 +144,7 @@ public class SqmlStaticAndImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(ISqmlStaticExpression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;

@@ -64,6 +64,7 @@ public class SqmlSubSelectImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlSelect getSelect() {
 		return select;
 	}
@@ -88,6 +89,7 @@ public class SqmlSubSelectImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSelect(ISqmlSelect newSelect) {
 		if (newSelect != select) {
 			NotificationChain msgs = null;

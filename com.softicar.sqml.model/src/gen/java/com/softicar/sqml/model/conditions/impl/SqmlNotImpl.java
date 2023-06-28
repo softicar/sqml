@@ -64,6 +64,7 @@ public class SqmlNotImpl extends MinimalEObjectImpl.Container implements SqmlNot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getCondition() {
 		return condition;
 	}
@@ -88,6 +89,7 @@ public class SqmlNotImpl extends MinimalEObjectImpl.Container implements SqmlNot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(ISqmlExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;

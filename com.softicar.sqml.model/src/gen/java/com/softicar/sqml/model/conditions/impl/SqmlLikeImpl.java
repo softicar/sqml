@@ -117,6 +117,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNot() {
 		return not;
 	}
@@ -126,6 +127,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNot(boolean newNot) {
 		boolean oldNot = not;
 		not = newNot;
@@ -138,6 +140,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getLeft() {
 		return left;
 	}
@@ -162,6 +165,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(ISqmlExpression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -181,6 +185,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getRight() {
 		return right;
 	}
@@ -205,6 +210,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(ISqmlExpression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;
@@ -224,6 +230,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEscape() {
 		return escape;
 	}
@@ -233,6 +240,7 @@ public class SqmlLikeImpl extends MinimalEObjectImpl.Container implements SqmlLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEscape(String newEscape) {
 		String oldEscape = escape;
 		escape = newEscape;

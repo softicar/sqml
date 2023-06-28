@@ -101,6 +101,7 @@ public class SqmlSelectIfImpl extends AbstractSqmlSelectBlockImpl implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlStaticExpression getCondition() {
 		return condition;
 	}
@@ -125,6 +126,7 @@ public class SqmlSelectIfImpl extends AbstractSqmlSelectBlockImpl implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(ISqmlStaticExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
@@ -144,6 +146,7 @@ public class SqmlSelectIfImpl extends AbstractSqmlSelectBlockImpl implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlSelectElseIf> getElseIfs() {
 		if (elseIfs == null) {
 			elseIfs = new EObjectContainmentEList<ISqmlSelectElseIf>(ISqmlSelectElseIf.class, this, SelectsPackage.SQML_SELECT_IF__ELSE_IFS);
@@ -156,6 +159,7 @@ public class SqmlSelectIfImpl extends AbstractSqmlSelectBlockImpl implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlSelectElse getElse() {
 		return else_;
 	}
@@ -180,6 +184,7 @@ public class SqmlSelectIfImpl extends AbstractSqmlSelectBlockImpl implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElse(ISqmlSelectElse newElse) {
 		if (newElse != else_) {
 			NotificationChain msgs = null;
@@ -199,6 +204,7 @@ public class SqmlSelectIfImpl extends AbstractSqmlSelectBlockImpl implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<? extends ISqmlSelectPart> getAllElements() {
 		return SqmlSelectIfMethods.getAllElements(this);
 	}

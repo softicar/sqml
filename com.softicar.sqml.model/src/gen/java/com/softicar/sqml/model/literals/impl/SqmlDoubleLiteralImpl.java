@@ -72,6 +72,7 @@ public class SqmlDoubleLiteralImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BigDecimal getValue() {
 		return value;
 	}
@@ -81,6 +82,7 @@ public class SqmlDoubleLiteralImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(BigDecimal newValue) {
 		BigDecimal oldValue = value;
 		value = newValue;

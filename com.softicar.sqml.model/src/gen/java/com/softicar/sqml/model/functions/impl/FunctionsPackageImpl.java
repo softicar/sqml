@@ -170,6 +170,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFunction() {
 		return sqmlFunctionEClass;
 	}
@@ -179,6 +180,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunction_ReturnType() {
 		return (EReference)sqmlFunctionEClass.getEStructuralFeatures().get(0);
 	}
@@ -188,6 +190,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunction_Parameters() {
 		return (EReference)sqmlFunctionEClass.getEStructuralFeatures().get(1);
 	}
@@ -197,6 +200,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunction_Sql() {
 		return (EReference)sqmlFunctionEClass.getEStructuralFeatures().get(2);
 	}
@@ -206,6 +210,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunction_Expression() {
 		return (EReference)sqmlFunctionEClass.getEStructuralFeatures().get(3);
 	}
@@ -215,6 +220,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getSqmlFunction__ToString() {
 		return sqmlFunctionEClass.getEOperations().get(0);
 	}
@@ -224,6 +230,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFunctionCall() {
 		return sqmlFunctionCallEClass;
 	}
@@ -233,6 +240,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunctionCall_Function() {
 		return (EReference)sqmlFunctionCallEClass.getEStructuralFeatures().get(0);
 	}
@@ -242,6 +250,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunctionCall_Arguments() {
 		return (EReference)sqmlFunctionCallEClass.getEStructuralFeatures().get(1);
 	}
@@ -251,6 +260,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFunctionParameter() {
 		return sqmlFunctionParameterEClass;
 	}
@@ -260,6 +270,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlFunctionParameter_Name() {
 		return (EAttribute)sqmlFunctionParameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -269,6 +280,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunctionParameter_Function() {
 		return (EReference)sqmlFunctionParameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -278,6 +290,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFunctionParameter_TypeReference() {
 		return (EReference)sqmlFunctionParameterEClass.getEStructuralFeatures().get(2);
 	}
@@ -287,6 +300,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSql() {
 		return sqmlSqlEClass;
 	}
@@ -296,6 +310,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlSql_Tokens() {
 		return (EReference)sqmlSqlEClass.getEStructuralFeatures().get(0);
 	}
@@ -305,6 +320,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSqlId() {
 		return sqmlSqlIdEClass;
 	}
@@ -314,6 +330,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSqlId_Identifier() {
 		return (EAttribute)sqmlSqlIdEClass.getEStructuralFeatures().get(0);
 	}
@@ -323,6 +340,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSqlKeyword() {
 		return sqmlSqlKeywordEClass;
 	}
@@ -332,6 +350,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSqlKeyword_KeywordText() {
 		return (EAttribute)sqmlSqlKeywordEClass.getEStructuralFeatures().get(0);
 	}
@@ -341,6 +360,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSqlNumberLiteral() {
 		return sqmlSqlNumberLiteralEClass;
 	}
@@ -350,6 +370,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSqlNumberLiteral_Integer() {
 		return (EAttribute)sqmlSqlNumberLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -359,6 +380,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSqlNumberLiteral_Decimal() {
 		return (EAttribute)sqmlSqlNumberLiteralEClass.getEStructuralFeatures().get(1);
 	}
@@ -368,6 +390,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSqlStringLiteral() {
 		return sqmlSqlStringLiteralEClass;
 	}
@@ -377,6 +400,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSqlStringLiteral_String() {
 		return (EAttribute)sqmlSqlStringLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -386,6 +410,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlSqlSymbol() {
 		return sqmlSqlSymbolEClass;
 	}
@@ -395,6 +420,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlSqlSymbol_SymbolText() {
 		return (EAttribute)sqmlSqlSymbolEClass.getEStructuralFeatures().get(0);
 	}
@@ -404,6 +430,7 @@ public class FunctionsPackageImpl extends EPackageImpl implements FunctionsPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FunctionsFactory getFunctionsFactory() {
 		return (FunctionsFactory)getEFactoryInstance();
 	}

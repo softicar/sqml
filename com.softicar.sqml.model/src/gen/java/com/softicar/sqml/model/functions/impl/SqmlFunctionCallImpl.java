@@ -84,6 +84,7 @@ public class SqmlFunctionCallImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlFunction getFunction() {
 		if (function != null && ((EObject)function).eIsProxy()) {
 			InternalEObject oldFunction = (InternalEObject)function;
@@ -110,6 +111,7 @@ public class SqmlFunctionCallImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFunction(ISqmlFunction newFunction) {
 		ISqmlFunction oldFunction = function;
 		function = newFunction;
@@ -122,6 +124,7 @@ public class SqmlFunctionCallImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlExpression> getArguments() {
 		if (arguments == null) {
 			arguments = new EObjectContainmentEList<ISqmlExpression>(ISqmlExpression.class, this, FunctionsPackage.SQML_FUNCTION_CALL__ARGUMENTS);

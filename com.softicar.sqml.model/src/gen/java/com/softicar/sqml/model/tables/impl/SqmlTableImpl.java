@@ -151,6 +151,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isEnumTable() {
 		return enumTable;
 	}
@@ -160,6 +161,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnumTable(boolean newEnumTable) {
 		boolean oldEnumTable = enumTable;
 		enumTable = newEnumTable;
@@ -172,6 +174,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPhysicalNameOverride() {
 		return physicalNameOverride;
 	}
@@ -181,6 +184,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPhysicalNameOverride(String newPhysicalNameOverride) {
 		String oldPhysicalNameOverride = physicalNameOverride;
 		physicalNameOverride = newPhysicalNameOverride;
@@ -193,6 +197,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlTableColumn> getColumns() {
 		if (columns == null) {
 			columns = new EObjectContainmentWithInverseEList<SqmlTableColumn>(SqmlTableColumn.class, this, TablesPackage.SQML_TABLE__COLUMNS, TablesPackage.SQML_TABLE_COLUMN__TABLE);
@@ -205,6 +210,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlTableKey> getTableKeys() {
 		if (tableKeys == null) {
 			tableKeys = new EObjectContainmentWithInverseEList<SqmlTableKey>(SqmlTableKey.class, this, TablesPackage.SQML_TABLE__TABLE_KEYS, TablesPackage.SQML_TABLE_KEY__TABLE);
@@ -217,6 +223,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlEnum> getEnums() {
 		if (enums == null) {
 			enums = new EObjectContainmentEList<ISqmlEnum>(ISqmlEnum.class, this, TablesPackage.SQML_TABLE__ENUMS);
@@ -229,6 +236,7 @@ public class SqmlTableImpl extends SqmlFileElementImpl implements SqmlTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlTableRow> getRows() {
 		if (rows == null) {
 			rows = new EObjectContainmentWithInverseEList<SqmlTableRow>(SqmlTableRow.class, this, TablesPackage.SQML_TABLE__ROWS, TablesPackage.SQML_TABLE_ROW__TABLE);

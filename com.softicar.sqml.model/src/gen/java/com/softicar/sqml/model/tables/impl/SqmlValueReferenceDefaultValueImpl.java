@@ -64,6 +64,7 @@ public class SqmlValueReferenceDefaultValueImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlValueReference getValueReference() {
 		return valueReference;
 	}
@@ -88,6 +89,7 @@ public class SqmlValueReferenceDefaultValueImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValueReference(ISqmlValueReference newValueReference) {
 		if (newValueReference != valueReference) {
 			NotificationChain msgs = null;

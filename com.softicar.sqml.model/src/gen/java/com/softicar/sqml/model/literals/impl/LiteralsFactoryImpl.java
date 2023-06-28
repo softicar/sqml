@@ -73,6 +73,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlBooleanLiteral createSqmlBooleanLiteral() {
 		SqmlBooleanLiteralImpl sqmlBooleanLiteral = new SqmlBooleanLiteralImpl();
 		return sqmlBooleanLiteral;
@@ -83,6 +84,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlIntegerLiteral createSqmlIntegerLiteral() {
 		SqmlIntegerLiteralImpl sqmlIntegerLiteral = new SqmlIntegerLiteralImpl();
 		return sqmlIntegerLiteral;
@@ -93,6 +95,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlLongLiteral createSqmlLongLiteral() {
 		SqmlLongLiteralImpl sqmlLongLiteral = new SqmlLongLiteralImpl();
 		return sqmlLongLiteral;
@@ -103,6 +106,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFloatLiteral createSqmlFloatLiteral() {
 		SqmlFloatLiteralImpl sqmlFloatLiteral = new SqmlFloatLiteralImpl();
 		return sqmlFloatLiteral;
@@ -113,6 +117,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlDoubleLiteral createSqmlDoubleLiteral() {
 		SqmlDoubleLiteralImpl sqmlDoubleLiteral = new SqmlDoubleLiteralImpl();
 		return sqmlDoubleLiteral;
@@ -123,6 +128,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlDecimalLiteral createSqmlDecimalLiteral() {
 		SqmlDecimalLiteralImpl sqmlDecimalLiteral = new SqmlDecimalLiteralImpl();
 		return sqmlDecimalLiteral;
@@ -133,6 +139,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlStringLiteral createSqmlStringLiteral() {
 		SqmlStringLiteralImpl sqmlStringLiteral = new SqmlStringLiteralImpl();
 		return sqmlStringLiteral;
@@ -143,6 +150,7 @@ public class LiteralsFactoryImpl extends EFactoryImpl implements LiteralsFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LiteralsPackage getLiteralsPackage() {
 		return (LiteralsPackage)getEPackage();
 	}

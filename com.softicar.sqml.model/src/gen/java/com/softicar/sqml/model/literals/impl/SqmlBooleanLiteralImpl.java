@@ -70,6 +70,7 @@ public class SqmlBooleanLiteralImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isTrue() {
 		return true_;
 	}
@@ -79,6 +80,7 @@ public class SqmlBooleanLiteralImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTrue(boolean newTrue) {
 		boolean oldTrue = true_;
 		true_ = newTrue;

@@ -89,6 +89,7 @@ public class SqmlEnumeratorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlEnum getEnum() {
 		if (eContainerFeatureID() != TypesPackage.SQML_ENUMERATOR__ENUM) return null;
 		return (SqmlEnum)eContainer();
@@ -119,6 +120,7 @@ public class SqmlEnumeratorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnum(SqmlEnum newEnum) {
 		if (newEnum != eInternalContainer() || (eContainerFeatureID() != TypesPackage.SQML_ENUMERATOR__ENUM && newEnum != null)) {
 			if (EcoreUtil.isAncestor(this, newEnum))
@@ -140,6 +142,7 @@ public class SqmlEnumeratorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -149,6 +152,7 @@ public class SqmlEnumeratorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -161,6 +165,7 @@ public class SqmlEnumeratorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlLiteral<?> getValue() {
 		return value;
 	}
@@ -185,6 +190,7 @@ public class SqmlEnumeratorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(ISqmlLiteral<?> newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;

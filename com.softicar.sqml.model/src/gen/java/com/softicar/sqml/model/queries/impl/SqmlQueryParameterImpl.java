@@ -110,6 +110,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -119,6 +120,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -131,6 +133,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlQuery getQuery() {
 		if (eContainerFeatureID() != QueriesPackage.SQML_QUERY_PARAMETER__QUERY) return null;
 		return (SqmlQuery)eContainer();
@@ -161,6 +164,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setQuery(SqmlQuery newQuery) {
 		if (newQuery != eInternalContainer() || (eContainerFeatureID() != QueriesPackage.SQML_QUERY_PARAMETER__QUERY && newQuery != null)) {
 			if (EcoreUtil.isAncestor(this, newQuery))
@@ -182,6 +186,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isOptional() {
 		return optional;
 	}
@@ -191,6 +196,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOptional(boolean newOptional) {
 		boolean oldOptional = optional;
 		optional = newOptional;
@@ -203,6 +209,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTypeReference getTypeReference() {
 		return typeReference;
 	}
@@ -227,6 +234,7 @@ public class SqmlQueryParameterImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeReference(ISqmlTypeReference newTypeReference) {
 		if (newTypeReference != typeReference) {
 			NotificationChain msgs = null;

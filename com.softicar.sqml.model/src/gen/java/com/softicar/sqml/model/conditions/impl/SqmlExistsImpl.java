@@ -64,6 +64,7 @@ public class SqmlExistsImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlSubSelect getSubSelect() {
 		return subSelect;
 	}
@@ -88,6 +89,7 @@ public class SqmlExistsImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSubSelect(ISqmlSubSelect newSubSelect) {
 		if (newSubSelect != subSelect) {
 			NotificationChain msgs = null;

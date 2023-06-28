@@ -104,6 +104,7 @@ public class SqmlJoinClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isLeftJoin() {
 		return leftJoin;
 	}
@@ -113,6 +114,7 @@ public class SqmlJoinClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeftJoin(boolean newLeftJoin) {
 		boolean oldLeftJoin = leftJoin;
 		leftJoin = newLeftJoin;
@@ -125,6 +127,7 @@ public class SqmlJoinClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlVariable getVariable() {
 		return variable;
 	}
@@ -149,6 +152,7 @@ public class SqmlJoinClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(ISqmlVariable newVariable) {
 		if (newVariable != variable) {
 			NotificationChain msgs = null;
@@ -168,6 +172,7 @@ public class SqmlJoinClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlExpression> getConditions() {
 		if (conditions == null) {
 			conditions = new EObjectContainmentEList<ISqmlExpression>(ISqmlExpression.class, this, SelectsPackage.SQML_JOIN_CLAUSE__CONDITIONS);

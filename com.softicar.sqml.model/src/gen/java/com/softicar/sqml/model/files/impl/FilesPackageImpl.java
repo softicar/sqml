@@ -123,6 +123,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFile() {
 		return sqmlFileEClass;
 	}
@@ -132,6 +133,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFile_PackageDeclaration() {
 		return (EReference)sqmlFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -141,6 +143,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFile_Imports() {
 		return (EReference)sqmlFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -150,6 +153,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlFile_Elements() {
 		return (EReference)sqmlFileEClass.getEStructuralFeatures().get(2);
 	}
@@ -159,6 +163,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlPackageDeclaration() {
 		return sqmlPackageDeclarationEClass;
 	}
@@ -168,6 +173,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlPackageDeclaration_SqmlFile() {
 		return (EReference)sqmlPackageDeclarationEClass.getEStructuralFeatures().get(0);
 	}
@@ -177,6 +183,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlPackageDeclaration_Name() {
 		return (EAttribute)sqmlPackageDeclarationEClass.getEStructuralFeatures().get(1);
 	}
@@ -186,6 +193,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlImport() {
 		return sqmlImportEClass;
 	}
@@ -195,6 +203,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlImport_SqmlFile() {
 		return (EReference)sqmlImportEClass.getEStructuralFeatures().get(0);
 	}
@@ -204,6 +213,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlImport_Target() {
 		return (EReference)sqmlImportEClass.getEStructuralFeatures().get(1);
 	}
@@ -213,6 +223,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFileElement() {
 		return sqmlFileElementEClass;
 	}
@@ -222,6 +233,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlFileElement_Name() {
 		return (EAttribute)sqmlFileElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -231,6 +243,7 @@ public class FilesPackageImpl extends EPackageImpl implements FilesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FilesFactory getFilesFactory() {
 		return (FilesFactory)getEFactoryInstance();
 	}

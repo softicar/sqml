@@ -64,6 +64,7 @@ public class SqmlWhereClauseImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getCondition() {
 		return condition;
 	}
@@ -88,6 +89,7 @@ public class SqmlWhereClauseImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(ISqmlExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;

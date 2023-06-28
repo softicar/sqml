@@ -75,6 +75,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFunction createSqmlFunction() {
 		SqmlFunctionImpl sqmlFunction = new SqmlFunctionImpl();
 		return sqmlFunction;
@@ -85,6 +86,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFunctionCall createSqmlFunctionCall() {
 		SqmlFunctionCallImpl sqmlFunctionCall = new SqmlFunctionCallImpl();
 		return sqmlFunctionCall;
@@ -95,6 +97,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFunctionParameter createSqmlFunctionParameter() {
 		SqmlFunctionParameterImpl sqmlFunctionParameter = new SqmlFunctionParameterImpl();
 		return sqmlFunctionParameter;
@@ -105,6 +108,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSql createSqmlSql() {
 		SqmlSqlImpl sqmlSql = new SqmlSqlImpl();
 		return sqmlSql;
@@ -115,6 +119,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSqlId createSqmlSqlId() {
 		SqmlSqlIdImpl sqmlSqlId = new SqmlSqlIdImpl();
 		return sqmlSqlId;
@@ -125,6 +130,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSqlKeyword createSqmlSqlKeyword() {
 		SqmlSqlKeywordImpl sqmlSqlKeyword = new SqmlSqlKeywordImpl();
 		return sqmlSqlKeyword;
@@ -135,6 +141,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSqlNumberLiteral createSqmlSqlNumberLiteral() {
 		SqmlSqlNumberLiteralImpl sqmlSqlNumberLiteral = new SqmlSqlNumberLiteralImpl();
 		return sqmlSqlNumberLiteral;
@@ -145,6 +152,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSqlStringLiteral createSqmlSqlStringLiteral() {
 		SqmlSqlStringLiteralImpl sqmlSqlStringLiteral = new SqmlSqlStringLiteralImpl();
 		return sqmlSqlStringLiteral;
@@ -155,6 +163,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlSqlSymbol createSqmlSqlSymbol() {
 		SqmlSqlSymbolImpl sqmlSqlSymbol = new SqmlSqlSymbolImpl();
 		return sqmlSqlSymbol;
@@ -165,6 +174,7 @@ public class FunctionsFactoryImpl extends EFactoryImpl implements FunctionsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FunctionsPackage getFunctionsPackage() {
 		return (FunctionsPackage)getEPackage();
 	}

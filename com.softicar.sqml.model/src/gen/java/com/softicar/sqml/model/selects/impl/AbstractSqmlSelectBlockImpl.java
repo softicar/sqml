@@ -71,6 +71,7 @@ public abstract class AbstractSqmlSelectBlockImpl extends MinimalEObjectImpl.Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlSelectPart> getParts() {
 		if (parts == null) {
 			parts = new EObjectContainmentEList<ISqmlSelectPart>(ISqmlSelectPart.class, this, SelectsPackage.ABSTRACT_SQML_SELECT_BLOCK__PARTS);
@@ -83,6 +84,7 @@ public abstract class AbstractSqmlSelectBlockImpl extends MinimalEObjectImpl.Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public List<? extends ISqmlSelectPart> getAllElements() {
 		return this.getParts();
 	}

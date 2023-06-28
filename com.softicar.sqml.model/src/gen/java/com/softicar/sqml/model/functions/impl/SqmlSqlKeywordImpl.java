@@ -70,6 +70,7 @@ public class SqmlSqlKeywordImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKeywordText() {
 		return keywordText;
 	}
@@ -79,6 +80,7 @@ public class SqmlSqlKeywordImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKeywordText(String newKeywordText) {
 		String oldKeywordText = keywordText;
 		keywordText = newKeywordText;

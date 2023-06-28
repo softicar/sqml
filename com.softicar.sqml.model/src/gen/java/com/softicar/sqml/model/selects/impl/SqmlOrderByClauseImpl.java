@@ -68,6 +68,7 @@ public class SqmlOrderByClauseImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlOrderByExpression> getExpressions() {
 		if (expressions == null) {
 			expressions = new EObjectContainmentEList<SqmlOrderByExpression>(SqmlOrderByExpression.class, this, SelectsPackage.SQML_ORDER_BY_CLAUSE__EXPRESSIONS);

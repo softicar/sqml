@@ -97,6 +97,7 @@ public class SqmlForeignKeyVariableImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -106,6 +107,7 @@ public class SqmlForeignKeyVariableImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -118,6 +120,7 @@ public class SqmlForeignKeyVariableImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlVariable getVariable() {
 		if (variable != null && ((EObject)variable).eIsProxy()) {
 			InternalEObject oldVariable = (InternalEObject)variable;
@@ -144,6 +147,7 @@ public class SqmlForeignKeyVariableImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(ISqmlVariable newVariable) {
 		ISqmlVariable oldVariable = variable;
 		variable = newVariable;
@@ -156,6 +160,7 @@ public class SqmlForeignKeyVariableImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlColumn getColumn() {
 		if (column != null && ((EObject)column).eIsProxy()) {
 			InternalEObject oldColumn = (InternalEObject)column;
@@ -182,6 +187,7 @@ public class SqmlForeignKeyVariableImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setColumn(ISqmlColumn newColumn) {
 		ISqmlColumn oldColumn = column;
 		column = newColumn;

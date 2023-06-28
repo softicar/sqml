@@ -86,6 +86,7 @@ public class SqmlBetweenImpl extends MinimalEObjectImpl.Container implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getOperand() {
 		return operand;
 	}
@@ -110,6 +111,7 @@ public class SqmlBetweenImpl extends MinimalEObjectImpl.Container implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(ISqmlExpression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;
@@ -129,6 +131,7 @@ public class SqmlBetweenImpl extends MinimalEObjectImpl.Container implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getLeft() {
 		return left;
 	}
@@ -153,6 +156,7 @@ public class SqmlBetweenImpl extends MinimalEObjectImpl.Container implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(ISqmlExpression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -172,6 +176,7 @@ public class SqmlBetweenImpl extends MinimalEObjectImpl.Container implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getRight() {
 		return right;
 	}
@@ -196,6 +201,7 @@ public class SqmlBetweenImpl extends MinimalEObjectImpl.Container implements Sqm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(ISqmlExpression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;

@@ -89,6 +89,7 @@ public class SqmlFunctionParameterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -98,6 +99,7 @@ public class SqmlFunctionParameterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -110,6 +112,7 @@ public class SqmlFunctionParameterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFunction getFunction() {
 		if (eContainerFeatureID() != FunctionsPackage.SQML_FUNCTION_PARAMETER__FUNCTION) return null;
 		return (SqmlFunction)eContainer();
@@ -140,6 +143,7 @@ public class SqmlFunctionParameterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFunction(SqmlFunction newFunction) {
 		if (newFunction != eInternalContainer() || (eContainerFeatureID() != FunctionsPackage.SQML_FUNCTION_PARAMETER__FUNCTION && newFunction != null)) {
 			if (EcoreUtil.isAncestor(this, newFunction))
@@ -161,6 +165,7 @@ public class SqmlFunctionParameterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTypeReference getTypeReference() {
 		return typeReference;
 	}
@@ -185,6 +190,7 @@ public class SqmlFunctionParameterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeReference(ISqmlTypeReference newTypeReference) {
 		if (newTypeReference != typeReference) {
 			NotificationChain msgs = null;

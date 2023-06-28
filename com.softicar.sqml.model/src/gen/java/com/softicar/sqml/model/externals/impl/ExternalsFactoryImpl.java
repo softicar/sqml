@@ -403,6 +403,7 @@ public class ExternalsFactoryImpl extends EFactoryImpl implements ExternalsFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalsPackage getExternalsPackage() {
 		return (ExternalsPackage)getEPackage();
 	}

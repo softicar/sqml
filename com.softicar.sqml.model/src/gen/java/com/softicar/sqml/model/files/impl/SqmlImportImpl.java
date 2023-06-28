@@ -69,6 +69,7 @@ public class SqmlImportImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlFile getSqmlFile() {
 		if (eContainerFeatureID() != FilesPackage.SQML_IMPORT__SQML_FILE) return null;
 		return (SqmlFile)eContainer();
@@ -99,6 +100,7 @@ public class SqmlImportImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSqmlFile(SqmlFile newSqmlFile) {
 		if (newSqmlFile != eInternalContainer() || (eContainerFeatureID() != FilesPackage.SQML_IMPORT__SQML_FILE && newSqmlFile != null)) {
 			if (EcoreUtil.isAncestor(this, newSqmlFile))
@@ -120,6 +122,7 @@ public class SqmlImportImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlGlobalObject getTarget() {
 		if (target != null && ((EObject)target).eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
@@ -146,6 +149,7 @@ public class SqmlImportImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(ISqmlGlobalObject newTarget) {
 		ISqmlGlobalObject oldTarget = target;
 		target = newTarget;

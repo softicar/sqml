@@ -96,6 +96,7 @@ public class SqmlInImpl extends MinimalEObjectImpl.Container implements SqmlIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNot() {
 		return not;
 	}
@@ -105,6 +106,7 @@ public class SqmlInImpl extends MinimalEObjectImpl.Container implements SqmlIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNot(boolean newNot) {
 		boolean oldNot = not;
 		not = newNot;
@@ -117,6 +119,7 @@ public class SqmlInImpl extends MinimalEObjectImpl.Container implements SqmlIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getLeft() {
 		return left;
 	}
@@ -141,6 +144,7 @@ public class SqmlInImpl extends MinimalEObjectImpl.Container implements SqmlIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeft(ISqmlExpression newLeft) {
 		if (newLeft != left) {
 			NotificationChain msgs = null;
@@ -160,6 +164,7 @@ public class SqmlInImpl extends MinimalEObjectImpl.Container implements SqmlIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getRight() {
 		return right;
 	}
@@ -184,6 +189,7 @@ public class SqmlInImpl extends MinimalEObjectImpl.Container implements SqmlIn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRight(ISqmlExpression newRight) {
 		if (newRight != right) {
 			NotificationChain msgs = null;

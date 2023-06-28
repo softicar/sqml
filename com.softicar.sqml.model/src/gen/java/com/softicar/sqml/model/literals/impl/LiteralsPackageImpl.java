@@ -149,6 +149,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlBooleanLiteral() {
 		return sqmlBooleanLiteralEClass;
 	}
@@ -158,6 +159,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlBooleanLiteral_True() {
 		return (EAttribute)sqmlBooleanLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -167,6 +169,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlIntegerLiteral() {
 		return sqmlIntegerLiteralEClass;
 	}
@@ -176,6 +179,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlIntegerLiteral_Value() {
 		return (EAttribute)sqmlIntegerLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -185,6 +189,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlLongLiteral() {
 		return sqmlLongLiteralEClass;
 	}
@@ -194,6 +199,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlLongLiteral_Value() {
 		return (EAttribute)sqmlLongLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -203,6 +209,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlFloatLiteral() {
 		return sqmlFloatLiteralEClass;
 	}
@@ -212,6 +219,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlFloatLiteral_Value() {
 		return (EAttribute)sqmlFloatLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -221,6 +229,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlDoubleLiteral() {
 		return sqmlDoubleLiteralEClass;
 	}
@@ -230,6 +239,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlDoubleLiteral_Value() {
 		return (EAttribute)sqmlDoubleLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -239,6 +249,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlDecimalLiteral() {
 		return sqmlDecimalLiteralEClass;
 	}
@@ -248,6 +259,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlDecimalLiteral_Value() {
 		return (EAttribute)sqmlDecimalLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -257,6 +269,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlStringLiteral() {
 		return sqmlStringLiteralEClass;
 	}
@@ -266,6 +279,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlStringLiteral_Value() {
 		return (EAttribute)sqmlStringLiteralEClass.getEStructuralFeatures().get(0);
 	}
@@ -275,6 +289,7 @@ public class LiteralsPackageImpl extends EPackageImpl implements LiteralsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LiteralsFactory getLiteralsFactory() {
 		return (LiteralsFactory)getEFactoryInstance();
 	}

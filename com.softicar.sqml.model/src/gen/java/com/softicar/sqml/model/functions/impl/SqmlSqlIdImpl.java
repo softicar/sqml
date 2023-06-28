@@ -70,6 +70,7 @@ public class SqmlSqlIdImpl extends MinimalEObjectImpl.Container implements SqmlS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getIdentifier() {
 		return identifier;
 	}
@@ -79,6 +80,7 @@ public class SqmlSqlIdImpl extends MinimalEObjectImpl.Container implements SqmlS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;

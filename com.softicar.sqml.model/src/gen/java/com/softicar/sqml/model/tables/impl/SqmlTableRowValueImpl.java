@@ -89,6 +89,7 @@ public class SqmlTableRowValueImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlTableRow getRow() {
 		if (eContainerFeatureID() != TablesPackage.SQML_TABLE_ROW_VALUE__ROW) return null;
 		return (SqmlTableRow)eContainer();
@@ -119,6 +120,7 @@ public class SqmlTableRowValueImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRow(SqmlTableRow newRow) {
 		if (newRow != eInternalContainer() || (eContainerFeatureID() != TablesPackage.SQML_TABLE_ROW_VALUE__ROW && newRow != null)) {
 			if (EcoreUtil.isAncestor(this, newRow))
@@ -140,6 +142,7 @@ public class SqmlTableRowValueImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlLiteral<?> getLiteral() {
 		return literal;
 	}
@@ -164,6 +167,7 @@ public class SqmlTableRowValueImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLiteral(ISqmlLiteral<?> newLiteral) {
 		if (newLiteral != literal) {
 			NotificationChain msgs = null;
@@ -183,6 +187,7 @@ public class SqmlTableRowValueImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNull() {
 		return null_;
 	}
@@ -192,6 +197,7 @@ public class SqmlTableRowValueImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNull(boolean newNull) {
 		boolean oldNull = null_;
 		null_ = newNull;

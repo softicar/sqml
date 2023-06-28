@@ -125,6 +125,7 @@ public class SqmlGroupConcatImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isDistinct() {
 		return distinct;
 	}
@@ -134,6 +135,7 @@ public class SqmlGroupConcatImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDistinct(boolean newDistinct) {
 		boolean oldDistinct = distinct;
 		distinct = newDistinct;
@@ -146,6 +148,7 @@ public class SqmlGroupConcatImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlExpression> getExpressions() {
 		if (expressions == null) {
 			expressions = new EObjectContainmentEList<ISqmlExpression>(ISqmlExpression.class, this, ExpressionsPackage.SQML_GROUP_CONCAT__EXPRESSIONS);
@@ -158,6 +161,7 @@ public class SqmlGroupConcatImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlOrderByExpression> getOrderByExpressions() {
 		if (orderByExpressions == null) {
 			orderByExpressions = new EObjectContainmentEList<ISqmlOrderByExpression>(ISqmlOrderByExpression.class, this, ExpressionsPackage.SQML_GROUP_CONCAT__ORDER_BY_EXPRESSIONS);
@@ -170,6 +174,7 @@ public class SqmlGroupConcatImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSeparator() {
 		return separator;
 	}
@@ -179,6 +184,7 @@ public class SqmlGroupConcatImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSeparator(String newSeparator) {
 		String oldSeparator = separator;
 		separator = newSeparator;

@@ -13,7 +13,7 @@ Require-Bundle: com.softicar.sqml.ui,
  org.eclipse.xtext.junit4,
  com.softicar.sqml.main,
  org.eclipse.xtext.xbase.testing,
- org.objectweb.asm;bundle-version="[9.4.0,9.5.0)";resolution:=optional
+ org.objectweb.asm;bundle-version="[9.5.0,9.6.0)";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: com.softicar.sqml.test.builder,
  com.softicar.sqml.test.builtin,

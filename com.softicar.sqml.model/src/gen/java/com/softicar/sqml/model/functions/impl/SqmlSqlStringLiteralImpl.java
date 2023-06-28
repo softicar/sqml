@@ -70,6 +70,7 @@ public class SqmlSqlStringLiteralImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getString() {
 		return string;
 	}
@@ -79,6 +80,7 @@ public class SqmlSqlStringLiteralImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setString(String newString) {
 		String oldString = string;
 		string = newString;

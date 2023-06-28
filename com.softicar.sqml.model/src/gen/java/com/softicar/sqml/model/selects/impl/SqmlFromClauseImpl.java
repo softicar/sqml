@@ -63,6 +63,7 @@ public class SqmlFromClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlVariable getVariable() {
 		return variable;
 	}
@@ -87,6 +88,7 @@ public class SqmlFromClauseImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVariable(ISqmlVariable newVariable) {
 		if (newVariable != variable) {
 			NotificationChain msgs = null;

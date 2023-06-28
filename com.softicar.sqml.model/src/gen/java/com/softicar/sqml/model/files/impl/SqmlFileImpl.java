@@ -95,6 +95,7 @@ public class SqmlFileImpl extends MinimalEObjectImpl.Container implements SqmlFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SqmlPackageDeclaration getPackageDeclaration() {
 		return packageDeclaration;
 	}
@@ -119,6 +120,7 @@ public class SqmlFileImpl extends MinimalEObjectImpl.Container implements SqmlFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPackageDeclaration(SqmlPackageDeclaration newPackageDeclaration) {
 		if (newPackageDeclaration != packageDeclaration) {
 			NotificationChain msgs = null;
@@ -138,6 +140,7 @@ public class SqmlFileImpl extends MinimalEObjectImpl.Container implements SqmlFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlImport> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentWithInverseEList<SqmlImport>(SqmlImport.class, this, FilesPackage.SQML_FILE__IMPORTS, FilesPackage.SQML_IMPORT__SQML_FILE);
@@ -150,6 +153,7 @@ public class SqmlFileImpl extends MinimalEObjectImpl.Container implements SqmlFi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SqmlFileElement> getElements() {
 		if (elements == null) {
 			elements = new EObjectContainmentEList<SqmlFileElement>(SqmlFileElement.class, this, FilesPackage.SQML_FILE__ELEMENTS);

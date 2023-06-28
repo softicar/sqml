@@ -96,6 +96,7 @@ public class SqmlRegexpImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isNot() {
 		return not;
 	}
@@ -105,6 +106,7 @@ public class SqmlRegexpImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNot(boolean newNot) {
 		boolean oldNot = not;
 		not = newNot;
@@ -117,6 +119,7 @@ public class SqmlRegexpImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getOperand() {
 		return operand;
 	}
@@ -141,6 +144,7 @@ public class SqmlRegexpImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(ISqmlExpression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;
@@ -160,6 +164,7 @@ public class SqmlRegexpImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlExpression getRegexp() {
 		return regexp;
 	}
@@ -184,6 +189,7 @@ public class SqmlRegexpImpl extends MinimalEObjectImpl.Container implements Sqml
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRegexp(ISqmlExpression newRegexp) {
 		if (newRegexp != regexp) {
 			NotificationChain msgs = null;

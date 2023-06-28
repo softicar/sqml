@@ -134,6 +134,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractSqmlTypeDefinition() {
 		return abstractSqmlTypeDefinitionEClass;
 	}
@@ -143,6 +144,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlValueType() {
 		return sqmlValueTypeEClass;
 	}
@@ -152,6 +154,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlEnum() {
 		return sqmlEnumEClass;
 	}
@@ -161,6 +164,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlEnum_Name() {
 		return (EAttribute)sqmlEnumEClass.getEStructuralFeatures().get(0);
 	}
@@ -170,6 +174,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlEnum_TypeReference() {
 		return (EReference)sqmlEnumEClass.getEStructuralFeatures().get(1);
 	}
@@ -179,6 +184,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlEnum_Enumerators() {
 		return (EReference)sqmlEnumEClass.getEStructuralFeatures().get(2);
 	}
@@ -188,6 +194,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlEnumerator() {
 		return sqmlEnumeratorEClass;
 	}
@@ -197,6 +204,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlEnumerator_Enum() {
 		return (EReference)sqmlEnumeratorEClass.getEStructuralFeatures().get(0);
 	}
@@ -206,6 +214,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlEnumerator_Name() {
 		return (EAttribute)sqmlEnumeratorEClass.getEStructuralFeatures().get(1);
 	}
@@ -215,6 +224,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlEnumerator_Value() {
 		return (EReference)sqmlEnumeratorEClass.getEStructuralFeatures().get(2);
 	}
@@ -224,6 +234,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSqmlTypeReference() {
 		return sqmlTypeReferenceEClass;
 	}
@@ -233,6 +244,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSqmlTypeReference_List() {
 		return (EAttribute)sqmlTypeReferenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -242,6 +254,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTypeReference_TypeDefinition() {
 		return (EReference)sqmlTypeReferenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -251,6 +264,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSqmlTypeReference_TypeParameters() {
 		return (EReference)sqmlTypeReferenceEClass.getEStructuralFeatures().get(2);
 	}
@@ -260,6 +274,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypesFactory getTypesFactory() {
 		return (TypesFactory)getEFactoryInstance();
 	}

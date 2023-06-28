@@ -104,6 +104,7 @@ public class SqmlTypeReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isList() {
 		return list;
 	}
@@ -113,6 +114,7 @@ public class SqmlTypeReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setList(boolean newList) {
 		boolean oldList = list;
 		list = newList;
@@ -125,6 +127,7 @@ public class SqmlTypeReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISqmlTypeDefinition getTypeDefinition() {
 		if (typeDefinition != null && ((EObject)typeDefinition).eIsProxy()) {
 			InternalEObject oldTypeDefinition = (InternalEObject)typeDefinition;
@@ -151,6 +154,7 @@ public class SqmlTypeReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeDefinition(ISqmlTypeDefinition newTypeDefinition) {
 		ISqmlTypeDefinition oldTypeDefinition = typeDefinition;
 		typeDefinition = newTypeDefinition;
@@ -163,6 +167,7 @@ public class SqmlTypeReferenceImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ISqmlTypeReference> getTypeParameters() {
 		if (typeParameters == null) {
 			typeParameters = new EObjectContainmentEList<ISqmlTypeReference>(ISqmlTypeReference.class, this, TypesPackage.SQML_TYPE_REFERENCE__TYPE_PARAMETERS);
