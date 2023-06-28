@@ -13,6 +13,7 @@ import com.softicar.sqml.generator.table.clazz.field.definition.ISqmlTableClassF
 import com.softicar.sqml.generator.table.clazz.field.utils.SqmlTableClassFieldDeclarationBuilder;
 import com.softicar.sqml.generator.table.clazz.field.utils.SqmlTableClassFieldNameDeterminer;
 import com.softicar.sqml.generator.table.clazz.printer.SqmlTableClassPrinter;
+import java.util.Optional;
 
 class SqmlTableClassFieldPrinter implements ISqmlTableClassFieldPrinter {
 
@@ -90,7 +91,9 @@ class SqmlTableClassFieldPrinter implements ISqmlTableClassFieldPrinter {
 			}
 
 			if (config.isGenerateOptionalGetter()) {
-				classPrinter.beginMethod("public final %s %s%s()", valueClassSimpleName, nameDeterminer.getGetFunctionName(), config.getOptionalGetterSuffix());
+				var returnType = "Optional<%s>".formatted(valueClassSimpleName);
+				classPrinter.addImport(Optional.class);
+				classPrinter.beginMethod("public final %s %s%s()", returnType, nameDeterminer.getGetFunctionName(), config.getOptionalGetterSuffix());
 				classPrinter.println("return getValueAsOptional(%s);", nameDeterminer.getStaticFinalName());
 				classPrinter.endBlock();
 			}
