@@ -2,7 +2,7 @@
 <feature
       id="com.softicar.sqml"
       label="SQML"
-      version="3.1.0"
+      version="3.1.1"
       provider-name="SoftiCAR"
       os="linux,macosx,win32"
       nl="en_US">
@@ -83,42 +83,42 @@ SOFTWARE.
          id="com.softicar.sqml.generator"
          download-size="0"
          install-size="0"
-         version="3.1.0"
+         version="3.1.1"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.generator.sqml"
          download-size="0"
          install-size="0"
-         version="3.1.0"
+         version="3.1.1"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.model"
          download-size="0"
          install-size="0"
-         version="3.1.0"
+         version="3.1.1"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.shared"
          download-size="0"
          install-size="0"
-         version="3.1.0"
+         version="3.1.1"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.ui"
          download-size="0"
          install-size="0"
-         version="3.1.0"
+         version="3.1.1"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.main"
          download-size="0"
          install-size="0"
-         version="3.1.0"
+         version="3.1.1"
          unpack="false"/>
 
 </feature>
