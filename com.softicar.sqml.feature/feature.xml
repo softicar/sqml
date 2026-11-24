@@ -2,7 +2,7 @@
 <feature
       id="com.softicar.sqml"
       label="SQML"
-      version="3.1.1"
+      version="3.1.2"
       provider-name="SoftiCAR"
       os="linux,macosx,win32"
       nl="en_US">
@@ -53,7 +53,6 @@ SOFTWARE.
       <import plugin="org.eclipse.xtext" version="2.4.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.eclipse.xtext.testing"/>
-      <import plugin="org.eclipse.xtext.junit4"/>
       <import plugin="org.junit"/>
       <import plugin="org.hamcrest.core"/>
       <import plugin="org.antlr.runtime"/>
@@ -83,42 +82,42 @@ SOFTWARE.
          id="com.softicar.sqml.generator"
          download-size="0"
          install-size="0"
-         version="3.1.1"
+         version="3.1.2"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.generator.sqml"
          download-size="0"
          install-size="0"
-         version="3.1.1"
+         version="3.1.2"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.model"
          download-size="0"
          install-size="0"
-         version="3.1.1"
+         version="3.1.2"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.shared"
          download-size="0"
          install-size="0"
-         version="3.1.1"
+         version="3.1.2"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.ui"
          download-size="0"
          install-size="0"
-         version="3.1.1"
+         version="3.1.2"
          unpack="false"/>
 
    <plugin
          id="com.softicar.sqml.main"
          download-size="0"
          install-size="0"
-         version="3.1.1"
+         version="3.1.2"
          unpack="false"/>
 
 </feature>
