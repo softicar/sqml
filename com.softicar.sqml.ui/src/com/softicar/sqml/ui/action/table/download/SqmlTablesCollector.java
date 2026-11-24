@@ -117,7 +117,7 @@ public class SqmlTablesCollector {
 
 			if (proxy.getType() == IResource.FILE && proxy.getName().endsWith(".sqml")) {
 				addTables((IFile) proxy.requestResource());
-				monitor.subTask(String.format("Collecting Sqml Table File: %s", ((IFile) proxy.requestResource()).getProjectRelativePath()));
+				monitor.subTask(String.format("Collecting Sqml Table File: %s", proxy.requestResource().getProjectRelativePath()));
 				return false;
 			} else if (proxy.getType() == IResource.FOLDER) {
 				return true;

@@ -20,8 +20,8 @@ The _SQML Eclipse Plugin_ provides the following features.
 
 To write _SQML_ code in another project, an **Ubuntu 20.04 (Focal)** based workstation is recommended, with the following software installed:
 
-1. [AdoptOpenJDK 15 with HotSpot JVM](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=hotspot), with `java` in the `PATH` _(an upgrade to Adoptium JDK 17 LTS is planned)_
-2. [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/), e.g. [2020-09 (4.17)](https://www.eclipse.org/downloads/packages/release/2020-09/r)
+1. [Eclipse Temurin JDK 21 (LTS)](https://adoptium.net/temurin/releases/?version=21), with `java` in the `PATH`
+2. [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/packages/), e.g. [2026-09 (4.41)](https://www.eclipse.org/downloads/packages/release/2026-09/r)
 3. [SQML Eclipse Plugin](https://github.com/softicar/sqml)
 
 ## 3 Installation
